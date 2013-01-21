@@ -15,16 +15,31 @@
 	[_persistentStoreCoordinator release];
 	[_managedObjectModel release];
 	[_managedObjectContext release];
+	[_statusItem release];
     [super dealloc];
 }
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize statusMenu = _statusMenu;
+@synthesize statusItem = _statusItem;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	// Insert code here to initialize your application
+}
+
+-(void) awakeFromNib{
+	
+	NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
+	_statusItem = [statusBar statusItemWithLength:NSSquareStatusItemLength];
+	[_statusItem retain];
+	
+	[_statusItem setTitle:@"Y"];
+	[_statusItem setHighlightMode:YES];
+	[_statusItem setMenu:_statusMenu];
+	[_statusMenu setAutoenablesItems:NO];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "pryv.PrYv" in the user's Application Support directory.
