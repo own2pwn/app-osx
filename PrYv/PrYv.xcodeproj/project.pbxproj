@@ -51,6 +51,7 @@
 		0C73430016ADB00B00EA101F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C73430216ADB00B00EA101F /* PrYvTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvTests.h; sourceTree = "<group>"; };
 		0C73430316ADB00B00EA101F /* PrYvTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvTests.m; sourceTree = "<group>"; };
+		0C7343B016AEA6F400EA101F /* PrYv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrYv.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +117,7 @@
 		0C7342DC16ADB00B00EA101F /* PrYv */ = {
 			isa = PBXGroup;
 			children = (
+				0C7343B016AEA6F400EA101F /* PrYv.entitlements */,
 				0C7342E816ADB00B00EA101F /* PRYVAppDelegate.h */,
 				0C7342E916ADB00B00EA101F /* PRYVAppDelegate.m */,
 				0C7342EB16ADB00B00EA101F /* MainMenu.xib */,
@@ -335,6 +337,8 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -351,6 +355,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -364,6 +369,8 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -373,6 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -380,7 +388,13 @@
 		0C73430816ADB00B00EA101F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Desktop/Pryv/BWToolkit\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
@@ -393,7 +407,13 @@
 		0C73430916ADB00B00EA101F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Desktop/Pryv/BWToolkit\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
@@ -452,6 +472,7 @@
 				0C73430916ADB00B00EA101F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C73430A16ADB00B00EA101F /* Build configuration list for PBXNativeTarget "PrYvTests" */ = {
 			isa = XCConfigurationList;
@@ -460,6 +481,7 @@
 				0C73430C16ADB00B00EA101F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
