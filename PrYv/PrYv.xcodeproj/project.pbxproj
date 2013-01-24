@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C293F5F16B13BFB00D90B36 /* FaviconBlack56.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */; };
 		0C7342D716ADB00B00EA101F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342DF16ADB00B00EA101F /* InfoPlist.strings */; };
 		0C7342E316ADB00B00EA101F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E216ADB00B00EA101F /* main.m */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaviconBlack56.png; sourceTree = "<group>"; };
 		0C7342D216ADB00B00EA101F /* PrYv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrYv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7342D616ADB00B00EA101F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0C7342D916ADB00B00EA101F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -78,6 +80,7 @@
 		0C7342C716ADB00A00EA101F = {
 			isa = PBXGroup;
 			children = (
+				0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */,
 				0C7342DC16ADB00B00EA101F /* PrYv */,
 				0C7342FC16ADB00B00EA101F /* PrYvTests */,
 				0C7342D516ADB00B00EA101F /* Frameworks */,
@@ -234,6 +237,7 @@
 				0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */,
 				0C7342E716ADB00B00EA101F /* Credits.rtf in Resources */,
 				0C7342ED16ADB00B00EA101F /* MainMenu.xib in Resources */,
+				0C293F5F16B13BFB00D90B36 /* FaviconBlack56.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
