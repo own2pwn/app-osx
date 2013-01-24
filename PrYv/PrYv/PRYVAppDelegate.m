@@ -26,10 +26,50 @@
 @synthesize statusItem = _statusItem;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
-	// Insert code here to initialize your application
-}
+{	
+	NSURL *requestURL = [NSURL URLWithString:@"https://jonmaim.rec.la/channels"];
+	
+	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requestURL];
+	[request setHTTPMethod:@"POST"];
+	[request setValue:@"VVEQmJD5T5" forHTTPHeaderField:@"Authorization"];
+	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+	
+	NSDictionary *body = [NSDictionary dictionaryWithObject:@"Mac OS X Application"
+													 forKey:@"name"];
+	NSError *error = nil;
+	NSData *bodyData = [NSJSONSerialization dataWithJSONObject:body options:0 error:&error];
+	if(!error){[request setHTTPBody:bodyData];}
+	
+	NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
+	
+	//__block int channelId = 0;
+	[NSURLConnection sendAsynchronousRequest:request
+									   queue:backgroundQueue
+						   completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
+							   if (!error) {
+								   NSDictionary *requestResults = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+								   NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+								   if ([httpResponse statusCode] >= 400) {
+									   NSLog(@"Remote URL returned error %ld %@",[httpResponse statusCode],[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]);
+									   NSLog(@"Result : %@", requestResults);
+									   NSLog(@"ID : %@",[requestResults valueForKey:@"id"]);
+								   } else {
+									   NSLog(@"It is the first time you try to create the channel");
+									   NSLog(@"Result : %@", requestResults);
+									   NSLog(@"ID : %@",[requestResults valueForKey:@"id"]);
+								   }
+								   //channelId = [requestResults valueForKey:@"id"];
+								   //NSString *requestResults = [[NSString alloc] initWithData:data encoding:NSStringEncodingConversionAllowLossy];
+							   } else {
+								   NSLog(@"Error in sendAsynchronousRequest : %@",error);
+								   NSString *requestResults = [[NSString alloc] initWithData:data encoding:NSStringEncodingConversionAllowLossy];
+								   NSLog(@"Result : %@", requestResults);
+								   NSLog(@"Response : %@", [response URL]);
+							   }
+						   }];
 
+}
+	 
 -(void) awakeFromNib{
 	
 	NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
