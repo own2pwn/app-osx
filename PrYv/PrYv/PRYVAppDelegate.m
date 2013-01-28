@@ -7,6 +7,7 @@
 //
 
 #import "PRYVAppDelegate.h"
+#import "PRYVApiClient.h"
 
 @implementation PRYVAppDelegate
 
@@ -34,15 +35,16 @@
 	[request setValue:@"VVEQmJD5T5" forHTTPHeaderField:@"Authorization"];
 	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 	
-	NSDictionary *body = [NSDictionary dictionaryWithObject:@"Mac OS X Application"
-													 forKey:@"name"];
+	NSDictionary *body = @{
+			@"name": @"Mac OS X Application" 
+	};
+	
 	NSError *error = nil;
 	NSData *bodyData = [NSJSONSerialization dataWithJSONObject:body options:0 error:&error];
 	if(!error){[request setHTTPBody:bodyData];}
 	
 	NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
 	
-	//__block int channelId = 0;
 	[NSURLConnection sendAsynchronousRequest:request
 									   queue:backgroundQueue
 						   completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
@@ -53,6 +55,13 @@
 									   NSLog(@"Remote URL returned error %ld %@",[httpResponse statusCode],[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]);
 									   NSLog(@"Result : %@", requestResults);
 									   NSLog(@"ID : %@",[requestResults valueForKey:@"id"]);
+									   
+									   //We make another request to get the list of channels and get the id from the result
+									   NSMutableString *channelId = [[NSMutableString alloc] initWithString:@"test"];
+									   //[PRYVApiClient getChannelIdForName:@"Mac OS X Application" ForUser:@"jonmaim" WithAccessToken:@"VVEQmJD5T5" ToChannelId:&channelId];
+
+									   //NSLog(@"Check for ID : %@", channelId);
+									   
 								   } else {
 									   NSLog(@"It is the first time you try to create the channel");
 									   NSLog(@"Result : %@", requestResults);
@@ -67,9 +76,8 @@
 								   NSLog(@"Response : %@", [response URL]);
 							   }
 						   }];
-
 }
-	 
+
 -(void) awakeFromNib{
 	
 	NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
