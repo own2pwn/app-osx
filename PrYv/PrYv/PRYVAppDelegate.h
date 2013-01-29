@@ -20,5 +20,6 @@
 
 - (void)awakeFromNib;
 - (IBAction)saveAction:(id)sender;
++ (PRYVAppDelegate*)sharedInstance;
 
 @end

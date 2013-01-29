@@ -8,6 +8,8 @@
 
 #import "PRYVAppDelegate.h"
 #import "PRYVApiClient.h"
+#import "User.h"
+#import "User+Extras.h"
 
 @implementation PRYVAppDelegate
 
@@ -27,55 +29,75 @@
 @synthesize statusItem = _statusItem;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{	
-	NSURL *requestURL = [NSURL URLWithString:@"https://jonmaim.rec.la/channels"];
+{
+	//Try to retrieve the user from the CoreData DB
+	User * user = [User currentUserInContext:[self managedObjectContext]];
 	
-	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requestURL];
-	[request setHTTPMethod:@"POST"];
-	[request setValue:@"VVEQmJD5T5" forHTTPHeaderField:@"Authorization"];
-	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+	//If no user has been found, create a new one
+	if (user==nil) {
+		NSString *username = @"jonmaim";
+		NSString *oAuthToken = @"VVEQmJD5T5";
+		NSString *channelId = @"TVoyO2x2B5";
+		
+		user = [User createNewUserWithUsername:username
+										 Token:oAuthToken
+									 ChannelId:channelId
+									 InContext:[self managedObjectContext]];
+		NSLog(@"user==nil");
 	
-	NSDictionary *body = @{
-			@"name": @"Mac OS X Application" 
-	};
+	//If the user has been found, be ready to create notes
+	}else{
+		NSLog(@"user!=nil");
+	}
 	
-	NSError *error = nil;
-	NSData *bodyData = [NSJSONSerialization dataWithJSONObject:body options:0 error:&error];
-	if(!error){[request setHTTPBody:bodyData];}
-	
-	NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
-	
-	[NSURLConnection sendAsynchronousRequest:request
-									   queue:backgroundQueue
-						   completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
-							   if (!error) {
-								   NSDictionary *requestResults = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-								   NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-								   if ([httpResponse statusCode] >= 400) {
-									   NSLog(@"Remote URL returned error %ld %@",[httpResponse statusCode],[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]);
-									   NSLog(@"Result : %@", requestResults);
-									   NSLog(@"ID : %@",[requestResults valueForKey:@"id"]);
-									   
-									   //We make another request to get the list of channels and get the id from the result
-									   NSMutableString *channelId = [[NSMutableString alloc] initWithString:@"test"];
-									   //[PRYVApiClient getChannelIdForName:@"Mac OS X Application" ForUser:@"jonmaim" WithAccessToken:@"VVEQmJD5T5" ToChannelId:&channelId];
-
-									   //NSLog(@"Check for ID : %@", channelId);
-									   
-								   } else {
-									   NSLog(@"It is the first time you try to create the channel");
-									   NSLog(@"Result : %@", requestResults);
-									   NSLog(@"ID : %@",[requestResults valueForKey:@"id"]);
-								   }
-								   //channelId = [requestResults valueForKey:@"id"];
-								   //NSString *requestResults = [[NSString alloc] initWithData:data encoding:NSStringEncodingConversionAllowLossy];
-							   } else {
-								   NSLog(@"Error in sendAsynchronousRequest : %@",error);
-								   NSString *requestResults = [[NSString alloc] initWithData:data encoding:NSStringEncodingConversionAllowLossy];
-								   NSLog(@"Result : %@", requestResults);
-								   NSLog(@"Response : %@", [response URL]);
-							   }
-						   }];
+//	NSURL *requestURL = [NSURL URLWithString:@"https://jonmaim.rec.la/channels"];
+//	
+//	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requestURL];
+//	[request setHTTPMethod:@"POST"];
+//	[request setValue:@"VVEQmJD5T5" forHTTPHeaderField:@"Authorization"];
+//	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+//	
+//	NSDictionary *body = @{
+//			@"name": @"Mac OS X Application" 
+//	};
+//	
+//	NSError *error = nil;
+//	NSData *bodyData = [NSJSONSerialization dataWithJSONObject:body options:0 error:&error];
+//	if(!error){[request setHTTPBody:bodyData];}
+//	
+//	NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
+//	
+//	[NSURLConnection sendAsynchronousRequest:request
+//									   queue:backgroundQueue
+//						   completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
+//							   if (!error) {
+//								   NSDictionary *requestResults = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+//								   NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+//								   if ([httpResponse statusCode] >= 400) {
+//									   NSLog(@"Remote URL returned error %ld %@",[httpResponse statusCode],[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]);
+//									   NSLog(@"Result : %@", requestResults);
+//									   NSLog(@"ID : %@",[requestResults valueForKey:@"id"]);
+//									   
+//									   //We make another request to get the list of channels and get the id from the result
+//									   NSMutableString *channelId = [[NSMutableString alloc] initWithString:@"test"];
+//									   //[PRYVApiClient getChannelIdForName:@"Mac OS X Application" ForUser:@"jonmaim" WithAccessToken:@"VVEQmJD5T5" ToChannelId:&channelId];
+//
+//									   //NSLog(@"Check for ID : %@", channelId);
+//									   
+//								   } else {
+//									   NSLog(@"It is the first time you try to create the channel");
+//									   NSLog(@"Result : %@", requestResults);
+//									   NSLog(@"ID : %@",[requestResults valueForKey:@"id"]);
+//								   }
+//								   //channelId = [requestResults valueForKey:@"id"];
+//								   //NSString *requestResults = [[NSString alloc] initWithData:data encoding:NSStringEncodingConversionAllowLossy];
+//							   } else {
+//								   NSLog(@"Error in sendAsynchronousRequest : %@",error);
+//								   NSString *requestResults = [[NSString alloc] initWithData:data encoding:NSStringEncodingConversionAllowLossy];
+//								   NSLog(@"Result : %@", requestResults);
+//								   NSLog(@"Response : %@", [response URL]);
+//							   }
+//						   }];
 }
 
 -(void) awakeFromNib{
@@ -98,6 +120,18 @@
     NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
     return [appSupportURL URLByAppendingPathComponent:@"pryv.PrYv"];
 }
+
+//Enables singleton using Grand Central
++ (PRYVAppDelegate*)sharedInstance
+{
+	static dispatch_once_t pred;
+	static PRYVAppDelegate *sharedInstance = nil;
+	dispatch_once(&pred, ^{
+        sharedInstance = [[self alloc] init];
+    });
+	return sharedInstance;
+}
+
 
 // Creates if necessary and returns the managed object model for the application.
 - (NSManagedObjectModel *)managedObjectModel
