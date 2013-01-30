@@ -18,6 +18,9 @@
 		0C2408C916B7F10D00BD60CC /* Folder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408C816B7F10D00BD60CC /* Folder.m */; };
 		0C2408CC16B7F2CA00BD60CC /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408CB16B7F2C900BD60CC /* Note.m */; };
 		0C2408CF16B7F49800BD60CC /* Folder+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408CE16B7F49600BD60CC /* Folder+Helper.m */; };
+		0C2408D316B9233200BD60CC /* PRYVLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408D116B9233200BD60CC /* PRYVLoginController.m */; };
+		0C2408D416B9233200BD60CC /* PRYVLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C2408D216B9233200BD60CC /* PRYVLoginController.xib */; };
+		0C2408D616B9253500BD60CC /* PrYvLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C2408D516B9253500BD60CC /* PrYvLogo.png */; };
 		0C293F5F16B13BFB00D90B36 /* FaviconBlack56.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */; };
 		0C70407F16B1791C00C6EEB1 /* PPrYvApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C70407E16B1791C00C6EEB1 /* PPrYvApiClient.m */; };
 		0C7040C516B1A99000C6EEB1 /* EventAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7040C416B1A99000C6EEB1 /* EventAttachment.m */; };
@@ -66,6 +69,10 @@
 		0C2408CB16B7F2C900BD60CC /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		0C2408CD16B7F49600BD60CC /* Folder+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Folder+Helper.h"; sourceTree = "<group>"; };
 		0C2408CE16B7F49600BD60CC /* Folder+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Folder+Helper.m"; sourceTree = "<group>"; };
+		0C2408D016B9233200BD60CC /* PRYVLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVLoginController.h; path = PrYv/PRYVLoginController.h; sourceTree = "<group>"; };
+		0C2408D116B9233200BD60CC /* PRYVLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVLoginController.m; path = PrYv/PRYVLoginController.m; sourceTree = "<group>"; };
+		0C2408D216B9233200BD60CC /* PRYVLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRYVLoginController.xib; sourceTree = "<group>"; };
+		0C2408D516B9253500BD60CC /* PrYvLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrYvLogo.png; sourceTree = "<group>"; };
 		0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaviconBlack56.png; sourceTree = "<group>"; };
 		0C70407D16B1791C00C6EEB1 /* PPrYvApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPrYvApiClient.h; path = PrYv/PPrYvApiClient.h; sourceTree = "<group>"; };
 		0C70407E16B1791C00C6EEB1 /* PPrYvApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPrYvApiClient.m; path = PrYv/PPrYvApiClient.m; sourceTree = "<group>"; };
@@ -142,6 +149,8 @@
 		0C24088116B7096400BD60CC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0C2408D016B9233200BD60CC /* PRYVLoginController.h */,
+				0C2408D116B9233200BD60CC /* PRYVLoginController.m */,
 				0C2408AA16B7C27A00BD60CC /* PRYVNewNoteController.h */,
 				0C2408AB16B7C27A00BD60CC /* PRYVNewNoteController.m */,
 				0C2408A216B7BC5D00BD60CC /* PRYVMenuController.h */,
@@ -168,6 +177,7 @@
 				0C24088116B7096400BD60CC /* Controller */,
 				0C24088016B7095600BD60CC /* Model */,
 				0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */,
+				0C2408D516B9253500BD60CC /* PrYvLogo.png */,
 				0C7342DC16ADB00B00EA101F /* PrYv */,
 				0C7342FC16ADB00B00EA101F /* PrYvTests */,
 				0C7342D516ADB00B00EA101F /* Frameworks */,
@@ -207,6 +217,7 @@
 		0C7342DC16ADB00B00EA101F /* PrYv */ = {
 			isa = PBXGroup;
 			children = (
+				0C2408D216B9233200BD60CC /* PRYVLoginController.xib */,
 				0C7342EB16ADB00B00EA101F /* MainMenu.xib */,
 				0C2408A516B7C0B600BD60CC /* NewNote.xib */,
 				0C7342E816ADB00B00EA101F /* PRYVAppDelegate.h */,
@@ -326,6 +337,8 @@
 				0C7342ED16ADB00B00EA101F /* MainMenu.xib in Resources */,
 				0C293F5F16B13BFB00D90B36 /* FaviconBlack56.png in Resources */,
 				0C2408A616B7C0B600BD60CC /* NewNote.xib in Resources */,
+				0C2408D416B9233200BD60CC /* PRYVLoginController.xib in Resources */,
+				0C2408D616B9253500BD60CC /* PrYvLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +387,7 @@
 				0C2408C916B7F10D00BD60CC /* Folder.m in Sources */,
 				0C2408CC16B7F2CA00BD60CC /* Note.m in Sources */,
 				0C2408CF16B7F49800BD60CC /* Folder+Helper.m in Sources */,
+				0C2408D316B9233200BD60CC /* PRYVLoginController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

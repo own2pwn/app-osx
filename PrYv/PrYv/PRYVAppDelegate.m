@@ -10,6 +10,7 @@
 #import "PRYVApiClient.h"
 #import "User.h"
 #import "User+Extras.h"
+#import "PRYVLoginController.h"
 
 @implementation PRYVAppDelegate
 
@@ -33,21 +34,16 @@
 	//Try to retrieve the user from the CoreData DB
 	User * user = [User currentUserInContext:[self managedObjectContext]];
 	
-	//If no user has been found, create a new one
-	if (user==nil) {
-		NSString *username = @"jonmaim";
-		NSString *oAuthToken = @"VVEQmJD5T5";
-		NSString *channelId = @"TVoyO2x2B5";
+	//If no user has been found, open login window
+	if (user==nil) {		
+		PRYVLoginController *loginWindow = [[PRYVLoginController alloc] initForUser:user];
+		[loginWindow showWindow:self];
 		
-		user = [User createNewUserWithUsername:username
-										 Token:oAuthToken
-									 ChannelId:channelId
-									 InContext:[self managedObjectContext]];
-		NSLog(@"user==nil");
+		NSLog(@"First onnection with : %@. Welcome !", user.username);
 	
 	//If the user has been found, be ready to create notes
 	}else{
-		NSLog(@"user!=nil");
+		NSLog(@"Welcome back, %@ !",user.username);
 	}
 	
 //	NSURL *requestURL = [NSURL URLWithString:@"https://jonmaim.rec.la/channels"];
@@ -110,7 +106,7 @@
 	[_statusItem setImage:[NSImage imageNamed:@"FaviconBlack56.png"]];
 	[_statusItem setHighlightMode:YES];
 	[_statusItem setMenu:_statusMenu];
-	[_statusMenu setAutoenablesItems:NO];
+	[_statusMenu setAutoenablesItems:YES];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "pryv.PrYv" in the user's Application Support directory.
