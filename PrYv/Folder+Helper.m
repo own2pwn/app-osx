@@ -12,14 +12,13 @@
 
 - (NSString *)description
 {
-	
-    NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", NSStringFromClass([self class])];
-    [description appendFormat:@", self.id=%@", self.folderId];
-    [description appendFormat:@", self.name=%@", self.name];
-    [description appendFormat:@", self.parentFolderId=%@", self.parentFolderId];
-    [description appendFormat:@", self.hidden=%@", self.hidden];
-    [description appendFormat:@", self.trashed=%@", self.trashed];
-    [description appendString:@">"];
+	NSMutableString *description = [NSMutableString stringWithFormat:@"%@",self.name];
+//	  NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", self.name];
+//    [description appendFormat:@"– Id: %@", self.folderId];
+//    [description appendFormat:@"– Parent Id: %@", self.parentFolderId];
+//    [description appendFormat:@"– Hidden: %@", self.hidden];
+//    [description appendFormat:@"– Trashed: %@", self.trashed];
+//    [description appendString:@">"];
     return description;
 }
 
