@@ -36,11 +36,8 @@
 								 InContext:[[PRYVAppDelegate sharedInstance] managedObjectContext]];
 	NSLog(@"First onnection with : %@. Welcome !", user.username);
 	[self.window close];
-<<<<<<< HEAD
-	
-=======
+
 	NSLog(@"First onnection with : %@. Welcome !", user.username);
->>>>>>> master
 }
 
 - (id)initWithWindow:(NSWindow *)window
