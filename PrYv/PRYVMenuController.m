@@ -48,6 +48,7 @@
 -(IBAction)newNote:(id)sender{
 	if(!newNoteController){
 		newNoteController = [[PRYVNewNoteController alloc] initWithWindowNibName:@"NewNote"];
+		[newNoteController.window setDelegate:newNoteController];
 	}
 	[newNoteController showWindow:self];
 }

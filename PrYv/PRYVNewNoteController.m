@@ -22,36 +22,50 @@
 @implementation PRYVNewNoteController
 
 -(IBAction)createNote:(id)sender{
-	NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
-	Note *newNote = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:context];
-	NSMutableSet *newTags = [[NSMutableSet alloc] init];
-	[[tags objectValue] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-		[newTags addObject:[Tag tagWithValue:obj inContext:context]];
-	}];
-	newNote.tags = newTags;
-	[newTags release];
-	
-	newNote.folder = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder" inManagedObjectContext:context];
-	newNote.folder.name = [folder stringValue];
-	newNote.title = [title stringValue];
-	newNote.content = [content stringValue];
-	User *current = [User currentUserInContext:context];
-	[current addNotesObject:newNote];
-	[context save:nil];
-	
-	NSLog(@"Note created with title : %@",[title stringValue]);
-	[self close];
+	//The content of the note is the only required field
+	if ([[content stringValue] isEqualToString:@""]) {
+		NSLog(@"The content is mandatory !");
+	}else{
+		//Get the general context and create a new note
+		NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
+		Note *newNote = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:context];
+		
+		//Construct the note using the fields in the panel
+		newNote.title = [title stringValue];
+		newNote.content = [content stringValue];
+		newNote.folder = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder" inManagedObjectContext:context];
+		newNote.folder.name = [folder stringValue];
+		NSMutableSet *newTags = [[NSMutableSet alloc] init];
+		[[tags objectValue] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+			[newTags addObject:[Tag tagWithValue:obj inContext:context]];
+		}];
+		newNote.tags = newTags;
+		[newTags release];
+		
+		//Add the note in the user set of notes and save the changes
+		User *current = [User currentUserInContext:context];
+		[current addNotesObject:newNote];
+		[context save:nil];
+		
+		NSLog(@"Note created with title : %@",[title stringValue]);
+		[self.window close];
+		
+	}
 }
 
--(IBAction)displayCurrentUser:(id)sender{
-	NSLog(@"TEst");
+-(void)windowWillClose:(NSNotification *)notification{
+	[title setStringValue:@""];
+	[content setStringValue:@""];
+	[folder setStringValue:@""];
+	[tags setStringValue:@""];
+	[title becomeFirstResponder];
+	
 }
 
 - (id)initWithWindow:(NSWindow *)window
 {
     self = [super initWithWindow:window];
     if (self) {
-        // Initialization code here.
     }
     
     return self;

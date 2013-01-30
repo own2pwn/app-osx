@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 @class PRYVNewNoteController;
 
-@interface PRYVMenuController : NSObject{
+
+@interface PRYVMenuController : NSObject {
 @private
 	PRYVNewNoteController *newNoteController;
 }
