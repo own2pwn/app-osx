@@ -38,8 +38,6 @@
 	if (user==nil) {		
 		PRYVLoginController *loginWindow = [[PRYVLoginController alloc] initForUser:user];
 		[loginWindow showWindow:self];
-		
-		NSLog(@"First onnection with : %@. Welcome !", user.username);
 	
 	//If the user has been found, be ready to create notes
 	}else{

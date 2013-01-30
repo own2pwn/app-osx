@@ -34,6 +34,7 @@
 								 ChannelId:channelId
 								 InContext:[[PRYVAppDelegate sharedInstance] managedObjectContext]];
 	[self.window close];
+	NSLog(@"First onnection with : %@. Welcome !", user.username);
 }
 
 - (id)initWithWindow:(NSWindow *)window
