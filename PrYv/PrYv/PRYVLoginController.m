@@ -20,6 +20,7 @@
 	self = [super initWithWindowNibName:@"PRYVLoginController"];
 	if (self) {
 		user = u;
+		
 	}
 	
 	return self;
@@ -33,7 +34,9 @@
 									 Token:[oAuthToken stringValue]
 								 ChannelId:channelId
 								 InContext:[[PRYVAppDelegate sharedInstance] managedObjectContext]];
+	NSLog(@"First onnection with : %@. Welcome !", user.username);
 	[self.window close];
+	
 }
 
 - (id)initWithWindow:(NSWindow *)window

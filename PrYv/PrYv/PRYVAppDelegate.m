@@ -38,8 +38,6 @@
 	if (user==nil) {		
 		PRYVLoginController *loginWindow = [[PRYVLoginController alloc] initForUser:user];
 		[loginWindow showWindow:self];
-		
-		NSLog(@"First onnection with : %@. Welcome !", user.username);
 	
 	//If the user has been found, be ready to create notes
 	}else{
@@ -102,7 +100,6 @@
 	_statusItem = [statusBar statusItemWithLength:NSSquareStatusItemLength];
 	[_statusItem retain];
 	
-	//[_statusItem setTitle:@"Y"];
 	[_statusItem setImage:[NSImage imageNamed:@"FaviconBlack56.png"]];
 	[_statusItem setHighlightMode:YES];
 	[_statusItem setMenu:_statusMenu];
