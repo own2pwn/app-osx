@@ -517,10 +517,6 @@
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Desktop/Pryv/BWToolkit\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
@@ -536,10 +532,6 @@
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Desktop/Pryv/BWToolkit\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
