@@ -60,8 +60,7 @@
 }
 
 -(void)dealloc{
-	[newNoteController dealloc];
-	newNoteController = nil;
+	[newNoteController release];
 	[super dealloc];
 }
 

@@ -10,7 +10,6 @@
 
 @interface PRYVAppDelegate : NSObject <NSApplicationDelegate>
 
-//@property (assign) IBOutlet NSWindow *window;
 
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -18,7 +17,7 @@
 @property (strong) IBOutlet NSMenu *statusMenu;
 @property (strong) NSStatusItem *statusItem;
 
-- (void)awakeFromNib;
+//- (void)awakeFromNib;
 - (IBAction)saveAction:(id)sender;
 + (PRYVAppDelegate*)sharedInstance;
 

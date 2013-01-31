@@ -15,6 +15,7 @@
 	IBOutlet NSTextField *username;
 	IBOutlet NSTextField *oAuthToken;
 	User *user;
+
 }
 -(PRYVLoginController*)initForUser:(User*)u;
 -(IBAction)login:(id)sender;

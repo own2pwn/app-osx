@@ -50,30 +50,30 @@
 /* Begin PBXFileReference section */
 		0C24087B16B2689400BD60CC /* PRYVApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVApiClient.h; path = PrYv/PRYVApiClient.h; sourceTree = "<group>"; };
 		0C24087C16B2689400BD60CC /* PRYVApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVApiClient.m; path = PrYv/PRYVApiClient.m; sourceTree = "<group>"; };
-		0C24089216B7B78C00BD60CC /* User+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+Extras.h"; sourceTree = "<group>"; };
-		0C24089316B7B78C00BD60CC /* User+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+Extras.m"; sourceTree = "<group>"; };
-		0C2408A216B7BC5D00BD60CC /* PRYVMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRYVMenuController.h; sourceTree = "<group>"; };
-		0C2408A316B7BC5D00BD60CC /* PRYVMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRYVMenuController.m; sourceTree = "<group>"; };
+		0C24089216B7B78C00BD60CC /* User+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+Extras.h"; path = "PrYv/User+Extras.h"; sourceTree = "<group>"; };
+		0C24089316B7B78C00BD60CC /* User+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+Extras.m"; path = "PrYv/User+Extras.m"; sourceTree = "<group>"; };
+		0C2408A216B7BC5D00BD60CC /* PRYVMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVMenuController.h; path = PrYv/PRYVMenuController.h; sourceTree = "<group>"; };
+		0C2408A316B7BC5D00BD60CC /* PRYVMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVMenuController.m; path = PrYv/PRYVMenuController.m; sourceTree = "<group>"; };
 		0C2408A516B7C0B600BD60CC /* NewNote.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewNote.xib; sourceTree = "<group>"; };
-		0C2408AA16B7C27A00BD60CC /* PRYVNewNoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PRYVNewNoteController.h; sourceTree = "<group>"; };
-		0C2408AB16B7C27A00BD60CC /* PRYVNewNoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PRYVNewNoteController.m; sourceTree = "<group>"; };
-		0C2408BB16B7DFAF00BD60CC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		0C2408BC16B7DFAF00BD60CC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		0C2408C116B7DFB000BD60CC /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
-		0C2408C216B7DFB000BD60CC /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
-		0C2408C416B7E12A00BD60CC /* Tag+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Tag+Helper.h"; sourceTree = "<group>"; };
-		0C2408C516B7E12A00BD60CC /* Tag+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Tag+Helper.m"; sourceTree = "<group>"; };
-		0C2408C716B7F10C00BD60CC /* Folder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Folder.h; sourceTree = "<group>"; };
-		0C2408C816B7F10D00BD60CC /* Folder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Folder.m; sourceTree = "<group>"; };
-		0C2408CA16B7F2C900BD60CC /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
-		0C2408CB16B7F2C900BD60CC /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
-		0C2408CD16B7F49600BD60CC /* Folder+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Folder+Helper.h"; sourceTree = "<group>"; };
-		0C2408CE16B7F49600BD60CC /* Folder+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Folder+Helper.m"; sourceTree = "<group>"; };
+		0C2408AA16B7C27A00BD60CC /* PRYVNewNoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVNewNoteController.h; path = PrYv/PRYVNewNoteController.h; sourceTree = "<group>"; };
+		0C2408AB16B7C27A00BD60CC /* PRYVNewNoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVNewNoteController.m; path = PrYv/PRYVNewNoteController.m; sourceTree = "<group>"; };
+		0C2408BB16B7DFAF00BD60CC /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = PrYv/User.h; sourceTree = "<group>"; };
+		0C2408BC16B7DFAF00BD60CC /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = PrYv/User.m; sourceTree = "<group>"; };
+		0C2408C116B7DFB000BD60CC /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tag.h; path = PrYv/Tag.h; sourceTree = "<group>"; };
+		0C2408C216B7DFB000BD60CC /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tag.m; path = PrYv/Tag.m; sourceTree = "<group>"; };
+		0C2408C416B7E12A00BD60CC /* Tag+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Tag+Helper.h"; path = "PrYv/Tag+Helper.h"; sourceTree = "<group>"; };
+		0C2408C516B7E12A00BD60CC /* Tag+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Tag+Helper.m"; path = "PrYv/Tag+Helper.m"; sourceTree = "<group>"; };
+		0C2408C716B7F10C00BD60CC /* Folder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Folder.h; path = PrYv/Folder.h; sourceTree = "<group>"; };
+		0C2408C816B7F10D00BD60CC /* Folder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Folder.m; path = PrYv/Folder.m; sourceTree = "<group>"; };
+		0C2408CA16B7F2C900BD60CC /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = PrYv/Note.h; sourceTree = "<group>"; };
+		0C2408CB16B7F2C900BD60CC /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = PrYv/Note.m; sourceTree = "<group>"; };
+		0C2408CD16B7F49600BD60CC /* Folder+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Folder+Helper.h"; path = "PrYv/Folder+Helper.h"; sourceTree = "<group>"; };
+		0C2408CE16B7F49600BD60CC /* Folder+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Folder+Helper.m"; path = "PrYv/Folder+Helper.m"; sourceTree = "<group>"; };
 		0C2408D016B9233200BD60CC /* PRYVLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVLoginController.h; path = PrYv/PRYVLoginController.h; sourceTree = "<group>"; };
 		0C2408D116B9233200BD60CC /* PRYVLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVLoginController.m; path = PrYv/PRYVLoginController.m; sourceTree = "<group>"; };
 		0C2408D216B9233200BD60CC /* PRYVLoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PRYVLoginController.xib; sourceTree = "<group>"; };
-		0C2408D516B9253500BD60CC /* PrYvLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PrYvLogo.png; sourceTree = "<group>"; };
-		0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaviconBlack56.png; sourceTree = "<group>"; };
+		0C2408D516B9253500BD60CC /* PrYvLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PrYvLogo.png; path = PrYv/PrYvLogo.png; sourceTree = "<group>"; };
+		0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaviconBlack56.png; path = PrYv/FaviconBlack56.png; sourceTree = "<group>"; };
 		0C70407D16B1791C00C6EEB1 /* PPrYvApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPrYvApiClient.h; path = PrYv/PPrYvApiClient.h; sourceTree = "<group>"; };
 		0C70407E16B1791C00C6EEB1 /* PPrYvApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPrYvApiClient.m; path = PrYv/PPrYvApiClient.m; sourceTree = "<group>"; };
 		0C7040C316B1A99000C6EEB1 /* EventAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventAttachment.h; path = PrYv/EventAttachment.h; sourceTree = "<group>"; };
@@ -173,11 +173,10 @@
 		0C7342C716ADB00A00EA101F = {
 			isa = PBXGroup;
 			children = (
+				0CD1201116BA6F740028CF5B /* Images */,
 				0C24088216B7097300BD60CC /* API */,
 				0C24088116B7096400BD60CC /* Controller */,
 				0C24088016B7095600BD60CC /* Model */,
-				0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */,
-				0C2408D516B9253500BD60CC /* PrYvLogo.png */,
 				0C7342DC16ADB00B00EA101F /* PrYv */,
 				0C7342FC16ADB00B00EA101F /* PrYvTests */,
 				0C7342D516ADB00B00EA101F /* Frameworks */,
@@ -257,6 +256,15 @@
 				0C7342FF16ADB00B00EA101F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0CD1201116BA6F740028CF5B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */,
+				0C2408D516B9253500BD60CC /* PrYvLogo.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,10 +517,6 @@
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Desktop/Pryv/BWToolkit\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
@@ -528,10 +532,6 @@
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Desktop/Pryv/BWToolkit\"",
-				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
