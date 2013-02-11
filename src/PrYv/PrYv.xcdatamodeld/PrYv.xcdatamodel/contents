@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Event" syncable="YES">
+        <attribute name="channelId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="folderId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="type_class" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type_format" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" syncable="YES"/>
+    </entity>
     <entity name="File" representedClassName="File" syncable="YES">
         <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mimeType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="files" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="FileEvent" syncable="YES">
+        <attribute name="fileName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Folder" representedClassName="Folder" syncable="YES">
         <attribute name="folderId" optional="YES" attributeType="String" syncable="YES"/>
@@ -37,7 +50,9 @@
         <element name="File" positionX="-83" positionY="-12" width="128" height="120"/>
         <element name="Folder" positionX="313" positionY="-144" width="128" height="135"/>
         <element name="Note" positionX="88" positionY="-90" width="128" height="118"/>
-        <element name="Tag" positionX="295" positionY="45" width="128" height="73"/>
+        <element name="Tag" positionX="684" positionY="-118" width="128" height="73"/>
         <element name="User" positionX="-108" positionY="-216" width="128" height="120"/>
+        <element name="Event" positionX="115" positionY="-306" width="110" height="133"/>
+        <element name="FileEvent" positionX="297" positionY="-108" width="128" height="88"/>
     </elements>
 </model>

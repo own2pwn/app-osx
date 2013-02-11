@@ -12,6 +12,10 @@
 #import "User.h"
 #import "User+Extras.h"
 #import "NSString+Helper.h"
+#import "Tag.h"
+#import "Tag+Helper.h"
+#import "Folder.h"
+#import "Folder+Helper.h"
 
 @implementation PRYVFileController
 
@@ -22,7 +26,7 @@
 		[openDialog setCanChooseFiles:YES];
 		[openDialog setAllowsMultipleSelection:YES];
 		[openDialog setCanChooseDirectories:YES];
-		[openDialog setCanCreateDirectories:YES];
+		[openDialog setCanCreateDirectories:NO];
 		[openDialog setResolvesAliases:YES];
 		threadLock = [[NSLock alloc] init];
 	}
@@ -30,23 +34,44 @@
 }
 
 -(void)runDialog{
-	// This method displays the panel and returns immediately.
-	// The completion handler is called when the user selects an
-	// item or cancels the panel.
+	
+		
+	if ([NSBundle loadNibNamed:@"OpenPanelWithTagsAndFolder" owner:self])
+		[openDialog setAccessoryView:accessoryView];
+	
+	NSArray *folderNames = [NSArray arrayWithObjects:@"Top Secret", @"Shared", @"Funny", @"Work", nil];
+	[folder addItemsWithTitles: folderNames];
+														
 	[openDialog beginWithCompletionHandler:^(NSInteger result){
 		if (result == NSFileHandlingPanelOKButton) {
-			
+			NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
+			//Get the tags for the event
+			NSMutableSet *newTags = [[NSMutableSet alloc] init];
+			[[tags objectValue] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+				[newTags addObject:[Tag tagWithValue:obj inContext:context]];
+			}];
+			//Get the folder
+			Folder *newFolder = [NSEntityDescription insertNewObjectForEntityForName:@"Folder" inManagedObjectContext:context];
+			if ([[folder titleOfSelectedItem] isEqualTo:@"None"]) {
+				newFolder.name = @"";
+			}else{
+				newFolder.name = [folder titleOfSelectedItem];
+			}
 			NSArray *files = [openDialog URLs];
-			[NSThread detachNewThreadSelector:@selector(pryvFiles:) toTarget:self withObject:files];
+			NSArray *objects = [NSArray arrayWithObjects: files, newTags, newFolder, nil];
+			NSArray *keys = [NSArray arrayWithObjects:@"files",@"tags",@"folder", nil];
+			NSDictionary *arguments = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+			[NSThread detachNewThreadSelector:@selector(pryvFiles:) toTarget:self withObject:arguments];
 		}
 		[openDialog release];//Mac OS X 10.6 fix
 		
 	}];
 }
 
--(void)pryvFiles:(NSArray *)files{
+-(void)pryvFiles:(NSDictionary *)args{
 	[threadLock lock];
 	@autoreleasepool {
+		NSArray *files = [NSArray arrayWithArray:[args objectForKey:@"files"]];
 		NSMutableArray *filesToSend = [[NSMutableArray alloc] init];
 		// Loop through the files to create File entities that we add in an NSArray in order to prepare them for the FileEvent.
 		[files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -54,7 +79,7 @@
 		}];
 		
 		//Enumerate the filesToSend array to create the FileEvent and try to send it.
-		
+		[filesToSend release];
 	}
 	[threadLock unlock];
 
@@ -113,6 +138,7 @@
 	}
 
 }
+
 
 -(void)dealloc{
 	[threadLock release];

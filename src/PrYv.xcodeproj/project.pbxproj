@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */; };
 		0C1A714116BBB5DD004E35EF /* PRYVFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A714016BBB5DD004E35EF /* PRYVFileController.m */; };
 		0C1F955316C26E0700E3C2F2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F955216C26E0700E3C2F2 /* User.m */; };
 		0C1F955616C26F3000E3C2F2 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F955516C26F3000E3C2F2 /* File.m */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenPanelWithTagsAndFolder.xib; sourceTree = "<group>"; };
 		0C1A713F16BBB5DD004E35EF /* PRYVFileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVFileController.h; path = PrYv/PRYVFileController.h; sourceTree = "<group>"; };
 		0C1A714016BBB5DD004E35EF /* PRYVFileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVFileController.m; path = PrYv/PRYVFileController.m; sourceTree = "<group>"; };
 		0C1F955116C26E0700E3C2F2 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = PrYv/User.h; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				0C2408D216B9233200BD60CC /* PRYVLoginController.xib */,
 				0C7342EB16ADB00B00EA101F /* MainMenu.xib */,
 				0C2408A516B7C0B600BD60CC /* NewNote.xib */,
+				0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */,
 				0C7342E816ADB00B00EA101F /* PRYVAppDelegate.h */,
 				0C7342E916ADB00B00EA101F /* PRYVAppDelegate.m */,
 				0C7343B016AEA6F400EA101F /* PrYv.entitlements */,
@@ -367,6 +370,7 @@
 				0C2408A616B7C0B600BD60CC /* NewNote.xib in Resources */,
 				0C2408D416B9233200BD60CC /* PRYVLoginController.xib in Resources */,
 				0C2408D616B9253500BD60CC /* PrYvLogo.png in Resources */,
+				0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

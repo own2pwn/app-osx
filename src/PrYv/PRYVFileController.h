@@ -7,15 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-@class File;
+
 @interface PRYVFileController : NSObject{
 @private
+	IBOutlet NSTokenField *tags;
+	IBOutlet NSPopUpButton *folder;
+	IBOutlet NSView *accessoryView;
 	NSOpenPanel* openDialog;
 	NSLock *threadLock;
 }
 
 - (PRYVFileController*)initWithOpenPanel:(NSOpenPanel*)openDialog;
 -(void) runDialog;
--(void) pryvFiles:(NSArray*)files;
+-(void) pryvFiles:(NSDictionary*)args;
 +(void)constructFilesArray:(NSMutableArray*)array withFile:(NSString*)file inSubfolder:(NSString*)subfolder;
 @end
