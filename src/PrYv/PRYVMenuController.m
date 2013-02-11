@@ -12,6 +12,7 @@
 #import "User+Extras.h"
 #import "User.h"
 #import "Note.h"
+#import "PRYVFileController.h"
 
 @implementation PRYVMenuController
 
@@ -22,6 +23,16 @@
 	}
 	return self;
 }
+
+-(IBAction)openFiles:(id)sender{
+	NSOpenPanel *openDialog = [NSOpenPanel openPanel];
+	[openDialog retain]; //Mac OS X 10.6 fix	
+	fileController = [[PRYVFileController alloc] initWithOpenPanel:openDialog];
+	[fileController runDialog];
+	
+	
+}
+
 
 -(IBAction)displayCurrentUser:(id)sender{
 	NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
@@ -43,6 +54,13 @@
 		}];
 		i++;
 	}];
+	i = 1;
+	[current.files enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+		NSLog(@"File %d",i);
+		NSLog(@"%@",[obj description]);
+		i++;
+
+	}];
 }
 
 -(IBAction)newNote:(id)sender{
@@ -61,6 +79,7 @@
 
 -(void)dealloc{
 	[newNoteController release];
+	[fileController release];
 	[super dealloc];
 }
 

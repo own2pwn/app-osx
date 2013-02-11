@@ -13,7 +13,8 @@
 	IBOutlet NSTextField *title;
 	IBOutlet NSTextField *content;
 	IBOutlet NSTokenField *tags;
-	IBOutlet NSTextField *folder;
+	IBOutlet NSPopUpButton *folder;
 }
+
 -(IBAction)createNote:(id)sender;
 @end

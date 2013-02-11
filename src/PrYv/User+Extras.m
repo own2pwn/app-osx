@@ -26,6 +26,7 @@
     newUser.oAuthToken = token;
     newUser.channelId = channelId;
 	newUser.notes = [[NSSet alloc] init];
+	newUser.files =[[NSSet alloc] init];
     
     [context save:nil];
     

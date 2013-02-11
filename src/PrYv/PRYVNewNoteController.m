@@ -34,7 +34,11 @@
 		newNote.title = [title stringValue];
 		newNote.content = [content stringValue];
 		newNote.folder = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder" inManagedObjectContext:context];
-		newNote.folder.name = [folder stringValue];
+		if ([[folder titleOfSelectedItem] isEqualTo:@"None"]) {
+			newNote.folder.name = @"";
+		}else{
+			newNote.folder.name = [folder titleOfSelectedItem];
+		}
 		NSMutableSet *newTags = [[NSMutableSet alloc] init];
 		[[tags objectValue] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 			[newTags addObject:[Tag tagWithValue:obj inContext:context]];
@@ -52,7 +56,7 @@
 		
 	}
 }
-
+//Reset the window so that next time you open it, it is a new window
 -(void)windowWillClose:(NSNotification *)notification{
 	[title setStringValue:@""];
 	[content setStringValue:@""];
@@ -66,6 +70,7 @@
 {
     self = [super initWithWindow:window];
     if (self) {
+		
     }
     
     return self;
@@ -74,8 +79,8 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
-    
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+	NSArray *folderNames = [NSArray arrayWithObjects:@"Top Secret", @"Shared", @"Funny", @"Work", nil];
+	[folder addItemsWithTitles: folderNames];
 }
 
 @end

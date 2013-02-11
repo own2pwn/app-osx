@@ -2,11 +2,12 @@
 //  User.m
 //  PrYv
 //
-//  Created by Victor Kristof on 29.01.13.
+//  Created by Victor Kristof on 06.02.13.
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
 #import "User.h"
+#import "File.h"
 #import "Note.h"
 
 
@@ -16,5 +17,6 @@
 @dynamic oAuthToken;
 @dynamic username;
 @dynamic notes;
+@dynamic files;
 
 @end

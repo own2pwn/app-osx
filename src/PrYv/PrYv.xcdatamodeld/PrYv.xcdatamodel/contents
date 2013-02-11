@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1811" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12C60" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="File" representedClassName="File" syncable="YES">
+        <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mimeType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="files" inverseEntity="User" syncable="YES"/>
+    </entity>
     <entity name="Folder" representedClassName="Folder" syncable="YES">
         <attribute name="folderId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hidden" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -23,12 +30,14 @@
         <attribute name="channelId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="oAuthToken" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="files" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="File" inverseName="user" inverseEntity="File" syncable="YES"/>
         <relationship name="notes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Note" inverseName="user" inverseEntity="Note" syncable="YES"/>
     </entity>
     <elements>
+        <element name="File" positionX="-83" positionY="-12" width="128" height="120"/>
+        <element name="Folder" positionX="313" positionY="-144" width="128" height="135"/>
         <element name="Note" positionX="88" positionY="-90" width="128" height="118"/>
-        <element name="User" positionX="-108" positionY="-216" width="128" height="103"/>
         <element name="Tag" positionX="295" positionY="45" width="128" height="73"/>
-        <element name="Folder" positionX="160" positionY="192" width="128" height="135"/>
+        <element name="User" positionX="-108" positionY="-216" width="128" height="120"/>
     </elements>
 </model>
