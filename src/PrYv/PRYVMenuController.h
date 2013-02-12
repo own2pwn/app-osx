@@ -22,5 +22,6 @@
 -(IBAction)displayCurrentUser:(id)sender;
 -(IBAction)goToMyPryv:(id)send;
 -(IBAction)openFiles:(id)sender;
+-(IBAction)purgeEvents:(id)sender;
 
 @end

@@ -1,18 +1,14 @@
 //
-//  Tag.m
+//  NoteEvent+Helper.h
 //  PrYv
 //
 //  Created by Victor Kristof on 11.02.13.
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
-#import "Tag.h"
-#import "Event.h"
+#import "NoteEvent.h"
 
+@interface NoteEvent (Helper)
 
-@implementation Tag
-
-@dynamic value;
-@dynamic event;
-
+-(NSString*)description;
 @end

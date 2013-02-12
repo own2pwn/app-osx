@@ -7,10 +7,10 @@
 //
 
 #import "PRYVNewNoteController.h"
-#import "Note.h"
+#import "NoteEvent.h"
 #import "PRYVAppDelegate.h"
 #import "User.h"
-#import "User+Extras.h"
+#import "User+Helper.h"
 #import "Tag+Helper.h"
 #import "Tag.h"
 #import "Folder.h"
@@ -28,27 +28,27 @@
 	}else{
 		//Get the general context and create a new note
 		NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
-		Note *newNote = [NSEntityDescription insertNewObjectForEntityForName:@"Note" inManagedObjectContext:context];
+		NoteEvent *newNoteEvent = [NSEntityDescription insertNewObjectForEntityForName:@"NoteEvent" inManagedObjectContext:context];
 		
 		//Construct the note using the fields in the panel
-		newNote.title = [title stringValue];
-		newNote.content = [content stringValue];
-		newNote.folder = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder" inManagedObjectContext:context];
+		newNoteEvent.title = [title stringValue];
+		newNoteEvent.content = [content stringValue];
+		newNoteEvent.folder = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder" inManagedObjectContext:context];
 		if ([[folder titleOfSelectedItem] isEqualTo:@"None"]) {
-			newNote.folder.name = @"";
+			newNoteEvent.folder.name = @"";
 		}else{
-			newNote.folder.name = [folder titleOfSelectedItem];
+			newNoteEvent.folder.name = [folder titleOfSelectedItem];
 		}
 		NSMutableSet *newTags = [[NSMutableSet alloc] init];
 		[[tags objectValue] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 			[newTags addObject:[Tag tagWithValue:obj inContext:context]];
 		}];
-		newNote.tags = newTags;
+		newNoteEvent.tags = newTags;
 		[newTags release];
 		
 		//Add the note in the user set of notes and save the changes
 		User *current = [User currentUserInContext:context];
-		[current addNotesObject:newNote];
+		[current addEventsObject:newNoteEvent];
 		[context save:nil];
 		
 		NSLog(@"Note created with title : %@",[title stringValue]);
@@ -60,7 +60,6 @@
 -(void)windowWillClose:(NSNotification *)notification{
 	[title setStringValue:@""];
 	[content setStringValue:@""];
-	[folder setStringValue:@""];
 	[tags setStringValue:@""];
 	[title becomeFirstResponder];
 	
@@ -79,7 +78,8 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
-	NSArray *folderNames = [NSArray arrayWithObjects:@"Top Secret", @"Shared", @"Funny", @"Work", nil];
+	User *current = [User currentUserInContext:[[PRYVAppDelegate sharedInstance] managedObjectContext]];
+	NSArray *folderNames = [current folderNames];
 	[folder addItemsWithTitles: folderNames];
 }
 

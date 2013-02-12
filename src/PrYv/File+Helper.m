@@ -12,10 +12,10 @@
 
 - (NSString *)description
 {
-	NSMutableString *description = [NSMutableString stringWithFormat:@"\n\tFilename : %@\n",self.filename];
-	[description appendFormat:@"\tMIME-Type : %@\n",self.mimeType];
-	[description appendFormat:@"\tSize : %@\n",self.size];
-	[description appendFormat:@"\tPath : %@\n",self.path];
+	NSMutableString *description = [NSMutableString stringWithFormat:@"\n\tFilename : %@",self.filename];
+	[description appendFormat:@"\n\tMIME-Type : %@",self.mimeType];
+	[description appendFormat:@"\n\tSize : %@",self.size];
+	[description appendFormat:@"\n\tData path : %@",self.path];
 	
 	return description;
 }

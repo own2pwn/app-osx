@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "User+Extras.h"
+#import "User+Helper.h"
 #import "User.h"
 
 @interface PRYVLoginController : NSWindowController{

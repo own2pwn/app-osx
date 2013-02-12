@@ -1,8 +1,8 @@
 //
-//  Note.h
+//  Event.h
 //  PrYv
 //
-//  Created by Victor Kristof on 29.01.13.
+//  Created by Victor Kristof on 11.02.13.
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
@@ -11,16 +11,18 @@
 
 @class Folder, Tag, User;
 
-@interface Note : NSManagedObject
+@interface Event : NSManagedObject
 
-@property (nonatomic, retain) NSString * content;
-@property (nonatomic, retain) NSString * title;
-@property (nonatomic, retain) User *user;
+@property (nonatomic, retain) NSString * channelId;
+@property (nonatomic, retain) NSNumber * time;
+@property (nonatomic, retain) NSString * type_class;
+@property (nonatomic, retain) NSString * type_format;
 @property (nonatomic, retain) NSSet *tags;
 @property (nonatomic, retain) Folder *folder;
+@property (nonatomic, retain) User *user;
 @end
 
-@interface Note (CoreDataGeneratedAccessors)
+@interface Event (CoreDataGeneratedAccessors)
 
 - (void)addTagsObject:(Tag *)value;
 - (void)removeTagsObject:(Tag *)value;

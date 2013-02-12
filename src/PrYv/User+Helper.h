@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
-@interface User (Extras)
+@interface User (Helper)
 
 // get the current user for the application
 +(User *)currentUserInContext:(NSManagedObjectContext *)context;
@@ -27,4 +27,8 @@
 							Token:(NSString*)token
 						ChannelId:(NSString*)channelId
 						InContext:(NSManagedObjectContext*)context;
+
+-(void)purgeEventsInContext:(NSManagedObjectContext*)context;
+-(NSArray*)folderNames;
+-(NSString*)description;
 @end

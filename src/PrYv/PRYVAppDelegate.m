@@ -9,7 +9,7 @@
 #import "PRYVAppDelegate.h"
 #import "PRYVApiClient.h"
 #import "User.h"
-#import "User+Extras.h"
+#import "User+Helper.h"
 #import "PRYVLoginController.h"
 
 @implementation PRYVAppDelegate

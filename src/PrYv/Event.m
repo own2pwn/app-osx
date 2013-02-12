@@ -1,22 +1,25 @@
 //
-//  User.m
+//  Event.m
 //  PrYv
 //
 //  Created by Victor Kristof on 11.02.13.
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
-#import "User.h"
 #import "Event.h"
 #import "Folder.h"
+#import "Tag.h"
+#import "User.h"
 
 
-@implementation User
+@implementation Event
 
 @dynamic channelId;
-@dynamic oAuthToken;
-@dynamic username;
-@dynamic events;
-@dynamic folders;
+@dynamic time;
+@dynamic type_class;
+@dynamic type_format;
+@dynamic tags;
+@dynamic folder;
+@dynamic user;
 
 @end

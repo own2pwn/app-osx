@@ -9,9 +9,9 @@
 #import "PRYVMenuController.h"
 #import "PRYVNewNoteController.h"
 #import "PRYVAppDelegate.h"
-#import "User+Extras.h"
+#import "User+Helper.h"
 #import "User.h"
-#import "Note.h"
+#import "NoteEvent.h"
 #import "PRYVFileController.h"
 
 @implementation PRYVMenuController
@@ -37,30 +37,13 @@
 -(IBAction)displayCurrentUser:(id)sender{
 	NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
 	User *current = [User currentUserInContext:context];
-	NSLog(@"#################");
-	NSLog(@"CURRENT USER");
-	NSLog(@"Username : %@",current.username);
-	NSLog(@"oAuthToken : %@", current.oAuthToken);
-	__block int i = 1;
-	[current.notes enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
-		NSLog(@"Note %d",i);
-		NSLog(@"\tTitle : %@", [obj title]);
-		NSLog(@"\tContent : %@", [obj content]);
-		NSLog(@"\tFolder : %@",[[obj folder] description]);
-		NSLog(@"\tTags : ");
-		NSSet *tagSet = [NSSet setWithSet:[obj tags]];
-		[tagSet enumerateObjectsUsingBlock:^(id t, BOOL *stop) {
-			NSLog(@"\t\t%@", (NSString*)[t tag]);
-		}];
-		i++;
-	}];
-	i = 1;
-	[current.files enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
-		NSLog(@"File %d",i);
-		NSLog(@"%@",[obj description]);
-		i++;
+	NSLog(@"\n%@",[current description]);
+}
 
-	}];
+-(IBAction)purgeEvents:(id)sender{
+	NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
+	User *current = [User currentUserInContext:context];
+	[current purgeEventsInContext:context];
 }
 
 -(IBAction)newNote:(id)sender{

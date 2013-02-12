@@ -10,12 +10,13 @@
 #import "PRYVAppDelegate.h"
 #import "File.h"
 #import "User.h"
-#import "User+Extras.h"
+#import "User+Helper.h"
 #import "NSString+Helper.h"
 #import "Tag.h"
 #import "Tag+Helper.h"
 #import "Folder.h"
 #import "Folder+Helper.h"
+#import "FileEvent.h"
 
 @implementation PRYVFileController
 
@@ -34,31 +35,34 @@
 }
 
 -(void)runDialog{
-	
-		
+	NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
+	//Add the fields for the tags and the folder
 	if ([NSBundle loadNibNamed:@"OpenPanelWithTagsAndFolder" owner:self])
 		[openDialog setAccessoryView:accessoryView];
 	
-	NSArray *folderNames = [NSArray arrayWithObjects:@"Top Secret", @"Shared", @"Funny", @"Work", nil];
+	//Get the folder names list and fill the popup button
+	User* current = [User currentUserInContext:context];
+	NSArray *folderNames = [current folderNames];
 	[folder addItemsWithTitles: folderNames];
-														
+	
+	//Handle result
 	[openDialog beginWithCompletionHandler:^(NSInteger result){
 		if (result == NSFileHandlingPanelOKButton) {
-			NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
 			//Get the tags for the event
 			NSMutableSet *newTags = [[NSMutableSet alloc] init];
 			[[tags objectValue] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 				[newTags addObject:[Tag tagWithValue:obj inContext:context]];
 			}];
 			//Get the folder
-			Folder *newFolder = [NSEntityDescription insertNewObjectForEntityForName:@"Folder" inManagedObjectContext:context];
+			NSString* folderName;
 			if ([[folder titleOfSelectedItem] isEqualTo:@"None"]) {
-				newFolder.name = @"";
+				folderName = @"";
 			}else{
-				newFolder.name = [folder titleOfSelectedItem];
+				folderName = [NSString stringWithString:[folder titleOfSelectedItem]];
 			}
 			NSArray *files = [openDialog URLs];
-			NSArray *objects = [NSArray arrayWithObjects: files, newTags, newFolder, nil];
+			
+			NSArray *objects = [NSArray arrayWithObjects: files, newTags, folderName, nil];
 			NSArray *keys = [NSArray arrayWithObjects:@"files",@"tags",@"folder", nil];
 			NSDictionary *arguments = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
 			[NSThread detachNewThreadSelector:@selector(pryvFiles:) toTarget:self withObject:arguments];
@@ -71,14 +75,28 @@
 -(void)pryvFiles:(NSDictionary *)args{
 	[threadLock lock];
 	@autoreleasepool {
-		NSArray *files = [NSArray arrayWithArray:[args objectForKey:@"files"]];
+		NSSet *files = [NSSet setWithArray:[args objectForKey:@"files"]];
+		NSSet *newTags = [NSSet setWithSet:[args objectForKey:@"tags"]];
+		NSString *folderName = [NSString stringWithString:[args objectForKey:@"folder"]];
+		//Construct the array of files @filesToSend recursively
+		//The hierarchical structure is kept in the filename
 		NSMutableArray *filesToSend = [[NSMutableArray alloc] init];
-		// Loop through the files to create File entities that we add in an NSArray in order to prepare them for the FileEvent.
-		[files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		[files enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
 			[PRYVFileController constructFilesArray:filesToSend withFile:[obj path] inSubfolder:@""];
 		}];
 		
-		//Enumerate the filesToSend array to create the FileEvent and try to send it.
+		//Create the FileEvent and store it
+		NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
+		User *current = [User currentUserInContext:context];
+		FileEvent *fileEvent = (FileEvent*)[NSEntityDescription insertNewObjectForEntityForName:@"FileEvent" inManagedObjectContext:context];
+		[fileEvent addTags:newTags];
+		[fileEvent addFiles:[NSSet setWithArray:filesToSend]];
+		fileEvent.folder = [NSEntityDescription insertNewObjectForEntityForName:@"Folder" inManagedObjectContext:context];
+		fileEvent.folder.name = folderName;
+		
+		[current addEventsObject:fileEvent];
+		
+		[context save:nil];
 		[filesToSend release];
 	}
 	[threadLock unlock];
@@ -109,7 +127,6 @@
 		
 	} else {
 		NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
-		User *current = [User currentUserInContext:context];
 		NSString *cachesDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
 		//Create a file object to add in the array
 		File *newFile = [NSEntityDescription insertNewObjectForEntityForName:@"File" inManagedObjectContext:context];
@@ -129,9 +146,6 @@
 			NSLog(@"File %@ couldn't be copied : %@",file, error);
 		} else{
 			NSLog(@"File %@ copied !",file);
-			//Store the files one by one to be sure that if the application quits, the work done so far is saved.
-			[current addFilesObject:newFile];
-			[context save:nil];
 			[array addObject:newFile];
 		}
 		

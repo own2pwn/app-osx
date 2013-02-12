@@ -3,12 +3,12 @@
 	<data>
 		<int key="IBDocument.SystemTarget">1060</int>
 		<string key="IBDocument.SystemVersion">12C60</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
+		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
 		<string key="IBDocument.AppKitVersion">1187.34</string>
 		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2844</string>
+			<string key="NS.object.0">3084</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSCustomObject</string>
@@ -1365,6 +1365,14 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
+					<object class="NSMenuItem" id="1027400655">
+						<reference key="NSMenu" ref="726235779"/>
+						<string key="NSTitle">Purge events</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
 					<object class="NSMenuItem" id="378796475">
 						<reference key="NSMenu" ref="726235779"/>
 						<string key="NSTitle">Go to my Pryv</string>
@@ -2141,6 +2149,14 @@
 						<reference key="destination" ref="966834656"/>
 					</object>
 					<int key="connectionID">585</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">purgeEvents:</string>
+						<reference key="source" ref="186245395"/>
+						<reference key="destination" ref="1027400655"/>
+					</object>
+					<int key="connectionID">587</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3143,6 +3159,7 @@
 							<reference ref="1011987834"/>
 							<reference ref="454037992"/>
 							<reference ref="130158989"/>
+							<reference ref="1027400655"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3220,6 +3237,11 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">537</int>
 						<reference key="object" ref="1023784746"/>
+						<reference key="parent" ref="726235779"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">586</int>
+						<reference key="object" ref="1027400655"/>
 						<reference key="parent" ref="726235779"/>
 					</object>
 				</array>
@@ -3379,6 +3401,7 @@
 				<string key="581.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="582.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="583.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="586.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="73.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3395,7 +3418,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">585</int>
+			<int key="maxID">587</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3437,6 +3460,7 @@
 						<string key="goToMyPryv:">id</string>
 						<string key="newNote:">id</string>
 						<string key="openFiles:">id</string>
+						<string key="purgeEvents:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="displayCurrentUser:">
@@ -3453,6 +3477,10 @@
 						</object>
 						<object class="IBActionInfo" key="openFiles:">
 							<string key="name">openFiles:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="purgeEvents:">
+							<string key="name">purgeEvents:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

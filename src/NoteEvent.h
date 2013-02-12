@@ -1,5 +1,5 @@
 //
-//  Tag.h
+//  NoteEvent.h
 //  PrYv
 //
 //  Created by Victor Kristof on 11.02.13.
@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Event.h"
 
-@class Event;
 
-@interface Tag : NSManagedObject
+@interface NoteEvent : Event
 
-@property (nonatomic, retain) NSString * value;
-@property (nonatomic, retain) Event *event;
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * content;
 
 @end

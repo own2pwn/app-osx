@@ -8,27 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */; };
+		0C1A1E2016C9589F0042D7D4 /* FileEvent+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E1F16C9589F0042D7D4 /* FileEvent+Helper.m */; };
+		0C1A1E2316C95FAB0042D7D4 /* NoteEvent+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E2216C95FAB0042D7D4 /* NoteEvent+Helper.m */; };
+		0C1A1E4716C96F840042D7D4 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E4616C96F840042D7D4 /* File.m */; };
+		0C1A1E4A16C96F860042D7D4 /* Folder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E4916C96F860042D7D4 /* Folder.m */; };
+		0C1A1E4D16C96F870042D7D4 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E4C16C96F860042D7D4 /* Event.m */; };
+		0C1A1E5016C96F870042D7D4 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E4F16C96F870042D7D4 /* Tag.m */; };
+		0C1A1E5316C96F870042D7D4 /* FileEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E5216C96F870042D7D4 /* FileEvent.m */; };
+		0C1A1E5616C96F870042D7D4 /* NoteEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E5516C96F870042D7D4 /* NoteEvent.m */; };
+		0C1A1E5916C96F870042D7D4 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E5816C96F870042D7D4 /* User.m */; };
+		0C1A1E5C16CA3B7C0042D7D4 /* Event+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E5B16CA3B7C0042D7D4 /* Event+Helper.m */; };
 		0C1A714116BBB5DD004E35EF /* PRYVFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A714016BBB5DD004E35EF /* PRYVFileController.m */; };
-		0C1F955316C26E0700E3C2F2 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F955216C26E0700E3C2F2 /* User.m */; };
-		0C1F955616C26F3000E3C2F2 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F955516C26F3000E3C2F2 /* File.m */; };
 		0C1F955916C2784800E3C2F2 /* File+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F955816C2784800E3C2F2 /* File+Helper.m */; };
 		0C1F955C16C27D1900E3C2F2 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F955B16C27D1900E3C2F2 /* NSString+Helper.m */; };
 		0C24087D16B2689400BD60CC /* PRYVApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C24087C16B2689400BD60CC /* PRYVApiClient.m */; };
-		0C24089416B7B78C00BD60CC /* User+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C24089316B7B78C00BD60CC /* User+Extras.m */; };
+		0C24089416B7B78C00BD60CC /* User+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C24089316B7B78C00BD60CC /* User+Helper.m */; };
 		0C2408A416B7BC5D00BD60CC /* PRYVMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408A316B7BC5D00BD60CC /* PRYVMenuController.m */; };
 		0C2408A616B7C0B600BD60CC /* NewNote.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C2408A516B7C0B600BD60CC /* NewNote.xib */; };
 		0C2408AC16B7C27A00BD60CC /* PRYVNewNoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408AB16B7C27A00BD60CC /* PRYVNewNoteController.m */; };
-		0C2408C316B7DFB000BD60CC /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408C216B7DFB000BD60CC /* Tag.m */; };
 		0C2408C616B7E12A00BD60CC /* Tag+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408C516B7E12A00BD60CC /* Tag+Helper.m */; };
-		0C2408C916B7F10D00BD60CC /* Folder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408C816B7F10D00BD60CC /* Folder.m */; };
-		0C2408CC16B7F2CA00BD60CC /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408CB16B7F2C900BD60CC /* Note.m */; };
 		0C2408CF16B7F49800BD60CC /* Folder+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408CE16B7F49600BD60CC /* Folder+Helper.m */; };
 		0C2408D316B9233200BD60CC /* PRYVLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408D116B9233200BD60CC /* PRYVLoginController.m */; };
 		0C2408D416B9233200BD60CC /* PRYVLoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C2408D216B9233200BD60CC /* PRYVLoginController.xib */; };
 		0C2408D616B9253500BD60CC /* PrYvLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C2408D516B9253500BD60CC /* PrYvLogo.png */; };
 		0C293F5F16B13BFB00D90B36 /* FaviconBlack56.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */; };
 		0C70407F16B1791C00C6EEB1 /* PPrYvApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C70407E16B1791C00C6EEB1 /* PPrYvApiClient.m */; };
-		0C7040C516B1A99000C6EEB1 /* EventAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7040C416B1A99000C6EEB1 /* EventAttachment.m */; };
 		0C7342D716ADB00B00EA101F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342DF16ADB00B00EA101F /* InfoPlist.strings */; };
 		0C7342E316ADB00B00EA101F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E216ADB00B00EA101F /* main.m */; };
@@ -54,33 +58,43 @@
 
 /* Begin PBXFileReference section */
 		0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenPanelWithTagsAndFolder.xib; sourceTree = "<group>"; };
+		0C1A1E1E16C9589F0042D7D4 /* FileEvent+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FileEvent+Helper.h"; path = "PrYv/FileEvent+Helper.h"; sourceTree = "<group>"; };
+		0C1A1E1F16C9589F0042D7D4 /* FileEvent+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FileEvent+Helper.m"; path = "PrYv/FileEvent+Helper.m"; sourceTree = "<group>"; };
+		0C1A1E2116C95FAB0042D7D4 /* NoteEvent+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NoteEvent+Helper.h"; path = "PrYv/NoteEvent+Helper.h"; sourceTree = "<group>"; };
+		0C1A1E2216C95FAB0042D7D4 /* NoteEvent+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NoteEvent+Helper.m"; path = "PrYv/NoteEvent+Helper.m"; sourceTree = "<group>"; };
+		0C1A1E4516C96F840042D7D4 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = PrYv/File.h; sourceTree = "<group>"; };
+		0C1A1E4616C96F840042D7D4 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = File.m; path = PrYv/File.m; sourceTree = "<group>"; };
+		0C1A1E4816C96F860042D7D4 /* Folder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Folder.h; path = PrYv/Folder.h; sourceTree = "<group>"; };
+		0C1A1E4916C96F860042D7D4 /* Folder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Folder.m; path = PrYv/Folder.m; sourceTree = "<group>"; };
+		0C1A1E4B16C96F860042D7D4 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = PrYv/Event.h; sourceTree = "<group>"; };
+		0C1A1E4C16C96F860042D7D4 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = PrYv/Event.m; sourceTree = "<group>"; };
+		0C1A1E4E16C96F870042D7D4 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tag.h; path = PrYv/Tag.h; sourceTree = "<group>"; };
+		0C1A1E4F16C96F870042D7D4 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tag.m; path = PrYv/Tag.m; sourceTree = "<group>"; };
+		0C1A1E5116C96F870042D7D4 /* FileEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileEvent.h; path = PrYv/FileEvent.h; sourceTree = "<group>"; };
+		0C1A1E5216C96F870042D7D4 /* FileEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileEvent.m; path = PrYv/FileEvent.m; sourceTree = "<group>"; };
+		0C1A1E5416C96F870042D7D4 /* NoteEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteEvent.h; path = PrYv/NoteEvent.h; sourceTree = "<group>"; };
+		0C1A1E5516C96F870042D7D4 /* NoteEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteEvent.m; path = PrYv/NoteEvent.m; sourceTree = "<group>"; };
+		0C1A1E5716C96F870042D7D4 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = PrYv/User.h; sourceTree = "<group>"; };
+		0C1A1E5816C96F870042D7D4 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = PrYv/User.m; sourceTree = "<group>"; };
+		0C1A1E5A16CA3B7B0042D7D4 /* Event+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Event+Helper.h"; path = "PrYv/Event+Helper.h"; sourceTree = "<group>"; };
+		0C1A1E5B16CA3B7C0042D7D4 /* Event+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Event+Helper.m"; path = "PrYv/Event+Helper.m"; sourceTree = "<group>"; };
 		0C1A713F16BBB5DD004E35EF /* PRYVFileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVFileController.h; path = PrYv/PRYVFileController.h; sourceTree = "<group>"; };
 		0C1A714016BBB5DD004E35EF /* PRYVFileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVFileController.m; path = PrYv/PRYVFileController.m; sourceTree = "<group>"; };
-		0C1F955116C26E0700E3C2F2 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = PrYv/User.h; sourceTree = "<group>"; };
-		0C1F955216C26E0700E3C2F2 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = PrYv/User.m; sourceTree = "<group>"; };
-		0C1F955416C26F3000E3C2F2 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = PrYv/File.h; sourceTree = "<group>"; };
-		0C1F955516C26F3000E3C2F2 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = File.m; path = PrYv/File.m; sourceTree = "<group>"; };
 		0C1F955716C2784800E3C2F2 /* File+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "File+Helper.h"; path = "PrYv/File+Helper.h"; sourceTree = "<group>"; };
 		0C1F955816C2784800E3C2F2 /* File+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "File+Helper.m"; path = "PrYv/File+Helper.m"; sourceTree = "<group>"; };
 		0C1F955A16C27D1900E3C2F2 /* NSString+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Helper.h"; path = "PrYv/NSString+Helper.h"; sourceTree = "<group>"; };
 		0C1F955B16C27D1900E3C2F2 /* NSString+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Helper.m"; path = "PrYv/NSString+Helper.m"; sourceTree = "<group>"; };
 		0C24087B16B2689400BD60CC /* PRYVApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVApiClient.h; path = PrYv/PRYVApiClient.h; sourceTree = "<group>"; };
 		0C24087C16B2689400BD60CC /* PRYVApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVApiClient.m; path = PrYv/PRYVApiClient.m; sourceTree = "<group>"; };
-		0C24089216B7B78C00BD60CC /* User+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+Extras.h"; path = "PrYv/User+Extras.h"; sourceTree = "<group>"; };
-		0C24089316B7B78C00BD60CC /* User+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+Extras.m"; path = "PrYv/User+Extras.m"; sourceTree = "<group>"; };
+		0C24089216B7B78C00BD60CC /* User+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+Helper.h"; path = "PrYv/User+Helper.h"; sourceTree = "<group>"; };
+		0C24089316B7B78C00BD60CC /* User+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+Helper.m"; path = "PrYv/User+Helper.m"; sourceTree = "<group>"; };
 		0C2408A216B7BC5D00BD60CC /* PRYVMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVMenuController.h; path = PrYv/PRYVMenuController.h; sourceTree = "<group>"; };
 		0C2408A316B7BC5D00BD60CC /* PRYVMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVMenuController.m; path = PrYv/PRYVMenuController.m; sourceTree = "<group>"; };
 		0C2408A516B7C0B600BD60CC /* NewNote.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewNote.xib; sourceTree = "<group>"; };
 		0C2408AA16B7C27A00BD60CC /* PRYVNewNoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVNewNoteController.h; path = PrYv/PRYVNewNoteController.h; sourceTree = "<group>"; };
 		0C2408AB16B7C27A00BD60CC /* PRYVNewNoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVNewNoteController.m; path = PrYv/PRYVNewNoteController.m; sourceTree = "<group>"; };
-		0C2408C116B7DFB000BD60CC /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tag.h; path = PrYv/Tag.h; sourceTree = "<group>"; };
-		0C2408C216B7DFB000BD60CC /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tag.m; path = PrYv/Tag.m; sourceTree = "<group>"; };
 		0C2408C416B7E12A00BD60CC /* Tag+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Tag+Helper.h"; path = "PrYv/Tag+Helper.h"; sourceTree = "<group>"; };
 		0C2408C516B7E12A00BD60CC /* Tag+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Tag+Helper.m"; path = "PrYv/Tag+Helper.m"; sourceTree = "<group>"; };
-		0C2408C716B7F10C00BD60CC /* Folder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Folder.h; path = PrYv/Folder.h; sourceTree = "<group>"; };
-		0C2408C816B7F10D00BD60CC /* Folder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Folder.m; path = PrYv/Folder.m; sourceTree = "<group>"; };
-		0C2408CA16B7F2C900BD60CC /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Note.h; path = PrYv/Note.h; sourceTree = "<group>"; };
-		0C2408CB16B7F2C900BD60CC /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Note.m; path = PrYv/Note.m; sourceTree = "<group>"; };
 		0C2408CD16B7F49600BD60CC /* Folder+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Folder+Helper.h"; path = "PrYv/Folder+Helper.h"; sourceTree = "<group>"; };
 		0C2408CE16B7F49600BD60CC /* Folder+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Folder+Helper.m"; path = "PrYv/Folder+Helper.m"; sourceTree = "<group>"; };
 		0C2408D016B9233200BD60CC /* PRYVLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVLoginController.h; path = PrYv/PRYVLoginController.h; sourceTree = "<group>"; };
@@ -90,8 +104,6 @@
 		0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaviconBlack56.png; path = PrYv/FaviconBlack56.png; sourceTree = "<group>"; };
 		0C70407D16B1791C00C6EEB1 /* PPrYvApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPrYvApiClient.h; path = PrYv/PPrYvApiClient.h; sourceTree = "<group>"; };
 		0C70407E16B1791C00C6EEB1 /* PPrYvApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPrYvApiClient.m; path = PrYv/PPrYvApiClient.m; sourceTree = "<group>"; };
-		0C7040C316B1A99000C6EEB1 /* EventAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventAttachment.h; path = PrYv/EventAttachment.h; sourceTree = "<group>"; };
-		0C7040C416B1A99000C6EEB1 /* EventAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventAttachment.m; path = PrYv/EventAttachment.m; sourceTree = "<group>"; };
 		0C7342D216ADB00B00EA101F /* PrYv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrYv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7342D616ADB00B00EA101F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0C7342D916ADB00B00EA101F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -136,30 +148,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C1A1E1316C956A30042D7D4 /* Model Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0C1F955716C2784800E3C2F2 /* File+Helper.h */,
+				0C1F955816C2784800E3C2F2 /* File+Helper.m */,
+				0C1A1E1E16C9589F0042D7D4 /* FileEvent+Helper.h */,
+				0C1A1E1F16C9589F0042D7D4 /* FileEvent+Helper.m */,
+				0C2408CD16B7F49600BD60CC /* Folder+Helper.h */,
+				0C2408CE16B7F49600BD60CC /* Folder+Helper.m */,
+				0C24089216B7B78C00BD60CC /* User+Helper.h */,
+				0C24089316B7B78C00BD60CC /* User+Helper.m */,
+				0C2408C416B7E12A00BD60CC /* Tag+Helper.h */,
+				0C2408C516B7E12A00BD60CC /* Tag+Helper.m */,
+				0C1A1E2116C95FAB0042D7D4 /* NoteEvent+Helper.h */,
+				0C1A1E2216C95FAB0042D7D4 /* NoteEvent+Helper.m */,
+				0C1A1E5A16CA3B7B0042D7D4 /* Event+Helper.h */,
+				0C1A1E5B16CA3B7C0042D7D4 /* Event+Helper.m */,
+			);
+			name = "Model Helpers";
+			sourceTree = "<group>";
+		};
+		0C1A1E1D16C958560042D7D4 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				0C1A1E5716C96F870042D7D4 /* User.h */,
+				0C1A1E5816C96F870042D7D4 /* User.m */,
+				0C1A1E5416C96F870042D7D4 /* NoteEvent.h */,
+				0C1A1E5516C96F870042D7D4 /* NoteEvent.m */,
+				0C1A1E5116C96F870042D7D4 /* FileEvent.h */,
+				0C1A1E5216C96F870042D7D4 /* FileEvent.m */,
+				0C1A1E4E16C96F870042D7D4 /* Tag.h */,
+				0C1A1E4F16C96F870042D7D4 /* Tag.m */,
+				0C1A1E4B16C96F860042D7D4 /* Event.h */,
+				0C1A1E4C16C96F860042D7D4 /* Event.m */,
+				0C1A1E4816C96F860042D7D4 /* Folder.h */,
+				0C1A1E4916C96F860042D7D4 /* Folder.m */,
+				0C1A1E4516C96F840042D7D4 /* File.h */,
+				0C1A1E4616C96F840042D7D4 /* File.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
 		0C24088016B7095600BD60CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0C7342EE16ADB00B00EA101F /* PrYv.xcdatamodeld */,
-				0C1F955416C26F3000E3C2F2 /* File.h */,
-				0C1F955516C26F3000E3C2F2 /* File.m */,
-				0C1F955716C2784800E3C2F2 /* File+Helper.h */,
-				0C1F955816C2784800E3C2F2 /* File+Helper.m */,
-				0C1F955116C26E0700E3C2F2 /* User.h */,
-				0C1F955216C26E0700E3C2F2 /* User.m */,
-				0C2408CA16B7F2C900BD60CC /* Note.h */,
-				0C2408CB16B7F2C900BD60CC /* Note.m */,
-				0C2408C716B7F10C00BD60CC /* Folder.h */,
-				0C2408CD16B7F49600BD60CC /* Folder+Helper.h */,
-				0C2408CE16B7F49600BD60CC /* Folder+Helper.m */,
-				0C2408C816B7F10D00BD60CC /* Folder.m */,
-				0C2408C116B7DFB000BD60CC /* Tag.h */,
-				0C2408C216B7DFB000BD60CC /* Tag.m */,
-				0C24089216B7B78C00BD60CC /* User+Extras.h */,
-				0C24089316B7B78C00BD60CC /* User+Extras.m */,
-				0C7040C316B1A99000C6EEB1 /* EventAttachment.h */,
-				0C7040C416B1A99000C6EEB1 /* EventAttachment.m */,
-				0C2408C416B7E12A00BD60CC /* Tag+Helper.h */,
-				0C2408C516B7E12A00BD60CC /* Tag+Helper.m */,
+				0C1A1E1D16C958560042D7D4 /* Core Data */,
+				0C1A1E1316C956A30042D7D4 /* Model Helpers */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -408,22 +444,26 @@
 				0C7342E316ADB00B00EA101F /* main.m in Sources */,
 				0C7342EA16ADB00B00EA101F /* PRYVAppDelegate.m in Sources */,
 				0C7342F016ADB00B00EA101F /* PrYv.xcdatamodeld in Sources */,
-				0C7040C516B1A99000C6EEB1 /* EventAttachment.m in Sources */,
 				0C24087D16B2689400BD60CC /* PRYVApiClient.m in Sources */,
-				0C24089416B7B78C00BD60CC /* User+Extras.m in Sources */,
+				0C24089416B7B78C00BD60CC /* User+Helper.m in Sources */,
 				0C2408A416B7BC5D00BD60CC /* PRYVMenuController.m in Sources */,
 				0C2408AC16B7C27A00BD60CC /* PRYVNewNoteController.m in Sources */,
-				0C2408C316B7DFB000BD60CC /* Tag.m in Sources */,
 				0C2408C616B7E12A00BD60CC /* Tag+Helper.m in Sources */,
-				0C2408C916B7F10D00BD60CC /* Folder.m in Sources */,
-				0C2408CC16B7F2CA00BD60CC /* Note.m in Sources */,
 				0C2408CF16B7F49800BD60CC /* Folder+Helper.m in Sources */,
 				0C2408D316B9233200BD60CC /* PRYVLoginController.m in Sources */,
 				0C1A714116BBB5DD004E35EF /* PRYVFileController.m in Sources */,
-				0C1F955316C26E0700E3C2F2 /* User.m in Sources */,
-				0C1F955616C26F3000E3C2F2 /* File.m in Sources */,
 				0C1F955916C2784800E3C2F2 /* File+Helper.m in Sources */,
 				0C1F955C16C27D1900E3C2F2 /* NSString+Helper.m in Sources */,
+				0C1A1E2016C9589F0042D7D4 /* FileEvent+Helper.m in Sources */,
+				0C1A1E2316C95FAB0042D7D4 /* NoteEvent+Helper.m in Sources */,
+				0C1A1E4716C96F840042D7D4 /* File.m in Sources */,
+				0C1A1E4A16C96F860042D7D4 /* Folder.m in Sources */,
+				0C1A1E4D16C96F870042D7D4 /* Event.m in Sources */,
+				0C1A1E5016C96F870042D7D4 /* Tag.m in Sources */,
+				0C1A1E5316C96F870042D7D4 /* FileEvent.m in Sources */,
+				0C1A1E5616C96F870042D7D4 /* NoteEvent.m in Sources */,
+				0C1A1E5916C96F870042D7D4 /* User.m in Sources */,
+				0C1A1E5C16CA3B7C0042D7D4 /* Event+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
