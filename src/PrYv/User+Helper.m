@@ -8,6 +8,7 @@
 #import "Folder.h"
 #import "FileEvent.h"
 #import "Event.h"
+#import "FileEvent+Helper.h"
 
 @implementation User (Helper)
 

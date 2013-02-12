@@ -7,6 +7,7 @@
 //
 
 #import "FileEvent+Helper.h"
+#import "Event+Helper.h"
 
 @implementation FileEvent (Helper)
 

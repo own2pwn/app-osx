@@ -7,6 +7,7 @@
 //
 
 #import "NoteEvent+Helper.h"
+#import "Event+Helper.h"
 
 @implementation NoteEvent (Helper)
 
