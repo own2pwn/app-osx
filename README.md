@@ -2,7 +2,7 @@
 ----------------------------------------
 Desktop application &amp; system wide contextual menu integration for PrYv.
 
-**Current version :** iteration 2
+**Current version :** iteration 3
 
 ##Overview
 Use the status menu to access the general features. From here, you can create a note, pryv some files, display information about your account (in the console), delete all the events and access the [PrYv website](http://www.pryv.net). It currently only works offline. The online connection to an account will be implemented really soon.
