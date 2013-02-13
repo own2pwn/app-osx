@@ -17,7 +17,7 @@
 @implementation PRYVLoginController
 
 -(PRYVLoginController*)initForUser:(User*)u{
-	self = [super initWithWindowNibName:@"PRYVLoginController"];
+	self = [super initWithWindowNibName:@"LoginController"];
 	if (self) {
 		user = u;
 		

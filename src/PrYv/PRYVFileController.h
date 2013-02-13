@@ -19,6 +19,7 @@
 
 - (PRYVFileController*)initWithOpenPanel:(NSOpenPanel*)openDialog;
 -(void) runDialog;
--(void) pryvFiles:(NSDictionary*)args;
+-(void) pryvFiles:(NSArray*)files withTags:(NSSet*)t andFolderName:(NSString*)folderName;
+-(void) pryvFilesThread:(NSDictionary*)args;
 +(void)constructFilesArray:(NSMutableArray*)array withFile:(NSString*)file inSubfolder:(NSString*)subfolder;
 @end

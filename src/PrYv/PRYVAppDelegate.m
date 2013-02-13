@@ -11,6 +11,7 @@
 #import "User.h"
 #import "User+Helper.h"
 #import "PRYVLoginController.h"
+#import "PRYVFileController.h"
 
 @implementation PRYVAppDelegate
 
@@ -104,6 +105,16 @@
 	[_statusItem setHighlightMode:YES];
 	[_statusItem setMenu:_statusMenu];
 	[_statusMenu setAutoenablesItems:YES];
+}
+
+-(void)application:(NSApplication *)sender openFiles:(NSArray *)filenames{
+	__block NSMutableArray *urls = [[NSMutableArray alloc] init];
+	[filenames enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+		[urls addObject:[NSURL fileURLWithPath:obj]];
+	}];
+	PRYVFileController *fileController = [[PRYVFileController alloc] init];
+	[fileController pryvFiles:[urls autorelease] withTags:[[[NSSet alloc] init] autorelease] andFolderName:@""];
+	[fileController release];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "pryv.PrYv" in the user's Application Support directory.

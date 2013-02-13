@@ -62,26 +62,33 @@
 			}
 			NSArray *files = [openDialog URLs];
 			
-			NSArray *objects = [NSArray arrayWithObjects: files, newTags, folderName, nil];
-			NSArray *keys = [NSArray arrayWithObjects:@"files",@"tags",@"folder", nil];
-			NSDictionary *arguments = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
-			[NSThread detachNewThreadSelector:@selector(pryvFiles:) toTarget:self withObject:arguments];
+			[self pryvFiles:files withTags:newTags andFolderName:folderName];
 		}
 		[openDialog release];//Mac OS X 10.6 fix
 		
 	}];
 }
 
--(void)pryvFiles:(NSDictionary *)args{
+-(void)pryvFiles:(NSArray *)files withTags:(NSSet *)t andFolderName:(NSString *)folderName{
+	NSArray *objects = [NSArray arrayWithObjects: files, t, folderName, nil];
+	NSArray *keys = [NSArray arrayWithObjects:@"files",@"tags",@"folder", nil];
+	NSDictionary *arguments = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+	[NSThread detachNewThreadSelector:@selector(pryvFilesThread:) toTarget:self withObject:arguments];
+
+}
+
+-(void)pryvFilesThread:(NSDictionary *)args{
 	[threadLock lock];
 	@autoreleasepool {
-		NSSet *files = [NSSet setWithArray:[args objectForKey:@"files"]];
+		NSArray *files = [NSArray arrayWithArray:[args objectForKey:@"files"]];
 		NSSet *newTags = [NSSet setWithSet:[args objectForKey:@"tags"]];
+		[newTags retain];
 		NSString *folderName = [NSString stringWithString:[args objectForKey:@"folder"]];
+		[folderName retain];
 		//Construct the array of files @filesToSend recursively
 		//The hierarchical structure is kept in the filename
 		NSMutableArray *filesToSend = [[NSMutableArray alloc] init];
-		[files enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
+		[files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 			[PRYVFileController constructFilesArray:filesToSend withFile:[obj path] inSubfolder:@""];
 		}];
 		
@@ -98,6 +105,8 @@
 		
 		[context save:nil];
 		[filesToSend release];
+		[newTags release];
+		[folderName release];
 	}
 	[threadLock unlock];
 
@@ -109,7 +118,7 @@
 	
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:file error:nil];
-	
+	//If it is a directory
 	if ([fileAttributes valueForKey:NSFileType] == NSFileTypeDirectory) {
 		NSError *error = nil;
 		NSArray *folderContent = [fileManager contentsOfDirectoryAtPath:file error:&error];
@@ -124,7 +133,7 @@
 				
 			}];
 		}
-		
+	//If it is a file
 	} else {
 		NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
 		NSString *cachesDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];

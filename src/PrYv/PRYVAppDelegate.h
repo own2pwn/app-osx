@@ -17,7 +17,6 @@
 @property (strong) IBOutlet NSMenu *statusMenu;
 @property (strong) NSStatusItem *statusItem;
 
-//- (void)awakeFromNib;
 - (IBAction)saveAction:(id)sender;
 + (PRYVAppDelegate*)sharedInstance;
 
