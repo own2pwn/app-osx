@@ -14,8 +14,6 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (strong) IBOutlet NSMenu *statusMenu;
-@property (strong) NSStatusItem *statusItem;
 
 - (IBAction)saveAction:(id)sender;
 + (PRYVAppDelegate*)sharedInstance;

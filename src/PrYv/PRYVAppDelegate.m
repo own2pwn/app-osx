@@ -12,6 +12,7 @@
 #import "User+Helper.h"
 #import "PRYVLoginController.h"
 #import "PRYVFileController.h"
+#import "PRYVStatusMenuController.h"
 
 @implementation PRYVAppDelegate
 
@@ -20,18 +21,18 @@
 	[_persistentStoreCoordinator release];
 	[_managedObjectModel release];
 	[_managedObjectContext release];
-	[_statusItem release];
     [super dealloc];
 }
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
-@synthesize statusMenu = _statusMenu;
-@synthesize statusItem = _statusItem;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+	PRYVStatusMenuController *menuController = [[PRYVStatusMenuController alloc] init];
+	[NSBundle loadNibNamed:@"StatusMenu" owner:menuController];
+	
 	//Try to retrieve the user from the CoreData DB
 	User * user = [User currentUserInContext:[self managedObjectContext]];
 	
@@ -40,7 +41,7 @@
 		PRYVLoginController *loginWindow = [[PRYVLoginController alloc] initForUser:user];
 		[loginWindow showWindow:self];
 	
-	//If the user has been found, be ready to create notes
+	//If the user has been found
 	}else{
 		NSLog(@"Welcome back, %@ !",user.username);
 	}
@@ -93,18 +94,6 @@
 //								   NSLog(@"Response : %@", [response URL]);
 //							   }
 //						   }];
-}
-
--(void) awakeFromNib{
-	
-	NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
-	_statusItem = [statusBar statusItemWithLength:NSSquareStatusItemLength];
-	[_statusItem retain];
-	
-	[_statusItem setImage:[NSImage imageNamed:@"FaviconBlack56.png"]];
-	[_statusItem setHighlightMode:YES];
-	[_statusItem setMenu:_statusMenu];
-	[_statusMenu setAutoenablesItems:YES];
 }
 
 -(void)application:(NSApplication *)sender openFiles:(NSArray *)filenames{

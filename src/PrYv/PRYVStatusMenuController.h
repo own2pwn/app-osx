@@ -7,21 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DragAndDropStatusMenuView.h"
 
 @class PRYVNewNoteController, PRYVFileController;
 
-
-@interface PRYVMenuController : NSObject {
+@interface PRYVStatusMenuController : NSViewController {
 @private
 	PRYVNewNoteController *newNoteController;
 	PRYVFileController *fileController;
-}
+	IBOutlet NSMenu *statusMenu;
+	NSStatusItem *statusItem;
 
--(PRYVMenuController*)init;
+}
+-(PRYVStatusMenuController*)init;
 -(IBAction)newNote:(id)sender;
 -(IBAction)displayCurrentUser:(id)sender;
 -(IBAction)goToMyPryv:(id)send;
 -(IBAction)openFiles:(id)sender;
 -(IBAction)purgeEvents:(id)sender;
-
+-(void)showMenu;
 @end
+
