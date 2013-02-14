@@ -2,21 +2,15 @@
 ----------------------------------------
 Desktop application &amp; system wide contextual menu integration for PrYv.
 
-**Current version :** iteration 3
+**Current version :** iteration 4
 
 ##Overview
-Use the status menu to access the general features. From here, you can create a note, pryv some files, display information about your account (in the console), delete all the events and access the [PrYv website](http://www.pryv.net). It currently only works offline. The online connection to an account will be implemented really soon.
+Use the status menu to access the general features. From here, you can create a note, pryv some files, display information about your account (in the console), delete all the events and access the [PrYv website](http://www.pryv.net). It is also possible to drag and drop files on the Dock tilde or the status menu icon to pryv files and folder.
+
+At this stage of development, it only works in offline mode. The online connection to an account will be implemented really soon.
 
 ##Details
 The first time you'll launch the application, just enter a random username and token. It has no influence for the moment. Once connected, you can create some personal notes and pryv any files and folder. They follow the *event* structure of the PrYv API, storing a timestamp, tags, folder, etc...
-
-###Note
-A note is composed by :
-
-- Title : *optional*
-- Content : *required*
-- Folder : *optional*
-- Tags : *optional*
 
 ###File
 When pryving a file, you can choose multiple files and folders. The hierarchical structure of all the subfiles is stored in the name of those ones in the form : 
@@ -24,7 +18,7 @@ When pryving a file, you can choose multiple files and folders. The hierarchical
 *sub/folder/path/to/filename.ext*
 
 ###User status
-You can display in the console the current stored events and delete the set using the *Display current user* and *Purge events*, respectively, in the general menu. 
+*Purge events* delete all the files from the Caches folder and release the event objects.
 
 This Mac OS X integration for PrYv uses *CoreData* to implement persistence to data. The following informations about the account are conserved from one run to another :
 
