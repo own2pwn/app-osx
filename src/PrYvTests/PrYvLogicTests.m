@@ -2,13 +2,13 @@
 //  PrYvTests.m
 //  PrYvTests
 //
-//  Created by Victor Kristof on 21.01.13.
+//  Created by Victor Kristof on 19.02.13.
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
-#import "PrYvTests.h"
+#import "PrYvLogicTests.h"
 
-@implementation PrYvTests
+@implementation PrYvLogicTests
 
 - (void)setUp
 {
@@ -26,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in PrYvTests");
+    STFail(@"Unit tests are not implemented yet in PrYvLogicTests");
 }
 
 @end

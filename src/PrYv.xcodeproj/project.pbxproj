@@ -35,7 +35,6 @@
 		0C3C26A216CBCC380023E724 /* StatusMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A116CBCC380023E724 /* StatusMenu.xib */; };
 		0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */; };
 		0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A716CCF9050023E724 /* FaviconBlack22.png */; };
-		0C70407F16B1791C00C6EEB1 /* PPrYvApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C70407E16B1791C00C6EEB1 /* PPrYvApiClient.m */; };
 		0C7342D716ADB00B00EA101F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342DF16ADB00B00EA101F /* InfoPlist.strings */; };
 		0C7342E316ADB00B00EA101F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E216ADB00B00EA101F /* main.m */; };
@@ -43,14 +42,18 @@
 		0C7342EA16ADB00B00EA101F /* PRYVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E916ADB00B00EA101F /* PRYVAppDelegate.m */; };
 		0C7342ED16ADB00B00EA101F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342EB16ADB00B00EA101F /* MainMenu.xib */; };
 		0C7342F016ADB00B00EA101F /* PrYv.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342EE16ADB00B00EA101F /* PrYv.xcdatamodeld */; };
-		0C7342F816ADB00B00EA101F /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342F716ADB00B00EA101F /* SenTestingKit.framework */; };
-		0C7342F916ADB00B00EA101F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
-		0C73430116ADB00B00EA101F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342FF16ADB00B00EA101F /* InfoPlist.strings */; };
-		0C73430416ADB00B00EA101F /* PrYvTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C73430316ADB00B00EA101F /* PrYvTests.m */; };
+		0C9B754216D37AAF00A7FEBD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342F716ADB00B00EA101F /* SenTestingKit.framework */; };
+		0C9B754316D37AAF00A7FEBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
+		0C9B754916D37AAF00A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B754716D37AAF00A7FEBD /* InfoPlist.strings */; };
+		0C9B754C16D37AAF00A7FEBD /* PrYvLogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B754B16D37AAF00A7FEBD /* PrYvLogicTests.m */; };
+		0C9B755716D37C3200A7FEBD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342F716ADB00B00EA101F /* SenTestingKit.framework */; };
+		0C9B755816D37C3200A7FEBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
+		0C9B755E16D37C3200A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */; };
+		0C9B756116D37C3200A7FEBD /* PrYvApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0C7342FA16ADB00B00EA101F /* PBXContainerItemProxy */ = {
+		0C9B756616D37D2100A7FEBD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0C7342C916ADB00B00EA101F /* Project object */;
 			proxyType = 1;
@@ -109,8 +112,6 @@
 		0C3C26A416CBDCCF0023E724 /* DragAndDropStatusMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragAndDropStatusMenuView.h; sourceTree = "<group>"; };
 		0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragAndDropStatusMenuView.m; sourceTree = "<group>"; };
 		0C3C26A716CCF9050023E724 /* FaviconBlack22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaviconBlack22.png; sourceTree = "<group>"; };
-		0C70407D16B1791C00C6EEB1 /* PPrYvApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PPrYvApiClient.h; path = PrYv/PPrYvApiClient.h; sourceTree = "<group>"; };
-		0C70407E16B1791C00C6EEB1 /* PPrYvApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PPrYvApiClient.m; path = PrYv/PPrYvApiClient.m; sourceTree = "<group>"; };
 		0C7342D216ADB00B00EA101F /* PrYv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrYv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7342D616ADB00B00EA101F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0C7342D916ADB00B00EA101F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -125,13 +126,20 @@
 		0C7342E916ADB00B00EA101F /* PRYVAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRYVAppDelegate.m; sourceTree = "<group>"; };
 		0C7342EC16ADB00B00EA101F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0C7342EF16ADB00B00EA101F /* PrYv.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrYv.xcdatamodel; sourceTree = "<group>"; };
-		0C7342F616ADB00B00EA101F /* PrYvTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrYvTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7342F716ADB00B00EA101F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		0C7342FE16ADB00B00EA101F /* PrYvTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrYvTests-Info.plist"; sourceTree = "<group>"; };
-		0C73430016ADB00B00EA101F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0C73430216ADB00B00EA101F /* PrYvTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvTests.h; sourceTree = "<group>"; };
-		0C73430316ADB00B00EA101F /* PrYvTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvTests.m; sourceTree = "<group>"; };
 		0C7343B016AEA6F400EA101F /* PrYv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrYv.entitlements; sourceTree = "<group>"; };
+		0C9B754116D37AAF00A7FEBD /* PrYvTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrYvTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C9B754616D37AAF00A7FEBD /* PrYvTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrYvTests-Info.plist"; sourceTree = "<group>"; };
+		0C9B754816D37AAF00A7FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0C9B754A16D37AAF00A7FEBD /* PrYvLogicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvLogicTests.h; sourceTree = "<group>"; };
+		0C9B754B16D37AAF00A7FEBD /* PrYvLogicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvLogicTests.m; sourceTree = "<group>"; };
+		0C9B754D16D37AAF00A7FEBD /* PrYvTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrYvTests-Prefix.pch"; sourceTree = "<group>"; };
+		0C9B755616D37C3200A7FEBD /* PrYvApplicationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrYvApplicationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C9B755B16D37C3200A7FEBD /* PrYvApplicationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrYvApplicationTests-Info.plist"; sourceTree = "<group>"; };
+		0C9B755D16D37C3200A7FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0C9B755F16D37C3200A7FEBD /* PrYvApplicationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvApplicationTests.h; sourceTree = "<group>"; };
+		0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvApplicationTests.m; sourceTree = "<group>"; };
+		0C9B756216D37C3200A7FEBD /* PrYvApplicationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrYvApplicationTests-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,12 +151,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C7342F216ADB00B00EA101F /* Frameworks */ = {
+		0C9B753D16D37AAF00A7FEBD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C7342F816ADB00B00EA101F /* SenTestingKit.framework in Frameworks */,
-				0C7342F916ADB00B00EA101F /* Cocoa.framework in Frameworks */,
+				0C9B754216D37AAF00A7FEBD /* SenTestingKit.framework in Frameworks */,
+				0C9B754316D37AAF00A7FEBD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C9B755216D37C3200A7FEBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C9B755716D37C3200A7FEBD /* SenTestingKit.framework in Frameworks */,
+				0C9B755816D37C3200A7FEBD /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,8 +244,6 @@
 			children = (
 				0C24087B16B2689400BD60CC /* PRYVApiClient.h */,
 				0C24087C16B2689400BD60CC /* PRYVApiClient.m */,
-				0C70407D16B1791C00C6EEB1 /* PPrYvApiClient.h */,
-				0C70407E16B1791C00C6EEB1 /* PPrYvApiClient.m */,
 				0C1F955A16C27D1900E3C2F2 /* NSString+Helper.h */,
 				0C1F955B16C27D1900E3C2F2 /* NSString+Helper.m */,
 			);
@@ -259,7 +274,8 @@
 				0C24088016B7095600BD60CC /* Model */,
 				0C3C26A316CBDC880023E724 /* View */,
 				0C7342DC16ADB00B00EA101F /* PrYv */,
-				0C7342FC16ADB00B00EA101F /* PrYvTests */,
+				0C9B754416D37AAF00A7FEBD /* PrYvLogicTests */,
+				0C9B755916D37C3200A7FEBD /* PrYvApplicationTests */,
 				0C7342D516ADB00B00EA101F /* Frameworks */,
 				0C7342D316ADB00B00EA101F /* Products */,
 			);
@@ -269,7 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				0C7342D216ADB00B00EA101F /* PrYv.app */,
-				0C7342F616ADB00B00EA101F /* PrYvTests.octest */,
+				0C9B754116D37AAF00A7FEBD /* PrYvTests.octest */,
+				0C9B755616D37C3200A7FEBD /* PrYvApplicationTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -317,21 +334,43 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0C7342FC16ADB00B00EA101F /* PrYvTests */ = {
+		0C9B754416D37AAF00A7FEBD /* PrYvLogicTests */ = {
 			isa = PBXGroup;
 			children = (
-				0C73430216ADB00B00EA101F /* PrYvTests.h */,
-				0C73430316ADB00B00EA101F /* PrYvTests.m */,
-				0C7342FD16ADB00B00EA101F /* Supporting Files */,
+				0C9B754A16D37AAF00A7FEBD /* PrYvLogicTests.h */,
+				0C9B754B16D37AAF00A7FEBD /* PrYvLogicTests.m */,
+				0C9B754516D37AAF00A7FEBD /* Supporting Files */,
 			);
+			name = PrYvLogicTests;
 			path = PrYvTests;
 			sourceTree = "<group>";
 		};
-		0C7342FD16ADB00B00EA101F /* Supporting Files */ = {
+		0C9B754516D37AAF00A7FEBD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0C7342FE16ADB00B00EA101F /* PrYvTests-Info.plist */,
-				0C7342FF16ADB00B00EA101F /* InfoPlist.strings */,
+				0C9B754616D37AAF00A7FEBD /* PrYvTests-Info.plist */,
+				0C9B754716D37AAF00A7FEBD /* InfoPlist.strings */,
+				0C9B754D16D37AAF00A7FEBD /* PrYvTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C9B755916D37C3200A7FEBD /* PrYvApplicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C9B755F16D37C3200A7FEBD /* PrYvApplicationTests.h */,
+				0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */,
+				0C9B755A16D37C3200A7FEBD /* Supporting Files */,
+			);
+			path = PrYvApplicationTests;
+			sourceTree = "<group>";
+		};
+		0C9B755A16D37C3200A7FEBD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C9B755B16D37C3200A7FEBD /* PrYvApplicationTests-Info.plist */,
+				0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */,
+				0C9B756216D37C3200A7FEBD /* PrYvApplicationTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -366,23 +405,41 @@
 			productReference = 0C7342D216ADB00B00EA101F /* PrYv.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0C7342F516ADB00B00EA101F /* PrYvTests */ = {
+		0C9B754016D37AAF00A7FEBD /* PrYvLogicTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C73430A16ADB00B00EA101F /* Build configuration list for PBXNativeTarget "PrYvTests" */;
+			buildConfigurationList = 0C9B754E16D37AAF00A7FEBD /* Build configuration list for PBXNativeTarget "PrYvLogicTests" */;
 			buildPhases = (
-				0C7342F116ADB00B00EA101F /* Sources */,
-				0C7342F216ADB00B00EA101F /* Frameworks */,
-				0C7342F316ADB00B00EA101F /* Resources */,
-				0C7342F416ADB00B00EA101F /* ShellScript */,
+				0C9B753C16D37AAF00A7FEBD /* Sources */,
+				0C9B753D16D37AAF00A7FEBD /* Frameworks */,
+				0C9B753E16D37AAF00A7FEBD /* Resources */,
+				0C9B753F16D37AAF00A7FEBD /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0C7342FB16ADB00B00EA101F /* PBXTargetDependency */,
 			);
-			name = PrYvTests;
+			name = PrYvLogicTests;
 			productName = PrYvTests;
-			productReference = 0C7342F616ADB00B00EA101F /* PrYvTests.octest */;
+			productReference = 0C9B754116D37AAF00A7FEBD /* PrYvTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		0C9B755516D37C3200A7FEBD /* PrYvApplicationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C9B756316D37C3200A7FEBD /* Build configuration list for PBXNativeTarget "PrYvApplicationTests" */;
+			buildPhases = (
+				0C9B755116D37C3200A7FEBD /* Sources */,
+				0C9B755216D37C3200A7FEBD /* Frameworks */,
+				0C9B755316D37C3200A7FEBD /* Resources */,
+				0C9B755416D37C3200A7FEBD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C9B756716D37D2100A7FEBD /* PBXTargetDependency */,
+			);
+			name = PrYvApplicationTests;
+			productName = PrYvApplicationTests;
+			productReference = 0C9B755616D37C3200A7FEBD /* PrYvApplicationTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -409,7 +466,8 @@
 			projectRoot = "";
 			targets = (
 				0C7342D116ADB00B00EA101F /* PrYv */,
-				0C7342F516ADB00B00EA101F /* PrYvTests */,
+				0C9B754016D37AAF00A7FEBD /* PrYvLogicTests */,
+				0C9B755516D37C3200A7FEBD /* PrYvApplicationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -432,18 +490,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C7342F316ADB00B00EA101F /* Resources */ = {
+		0C9B753E16D37AAF00A7FEBD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C73430116ADB00B00EA101F /* InfoPlist.strings in Resources */,
+				0C9B754916D37AAF00A7FEBD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C9B755316D37C3200A7FEBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C9B755E16D37C3200A7FEBD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0C7342F416ADB00B00EA101F /* ShellScript */ = {
+		0C9B753F16D37AAF00A7FEBD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		0C9B755416D37C3200A7FEBD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -490,22 +569,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C7342F116ADB00B00EA101F /* Sources */ = {
+		0C9B753C16D37AAF00A7FEBD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C73430416ADB00B00EA101F /* PrYvTests.m in Sources */,
-				0C70407F16B1791C00C6EEB1 /* PPrYvApiClient.m in Sources */,
+				0C9B754C16D37AAF00A7FEBD /* PrYvLogicTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C9B755116D37C3200A7FEBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C9B756116D37C3200A7FEBD /* PrYvApplicationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0C7342FB16ADB00B00EA101F /* PBXTargetDependency */ = {
+		0C9B756716D37D2100A7FEBD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0C7342D116ADB00B00EA101F /* PrYv */;
-			targetProxy = 0C7342FA16ADB00B00EA101F /* PBXContainerItemProxy */;
+			targetProxy = 0C9B756616D37D2100A7FEBD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -534,10 +620,18 @@
 			name = MainMenu.xib;
 			sourceTree = "<group>";
 		};
-		0C7342FF16ADB00B00EA101F /* InfoPlist.strings */ = {
+		0C9B754716D37AAF00A7FEBD /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0C73430016ADB00B00EA101F /* en */,
+				0C9B754816D37AAF00A7FEBD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C9B755D16D37C3200A7FEBD /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -632,35 +726,155 @@
 			};
 			name = Release;
 		};
-		0C73430B16ADB00B00EA101F /* Debug */ = {
+		0C9B754F16D37AAF00A7FEBD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PrYv.app/Contents/MacOS/PrYv";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
+				GCC_PREFIX_HEADER = "PrYvTests/PrYvTests-Prefix.pch";
 				INFOPLIST_FILE = "PrYvTests/PrYvTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0C9B755016D37AAF00A7FEBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvTests/PrYvTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvTests/PrYvTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		0C9B756416D37C3200A7FEBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PrYv.app/Contents/MacOS/PrYv";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvApplicationTests/PrYvApplicationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvApplicationTests/PrYvApplicationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
-		0C73430C16ADB00B00EA101F /* Release */ = {
+		0C9B756516D37C3200A7FEBD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PrYv.app/Contents/MacOS/PrYv";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
-				INFOPLIST_FILE = "PrYvTests/PrYvTests-Info.plist";
+				GCC_PREFIX_HEADER = "PrYvApplicationTests/PrYvApplicationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvApplicationTests/PrYvApplicationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
+		};
+		0C9B756816D3816900A7FEBD /* Tests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Tests;
+		};
+		0C9B756916D3816900A7FEBD /* Tests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
+				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Tests;
+		};
+		0C9B756A16D3816900A7FEBD /* Tests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvTests/PrYvTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvTests/PrYvTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Tests;
+		};
+		0C9B756B16D3816900A7FEBD /* Tests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PrYv.app/Contents/MacOS/PrYv";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvApplicationTests/PrYvApplicationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvApplicationTests/PrYvApplicationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Tests;
 		};
 /* End XCBuildConfiguration section */
 
@@ -669,6 +883,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C73430516ADB00B00EA101F /* Debug */,
+				0C9B756816D3816900A7FEBD /* Tests */,
 				0C73430616ADB00B00EA101F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -678,19 +893,29 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C73430816ADB00B00EA101F /* Debug */,
+				0C9B756916D3816900A7FEBD /* Tests */,
 				0C73430916ADB00B00EA101F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C73430A16ADB00B00EA101F /* Build configuration list for PBXNativeTarget "PrYvTests" */ = {
+		0C9B754E16D37AAF00A7FEBD /* Build configuration list for PBXNativeTarget "PrYvLogicTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C73430B16ADB00B00EA101F /* Debug */,
-				0C73430C16ADB00B00EA101F /* Release */,
+				0C9B754F16D37AAF00A7FEBD /* Debug */,
+				0C9B756A16D3816900A7FEBD /* Tests */,
+				0C9B755016D37AAF00A7FEBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+		};
+		0C9B756316D37C3200A7FEBD /* Build configuration list for PBXNativeTarget "PrYvApplicationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C9B756416D37C3200A7FEBD /* Debug */,
+				0C9B756B16D3816900A7FEBD /* Tests */,
+				0C9B756516D37C3200A7FEBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
