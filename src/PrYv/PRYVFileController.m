@@ -95,7 +95,7 @@
 		//The hierarchical structure is kept in the filename
 		NSMutableArray *filesToSend = [[NSMutableArray alloc] init];
 		[files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-			[PRYVFileController constructFilesArray:filesToSend
+			[self constructFilesArray:filesToSend
                                            withFile:[obj path]
                                         inSubfolder:@""];
 		}];
@@ -122,7 +122,7 @@
 }
 
 //Recursively add files with their hierarchical structure to the array
-+(void)constructFilesArray:(NSMutableArray*)array withFile:(NSString*)file inSubfolder:(NSString*)subfolder {
+-(void)constructFilesArray:(NSMutableArray*)array withFile:(NSString*)file inSubfolder:(NSString*)subfolder {
 	
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:file error:nil];
@@ -138,7 +138,7 @@
 			NSString *folderName = [[file lastPathComponent] stringByAppendingString:@"/"];
 			[folderContent enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 				if ([obj characterAtIndex:0] != '.') {
-					[PRYVFileController constructFilesArray:array
+					[self constructFilesArray:array
                                                    withFile:[file stringByAppendingPathComponent:obj]
                                                 inSubfolder:folderName];
 				}

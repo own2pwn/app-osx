@@ -10,7 +10,6 @@
 
 @interface Tag (Helper)
 
-+(Tag*)tagWithValue:(NSString*)tag
-           inContext:(NSManagedObjectContext*)context;
++(Tag*)tagWithValue:(NSString*)tag inContext:(NSManagedObjectContext*)context;
 
 @end

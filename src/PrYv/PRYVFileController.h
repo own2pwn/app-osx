@@ -22,8 +22,15 @@
 -(void)pryvFiles:(NSArray*)files
         withTags:(NSSet*)tags
    andFolderName:(NSString*)folderName;
+
+@end
+
+
+@interface PRYVFileController ()
+
 -(void)pryvFilesThread:(NSDictionary*)args;
-+(void)constructFilesArray:(NSMutableArray*)array
+-(void)constructFilesArray:(NSMutableArray*)array
                   withFile:(NSString*)file
                inSubfolder:(NSString*)subfolder;
+
 @end
