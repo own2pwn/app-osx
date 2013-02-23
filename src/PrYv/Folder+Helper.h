@@ -11,4 +11,5 @@
 @interface Folder (Helper)
 
 - (NSString *)description;
+
 @end

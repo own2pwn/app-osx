@@ -27,8 +27,8 @@
 							Token:(NSString*)token
 						ChannelId:(NSString*)channelId
 						InContext:(NSManagedObjectContext*)context;
-
 -(void)purgeEventsInContext:(NSManagedObjectContext*)context;
 -(NSArray*)folderNames;
 -(NSString*)description;
+
 @end

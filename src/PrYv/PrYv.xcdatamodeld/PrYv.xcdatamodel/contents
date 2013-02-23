@@ -45,12 +45,12 @@
         <relationship name="folders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Folder" inverseName="user" inverseEntity="Folder" syncable="YES"/>
     </entity>
     <elements>
-        <element name="File" positionX="-6579" positionY="3965" width="128" height="118"/>
-        <element name="Folder" positionX="-6921" positionY="4007" width="128" height="163"/>
-        <element name="Tag" positionX="-6788" positionY="4010" width="128" height="73"/>
-        <element name="User" positionX="-7065" positionY="3860" width="128" height="118"/>
-        <element name="Event" positionX="-6813" positionY="3791" width="110" height="148"/>
-        <element name="FileEvent" positionX="-6561" positionY="3861" width="128" height="58"/>
-        <element name="NoteEvent" positionX="-6561" positionY="3780" width="128" height="73"/>
+        <element name="Event" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="File" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="FileEvent" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Folder" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="NoteEvent" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Tag" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

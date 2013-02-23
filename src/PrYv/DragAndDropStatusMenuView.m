@@ -17,8 +17,8 @@
     self = [super initWithFrame:frame];
     if (self) {
 		_statusItem = nil;
-		menu = nil;
-		isMenuVisible = NO;
+		_menu = nil;
+		_isMenuVisible = NO;
         [self registerForDraggedTypes:[NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
     }
 	
@@ -29,7 +29,7 @@
 -(void)drawRect:(NSRect)dirtyRect {
 	// Draw status bar background, highlighted if menu is showing
     [_statusItem drawStatusBarBackgroundInRect:[self bounds]
-                                withHighlight:isMenuVisible];
+                                withHighlight:_isMenuVisible];
 	NSRect rect = {0,0,22,22};
 	[[NSImage imageNamed:@"FaviconBlack22.png"] drawInRect:dirtyRect
 												  fromRect:rect
@@ -44,12 +44,12 @@
 }
 
 - (void)menuWillOpen:(NSMenu *)menu {
-    isMenuVisible = YES;
+    _isMenuVisible = YES;
     [self setNeedsDisplay:YES];
 }
 
 - (void)menuDidClose:(NSMenu *)menu {
-    isMenuVisible = NO;
+    _isMenuVisible = NO;
     [self.menu setDelegate:nil];
     [self setNeedsDisplay:YES];
 }
@@ -57,9 +57,8 @@
 - (NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender{
     return NSDragOperationCopy;
 }
-- (BOOL)performDragOperation:(id <NSDraggingInfo>)sender
-{
-	
+
+- (BOOL)performDragOperation:(id <NSDraggingInfo>)sender {
     NSPasteboard *pboard;
     NSDragOperation sourceDragMask;
 	
@@ -81,7 +80,7 @@
     return YES;
 }
 
--(void)dealloc{
+-(void)dealloc {
 	[_statusItem release];
 	_statusItem = nil;
 	[super dealloc];

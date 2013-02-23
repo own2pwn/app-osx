@@ -128,7 +128,7 @@
 		0C7342EF16ADB00B00EA101F /* PrYv.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrYv.xcdatamodel; sourceTree = "<group>"; };
 		0C7342F716ADB00B00EA101F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0C7343B016AEA6F400EA101F /* PrYv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrYv.entitlements; sourceTree = "<group>"; };
-		0C9B754116D37AAF00A7FEBD /* PrYvTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrYvTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C9B754116D37AAF00A7FEBD /* PrYvLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrYvLogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9B754616D37AAF00A7FEBD /* PrYvTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrYvTests-Info.plist"; sourceTree = "<group>"; };
 		0C9B754816D37AAF00A7FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C9B754A16D37AAF00A7FEBD /* PrYvLogicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvLogicTests.h; sourceTree = "<group>"; };
@@ -285,7 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				0C7342D216ADB00B00EA101F /* PrYv.app */,
-				0C9B754116D37AAF00A7FEBD /* PrYvTests.octest */,
+				0C9B754116D37AAF00A7FEBD /* PrYvLogicTests.octest */,
 				0C9B755616D37C3200A7FEBD /* PrYvApplicationTests.octest */,
 			);
 			name = Products;
@@ -420,7 +420,7 @@
 			);
 			name = PrYvLogicTests;
 			productName = PrYvTests;
-			productReference = 0C9B754116D37AAF00A7FEBD /* PrYvTests.octest */;
+			productReference = 0C9B754116D37AAF00A7FEBD /* PrYvLogicTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 		0C9B755516D37C3200A7FEBD /* PrYvApplicationTests */ = {
@@ -907,6 +907,7 @@
 				0C9B755016D37AAF00A7FEBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C9B756316D37C3200A7FEBD /* Build configuration list for PBXNativeTarget "PrYvApplicationTests" */ = {
 			isa = XCConfigurationList;
@@ -916,6 +917,7 @@
 				0C9B756516D37C3200A7FEBD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

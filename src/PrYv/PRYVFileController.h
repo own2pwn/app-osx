@@ -8,18 +8,22 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PRYVFileController : NSObject{
+@interface PRYVFileController : NSObject {
 @private
-	IBOutlet NSTokenField *tags;
-	IBOutlet NSPopUpButton *folder;
-	IBOutlet NSView *accessoryView;
-	NSOpenPanel* openDialog;
-	NSLock *threadLock;
+	IBOutlet NSTokenField *_tags;
+	IBOutlet NSPopUpButton *_folder;
+	IBOutlet NSView *_accessoryView;
+	NSOpenPanel* _openDialog;
+	NSLock *_threadLock;
 }
 
-- (PRYVFileController*)initWithOpenPanel:(NSOpenPanel*)openDialog;
--(void) runDialog;
--(void) pryvFiles:(NSArray*)files withTags:(NSSet*)t andFolderName:(NSString*)folderName;
--(void) pryvFilesThread:(NSDictionary*)args;
-+(void)constructFilesArray:(NSMutableArray*)array withFile:(NSString*)file inSubfolder:(NSString*)subfolder;
+-(PRYVFileController*)initWithOpenPanel:(NSOpenPanel*)openDialog;
+-(void)runDialog;
+-(void)pryvFiles:(NSArray*)files
+        withTags:(NSSet*)tags
+   andFolderName:(NSString*)folderName;
+-(void)pryvFilesThread:(NSDictionary*)args;
++(void)constructFilesArray:(NSMutableArray*)array
+                  withFile:(NSString*)file
+               inSubfolder:(NSString*)subfolder;
 @end

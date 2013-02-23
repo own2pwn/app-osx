@@ -10,10 +10,10 @@
 
 @interface DragAndDropStatusMenuView : NSView <NSDraggingDestination, NSObject, NSMenuDelegate>{
 @private
-	NSMenu *menu;
-	BOOL isMenuVisible;
+	NSMenu *_menu;
+	BOOL _isMenuVisible;
 	
 }
-@property(retain,nonatomic) NSStatusItem* statusItem;
+@property(retain, nonatomic) NSStatusItem* statusItem;
 
 @end

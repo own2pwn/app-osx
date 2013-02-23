@@ -11,4 +11,5 @@
 @interface NoteEvent (Helper)
 
 -(NSString*)description;
+
 @end

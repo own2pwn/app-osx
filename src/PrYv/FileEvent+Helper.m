@@ -11,18 +11,7 @@
 
 @implementation FileEvent (Helper)
 
--(id)initWithTime:(NSNumber*)time tags:(NSSet *)tags folder:(Folder *)folder files:(NSSet*)files{
-	
-	self = [super init];
-	if (self) {
-		super.time = time;
-		[super addTags:tags];
-		super.folder = [folder copy];
-		[self addFiles:files];
-	}
-	return self;
-}
--(NSString*)description{
+-(NSString*)description {
 	NSMutableString *description = [NSMutableString stringWithString:@""];
 	//[description appendFormat:@"\n\tTime: %@",self.time];
 	//[description appendString:@"\nType:"];
@@ -40,12 +29,13 @@
 	return description;
 }
 
--(void)deleteFiles{
+-(void)deleteFiles {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
 	__block NSError *error;
 	[self.files enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
 		error = nil;
-		if (![fileManager removeItemAtPath:[obj path] error:&error]) {
+		if (![fileManager removeItemAtPath:[obj path]
+                                     error:&error]) {
 			NSLog(@"Error while deleting file %@ : %@",[obj path],error);
 		};
 	}];
