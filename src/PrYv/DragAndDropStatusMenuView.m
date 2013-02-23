@@ -9,6 +9,16 @@
 #import "DragAndDropStatusMenuView.h"
 #import "PRYVFileController.h"
 
+@interface DragAndDropStatusMenuView ()
+
+-(void)mouseDown:(NSEvent *)theEvent;
+-(void)menuWillOpen:(NSMenu *)menu;
+-(void)menuDidClose:(NSMenu *)menu;
+-(void)drawRect:(NSRect)dirtyRect;
+-(NSDragOperation)draggingEntered:(id<NSDraggingInfo>)sender;
+
+@end
+
 @implementation DragAndDropStatusMenuView
 
 @synthesize statusItem = _statusItem;
