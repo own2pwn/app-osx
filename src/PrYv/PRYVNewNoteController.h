@@ -8,13 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PRYVNewNoteController : NSWindowController <NSWindowDelegate>{
+@interface PRYVNewNoteController : NSWindowController <NSWindowDelegate> {
 @private
-	IBOutlet NSTextField *title;
-	IBOutlet NSTextField *content;
-	IBOutlet NSTokenField *tags;
-	IBOutlet NSPopUpButton *folder;
+	IBOutlet NSTextField *_title;
+	IBOutlet NSTextField *_content;
+	IBOutlet NSTokenField *_tags;
+	IBOutlet NSPopUpButton *_folder;
 }
 
 -(IBAction)createNote:(id)sender;
+
 @end

@@ -10,8 +10,7 @@
 
 @implementation File (Helper)
 
-- (NSString *)description
-{
+- (NSString *)description {
 	NSMutableString *description = [NSMutableString stringWithFormat:@"\n\tFilename : %@",self.filename];
 	[description appendFormat:@"\n\tMIME-Type : %@",self.mimeType];
 	[description appendFormat:@"\n\tSize : %@",self.size];

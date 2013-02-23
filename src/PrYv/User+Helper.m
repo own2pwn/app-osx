@@ -18,10 +18,10 @@
 	
     return [[context executeFetchRequest:request error:nil] lastObject];
 }
-+(User *)createNewUserWithUsername:(NSString *)username Token:(NSString *)token ChannelId:(NSString *)channelId InContext:(NSManagedObjectContext *)context{
+
++(User *)createNewUserWithUsername:(NSString *)username Token:(NSString *)token ChannelId:(NSString *)channelId InContext:(NSManagedObjectContext *)context {
 	
 	User * newUser = [User currentUserInContext:context];
-	
     if (newUser == nil) {
         newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
     }
@@ -31,13 +31,17 @@
     newUser.channelId = channelId;
 	newUser.events = [[NSSet alloc] init];
 	
-	Folder *newFolder1 = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder" inManagedObjectContext:context];
+	Folder *newFolder1 = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder"
+                                                                inManagedObjectContext:context];
 	newFolder1.name = @"Top Secret";
-	Folder *newFolder2 = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder" inManagedObjectContext:context];
+	Folder *newFolder2 = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder"
+                                                                inManagedObjectContext:context];
 	newFolder2.name = @"Shared";
-	Folder *newFolder3 = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder" inManagedObjectContext:context];
+	Folder *newFolder3 = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder"
+                                                                inManagedObjectContext:context];
 	newFolder3.name = @"Funny";
-	Folder *newFolder4 = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder" inManagedObjectContext:context];
+	Folder *newFolder4 = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder"
+                                                                inManagedObjectContext:context];
 	newFolder4.name = @"Work";
 	newUser.folders = [NSMutableSet setWithObjects:newFolder1,newFolder2,newFolder3,newFolder4, nil];
 	
@@ -46,8 +50,7 @@
     return newUser;
 }
 
--(void)purgeEventsInContext:(NSManagedObjectContext *)context{
-	
+-(void)purgeEventsInContext:(NSManagedObjectContext *)context {
 	[self.events enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
 		if ([obj isKindOfClass:[FileEvent class]]) {
 			[(FileEvent*)obj deleteFiles];
@@ -58,7 +61,7 @@
 	NSLog(@"Events purged !");
 }
 
--(NSArray*)folderNames{
+-(NSArray*)folderNames {
 	NSMutableArray *names = [[NSMutableArray alloc] init];
 	[self.folders enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
 		[names addObject:[obj name]];
@@ -66,7 +69,7 @@
 	return [names autorelease];
 }
 
--(NSString*)description{
+-(NSString*)description {
 	NSMutableString *description = [NSMutableString stringWithString:@""];
 	[description appendString:@"#######################################"];
 	[description appendString:@"\nCURRENT USER"];

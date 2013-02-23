@@ -11,7 +11,7 @@
 
 @implementation NoteEvent (Helper)
 
--(NSString*)description{
+-(NSString*)description {
 	NSMutableString *description = [NSMutableString stringWithString:@""];
 	//[description appendFormat:@"\nTime: %@",self.time];
 	//[description appendString:@"\nType:"];

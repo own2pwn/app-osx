@@ -13,16 +13,17 @@
 
 @interface PRYVStatusMenuController : NSViewController {
 @private
-	PRYVNewNoteController *newNoteController;
-	PRYVFileController *fileController;
-	IBOutlet NSMenu *statusMenu;
-	NSStatusItem *statusItem;
+	PRYVNewNoteController *_newNoteController;
+	PRYVFileController *_fileController;
+	IBOutlet NSMenu *_statusMenu;
+	NSStatusItem *_statusItem;
 
 }
+
 -(PRYVStatusMenuController*)init;
 -(IBAction)newNote:(id)sender;
 -(IBAction)displayCurrentUser:(id)sender;
--(IBAction)goToMyPryv:(id)send;
+-(IBAction)goToMyPryv:(id)sender;
 -(IBAction)openFiles:(id)sender;
 -(IBAction)purgeEvents:(id)sender;
 -(void)showMenu;

@@ -16,8 +16,7 @@
 
 @implementation PRYVAppDelegate
 
-- (void)dealloc
-{
+- (void)dealloc {
 	[_persistentStoreCoordinator release];
 	[_managedObjectModel release];
 	[_managedObjectContext release];
@@ -28,8 +27,7 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
-{
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	PRYVStatusMenuController *menuController = [[PRYVStatusMenuController alloc] init];
 	[NSBundle loadNibNamed:@"StatusMenu" owner:menuController];
 	
@@ -42,7 +40,7 @@
 		[loginWindow showWindow:self];
 	
 	//If the user has been found
-	}else{
+	}else {
 		NSLog(@"Welcome back, %@ !",user.username);
 	}
 	
@@ -96,27 +94,28 @@
 //						   }];
 }
 
--(void)application:(NSApplication *)sender openFiles:(NSArray *)filenames{
+-(void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
 	__block NSMutableArray *urls = [[NSMutableArray alloc] init];
 	[filenames enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 		[urls addObject:[NSURL fileURLWithPath:obj]];
 	}];
 	PRYVFileController *fileController = [[PRYVFileController alloc] init];
-	[fileController pryvFiles:[urls autorelease] withTags:[[[NSSet alloc] init] autorelease] andFolderName:@""];
+	[fileController pryvFiles:[urls autorelease]
+                     withTags:[[[NSSet alloc] init] autorelease]
+                andFolderName:@""];
 	[fileController release];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "pryv.PrYv" in the user's Application Support directory.
-- (NSURL *)applicationFilesDirectory
-{
+- (NSURL *)applicationFilesDirectory {
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL *appSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory
+                                                inDomains:NSUserDomainMask] lastObject];
     return [appSupportURL URLByAppendingPathComponent:@"pryv.PrYv"];
 }
 
 //Enables singleton using Grand Central
-+ (PRYVAppDelegate*)sharedInstance
-{
++ (PRYVAppDelegate*)sharedInstance {
 	static dispatch_once_t pred;
 	static PRYVAppDelegate *sharedInstance = nil;
 	dispatch_once(&pred, ^{
@@ -127,8 +126,7 @@
 
 
 // Creates if necessary and returns the managed object model for the application.
-- (NSManagedObjectModel *)managedObjectModel
-{
+- (NSManagedObjectModel *)managedObjectModel {
     if (_managedObjectModel) {
         return _managedObjectModel;
     }
@@ -139,8 +137,7 @@
 }
 
 // Returns the persistent store coordinator for the application. This implementation creates and return a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.)
-- (NSPersistentStoreCoordinator *)persistentStoreCoordinator
-{
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     if (_persistentStoreCoordinator) {
         return _persistentStoreCoordinator;
     }
@@ -166,7 +163,7 @@
             [[NSApplication sharedApplication] presentError:error];
             return nil;
         }
-    } else {
+    }else {
         if (![properties[NSURLIsDirectoryKey] boolValue]) {
             // Customize and localize this error.
             NSString *failureDescription = [NSString stringWithFormat:@"Expected a folder to store application data, found a file (%@).", [applicationFilesDirectory path]];
@@ -181,8 +178,13 @@
     }
     
     NSURL *url = [applicationFilesDirectory URLByAppendingPathComponent:@"PrYv.storedata"];
-    NSPersistentStoreCoordinator *coordinator = [[[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:mom] autorelease];
-    if (![coordinator addPersistentStoreWithType:NSXMLStoreType configuration:nil URL:url options:nil error:&error]) {
+    NSPersistentStoreCoordinator *coordinator = [[[NSPersistentStoreCoordinator alloc]
+                                                  initWithManagedObjectModel:mom] autorelease];
+    if (![coordinator addPersistentStoreWithType:NSXMLStoreType
+                                   configuration:nil
+                                             URL:url
+                                         options:nil
+                                           error:&error]) {
         [[NSApplication sharedApplication] presentError:error];
         return nil;
     }
@@ -236,7 +238,6 @@
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
 {
     // Save changes in the application's managed object context before the application terminates.
-    
     if (!_managedObjectContext) {
         return NSTerminateNow;
     }

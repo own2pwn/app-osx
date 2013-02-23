@@ -10,7 +10,7 @@
 
 @implementation Event (Helper)
 
--(NSString*)describeTags{
+-(NSString*)describeTags {
 	NSMutableString *description = [NSMutableString stringWithString:@""];
 	[self.tags enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
 		[description appendFormat:@"%@ ",[obj value]];

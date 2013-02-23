@@ -16,30 +16,26 @@
 
 @implementation PRYVLoginController
 
--(PRYVLoginController*)initForUser:(User*)u{
+-(PRYVLoginController*)initForUser:(User*)user {
 	self = [super initWithWindowNibName:@"LoginController"];
 	if (self) {
-		user = u;
-		
+		_user = user;
 	}
 	
 	return self;
 }
 
--(IBAction)login:(id)sender{
-	
+-(IBAction)login:(id)sender {
 	NSString *channelId = @"TVoyO2x2B5";
-	
-	user = [User createNewUserWithUsername:[username stringValue]
-									 Token:[oAuthToken stringValue]
+	_user = [User createNewUserWithUsername:[_username stringValue]
+									 Token:[_oAuthToken stringValue]
 								 ChannelId:channelId
 								 InContext:[[PRYVAppDelegate sharedInstance] managedObjectContext]];
-	NSLog(@"First onnection with : %@. Welcome !", user.username);
+	NSLog(@"First onnection with : %@. Welcome !", _user.username);
 	[self.window close];
 }
 
-- (id)initWithWindow:(NSWindow *)window
-{
+- (id)initWithWindow:(NSWindow *)window {
     self = [super initWithWindow:window];
     if (self) {
         // Initialization code here.
@@ -48,10 +44,8 @@
     return self;
 }
 
-- (void)windowDidLoad
-{
+- (void)windowDidLoad {
     [super windowDidLoad];
-    
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 }
 

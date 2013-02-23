@@ -10,8 +10,7 @@
 
 @implementation Folder (Helper)
 
-- (NSString *)description
-{
+- (NSString *)description {
 	NSMutableString *description = [NSMutableString stringWithFormat:@"%@",self.name];
 //	  NSMutableString *description = [NSMutableString stringWithFormat:@"<%@: ", self.name];
 //    [description appendFormat:@"– Id: %@", self.folderId];

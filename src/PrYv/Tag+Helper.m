@@ -11,8 +11,11 @@
 
 @implementation Tag (Helper)
 
-+(Tag*)tagWithValue:(NSString *)val inContext:(NSManagedObjectContext *)context{
-	Tag *newTag =(Tag*)[NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:context];
++(Tag*)tagWithValue:(NSString *)val
+          inContext:(NSManagedObjectContext *)context {
+    
+	Tag *newTag =(Tag*)[NSEntityDescription insertNewObjectForEntityForName:@"Tag"
+                                                     inManagedObjectContext:context];
 	newTag.value = val;
 	return [newTag autorelease];
 }

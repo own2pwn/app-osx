@@ -17,7 +17,7 @@
 
 @implementation PRYVStatusMenuController
 
--(PRYVStatusMenuController*)init{
+-(PRYVStatusMenuController*)init {
 	self = [super init];
 	if (self) {
 		//Initialization code goes here
@@ -25,70 +25,59 @@
 	return self;
 }
 
--(void) awakeFromNib{
-	
+-(void) awakeFromNib {
 	NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
-	statusItem = [statusBar statusItemWithLength:NSVariableStatusItemLength];
-	[statusItem retain];
-	
+	_statusItem = [statusBar statusItemWithLength:NSVariableStatusItemLength];
+	[_statusItem retain];
 	DragAndDropStatusMenuView *dragAndDropView = [[DragAndDropStatusMenuView alloc]
 												  initWithFrame:NSMakeRect(0, 0, 22, 22)];
-	dragAndDropView.statusItem = statusItem;
-	[dragAndDropView setMenu:statusMenu];
-	[statusItem setView:dragAndDropView];
-	[dragAndDropView release];
-//	[statusItem setImage:[NSImage imageNamed:@"FaviconBlack56.png"]];
-//	[statusItem setHighlightMode:YES];
-//	[statusItem setMenu:statusMenu];
-//	[statusMenu setAutoenablesItems:YES];
-//	DragAndDropStatusMenuView* dragView = [[DragAndDropStatusMenuView alloc] initWithFrame:NSMakeRect(0, 0, 22, 22)];
-//	[dragView setDelegate:self];
-//	[statusItem setView:dragView];
-//	[dragView release];
-	
+	dragAndDropView.statusItem = _statusItem;
+	[dragAndDropView setMenu:_statusMenu];
+	[_statusItem setView:dragAndDropView];
+	[dragAndDropView release];	
 }
 
--(void)showMenu{
-	[statusItem popUpStatusItemMenu:statusMenu];
+-(void)showMenu {
+	[_statusItem popUpStatusItemMenu:_statusMenu];
 }
 
--(IBAction)openFiles:(id)sender{
+-(IBAction)openFiles:(id)sender {
 	NSOpenPanel *openDialog = [NSOpenPanel openPanel];
 	[openDialog retain]; //Mac OS X 10.6 fix	
-	fileController = [[PRYVFileController alloc] initWithOpenPanel:openDialog];
-	[fileController runDialog];
+	_fileController = [[PRYVFileController alloc] initWithOpenPanel:openDialog];
+	[_fileController runDialog];
 }
 
--(IBAction)displayCurrentUser:(id)sender{
+-(IBAction)displayCurrentUser:(id)sender {
 	NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
 	User *current = [User currentUserInContext:context];
 	NSLog(@"\n%@",[current description]);
 }
 
--(IBAction)purgeEvents:(id)sender{
+-(IBAction)purgeEvents:(id)sender {
 	NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
 	User *current = [User currentUserInContext:context];
 	[current purgeEventsInContext:context];
 }
 
--(IBAction)newNote:(id)sender{
-	if(!newNoteController){
-		newNoteController = [[PRYVNewNoteController alloc] initWithWindowNibName:@"NewNote"];
-		[newNoteController.window setDelegate:newNoteController];
+-(IBAction)newNote:(id)sender {
+	if(!_newNoteController) {
+		_newNoteController = [[PRYVNewNoteController alloc] initWithWindowNibName:@"NewNote"];
+		[_newNoteController.window setDelegate:_newNoteController];
 	}
-	[newNoteController showWindow:self];
+	[_newNoteController showWindow:self];
 }
 
--(IBAction)goToMyPryv:(id)send{
+-(IBAction)goToMyPryv:(id)sender {
 	NSURL *url = [NSURL URLWithString:@"http://www.pryv.net/"];
-	if( ![[NSWorkspace sharedWorkspace] openURL:url] )
+	if(![[NSWorkspace sharedWorkspace] openURL:url])
 		NSLog(@"Failed to open url: %@",[url description]);
 }
 
--(void)dealloc{
-	[newNoteController release];
-	[fileController release];
-	[statusItem release];
+-(void)dealloc {
+	[_newNoteController release];
+	[_fileController release];
+	[_statusItem release];
 	[super dealloc];
 }
 
