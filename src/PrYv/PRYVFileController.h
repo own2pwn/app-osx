@@ -35,5 +35,7 @@
                   withFile:(NSString*)file
                inSubfolder:(NSString*)subfolder;
 -(NSString*) createsUniqueIDForFile:(File*)file;
+-(NSString*)findCachesDirectory;
+-(void)cacheFile:(NSString*)file atPath:(NSString*)path success:(void (^)(void))block;
 
 @end
