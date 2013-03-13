@@ -34,6 +34,9 @@
 	return self;
 }
 
+#pragma mark -
+#pragma mark Pryv Files
+
 -(void)runDialog {
 	NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
 	
@@ -81,6 +84,9 @@
                              toTarget:self
                            withObject:arguments];
 }
+
+#pragma mark -
+#pragma mark Private Methods
 
 -(void)pryvFilesThread:(NSDictionary *)args {
 	[_threadLock lock];
@@ -148,40 +154,49 @@
     //If it is a file
 	} else {
 		NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
-		NSString *cachesDirectory = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+		NSString *cachesDirectory = [self findCachesDirectory];
 		
         //Create a file object to add in the array
 		File *newFile = [NSEntityDescription insertNewObjectForEntityForName:@"File"
                                                       inManagedObjectContext:context];
 		
-		NSString *tempFileName = [self createsUniqueIDForFile: newFile];
+		NSString *tempFileName = [self createsUniqueIDForFile:newFile];
 		
         //Add the subfolder before the file name to trace the hierarchical structure
 		newFile.filename = [subfolder stringByAppendingPathComponent:[file lastPathComponent]];
-		
-        //Path of the cached file (before pryving it)
 		newFile.path = [cachesDirectory stringByAppendingPathComponent:tempFileName];
-		
 		newFile.size = [NSNumber numberWithInt:[fileAttributes valueForKey:NSFileSize]];
-		newFile.mimeType = [NSString stringWithString:[NSString mimeTypeFromFileExtension:newFile.filename]];
-		
-        //Copy the file in the Caches directory so that we don't manipulate the original object.
-		NSString *copyPath = newFile.path;
-		NSError *error = nil;
-		if (![fileManager copyItemAtPath:file
-                                  toPath:copyPath
-                                   error:&error]) {
-			NSLog(@"File %@ couldn't be copied : %@",file, error);
-		} else {
-			NSLog(@"File %@ copied !",file);
-			[array addObject:newFile];
+        NSString* mimeType = [NSString mimeTypeFromFileExtension:newFile.filename];
+		newFile.mimeType = [NSString stringWithString:mimeType];
+        [self cacheFile:file atPath:newFile.path success:^{
+            [array addObject:newFile];
+        }];
 		}
-	}
 }
 
 //Create unique id to store the file in the Caches directory
 -(NSString*)createsUniqueIDForFile:(File*)file {
     return [[[[file objectID] URIRepresentation] relativeString] lastPathComponent];
+}
+
+//Returns path of Caches directory
+-(NSString*)findCachesDirectory {
+    return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
+}
+
+//Copy the file in the Caches directory so that we don't manipulate the original object
+-(void)cacheFile:(NSString*)file atPath:(NSString*)path success:(void (^)(void))block{
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error = nil;
+    if (![fileManager copyItemAtPath:file
+                              toPath:path
+                               error:&error]) {
+        NSLog(@"File %@ couldn't be copied : %@",file, error);
+    } else {
+        NSLog(@"File %@ copied !",file);
+        block();
+    }
+
 }
 
 -(void)dealloc {
