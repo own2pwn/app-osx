@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class File;
+
 @interface PRYVFileController : NSObject {
 @private
 	IBOutlet NSTokenField *_tags;
@@ -32,5 +34,6 @@
 -(void)constructFilesArray:(NSMutableArray*)array
                   withFile:(NSString*)file
                inSubfolder:(NSString*)subfolder;
+-(NSString*) createsUniqueIDForFile:(File*)file;
 
 @end
