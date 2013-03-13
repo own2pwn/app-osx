@@ -5,6 +5,7 @@
         <attribute name="time" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="type_class" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type_format" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="files" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="File" inverseName="event" inverseEntity="File" syncable="YES"/>
         <relationship name="folder" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Folder" inverseName="event" inverseEntity="Folder" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="event" inverseEntity="Tag" syncable="YES"/>
         <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="events" inverseEntity="User" syncable="YES"/>
@@ -14,11 +15,9 @@
         <attribute name="mimeType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="fileEvent" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="FileEvent" inverseName="files" inverseEntity="FileEvent" syncable="YES"/>
+        <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="files" inverseEntity="Event" syncable="YES"/>
     </entity>
-    <entity name="FileEvent" representedClassName="FileEvent" parentEntity="Event" syncable="YES">
-        <relationship name="files" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="File" inverseName="fileEvent" inverseEntity="File" syncable="YES"/>
-    </entity>
+    <entity name="FileEvent" representedClassName="FileEvent" parentEntity="Event" syncable="YES"/>
     <entity name="Folder" representedClassName="Folder" syncable="YES">
         <attribute name="folderId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="hidden" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -45,12 +44,12 @@
         <relationship name="folders" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Folder" inverseName="user" inverseEntity="Folder" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="File" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="FileEvent" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Folder" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="NoteEvent" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Tag" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Event" positionX="-648" positionY="-955" width="128" height="163"/>
+        <element name="File" positionX="-450" positionY="-990" width="128" height="118"/>
+        <element name="FileEvent" positionX="-542" positionY="-630" width="128" height="43"/>
+        <element name="Folder" positionX="-936" positionY="-687" width="128" height="165"/>
+        <element name="NoteEvent" positionX="-686" positionY="-630" width="128" height="75"/>
+        <element name="Tag" positionX="-450" positionY="-855" width="128" height="73"/>
+        <element name="User" positionX="-891" positionY="-894" width="128" height="120"/>
     </elements>
 </model>

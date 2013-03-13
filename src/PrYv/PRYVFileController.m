@@ -154,9 +154,7 @@
 		File *newFile = [NSEntityDescription insertNewObjectForEntityForName:@"File"
                                                       inManagedObjectContext:context];
 		
-        //Create unique id that is used to change the name in the temp directory
-        //if you already have a file with the same file name in that directory
-		NSString *tempFileName = [[[[newFile objectID] URIRepresentation] relativeString] lastPathComponent];
+		NSString *tempFileName = [self createsUniqueIDForFile: newFile];
 		
         //Add the subfolder before the file name to trace the hierarchical structure
 		newFile.filename = [subfolder stringByAppendingPathComponent:[file lastPathComponent]];
@@ -181,6 +179,10 @@
 	}
 }
 
+//Create unique id to store the file in the Caches directory
+-(NSString*)createsUniqueIDForFile:(File*)file {
+    return [[[[file objectID] URIRepresentation] relativeString] lastPathComponent];
+}
 
 -(void)dealloc {
 	[_threadLock release];
