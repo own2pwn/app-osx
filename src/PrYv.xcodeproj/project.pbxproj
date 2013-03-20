@@ -31,6 +31,7 @@
 		0C2408D316B9233200BD60CC /* PRYVLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408D116B9233200BD60CC /* PRYVLoginController.m */; };
 		0C2408D416B9233200BD60CC /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C2408D216B9233200BD60CC /* LoginController.xib */; };
 		0C2408D616B9253500BD60CC /* PrYvLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C2408D516B9253500BD60CC /* PrYvLogo.png */; };
+		0C2559B016FA5B7F00B4C2BC /* PRYVServicesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2559AF16FA5B7F00B4C2BC /* PRYVServicesController.m */; };
 		0C293F5F16B13BFB00D90B36 /* FaviconBlack56.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */; };
 		0C3C26A216CBCC380023E724 /* StatusMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A116CBCC380023E724 /* StatusMenu.xib */; };
 		0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */; };
@@ -107,6 +108,8 @@
 		0C2408D116B9233200BD60CC /* PRYVLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVLoginController.m; path = PrYv/PRYVLoginController.m; sourceTree = "<group>"; };
 		0C2408D216B9233200BD60CC /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		0C2408D516B9253500BD60CC /* PrYvLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = PrYvLogo.png; path = PrYv/PrYvLogo.png; sourceTree = "<group>"; };
+		0C2559AE16FA5B7F00B4C2BC /* PRYVServicesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVServicesController.h; path = PrYv/PRYVServicesController.h; sourceTree = "<group>"; };
+		0C2559AF16FA5B7F00B4C2BC /* PRYVServicesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVServicesController.m; path = PrYv/PRYVServicesController.m; sourceTree = "<group>"; };
 		0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaviconBlack56.png; path = PrYv/FaviconBlack56.png; sourceTree = "<group>"; };
 		0C3C26A116CBCC380023E724 /* StatusMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusMenu.xib; sourceTree = "<group>"; };
 		0C3C26A416CBDCCF0023E724 /* DragAndDropStatusMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragAndDropStatusMenuView.h; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 				0C2408A316B7BC5D00BD60CC /* PRYVStatusMenuController.m */,
 				0C1A713F16BBB5DD004E35EF /* PRYVFileController.h */,
 				0C1A714016BBB5DD004E35EF /* PRYVFileController.m */,
+				0C2559AE16FA5B7F00B4C2BC /* PRYVServicesController.h */,
+				0C2559AF16FA5B7F00B4C2BC /* PRYVServicesController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -566,6 +571,7 @@
 				0C1A1E5916C96F870042D7D4 /* User.m in Sources */,
 				0C1A1E5C16CA3B7C0042D7D4 /* Event+Helper.m in Sources */,
 				0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */,
+				0C2559B016FA5B7F00B4C2BC /* PRYVServicesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,7 @@
 #import "PRYVLoginController.h"
 #import "PRYVFileController.h"
 #import "PRYVStatusMenuController.h"
+#import "PRYVServicesController.h"
 
 @implementation PRYVAppDelegate
 
@@ -43,6 +44,10 @@
 	}else {
 		NSLog(@"Welcome back, %@ !",user.username);
 	}
+    
+    PRYVServicesController *servicesController;
+    servicesController = [[PRYVServicesController alloc] init];
+    [NSApp setServicesProvider:servicesController];
 	
 //	NSURL *requestURL = [NSURL URLWithString:@"https://jonmaim.rec.la/channels"];
 //	
