@@ -3,10 +3,17 @@
 Desktop application &amp; system wide contextual menu integration for PrYv.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 **Current version :** iteration 4
 
 ##Overview
 Use the status menu to access the general features. From here, you can create a note, pryv some files, display information about your account (in the console), delete all the events and access the [PrYv website](http://www.pryv.net). It is also possible to drag and drop files on the Dock tilde or the status menu icon to pryv files and folder.
+=======
+**Current version :** iteration 5
+
+##Overview
+Use the status menu to access the general features. From here, you can create a note, pryv some files, display information about your account (in the console), delete all the events and access the [PrYv website](http://www.pryv.net). Now, you can also pryv file(s) from the Finder with a right click on the selection or with the keyboard shortcut CMD-SHIFT-M (arbitrary choice to avoid conflicts with other shortcuts) It currently only works offline. The online connection to an account will be implemented really soon.
+>>>>>>> Fifth-iteration
 
 At this stage of development, it only works in offline mode. The online connection to an account will be implemented really soon.
 =======
@@ -53,7 +60,11 @@ If you want to disable the service, just uncheck the corresponding box in
 
 *System Preferences > Keyboard > Keyboard shortcuts > Services > Files and folders > Pryv file(s)*
 
+<<<<<<< HEAD
 To remove completely the service, right click on its name and chose *Reveal in Finder* and delete the corresponding folder.
+=======
+To remove completely the service, right click on the service and chose *Reveal in Finder* and delete the corresponding folder.
+>>>>>>> Fifth-iteration
 
 ##Information
 You can explore data with the [GitHub explorer](http://pryv.github.com/explorer/).

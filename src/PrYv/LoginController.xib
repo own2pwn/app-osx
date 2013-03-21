@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12C60</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			<string key="NS.object.0">3084</string>
@@ -42,7 +42,7 @@
 			<object class="NSWindowTemplate" id="28425152">
 				<int key="NSWindowStyleMask">1</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{859, 551}, {269, 393}}</string>
+				<string key="NSWindowRect">{{859, 316}, {269, 393}}</string>
 				<int key="NSWTFlags">611845120</int>
 				<string key="NSWindowTitle">Welcome to PrYv !</string>
 				<string key="NSWindowClass">NSPanel</string>
@@ -172,6 +172,10 @@
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{69, 20}, {124, 32}}</string>
 							<reference key="NSSuperview" ref="6992589"/>
+<<<<<<< HEAD
+=======
+							<reference key="NSWindow"/>
+>>>>>>> Fifth-iteration
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="584628171">
@@ -227,7 +231,7 @@
 					<reference key="NSNextKeyView" ref="813152848"/>
 					<string key="NSReuseIdentifierKey">_NS:21</string>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {1920, 1178}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1280, 778}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -852,16 +856,16 @@
 						</object>
 					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="oAuthToken">NSTextField</string>
-						<string key="username">NSTextField</string>
+						<string key="_oAuthToken">NSTextField</string>
+						<string key="_username">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="oAuthToken">
-							<string key="name">oAuthToken</string>
+						<object class="IBToOneOutletInfo" key="_oAuthToken">
+							<string key="name">_oAuthToken</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="username">
-							<string key="name">username</string>
+						<object class="IBToOneOutletInfo" key="_username">
+							<string key="name">_username</string>
 							<string key="candidateClassName">NSTextField</string>
 						</object>
 					</dictionary>
