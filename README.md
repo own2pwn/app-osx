@@ -52,7 +52,7 @@ If you want to disable the service, just uncheck the corresponding box in
 
 *System Preferences > Keyboard > Keyboard shortcuts > Services > Files and folders > Pryv file(s)*
 
-To remove completely the service, right click on its name and chose *Reveal in Finder* and delete the corresponding folder.
+To remove completely the service, right click on the service and chose *Reveal in Finder* and delete the corresponding folder.
 
 ##Information
 You can explore data with the [GitHub explorer](http://pryv.github.com/explorer/).
