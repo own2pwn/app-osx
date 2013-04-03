@@ -19,10 +19,12 @@
     return self;
 }
 
--(void)pryvFilesFromService:(NSPasteboard *)pboard userData:(NSString *)userData error:(NSString **)error{
+-(void)pryvFilesFromService:(NSPasteboard *)pboard
+                   userData:(NSString *)userData
+                      error:(NSString **)error{
     
-    // Test for strings on the pasteboard.
-    if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
+    // Test for filenames as string on the pasteboard.
+    if ([[pboard types] containsObject:NSFilenamesPboardType]) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
 		__block NSMutableArray *urls = [[NSMutableArray alloc] init];
 		[files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -36,4 +38,19 @@
 		[fileController release];
     }
 }
+
+-(void)pryvSelectedText:(NSPasteboard *)pboard
+               userData:(NSString *)userData
+                  error:(NSString **)error{
+    
+    //Test for string on the pasteboard
+    NSLog(@"OK");
+    if ([[pboard types] containsObject:NSPasteboardTypeString]) {
+        NSString *text = [pboard  stringForType:NSPasteboardTypeString];
+        PRYVTextController *textController = [[PRYVTextController alloc] init];
+        [textController pryvText:text];
+        [textController release];
+    }
+}
+    
 @end

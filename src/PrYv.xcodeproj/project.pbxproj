@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C1413B6170CB82B00C21239 /* TextEvent+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1413B5170CB82B00C21239 /* TextEvent+Helper.m */; };
+		0C1413B9170CB89300C21239 /* TextEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1413B8170CB89300C21239 /* TextEvent.m */; };
+		0C1413BC170CB98500C21239 /* PRYVTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1413BB170CB98500C21239 /* PRYVTextController.m */; };
 		0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */; };
 		0C1A1E2016C9589F0042D7D4 /* FileEvent+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E1F16C9589F0042D7D4 /* FileEvent+Helper.m */; };
 		0C1A1E2316C95FAB0042D7D4 /* NoteEvent+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E2216C95FAB0042D7D4 /* NoteEvent+Helper.m */; };
@@ -64,6 +67,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C1413B4170CB82B00C21239 /* TextEvent+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TextEvent+Helper.h"; path = "PrYv/TextEvent+Helper.h"; sourceTree = "<group>"; };
+		0C1413B5170CB82B00C21239 /* TextEvent+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TextEvent+Helper.m"; path = "PrYv/TextEvent+Helper.m"; sourceTree = "<group>"; };
+		0C1413B7170CB89300C21239 /* TextEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextEvent.h; path = PrYv/TextEvent.h; sourceTree = "<group>"; };
+		0C1413B8170CB89300C21239 /* TextEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextEvent.m; path = PrYv/TextEvent.m; sourceTree = "<group>"; };
+		0C1413BA170CB98500C21239 /* PRYVTextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PRYVTextController.h; path = PrYv/PRYVTextController.h; sourceTree = "<group>"; };
+		0C1413BB170CB98500C21239 /* PRYVTextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PRYVTextController.m; path = PrYv/PRYVTextController.m; sourceTree = "<group>"; };
 		0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenPanelWithTagsAndFolder.xib; sourceTree = "<group>"; };
 		0C1A1E1E16C9589F0042D7D4 /* FileEvent+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FileEvent+Helper.h"; path = "PrYv/FileEvent+Helper.h"; sourceTree = "<group>"; };
 		0C1A1E1F16C9589F0042D7D4 /* FileEvent+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FileEvent+Helper.m"; path = "PrYv/FileEvent+Helper.m"; sourceTree = "<group>"; };
@@ -192,6 +201,8 @@
 				0C1A1E2216C95FAB0042D7D4 /* NoteEvent+Helper.m */,
 				0C1A1E5A16CA3B7B0042D7D4 /* Event+Helper.h */,
 				0C1A1E5B16CA3B7C0042D7D4 /* Event+Helper.m */,
+				0C1413B4170CB82B00C21239 /* TextEvent+Helper.h */,
+				0C1413B5170CB82B00C21239 /* TextEvent+Helper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -199,6 +210,8 @@
 		0C1A1E1D16C958560042D7D4 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				0C1413B7170CB89300C21239 /* TextEvent.h */,
+				0C1413B8170CB89300C21239 /* TextEvent.m */,
 				0C1A1E5716C96F870042D7D4 /* User.h */,
 				0C1A1E5816C96F870042D7D4 /* User.m */,
 				0C1A1E5416C96F870042D7D4 /* NoteEvent.h */,
@@ -240,6 +253,8 @@
 				0C1A714016BBB5DD004E35EF /* PRYVFileController.m */,
 				0C2559AE16FA5B7F00B4C2BC /* PRYVServicesController.h */,
 				0C2559AF16FA5B7F00B4C2BC /* PRYVServicesController.m */,
+				0C1413BA170CB98500C21239 /* PRYVTextController.h */,
+				0C1413BB170CB98500C21239 /* PRYVTextController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -572,6 +587,9 @@
 				0C1A1E5C16CA3B7C0042D7D4 /* Event+Helper.m in Sources */,
 				0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */,
 				0C2559B016FA5B7F00B4C2BC /* PRYVServicesController.m in Sources */,
+				0C1413B6170CB82B00C21239 /* TextEvent+Helper.m in Sources */,
+				0C1413B9170CB89300C21239 /* TextEvent.m in Sources */,
+				0C1413BC170CB98500C21239 /* PRYVTextController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

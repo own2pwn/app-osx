@@ -31,7 +31,7 @@
 									 Token:[_oAuthToken stringValue]
 								 ChannelId:channelId
 								 InContext:[[PRYVAppDelegate sharedInstance] managedObjectContext]];
-	NSLog(@"First onnection with : %@. Welcome !", _user.username);
+	NSLog(@"First connection with : %@. Welcome !", _user.username);
 	[self.window close];
 }
 

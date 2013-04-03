@@ -9,14 +9,19 @@
 
 #import <Foundation/Foundation.h>
 #import "PRYVFileController.h"
+#import "PRYVTextController.h"
 
 @interface PRYVServicesController : NSObject{
 @private
     PRYVFileController* _fileController;
+    PRYVTextController* _textController;
 }
 
 -(void)pryvFilesFromService:(NSPasteboard*)pboard
        userData:(NSString*)userData
           error:(NSString**)error;
+-(void)pryvSelectedText:(NSPasteboard*)pboard
+               userData:(NSString*)userData
+                  error:(NSString**)error;
 
 @end

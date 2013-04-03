@@ -2,10 +2,10 @@
 ----------------------------------------
 Desktop application &amp; system wide contextual menu integration for PrYv.
 
-**Current version :** iteration 5
+**Current version :** iteration 6
 
 ##Overview
-Use the status menu to access the general features. From here, you can create a note, pryv some files, display information about your account (in the console), delete all the events and access the [PrYv website](http://www.pryv.net). Now, you can also pryv file(s) from the Finder with a right click on the selection or with the keyboard shortcut CMD-SHIFT-M (arbitrary choice to avoid conflicts with other shortcuts) It currently only works offline. The online connection to an account will be implemented really soon.
+Use the status menu to access the general features. From here, you can create a note, pryv some files, display information about your account (in the console), delete all the events and access the [PrYv website](http://www.pryv.net). Now, you can also pryv file(s) from the Finder with a right click on the selection or with the keyboard shortcut CMD-SHIFT-M (arbitrary choice to avoid conflicts with other shortcuts. The same holds for the selected text in any application (same shortcut) It currently only works offline. The online connection to an account will be implemented really soon.
 
 ##Details
 The first time you'll launch the application, just enter a random username and token. It has no influence for the moment. Once connected, you can create some personal notes and pryv any files and folder. They follow the *event* structure of the PrYv API, storing a timestamp, tags, folder, etc...
@@ -34,17 +34,17 @@ You are reading this section if you want to :
 - Troubleshoot **Failed to initialize the store**
 - Change the user
 - Check what files are cached
-- Remove the pryv file(s) service
+- Remove the *pryv file(s)* or *pryv selected text* service
 
 CoreData is a great, powerful feature but it has some constraints when you have to change the data model. The solution is to *activate model versioning* or to *delete the data folder*. The first one has to be used when the *application is released* and that users are actually using it. The second one has to be used during the *development phase*. If you want to troubleshoot the CoreData errors or connect another user, just delete the **~/Library/Containers/pryv.PrYv** folder.
 
 You can find all the cached files in the **~/Library/Containers/pryv.PrYv/Data/Library/Caches** folder, which is the folder you can use to write in when using application sandboxing.
 
-If you want to disable the service, just uncheck the corresponding box in 
+If you want to disable the services, just uncheck the corresponding box in 
 
-*System Preferences > Keyboard > Keyboard shortcuts > Services > Files and folders > Pryv file(s)*
+*System Preferences > Keyboard > Keyboard shortcuts > Services*
 
-To remove it completely, right-click on the service name and chose *Reveal in Finder* and delete the corresponding folder.
+To remove it completely, right-click on the service name and chose *Reveal in Finder*. Then delete the corresponding folder.
 
 ##Information
 You can explore data with the [GitHub explorer](http://pryv.github.com/explorer/).
