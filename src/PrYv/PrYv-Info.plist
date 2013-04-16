@@ -18,7 +18,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>icon_512x512.png</string>
+	<string>PrYv</string>
 	<key>CFBundleIdentifier</key>
 	<string>pryv.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>

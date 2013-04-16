@@ -54,7 +54,8 @@
 		0C9B755816D37C3200A7FEBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0C9B755E16D37C3200A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */; };
 		0C9B756116D37C3200A7FEBD /* PrYvApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */; };
-		4E9A8F1E171D809300040B89 /* icon_512x512.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E9A8F1D171D809300040B89 /* icon_512x512.png */; };
+		4E9A8F21171D929E00040B89 /* PrYv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4E9A8F1F171D929E00040B89 /* PrYv.icns */; };
+		4E9A8F22171D929E00040B89 /* PrYv.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 4E9A8F20171D929E00040B89 /* PrYv.iconset */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,7 +154,8 @@
 		0C9B755F16D37C3200A7FEBD /* PrYvApplicationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvApplicationTests.h; sourceTree = "<group>"; };
 		0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvApplicationTests.m; sourceTree = "<group>"; };
 		0C9B756216D37C3200A7FEBD /* PrYvApplicationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrYvApplicationTests-Prefix.pch"; sourceTree = "<group>"; };
-		4E9A8F1D171D809300040B89 /* icon_512x512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_512x512.png; sourceTree = "<group>"; };
+		4E9A8F1F171D929E00040B89 /* PrYv.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = PrYv.icns; sourceTree = "<group>"; };
+		4E9A8F20171D929E00040B89 /* PrYv.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = PrYv.iconset; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,8 @@
 		0C7342C716ADB00A00EA101F = {
 			isa = PBXGroup;
 			children = (
+				4E9A8F1F171D929E00040B89 /* PrYv.icns */,
+				4E9A8F20171D929E00040B89 /* PrYv.iconset */,
 				0CD1201116BA6F740028CF5B /* Images */,
 				0C24088216B7097300BD60CC /* API */,
 				0C24088116B7096400BD60CC /* Controller */,
@@ -400,7 +404,6 @@
 		0CD1201116BA6F740028CF5B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				4E9A8F1D171D809300040B89 /* icon_512x512.png */,
 				0C3C26A716CCF9050023E724 /* FaviconBlack22.png */,
 				0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */,
 				0C2408D516B9253500BD60CC /* PrYvLogo.png */,
@@ -510,7 +513,8 @@
 				0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */,
 				0C3C26A216CBCC380023E724 /* StatusMenu.xib in Resources */,
 				0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */,
-				4E9A8F1E171D809300040B89 /* icon_512x512.png in Resources */,
+				4E9A8F21171D929E00040B89 /* PrYv.icns in Resources */,
+				4E9A8F22171D929E00040B89 /* PrYv.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
