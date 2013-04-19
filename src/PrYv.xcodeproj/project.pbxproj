@@ -292,8 +292,6 @@
 		0C7342C716ADB00A00EA101F = {
 			isa = PBXGroup;
 			children = (
-				4E9A8F1F171D929E00040B89 /* PrYv.icns */,
-				4E9A8F20171D929E00040B89 /* PrYv.iconset */,
 				0CD1201116BA6F740028CF5B /* Images */,
 				0C24088216B7097300BD60CC /* API */,
 				0C24088116B7096400BD60CC /* Controller */,
@@ -404,6 +402,8 @@
 		0CD1201116BA6F740028CF5B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				4E9A8F1F171D929E00040B89 /* PrYv.icns */,
+				4E9A8F20171D929E00040B89 /* PrYv.iconset */,
 				0C3C26A716CCF9050023E724 /* FaviconBlack22.png */,
 				0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */,
 				0C2408D516B9253500BD60CC /* PrYvLogo.png */,
