@@ -39,6 +39,7 @@
 		0C3C26A216CBCC380023E724 /* StatusMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A116CBCC380023E724 /* StatusMenu.xib */; };
 		0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */; };
 		0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A716CCF9050023E724 /* FaviconBlack22.png */; };
+		0C6FDEDB1725B8C300FF2447 /* PryvApiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6FDED61725B83500FF2447 /* PryvApiKit.framework */; };
 		0C7342D716ADB00B00EA101F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342DF16ADB00B00EA101F /* InfoPlist.strings */; };
 		0C7342E316ADB00B00EA101F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E216ADB00B00EA101F /* main.m */; };
@@ -185,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C6FDEDB1725B8C300FF2447 /* PryvApiKit.framework in Frameworks */,
 				0C7342D716ADB00B00EA101F /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -797,6 +799,10 @@
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/PrYv-gusgsoeaisafeehjlkslssmwnyms/Build/Products/Debug\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
@@ -812,6 +818,10 @@
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/PrYv-gusgsoeaisafeehjlkslssmwnyms/Build/Products/Debug\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
@@ -926,6 +936,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/PrYv-gusgsoeaisafeehjlkslssmwnyms/Build/Products/Debug\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
