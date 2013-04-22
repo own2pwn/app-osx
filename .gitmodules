@@ -1,4 +1,0 @@
-
-[submodule "sdk-objectivec-apple"]
-	path = sdk-objectivec-apple
-	url = git@github.com:pryv/sdk-objectivec-apple.git
