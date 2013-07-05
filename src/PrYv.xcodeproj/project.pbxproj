@@ -88,6 +88,20 @@
 			remoteGlobalIDString = 0C7342D116ADB00B00EA101F;
 			remoteInfo = PrYv;
 		};
+		0CE29E5517842C1500D6F9DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EDEB9381725A14400AA6D7D /* PryvApiKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3DAF21C9172B28E900B62416;
+			remoteInfo = "OS X example";
+		};
+		0CE29E5717842C1500D6F9DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EDEB9381725A14400AA6D7D /* PryvApiKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D48973F1778E8AC008C7B66;
+			remoteInfo = libPryvApiKitLogicTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -319,6 +333,8 @@
 				0C6FDED61725B83500FF2447 /* PryvApiKit.framework */,
 				0C6FDED81725B83500FF2447 /* libPryvApiKit.a */,
 				0C6FDEDA1725B83500FF2447 /* iOs Example.app */,
+				0CE29E5617842C1500D6F9DC /* OS X example.app */,
+				0CE29E5817842C1500D6F9DC /* libPryvApiKitLogicTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -559,6 +575,20 @@
 			fileType = wrapper.application;
 			path = "iOs Example.app";
 			remoteRef = 0C6FDED91725B83500FF2447 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0CE29E5617842C1500D6F9DC /* OS X example.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "OS X example.app";
+			remoteRef = 0CE29E5517842C1500D6F9DC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0CE29E5817842C1500D6F9DC /* libPryvApiKitLogicTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = libPryvApiKitLogicTests.octest;
+			remoteRef = 0CE29E5717842C1500D6F9DC /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
