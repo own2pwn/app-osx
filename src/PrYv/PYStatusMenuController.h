@@ -9,18 +9,18 @@
 #import <Foundation/Foundation.h>
 #import "DragAndDropStatusMenuView.h"
 
-@class PRYVNewNoteController, PRYVFileController;
+@class PYNewNoteController, PYFileController;
 
-@interface PRYVStatusMenuController : NSViewController {
+@interface PYStatusMenuController : NSViewController {
 @private
-	PRYVNewNoteController *_newNoteController;
-	PRYVFileController *_fileController;
+	PYNewNoteController *_newNoteController;
+	PYFileController *_fileController;
 	IBOutlet NSMenu *_statusMenu;
 	NSStatusItem *_statusItem;
 
 }
 
--(PRYVStatusMenuController*)init;
+-(PYStatusMenuController*)init;
 -(IBAction)newNote:(id)sender;
 -(IBAction)displayCurrentUser:(id)sender;
 -(IBAction)goToMyPryv:(id)sender;

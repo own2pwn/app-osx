@@ -6,16 +6,16 @@
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
-#import "PRYVAppDelegate.h"
+#import "PYAppDelegate.h"
 #import "PRYVApiClient.h"
 #import "User.h"
 #import "User+Helper.h"
-#import "PRYVLoginController.h"
-#import "PRYVFileController.h"
-#import "PRYVStatusMenuController.h"
-#import "PRYVServicesController.h"
+#import "PYLoginController.h"
+#import "PYFileController.h"
+#import "PYStatusMenuController.h"
+#import "PYServicesController.h"
 
-@implementation PRYVAppDelegate
+@implementation PYAppDelegate
 
 - (void)dealloc {
 	[_persistentStoreCoordinator release];
@@ -29,7 +29,7 @@
 @synthesize managedObjectContext = _managedObjectContext;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	PRYVStatusMenuController *menuController = [[PRYVStatusMenuController alloc] init];
+	PYStatusMenuController *menuController = [[PYStatusMenuController alloc] init];
 	[NSBundle loadNibNamed:@"StatusMenu" owner:menuController];
 	
 	//Try to retrieve the user from the CoreData DB
@@ -37,7 +37,7 @@
 	
 	//If no user has been found, open login window
 	if (user==nil) {		
-		PRYVLoginController *loginWindow = [[PRYVLoginController alloc] initForUser:user];
+		PYLoginController *loginWindow = [[PYLoginController alloc] initForUser:user];
 		[loginWindow showWindow:self];
 	
 	//If the user has been found
@@ -45,58 +45,10 @@
 		NSLog(@"Welcome back, %@ !",user.username);
 	}
     
-    PRYVServicesController *servicesController;
-    servicesController = [[PRYVServicesController alloc] init];
+    PYServicesController *servicesController;
+    servicesController = [[PYServicesController alloc] init];
     [NSApp setServicesProvider:servicesController];
 	
-//	NSURL *requestURL = [NSURL URLWithString:@"https://jonmaim.rec.la/channels"];
-//	
-//	NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:requestURL];
-//	[request setHTTPMethod:@"POST"];
-//	[request setValue:@"VVEQmJD5T5" forHTTPHeaderField:@"Authorization"];
-//	[request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-//	
-//	NSDictionary *body = @{
-//			@"name": @"Mac OS X Application" 
-//	};
-//	
-//	NSError *error = nil;
-//	NSData *bodyData = [NSJSONSerialization dataWithJSONObject:body options:0 error:&error];
-//	if(!error){[request setHTTPBody:bodyData];}
-//	
-//	NSOperationQueue *backgroundQueue = [[NSOperationQueue alloc] init];
-//	
-//	[NSURLConnection sendAsynchronousRequest:request
-//									   queue:backgroundQueue
-//						   completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
-//							   if (!error) {
-//								   NSDictionary *requestResults = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-//								   NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
-//								   if ([httpResponse statusCode] >= 400) {
-//									   NSLog(@"Remote URL returned error %ld %@",[httpResponse statusCode],[NSHTTPURLResponse localizedStringForStatusCode:[httpResponse statusCode]]);
-//									   NSLog(@"Result : %@", requestResults);
-//									   NSLog(@"ID : %@",[requestResults valueForKey:@"id"]);
-//									   
-//									   //We make another request to get the list of channels and get the id from the result
-//									   NSMutableString *channelId = [[NSMutableString alloc] initWithString:@"test"];
-//									   //[PRYVApiClient getChannelIdForName:@"Mac OS X Application" ForUser:@"jonmaim" WithAccessToken:@"VVEQmJD5T5" ToChannelId:&channelId];
-//
-//									   //NSLog(@"Check for ID : %@", channelId);
-//									   
-//								   } else {
-//									   NSLog(@"It is the first time you try to create the channel");
-//									   NSLog(@"Result : %@", requestResults);
-//									   NSLog(@"ID : %@",[requestResults valueForKey:@"id"]);
-//								   }
-//								   //channelId = [requestResults valueForKey:@"id"];
-//								   //NSString *requestResults = [[NSString alloc] initWithData:data encoding:NSStringEncodingConversionAllowLossy];
-//							   } else {
-//								   NSLog(@"Error in sendAsynchronousRequest : %@",error);
-//								   NSString *requestResults = [[NSString alloc] initWithData:data encoding:NSStringEncodingConversionAllowLossy];
-//								   NSLog(@"Result : %@", requestResults);
-//								   NSLog(@"Response : %@", [response URL]);
-//							   }
-//						   }];
 }
 
 -(void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
@@ -104,7 +56,7 @@
 	[filenames enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 		[urls addObject:[NSURL fileURLWithPath:obj]];
 	}];
-	PRYVFileController *fileController = [[PRYVFileController alloc] init];
+	PYFileController *fileController = [[PYFileController alloc] init];
 	[fileController pryvFiles:[urls autorelease]
                      withTags:[[[NSSet alloc] init] autorelease]
                 andFolderName:@""];
@@ -120,9 +72,9 @@
 }
 
 //Enables singleton using Grand Central
-+ (PRYVAppDelegate*)sharedInstance {
++ (PYAppDelegate*)sharedInstance {
 	static dispatch_once_t pred;
-	static PRYVAppDelegate *sharedInstance = nil;
+	static PYAppDelegate *sharedInstance = nil;
 	dispatch_once(&pred, ^{
         sharedInstance = [[self alloc] init];
     });

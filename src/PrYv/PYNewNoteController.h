@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PRYVNewNoteController : NSWindowController <NSWindowDelegate> {
+@interface PYNewNoteController : NSWindowController <NSWindowDelegate> {
 @private
 	IBOutlet NSTextField *_title;
 	IBOutlet NSTextField *_content;

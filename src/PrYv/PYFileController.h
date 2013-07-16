@@ -10,7 +10,7 @@
 
 @class File;
 
-@interface PRYVFileController : NSObject {
+@interface PYFileController : NSObject {
 @private
 	IBOutlet NSTokenField *_tags;
 	IBOutlet NSPopUpButton *_folder;
@@ -19,7 +19,7 @@
 	NSLock *_threadLock;
 }
 
--(PRYVFileController*)initWithOpenPanel:(NSOpenPanel*)openDialog;
+-(PYFileController*)initWithOpenPanel:(NSOpenPanel*)openDialog;
 -(void)runDialog;
 -(void)pryvFiles:(NSArray*)files
         withTags:(NSSet*)tags
@@ -28,7 +28,7 @@
 @end
 
 
-@interface PRYVFileController ()
+@interface PYFileController ()
 
 -(void)pryvFilesThread:(NSDictionary*)args;
 -(void)constructFilesArray:(NSMutableArray*)array

@@ -7,7 +7,7 @@
 //
 
 #import "DragAndDropStatusMenuView.h"
-#import "PRYVFileController.h"
+#import "PYFileController.h"
 
 @interface DragAndDropStatusMenuView ()
 
@@ -81,7 +81,7 @@
 		[files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 			[urls addObject:[NSURL fileURLWithPath:obj]];
 		}];
-		PRYVFileController *fileController = [[PRYVFileController alloc] init];
+		PYFileController *fileController = [[PYFileController alloc] init];
 		[fileController pryvFiles:[urls autorelease]
 						 withTags:[[[NSSet alloc] init] autorelease]
 					andFolderName:@""];

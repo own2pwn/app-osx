@@ -6,20 +6,20 @@
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
-#import "PRYVTextController.h"
+#import "PYTextController.h"
 #import "TextEvent.h"
-#import "PRYVAppDelegate.h"
+#import "PYAppDelegate.h"
 #import "User.h"
 #import "User+Helper.h"
 
-@implementation PRYVTextController
+@implementation PYTextController
 
 -(void)pryvText:(NSString *)text{
     if ([text isEqualToString:@""]) {
 		NSLog(@"No text entered !");
 	}else {
         //Get the general context
-		NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
+		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
 		TextEvent *newTextEvent = [NSEntityDescription insertNewObjectForEntityForName:@"TextEvent"
                                                                 inManagedObjectContext:context];
         newTextEvent.text = [NSString stringWithString:text];

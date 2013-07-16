@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
-#import "PRYVServicesController.h"
+#import "PYServicesController.h"
 
-@implementation PRYVServicesController
+@implementation PYServicesController
 
 -(id)init {
     self = [super init];
     if (self) {
-        _fileController = [[PRYVFileController alloc] init];
+        _fileController = [[PYFileController alloc] init];
     }
     
     return self;
@@ -31,7 +31,7 @@
 			[urls addObject:[NSURL fileURLWithPath:obj]];
 		}];
         //NSLog(@"Files : %@",files);
-		PRYVFileController *fileController = [[PRYVFileController alloc] init];
+		PYFileController *fileController = [[PYFileController alloc] init];
 		[fileController pryvFiles:[urls autorelease]
 						 withTags:[[[NSSet alloc] init] autorelease]
 					andFolderName:@""];
@@ -47,7 +47,7 @@
     NSLog(@"OK");
     if ([[pboard types] containsObject:NSPasteboardTypeString]) {
         NSString *text = [pboard  stringForType:NSPasteboardTypeString];
-        PRYVTextController *textController = [[PRYVTextController alloc] init];
+        PYTextController *textController = [[PYTextController alloc] init];
         [textController pryvText:text];
         [textController release];
     }

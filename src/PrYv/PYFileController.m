@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
-#import "PRYVFileController.h"
-#import "PRYVAppDelegate.h"
+#import "PYFileController.h"
+#import "PYAppDelegate.h"
 #import "File.h"
 #import "User.h"
 #import "User+Helper.h"
@@ -18,7 +18,7 @@
 #import "Folder+Helper.h"
 #import "FileEvent.h"
 
-@implementation PRYVFileController
+@implementation PYFileController
 
 -(id)initWithOpenPanel:(NSOpenPanel *)openDialog {
 	self = [super init];
@@ -38,7 +38,7 @@
 #pragma mark Pryv Files
 
 -(void)runDialog {
-	NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
+	NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
 	
     //Add the fields for the tags and the folder
 	if ([NSBundle loadNibNamed:@"OpenPanelWithTagsAndFolder" owner:self])
@@ -107,7 +107,7 @@
 		}];
 		
 		//Create the FileEvent and store it
-		NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
+		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
 		User *current = [User currentUserInContext:context];
 		FileEvent *fileEvent = (FileEvent*)[NSEntityDescription insertNewObjectForEntityForName:@"FileEvent"
                                                                          inManagedObjectContext:context];
@@ -153,7 +153,7 @@
 	
     //If it is a file
 	} else {
-		NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
+		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
 		NSString *cachesDirectory = [self findCachesDirectory];
 		
         //Create a file object to add in the array
