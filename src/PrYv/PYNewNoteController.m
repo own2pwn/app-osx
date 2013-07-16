@@ -6,20 +6,20 @@
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
-#import "PRYVNewNoteController.h"
+#import "PYNewNoteController.h"
 #import "NoteEvent.h"
-#import "PRYVAppDelegate.h"
+#import "PYAppDelegate.h"
 #import "User.h"
 #import "User+Helper.h"
 #import "Tag+Helper.h"
 #import "Tag.h"
 #import "Folder.h"
 
-@interface PRYVNewNoteController ()
+@interface PYNewNoteController ()
 
 @end
 
-@implementation PRYVNewNoteController
+@implementation PYNewNoteController
 
 -(IBAction)createNote:(id)sender {
 	//The content of the note is the only required field
@@ -27,7 +27,7 @@
 		NSLog(@"The content is mandatory !");
 	}else {
 		//Get the general context and create a new note
-		NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
+		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
 		NoteEvent *newNoteEvent = [NSEntityDescription insertNewObjectForEntityForName:@"NoteEvent"
                                                                 inManagedObjectContext:context];
 		//Construct the note using the fields in the panel
@@ -77,7 +77,7 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-	User *current = [User currentUserInContext:[[PRYVAppDelegate sharedInstance] managedObjectContext]];
+	User *current = [User currentUserInContext:[[PYAppDelegate sharedInstance] managedObjectContext]];
 	NSArray *folderNames = [current folderNames];
 	[_folder addItemsWithTitles: folderNames];
 }

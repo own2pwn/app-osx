@@ -6,18 +6,18 @@
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
-#import "PRYVStatusMenuController.h"
-#import "PRYVNewNoteController.h"
-#import "PRYVAppDelegate.h"
+#import "PYStatusMenuController.h"
+#import "PYNewNoteController.h"
+#import "PYAppDelegate.h"
 #import "User+Helper.h"
 #import "User.h"
 #import "NoteEvent.h"
-#import "PRYVFileController.h"
+#import "PYFileController.h"
 #import "DragAndDropStatusMenuView.h"
 
-@implementation PRYVStatusMenuController
+@implementation PYStatusMenuController
 
--(PRYVStatusMenuController*)init {
+-(PYStatusMenuController*)init {
 	self = [super init];
 	if (self) {
 		//Initialization code goes here
@@ -44,25 +44,25 @@
 -(IBAction)openFiles:(id)sender {
 	NSOpenPanel *openDialog = [NSOpenPanel openPanel];
 	[openDialog retain]; //Mac OS X 10.6 fix	
-	_fileController = [[PRYVFileController alloc] initWithOpenPanel:openDialog];
+	_fileController = [[PYFileController alloc] initWithOpenPanel:openDialog];
 	[_fileController runDialog];
 }
 
 -(IBAction)displayCurrentUser:(id)sender {
-	NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
+	NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
 	User *current = [User currentUserInContext:context];
 	NSLog(@"\n%@",[current description]);
 }
 
 -(IBAction)purgeEvents:(id)sender {
-	NSManagedObjectContext *context = [[PRYVAppDelegate sharedInstance] managedObjectContext];
+	NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
 	User *current = [User currentUserInContext:context];
 	[current purgeEventsInContext:context];
 }
 
 -(IBAction)newNote:(id)sender {
 	if(!_newNoteController) {
-		_newNoteController = [[PRYVNewNoteController alloc] initWithWindowNibName:@"NewNote"];
+		_newNoteController = [[PYNewNoteController alloc] initWithWindowNibName:@"NewNote"];
 		[_newNoteController.window setDelegate:_newNoteController];
 	}
 	[_newNoteController showWindow:self];

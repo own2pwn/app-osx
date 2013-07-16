@@ -8,13 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PRYVAppDelegate : NSObject <NSApplicationDelegate>
+@interface PYAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 - (IBAction)saveAction:(id)sender;
-+ (PRYVAppDelegate*)sharedInstance;
++ (PYAppDelegate*)sharedInstance;
 
 @end

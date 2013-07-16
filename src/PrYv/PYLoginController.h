@@ -10,14 +10,14 @@
 #import "User+Helper.h"
 #import "User.h"
 
-@interface PRYVLoginController : NSWindowController{ 
+@interface PYLoginController : NSWindowController{ 
 @private
     IBOutlet NSTextField *_username;
     IBOutlet NSTextField *_oAuthToken;
     User *_user;
 }
 
--(PRYVLoginController*)initForUser:(User*)user;
+-(PYLoginController*)initForUser:(User*)user;
 -(IBAction)login:(id)sender;
 
 @end

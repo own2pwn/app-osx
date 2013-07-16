@@ -8,13 +8,13 @@
 
 
 #import <Foundation/Foundation.h>
-#import "PRYVFileController.h"
-#import "PRYVTextController.h"
+#import "PYFileController.h"
+#import "PYTextController.h"
 
-@interface PRYVServicesController : NSObject{
+@interface PYServicesController : NSObject{
 @private
-    PRYVFileController* _fileController;
-    PRYVTextController* _textController;
+    PYFileController* _fileController;
+    PYTextController* _textController;
 }
 
 -(void)pryvFilesFromService:(NSPasteboard*)pboard

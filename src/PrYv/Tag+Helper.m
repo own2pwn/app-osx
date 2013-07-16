@@ -7,7 +7,7 @@
 //
 
 #import "Tag+Helper.h"
-#import "PRYVAppDelegate.h"
+#import "PYAppDelegate.h"
 
 @implementation Tag (Helper)
 

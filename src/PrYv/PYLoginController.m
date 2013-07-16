@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
-#import "PRYVLoginController.h"
-#import "PRYVAppDelegate.h"
+#import "PYLoginController.h"
+#import "PYAppDelegate.h"
 
 
-@interface PRYVLoginController ()
+@interface PYLoginController ()
 
 @end
 
-@implementation PRYVLoginController
+@implementation PYLoginController
 
--(PRYVLoginController*)initForUser:(User*)user {
+-(PYLoginController*)initForUser:(User*)user {
 	self = [super initWithWindowNibName:@"LoginController"];
 	if (self) {
 		_user = user;
@@ -30,7 +30,7 @@
 	_user = [User createNewUserWithUsername:[_username stringValue]
 									 Token:[_oAuthToken stringValue]
 								 ChannelId:channelId
-								 InContext:[[PRYVAppDelegate sharedInstance] managedObjectContext]];
+								 InContext:[[PYAppDelegate sharedInstance] managedObjectContext]];
 	NSLog(@"First connection with : %@. Welcome !", _user.username);
 	[self.window close];
 }
