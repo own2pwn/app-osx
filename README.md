@@ -35,11 +35,11 @@ If you want to disable the Services, just uncheck the corresponding box in
 To remove it completely, right-click on the service name and chose *Reveal in Finder*. Then delete the corresponding folder.
 
 ##Information
-You can explore data with the [GitHub explorer](http://pryv.github.com/explorer/).
+You can explore data with the [GitHub explorer](http://pryv.github.io/explorer/).
 
-The developer API reference is accessible at <http://dev.pryv.com>.
+The developer API reference is accessible at <http://api.pryv.com>.
 
-API issues should be reported to <https://github.com/pryv/pryv.github.com/issues>.
+API issues should be reported to <https://github.com/pryv/pryv.github.io/issues>.
 
 
 ## License
