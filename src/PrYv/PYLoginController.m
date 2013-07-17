@@ -8,13 +8,17 @@
 
 #import "PYLoginController.h"
 #import "PYAppDelegate.h"
+#import "PryvApiKit/PryvApiKit.h"
+#import "PryvApiKit/PYWebLoginViewController.h"
 
-
-@interface PYLoginController ()
+@interface PYLoginController () <PYWebLoginDelegate>
 
 @end
 
 @implementation PYLoginController
+
+@synthesize user = _user;
+@synthesize webView;
 
 -(PYLoginController*)initForUser:(User*)user {
 	self = [super initWithWindowNibName:@"LoginController"];
@@ -23,16 +27,6 @@
 	}
 	
 	return self;
-}
-
--(IBAction)login:(id)sender {
-	NSString *channelId = @"TVoyO2x2B5";
-	_user = [User createNewUserWithUsername:[_username stringValue]
-									 Token:[_oAuthToken stringValue]
-								 ChannelId:channelId
-								 InContext:[[PYAppDelegate sharedInstance] managedObjectContext]];
-	NSLog(@"First connection with : %@. Welcome !", _user.username);
-	[self.window close];
 }
 
 - (id)initWithWindow:(NSWindow *)window {
@@ -47,6 +41,16 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+}
+
+- (void) pyWebLoginSuccess:(PYAccess*)pyAccess{
+    
+}
+- (void) pyWebLoginAborded:(NSString*)reason{
+    
+}
+- (void) pyWebLoginError:(NSError*)error{
+    
 }
 
 @end

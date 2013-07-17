@@ -14,8 +14,12 @@
 
 + (User *)currentUserInContext:(NSManagedObjectContext *)context {
 	
-    NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
-	
+    // NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+	NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User"
+                                              inManagedObjectContext:context];
+    request.entity = entity;
+    
     return [[context executeFetchRequest:request error:nil] lastObject];
 }
 

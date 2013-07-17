@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface DragAndDropStatusMenuView : NSView <NSDraggingDestination, NSObject, NSMenuDelegate>{
+@interface DragAndDropStatusMenuView : NSView <NSObject, NSMenuDelegate>{
 @private
 	NSMenu *_menu;
 	BOOL _isMenuVisible;

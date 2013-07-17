@@ -14,6 +14,7 @@
 #import "PYFileController.h"
 #import "PYStatusMenuController.h"
 #import "PYServicesController.h"
+#import "NSDictionary+SubscriptingCompatibility.h"
 
 @implementation PYAppDelegate
 
