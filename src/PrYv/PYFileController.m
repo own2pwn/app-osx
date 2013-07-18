@@ -108,7 +108,7 @@
 		
 		//Create the FileEvent and store it
 		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-		User *current = [User currentUserInContext:context];
+		//User *current = [User currentUserInContext:context];
 		FileEvent *fileEvent = (FileEvent*)[NSEntityDescription insertNewObjectForEntityForName:@"FileEvent"
                                                                          inManagedObjectContext:context];
 		[fileEvent addTags:newTags];
@@ -117,7 +117,7 @@
                                                          inManagedObjectContext:context];
 		fileEvent.folder.name = folderName;
 		
-		[current addEventsObject:fileEvent];
+		//[current addEventsObject:fileEvent];
 		
 		[context save:nil];
 		[filesToSend release];

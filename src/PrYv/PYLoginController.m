@@ -40,17 +40,30 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    NSArray *objects = [NSArray arrayWithObjects:@"*", @"manage", nil];
+    NSArray *keys = [NSArray arrayWithObjects:@"channelId", @"level", nil];
+    NSArray *permissions = [NSArray arrayWithObject:[NSDictionary dictionaryWithObjects:objects forKeys:keys]];
+    [PYClient setDefaultDomainStaging];
+    [PYWebLoginViewController requestAccessWithAppId:@"integration-osx"
+                                      andPermissions:permissions
+                                            delegate:self
+                                         withWebView:&webView];
 }
 
 - (void) pyWebLoginSuccess:(PYAccess*)pyAccess{
     
+    NSLog(@"Signin With Success %@ %@",pyAccess.userID,pyAccess.accessToken);
+    NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
+    _user = [User createNewUserWithUsername:pyAccess.userID AndToken:pyAccess.accessToken InContext:context];
+    [pyAccess synchronizeTimeWithSuccessHandler:nil errorHandler:nil];
 }
-- (void) pyWebLoginAborded:(NSString*)reason{
-    
+
+- (void) pyWebLoginAborded:(NSString*)reason {
+    NSLog(@"Signin Aborded: %@",reason);
 }
-- (void) pyWebLoginError:(NSError*)error{
-    
+
+- (void) pyWebLoginError:(NSError*)error {
+    NSLog(@"Signin Error: %@",error);
 }
 
 @end

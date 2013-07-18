@@ -23,10 +23,9 @@
  @param token is the user Authorization token to connect to the PrYv API
  */
 
-+(User*)createNewUserWithUsername:(NSString*)username
-							Token:(NSString*)token
-						ChannelId:(NSString*)channelId
-						InContext:(NSManagedObjectContext*)context;
++(User*)createNewUserWithUsername:(NSString *)username
+							AndToken:(NSString *)token
+							InContext:(NSManagedObjectContext*)context;
 -(void)purgeEventsInContext:(NSManagedObjectContext*)context;
 -(NSArray*)folderNames;
 -(NSString*)description;

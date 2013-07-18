@@ -48,8 +48,8 @@
 		[newTags release];
 		
 		//Add the note in the user set of notes and save the changes
-		User *current = [User currentUserInContext:context];
-		[current addEventsObject:newNoteEvent];
+		//User *current = [User currentUserInContext:context];
+		//[current addEventsObject:newNoteEvent];
 		[context save:nil];
 		
 		NSLog(@"Note created with title : %@",[_title stringValue]);

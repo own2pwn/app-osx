@@ -25,8 +25,8 @@
         newTextEvent.text = [NSString stringWithString:text];
         
         //Add the text in the user event set
-		User *current = [User currentUserInContext:context];
-		[current addEventsObject:newTextEvent];
+		//User *current = [User currentUserInContext:context];
+		//[current addEventsObject:newTextEvent];
 		[context save:nil];
 		
 		NSLog(@"Text pryved : %@",text);
