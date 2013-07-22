@@ -19,12 +19,10 @@
 
 @implementation PYStatusMenuController
 
-@synthesize logInOrOut;
-
 -(PYStatusMenuController*)init {
 	self = [super init];
 	if (self) {
-		//Initialization code goes here
+		
 	}
 	return self;
 }
@@ -39,6 +37,12 @@
 	[dragAndDropView setMenu:_statusMenu];
 	[_statusItem setView:dragAndDropView];
 	[dragAndDropView release];
+    [newNote setEnabled:NO];
+    [pryvFiles setEnabled:NO];
+    [displayCurrentUser setEnabled:NO];
+    [purgeEvents setEnabled:NO];
+    [goToMyPryv setEnabled:NO];
+    [preferences setEnabled:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateMenuItemsLogin:)
                                                  name:PYLoginSuccessfullNotification

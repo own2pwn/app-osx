@@ -2,7 +2,7 @@
 ----------------------------------------
 Desktop application &amp; system wide contextual menu integration for PrYv.
 
-**Current version :** iteration 6
+**Current version :** iteration 7
 
 ##Troubleshooter and reset
 

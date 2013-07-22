@@ -16,12 +16,18 @@
 	PYNewNoteController *_newNoteController;
 	PYFileController *_fileController;
     PYLoginController *loginWindow;
+	NSStatusItem *_statusItem;
 	IBOutlet NSMenu *_statusMenu;
     IBOutlet NSMenuItem *logInOrOut;
-	NSStatusItem *_statusItem;
+    IBOutlet NSMenuItem *newNote;
+    IBOutlet NSMenuItem *pryvFiles;
+    IBOutlet NSMenuItem *displayCurrentUser;
+    IBOutlet NSMenuItem *purgeEvents;
+    IBOutlet NSMenuItem *goToMyPryv;
+    IBOutlet NSMenuItem *preferences;
 }
 
-@property (assign) IBOutlet NSMenuItem *logInOrOut;
+
 
 -(PYStatusMenuController*)init;
 -(IBAction)newNote:(id)sender;
