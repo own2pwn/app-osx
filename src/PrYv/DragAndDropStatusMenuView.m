@@ -56,6 +56,7 @@
 - (void)menuWillOpen:(NSMenu *)menu {
     _isMenuVisible = YES;
     [self setNeedsDisplay:YES];
+    //[_menu update];
 }
 
 - (void)menuDidClose:(NSMenu *)menu {

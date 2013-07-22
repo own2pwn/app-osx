@@ -15,6 +15,7 @@
 #import "PYStatusMenuController.h"
 #import "PYServicesController.h"
 #import "NSDictionary+SubscriptingCompatibility.h"
+#import "Constants.h"
 
 @implementation PYAppDelegate
 
@@ -22,34 +23,39 @@
 	[_persistentStoreCoordinator release];
 	[_managedObjectModel release];
 	[_managedObjectContext release];
+    [menuController release];
+    [loginWindow release];
+    [servicesController release];
     [super dealloc];
 }
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
+@synthesize loginWindow, menuController;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	PYStatusMenuController *menuController = [[PYStatusMenuController alloc] init];
+	menuController = [[PYStatusMenuController alloc] init];
 	[NSBundle loadNibNamed:@"StatusMenu" owner:menuController];
 	
 	//Try to retrieve the user from the CoreData DB
 	User * user = [User currentUserInContext:[self managedObjectContext]];
 	
 	//If no user has been found, open login window
-	if (user==nil) {		
-		PYLoginController *loginWindow = [[PYLoginController alloc] initForUser:user];
+	if (!user) {
+		loginWindow = [[PYLoginController alloc] initForUser:user];
+		[loginWindow.window setDelegate:menuController];
 		[loginWindow showWindow:self];
 	
 	//If the user has been found
 	}else {
 		NSLog(@"Welcome back, %@ !",user.username);
+        [[NSNotificationCenter defaultCenter] postNotificationName:PYLoginSuccessfullNotification object:self];
 	}
     
-    PYServicesController *servicesController;
+    //Set up the service handler
     servicesController = [[PYServicesController alloc] init];
     [NSApp setServicesProvider:servicesController];
-	
 }
 
 -(void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {

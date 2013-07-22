@@ -9,6 +9,7 @@
 #import "FileEvent.h"
 #import "Event.h"
 #import "FileEvent+Helper.h"
+#import "Constants.h"
 
 @implementation User (Helper)
 
@@ -49,6 +50,14 @@
 //	}];
 	[context save:nil];
 	NSLog(@"Events purged !");
+}
+
+-(void)logoutFromContext:(NSManagedObjectContext *)context{
+    [context deleteObject:self];
+    NSLog(@"Logged out.");
+    [context save:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:PYLogoutSuccessfullNotification
+                                                                           object:self];
 }
 
 -(NSArray*)folderNames {

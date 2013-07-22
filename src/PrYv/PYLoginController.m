@@ -10,6 +10,7 @@
 #import "PYAppDelegate.h"
 #import "PryvApiKit/PryvApiKit.h"
 #import "PryvApiKit/PYWebLoginViewController.h"
+#import "Constants.h"
 
 @interface PYLoginController () <PYWebLoginDelegate>
 
@@ -54,8 +55,12 @@
     
     NSLog(@"Signin With Success %@ %@",pyAccess.userID,pyAccess.accessToken);
     NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-    _user = [User createNewUserWithUsername:pyAccess.userID AndToken:pyAccess.accessToken InContext:context];
+    _user = [User createNewUserWithUsername:pyAccess.userID
+                                   AndToken:pyAccess.accessToken
+                                  InContext:context];
     [pyAccess synchronizeTimeWithSuccessHandler:nil errorHandler:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:PYLoginSuccessfullNotification
+                                                        object:self];
 }
 
 - (void) pyWebLoginAborded:(NSString*)reason {

@@ -8,11 +8,17 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PYAppDelegate : NSObject <NSApplicationDelegate>
+@class PYLoginController, PYStatusMenuController, PYServicesController;
 
+@interface PYAppDelegate : NSObject <NSApplicationDelegate> {
+@private
+    PYServicesController *servicesController;
+}
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (retain) PYLoginController *loginWindow;
+@property (retain) PYStatusMenuController *menuController;
 
 - (IBAction)saveAction:(id)sender;
 + (PYAppDelegate*)sharedInstance;

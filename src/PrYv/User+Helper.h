@@ -29,5 +29,6 @@
 -(void)purgeEventsInContext:(NSManagedObjectContext*)context;
 -(NSArray*)folderNames;
 -(NSString*)description;
+-(void)logoutFromContext:(NSManagedObjectContext*)context;
 
 @end

@@ -14,8 +14,12 @@
 #import "NoteEvent.h"
 #import "PYFileController.h"
 #import "DragAndDropStatusMenuView.h"
+#import "PYLoginController.h"
+#import "Constants.h"
 
 @implementation PYStatusMenuController
+
+@synthesize logInOrOut;
 
 -(PYStatusMenuController*)init {
 	self = [super init];
@@ -34,11 +38,27 @@
 	dragAndDropView.statusItem = _statusItem;
 	[dragAndDropView setMenu:_statusMenu];
 	[_statusItem setView:dragAndDropView];
-	[dragAndDropView release];	
+	[dragAndDropView release];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateMenuItemsLogin:)
+                                                 name:PYLoginSuccessfullNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(updateMenuItemsLogout:)
+                                                 name:PYLogoutSuccessfullNotification
+                                               object:nil];
 }
 
 -(void)showMenu {
 	[_statusItem popUpStatusItemMenu:_statusMenu];
+}
+
+-(void)updateMenuItemsLogin:(NSNotification*)notification{
+    [logInOrOut setTitle:@"Log out"];
+}
+
+-(void)updateMenuItemsLogout:(NSNotification*)notification{
+    [logInOrOut setTitle:@"Log in"];
 }
 
 -(IBAction)openFiles:(id)sender {
@@ -59,6 +79,34 @@
 	User *current = [User currentUserInContext:context];
 	[current purgeEventsInContext:context];
 }
+
+- (IBAction)logInOrOut:(id)sender {
+    NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
+    User * user = [User currentUserInContext:context];
+	//If no user has been found, open login window
+	if (!user) {
+		loginWindow = [[PYLoginController alloc] initForUser:user];
+		[loginWindow.window setDelegate:self];
+		[loginWindow showWindow:self];
+        
+        //If the user has been found
+	}else {
+		[user logoutFromContext:context];
+    }
+}
+
+-(void)windowDidBecomeKey:(NSNotification *)notification{
+    if ([[[notification object] identifier] isEqual: @"LoginWindow"]) {
+        [logInOrOut setEnabled:NO];
+    }
+}
+
+-(void)windowWillClose:(NSNotification *)notification{
+   if ([[[notification object] identifier] isEqual: @"LoginWindow"]) {
+       [logInOrOut setEnabled:YES];
+   }
+}
+
 
 -(IBAction)newNote:(id)sender {
 	if(!_newNoteController) {
