@@ -39,7 +39,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{859, 316}, {269, 393}}</string>
 				<int key="NSWTFlags">611845120</int>
-				<string key="NSWindowTitle">Welcome to PrYv !</string>
+				<string key="NSWindowTitle">Welcome to Pryv !</string>
 				<string key="NSWindowClass">NSPanel</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>

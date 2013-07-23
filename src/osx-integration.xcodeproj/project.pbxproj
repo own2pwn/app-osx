@@ -58,7 +58,7 @@
 		0C9B755E16D37C3200A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */; };
 		0C9B756116D37C3200A7FEBD /* PrYvApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */; };
 		0CD04985179C5AD8003716A2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD04984179C5AD8003716A2 /* Constants.m */; };
-		4E9A8F21171D929E00040B89 /* PrYv.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4E9A8F1F171D929E00040B89 /* PrYv.icns */; };
+		4E9A8F21171D929E00040B89 /* osx-integration.icns in Resources */ = {isa = PBXBuildFile; fileRef = 4E9A8F1F171D929E00040B89 /* osx-integration.icns */; };
 		4E9A8F22171D929E00040B89 /* PrYv.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 4E9A8F20171D929E00040B89 /* PrYv.iconset */; };
 /* End PBXBuildFile section */
 
@@ -173,10 +173,10 @@
 		0C7342D916ADB00B00EA101F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		0C7342DA16ADB00B00EA101F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0C7342DB16ADB00B00EA101F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		0C7342DE16ADB00B00EA101F /* PrYv-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrYv-Info.plist"; sourceTree = "<group>"; };
+		0C7342DE16ADB00B00EA101F /* osx-integration-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "osx-integration-Info.plist"; sourceTree = "<group>"; };
 		0C7342E016ADB00B00EA101F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C7342E216ADB00B00EA101F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0C7342E416ADB00B00EA101F /* PrYv-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrYv-Prefix.pch"; sourceTree = "<group>"; };
+		0C7342E416ADB00B00EA101F /* osx-integration-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-integration-Prefix.pch"; sourceTree = "<group>"; };
 		0C7342E616ADB00B00EA101F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		0C7342E816ADB00B00EA101F /* PYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYAppDelegate.h; sourceTree = "<group>"; };
 		0C7342E916ADB00B00EA101F /* PYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYAppDelegate.m; sourceTree = "<group>"; };
@@ -184,21 +184,21 @@
 		0C7342EF16ADB00B00EA101F /* PrYv.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrYv.xcdatamodel; sourceTree = "<group>"; };
 		0C7342F716ADB00B00EA101F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0C7343B016AEA6F400EA101F /* PrYv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrYv.entitlements; sourceTree = "<group>"; };
-		0C9B754116D37AAF00A7FEBD /* PrYvLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrYvLogicTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C9B754616D37AAF00A7FEBD /* PrYvTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrYvTests-Info.plist"; sourceTree = "<group>"; };
+		0C9B754116D37AAF00A7FEBD /* osx-integrationLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "osx-integrationLogicTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C9B754616D37AAF00A7FEBD /* osx-integrationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "osx-integrationTests-Info.plist"; sourceTree = "<group>"; };
 		0C9B754816D37AAF00A7FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C9B754A16D37AAF00A7FEBD /* PrYvLogicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvLogicTests.h; sourceTree = "<group>"; };
 		0C9B754B16D37AAF00A7FEBD /* PrYvLogicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvLogicTests.m; sourceTree = "<group>"; };
-		0C9B754D16D37AAF00A7FEBD /* PrYvTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrYvTests-Prefix.pch"; sourceTree = "<group>"; };
-		0C9B755616D37C3200A7FEBD /* PrYvApplicationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrYvApplicationTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C9B755B16D37C3200A7FEBD /* PrYvApplicationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PrYvApplicationTests-Info.plist"; sourceTree = "<group>"; };
+		0C9B754D16D37AAF00A7FEBD /* osx-integrationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-integrationTests-Prefix.pch"; sourceTree = "<group>"; };
+		0C9B755616D37C3200A7FEBD /* osx-integrationApplicationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "osx-integrationApplicationTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C9B755B16D37C3200A7FEBD /* osx-integrationApplicationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "osx-integrationApplicationTests-Info.plist"; sourceTree = "<group>"; };
 		0C9B755D16D37C3200A7FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C9B755F16D37C3200A7FEBD /* PrYvApplicationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvApplicationTests.h; sourceTree = "<group>"; };
 		0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvApplicationTests.m; sourceTree = "<group>"; };
-		0C9B756216D37C3200A7FEBD /* PrYvApplicationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrYvApplicationTests-Prefix.pch"; sourceTree = "<group>"; };
+		0C9B756216D37C3200A7FEBD /* osx-integrationApplicationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-integrationApplicationTests-Prefix.pch"; sourceTree = "<group>"; };
 		0CD04983179C5AD8003716A2 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = PrYv/Constants.h; sourceTree = "<group>"; };
 		0CD04984179C5AD8003716A2 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = PrYv/Constants.m; sourceTree = "<group>"; };
-		4E9A8F1F171D929E00040B89 /* PrYv.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = PrYv.icns; sourceTree = "<group>"; };
+		4E9A8F1F171D929E00040B89 /* osx-integration.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "osx-integration.icns"; sourceTree = "<group>"; };
 		4E9A8F20171D929E00040B89 /* PrYv.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = PrYv.iconset; sourceTree = "<group>"; };
 		4EDEB9381725A14400AA6D7D /* PryvApiKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PryvApiKit.xcodeproj; path = "sdk-objectivec-apple/PryvApiKit.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -372,8 +372,8 @@
 			isa = PBXGroup;
 			children = (
 				0C7342D216ADB00B00EA101F /* PrYv.app */,
-				0C9B754116D37AAF00A7FEBD /* PrYvLogicTests.octest */,
-				0C9B755616D37C3200A7FEBD /* PrYvApplicationTests.octest */,
+				0C9B754116D37AAF00A7FEBD /* osx-integrationLogicTests.octest */,
+				0C9B755616D37C3200A7FEBD /* osx-integrationApplicationTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -413,10 +413,10 @@
 		0C7342DD16ADB00B00EA101F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0C7342DE16ADB00B00EA101F /* PrYv-Info.plist */,
+				0C7342DE16ADB00B00EA101F /* osx-integration-Info.plist */,
 				0C7342DF16ADB00B00EA101F /* InfoPlist.strings */,
 				0C7342E216ADB00B00EA101F /* main.m */,
-				0C7342E416ADB00B00EA101F /* PrYv-Prefix.pch */,
+				0C7342E416ADB00B00EA101F /* osx-integration-Prefix.pch */,
 				0C7342E516ADB00B00EA101F /* Credits.rtf */,
 			);
 			name = "Supporting Files";
@@ -436,9 +436,9 @@
 		0C9B754516D37AAF00A7FEBD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0C9B754616D37AAF00A7FEBD /* PrYvTests-Info.plist */,
+				0C9B754616D37AAF00A7FEBD /* osx-integrationTests-Info.plist */,
 				0C9B754716D37AAF00A7FEBD /* InfoPlist.strings */,
-				0C9B754D16D37AAF00A7FEBD /* PrYvTests-Prefix.pch */,
+				0C9B754D16D37AAF00A7FEBD /* osx-integrationTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -456,9 +456,9 @@
 		0C9B755A16D37C3200A7FEBD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0C9B755B16D37C3200A7FEBD /* PrYvApplicationTests-Info.plist */,
+				0C9B755B16D37C3200A7FEBD /* osx-integrationApplicationTests-Info.plist */,
 				0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */,
-				0C9B756216D37C3200A7FEBD /* PrYvApplicationTests-Prefix.pch */,
+				0C9B756216D37C3200A7FEBD /* osx-integrationApplicationTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -475,7 +475,7 @@
 		0CD1201116BA6F740028CF5B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				4E9A8F1F171D929E00040B89 /* PrYv.icns */,
+				4E9A8F1F171D929E00040B89 /* osx-integration.icns */,
 				4E9A8F20171D929E00040B89 /* PrYv.iconset */,
 				0C3C26A716CCF9050023E724 /* FaviconBlack22.png */,
 				0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */,
@@ -487,9 +487,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0C7342D116ADB00B00EA101F /* PrYv */ = {
+		0C7342D116ADB00B00EA101F /* osx-integration */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C73430716ADB00B00EA101F /* Build configuration list for PBXNativeTarget "PrYv" */;
+			buildConfigurationList = 0C73430716ADB00B00EA101F /* Build configuration list for PBXNativeTarget "osx-integration" */;
 			buildPhases = (
 				0C7342CE16ADB00B00EA101F /* Sources */,
 				0C7342CF16ADB00B00EA101F /* Frameworks */,
@@ -499,14 +499,14 @@
 			);
 			dependencies = (
 			);
-			name = PrYv;
+			name = "osx-integration";
 			productName = PrYv;
 			productReference = 0C7342D216ADB00B00EA101F /* PrYv.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0C9B754016D37AAF00A7FEBD /* PrYvLogicTests */ = {
+		0C9B754016D37AAF00A7FEBD /* osx-integrationLogicTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C9B754E16D37AAF00A7FEBD /* Build configuration list for PBXNativeTarget "PrYvLogicTests" */;
+			buildConfigurationList = 0C9B754E16D37AAF00A7FEBD /* Build configuration list for PBXNativeTarget "osx-integrationLogicTests" */;
 			buildPhases = (
 				0C9B753C16D37AAF00A7FEBD /* Sources */,
 				0C9B753D16D37AAF00A7FEBD /* Frameworks */,
@@ -517,14 +517,14 @@
 			);
 			dependencies = (
 			);
-			name = PrYvLogicTests;
+			name = "osx-integrationLogicTests";
 			productName = PrYvTests;
-			productReference = 0C9B754116D37AAF00A7FEBD /* PrYvLogicTests.octest */;
+			productReference = 0C9B754116D37AAF00A7FEBD /* osx-integrationLogicTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
-		0C9B755516D37C3200A7FEBD /* PrYvApplicationTests */ = {
+		0C9B755516D37C3200A7FEBD /* osx-integrationApplicationTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C9B756316D37C3200A7FEBD /* Build configuration list for PBXNativeTarget "PrYvApplicationTests" */;
+			buildConfigurationList = 0C9B756316D37C3200A7FEBD /* Build configuration list for PBXNativeTarget "osx-integrationApplicationTests" */;
 			buildPhases = (
 				0C9B755116D37C3200A7FEBD /* Sources */,
 				0C9B755216D37C3200A7FEBD /* Frameworks */,
@@ -536,9 +536,9 @@
 			dependencies = (
 				0C9B756716D37D2100A7FEBD /* PBXTargetDependency */,
 			);
-			name = PrYvApplicationTests;
+			name = "osx-integrationApplicationTests";
 			productName = PrYvApplicationTests;
-			productReference = 0C9B755616D37C3200A7FEBD /* PrYvApplicationTests.octest */;
+			productReference = 0C9B755616D37C3200A7FEBD /* osx-integrationApplicationTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -551,7 +551,7 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = PrYv;
 			};
-			buildConfigurationList = 0C7342CC16ADB00B00EA101F /* Build configuration list for PBXProject "PrYv" */;
+			buildConfigurationList = 0C7342CC16ADB00B00EA101F /* Build configuration list for PBXProject "osx-integration" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -570,9 +570,9 @@
 			);
 			projectRoot = "";
 			targets = (
-				0C7342D116ADB00B00EA101F /* PrYv */,
-				0C9B754016D37AAF00A7FEBD /* PrYvLogicTests */,
-				0C9B755516D37C3200A7FEBD /* PrYvApplicationTests */,
+				0C7342D116ADB00B00EA101F /* osx-integration */,
+				0C9B754016D37AAF00A7FEBD /* osx-integrationLogicTests */,
+				0C9B755516D37C3200A7FEBD /* osx-integrationApplicationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -630,7 +630,7 @@
 				0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */,
 				0C3C26A216CBCC380023E724 /* StatusMenu.xib in Resources */,
 				0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */,
-				4E9A8F21171D929E00040B89 /* PrYv.icns in Resources */,
+				4E9A8F21171D929E00040B89 /* osx-integration.icns in Resources */,
 				4E9A8F22171D929E00040B89 /* PrYv.iconset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -741,7 +741,7 @@
 /* Begin PBXTargetDependency section */
 		0C9B756716D37D2100A7FEBD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0C7342D116ADB00B00EA101F /* PrYv */;
+			target = 0C7342D116ADB00B00EA101F /* osx-integration */;
 			targetProxy = 0C9B756616D37D2100A7FEBD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -863,10 +863,10 @@
 					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/PrYv-gusgsoeaisafeehjlkslssmwnyms/Build/Products/Debug\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
-				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
+				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
+				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PrYv;
 				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = app;
 			};
@@ -884,10 +884,10 @@
 					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/PrYv-gusgsoeaisafeehjlkslssmwnyms/Build/Products/Debug\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
-				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
+				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
+				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PrYv;
 				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = app;
 			};
@@ -902,10 +902,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrYvTests/PrYvTests-Prefix.pch";
-				INFOPLIST_FILE = "PrYvTests/PrYvTests-Info.plist";
+				GCC_PREFIX_HEADER = "PrYvTests/osx-integrationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvTests/osx-integrationTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "osx-integrationLogicTests";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -919,10 +919,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrYvTests/PrYvTests-Prefix.pch";
-				INFOPLIST_FILE = "PrYvTests/PrYvTests-Info.plist";
+				GCC_PREFIX_HEADER = "PrYvTests/osx-integrationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvTests/osx-integrationTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "osx-integrationLogicTests";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -937,10 +937,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrYvApplicationTests/PrYvApplicationTests-Prefix.pch";
-				INFOPLIST_FILE = "PrYvApplicationTests/PrYvApplicationTests-Info.plist";
+				GCC_PREFIX_HEADER = "PrYvApplicationTests/osx-integrationApplicationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvApplicationTests/osx-integrationApplicationTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "osx-integrationApplicationTests";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -957,10 +957,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrYvApplicationTests/PrYvApplicationTests-Prefix.pch";
-				INFOPLIST_FILE = "PrYvApplicationTests/PrYvApplicationTests-Info.plist";
+				GCC_PREFIX_HEADER = "PrYvApplicationTests/osx-integrationApplicationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvApplicationTests/osx-integrationApplicationTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "osx-integrationApplicationTests";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -1008,10 +1008,10 @@
 					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/PrYv-gusgsoeaisafeehjlkslssmwnyms/Build/Products/Debug\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrYv/PrYv-Prefix.pch";
-				INFOPLIST_FILE = "PrYv/PrYv-Info.plist";
+				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
+				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PrYv;
 				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1026,10 +1026,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrYvTests/PrYvTests-Prefix.pch";
-				INFOPLIST_FILE = "PrYvTests/PrYvTests-Info.plist";
+				GCC_PREFIX_HEADER = "PrYvTests/osx-integrationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvTests/osx-integrationTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "osx-integrationLogicTests";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Tests;
@@ -1044,10 +1044,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PrYvApplicationTests/PrYvApplicationTests-Prefix.pch";
-				INFOPLIST_FILE = "PrYvApplicationTests/PrYvApplicationTests-Info.plist";
+				GCC_PREFIX_HEADER = "PrYvApplicationTests/osx-integrationApplicationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvApplicationTests/osx-integrationApplicationTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "osx-integrationApplicationTests";
 				SDKROOT = macosx;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -1057,7 +1057,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0C7342CC16ADB00B00EA101F /* Build configuration list for PBXProject "PrYv" */ = {
+		0C7342CC16ADB00B00EA101F /* Build configuration list for PBXProject "osx-integration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C73430516ADB00B00EA101F /* Debug */,
@@ -1067,7 +1067,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C73430716ADB00B00EA101F /* Build configuration list for PBXNativeTarget "PrYv" */ = {
+		0C73430716ADB00B00EA101F /* Build configuration list for PBXNativeTarget "osx-integration" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C73430816ADB00B00EA101F /* Debug */,
@@ -1077,7 +1077,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C9B754E16D37AAF00A7FEBD /* Build configuration list for PBXNativeTarget "PrYvLogicTests" */ = {
+		0C9B754E16D37AAF00A7FEBD /* Build configuration list for PBXNativeTarget "osx-integrationLogicTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C9B754F16D37AAF00A7FEBD /* Debug */,
@@ -1087,7 +1087,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C9B756316D37C3200A7FEBD /* Build configuration list for PBXNativeTarget "PrYvApplicationTests" */ = {
+		0C9B756316D37C3200A7FEBD /* Build configuration list for PBXNativeTarget "osx-integrationApplicationTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C9B756416D37C3200A7FEBD /* Debug */,

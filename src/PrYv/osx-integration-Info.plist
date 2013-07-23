@@ -18,9 +18,9 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>PrYv</string>
+	<string>osx-integration</string>
 	<key>CFBundleIdentifier</key>
-	<string>pryv.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.pryv.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
