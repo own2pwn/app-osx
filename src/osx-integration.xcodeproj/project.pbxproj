@@ -168,7 +168,7 @@
 		0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+SubscriptingCompatibility.m"; path = "PrYv/NSDictionary+SubscriptingCompatibility.m"; sourceTree = "<group>"; };
 		0C5D66D0179807110040DB36 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = PrYv/User.h; sourceTree = "<group>"; };
 		0C5D66D1179807120040DB36 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = PrYv/User.m; sourceTree = "<group>"; };
-		0C7342D216ADB00B00EA101F /* PrYv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrYv.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C7342D216ADB00B00EA101F /* Pryv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pryv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7342D616ADB00B00EA101F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0C7342D916ADB00B00EA101F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		0C7342DA16ADB00B00EA101F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -371,7 +371,7 @@
 		0C7342D316ADB00B00EA101F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C7342D216ADB00B00EA101F /* PrYv.app */,
+				0C7342D216ADB00B00EA101F /* Pryv.app */,
 				0C9B754116D37AAF00A7FEBD /* osx-integrationLogicTests.octest */,
 				0C9B755616D37C3200A7FEBD /* osx-integrationApplicationTests.octest */,
 			);
@@ -501,7 +501,7 @@
 			);
 			name = "osx-integration";
 			productName = PrYv;
-			productReference = 0C7342D216ADB00B00EA101F /* PrYv.app */;
+			productReference = 0C7342D216ADB00B00EA101F /* Pryv.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0C9B754016D37AAF00A7FEBD /* osx-integrationLogicTests */ = {
@@ -866,7 +866,7 @@
 				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = PrYv;
+				PRODUCT_NAME = Pryv;
 				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = app;
 			};
@@ -887,7 +887,7 @@
 				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = PrYv;
+				PRODUCT_NAME = Pryv;
 				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1011,7 +1011,7 @@
 				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = PrYv;
+				PRODUCT_NAME = Pryv;
 				SDKROOT = macosx10.6;
 				WRAPPER_EXTENSION = app;
 			};
