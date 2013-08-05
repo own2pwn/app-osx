@@ -7,7 +7,6 @@
 //
 
 #import "PYAppDelegate.h"
-#import "PRYVApiClient.h"
 #import "User.h"
 #import "User+Helper.h"
 #import "PYLoginController.h"

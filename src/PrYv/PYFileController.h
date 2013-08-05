@@ -26,16 +26,3 @@
    andFolderName:(NSString*)folderName;
 
 @end
-
-
-@interface PYFileController ()
-
--(void)pryvFilesThread:(NSDictionary*)args;
--(void)constructFilesArray:(NSMutableArray*)array
-                  withFile:(NSString*)file
-               inSubfolder:(NSString*)subfolder;
--(NSString*) createsUniqueIDForFile:(File*)file;
--(NSString*)findCachesDirectory;
--(void)cacheFile:(NSString*)file atPath:(NSString*)path success:(void (^)(void))block;
-
-@end
