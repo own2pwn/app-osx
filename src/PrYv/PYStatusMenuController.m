@@ -100,15 +100,17 @@
 }
 
 -(void)windowDidBecomeKey:(NSNotification *)notification{
-    if ([[[notification object] identifier] isEqual: @"LoginWindow"]) {
+    NSString *identifier = [[notification object] valueForKey:@"identifier"];
+    if ([identifier isEqual: @"LoginWindow"]) {
         [logInOrOut setEnabled:NO];
     }
 }
 
 -(void)windowWillClose:(NSNotification *)notification{
-   if ([[[notification object] identifier] isEqual: @"LoginWindow"]) {
-       [logInOrOut setEnabled:YES];
-   }
+    NSString *identifier = [[notification object] valueForKey:@"identifier"];
+    if ([identifier isEqual: @"LoginWindow"]) {
+        [logInOrOut setEnabled:NO];
+    }
 }
 
 
