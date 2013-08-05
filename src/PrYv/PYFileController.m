@@ -17,6 +17,7 @@
 #import "Folder.h"
 #import "Folder+Helper.h"
 #import "FileEvent.h"
+#import "PryvApiKit.h"
 
 @interface PYFileController ()
 
@@ -113,28 +114,32 @@
 		//The hierarchical structure is kept in the filename
 		NSMutableArray *filesToSend = [[NSMutableArray alloc] init];
 		[files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-			[self constructFilesArray:filesToSend
-                                           withFile:[obj path]
-                                        inSubfolder:@""];
+			[self constructFilesArray:filesToSend withFile:[obj path] inSubfolder:@""];
 		}];
 		
-		//Create the FileEvent and store it
 		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-		//User *current = [User currentUserInContext:context];
-		FileEvent *fileEvent = (FileEvent*)[NSEntityDescription insertNewObjectForEntityForName:@"FileEvent"
-                                                                         inManagedObjectContext:context];
-		[fileEvent addTags:newTags];
-		[fileEvent addFiles:[NSSet setWithArray:filesToSend]];
-		fileEvent.folder = [NSEntityDescription insertNewObjectForEntityForName:@"Folder"
-                                                         inManagedObjectContext:context];
-		fileEvent.folder.name = folderName;
+		User *current = [User currentUserInContext:context];
+		PYAccess *access = [current access];
+        [access getAllChannelsWithRequestType:PYRequestTypeAsync gotCachedChannels:^(NSArray *cachedChannelList) {
+            NSLog(@"%@",cachedChannelList);
+        } gotOnlineChannels:^(NSArray *onlineChannelList) {
+            NSLog(@"%@",onlineChannelList);
+        } errorHandler:^(NSError *error) {
+            NSLog(@"Error : %@",error);
+        }];
+        
+        
+        NSMutableArray *attachments = [[NSMutableArray alloc] init];
+        
+        
 		
-		//[current addEventsObject:fileEvent];
+		
 		
 		[context save:nil];
 		[filesToSend release];
 		[newTags release];
 		[folderName release];
+        [attachments release];
 	}
 	[_threadLock unlock];
 }

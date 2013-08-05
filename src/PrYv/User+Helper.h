@@ -7,6 +7,8 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
+@class PYAccess;
+
 @interface User (Helper)
 
 // get the current user for the application
@@ -30,5 +32,6 @@
 -(NSArray*)folderNames;
 -(NSString*)description;
 -(void)logoutFromContext:(NSManagedObjectContext*)context;
+-(PYAccess*)access;
 
 @end

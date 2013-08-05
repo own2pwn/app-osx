@@ -8,8 +8,7 @@
 
 #import "PYLoginController.h"
 #import "PYAppDelegate.h"
-#import "PryvApiKit/PryvApiKit.h"
-#import "PryvApiKit/PYWebLoginViewController.h"
+#import "PryvApiKit.h"
 #import "Constants.h"
 
 @interface PYLoginController () <PYWebLoginDelegate>

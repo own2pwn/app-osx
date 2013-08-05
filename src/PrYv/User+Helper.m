@@ -10,6 +10,7 @@
 #import "Event.h"
 #import "FileEvent+Helper.h"
 #import "Constants.h"
+#import "PryvApiKit.h"
 
 @implementation User (Helper)
 
@@ -39,6 +40,10 @@
     [context save:nil];
     
     return newUser;
+}
+
+-(PYAccess*)access{
+    return [PYClient createAccessWithUsername:self.username andAccessToken:self.token];
 }
 
 -(void)purgeEventsInContext:(NSManagedObjectContext *)context {

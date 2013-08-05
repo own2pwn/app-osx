@@ -16,8 +16,25 @@
 #import "DragAndDropStatusMenuView.h"
 #import "PYLoginController.h"
 #import "Constants.h"
+#import "PryvApiKit.h"
 
 @implementation PYStatusMenuController
+
+-(IBAction)test:(id)sender {
+	NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
+    User *current = [User currentUserInContext:context];
+    PYAccess *access = [current access];
+    
+    [access getAllChannelsWithRequestType:PYRequestTypeAsync gotCachedChannels:^(NSArray *cachedChannelList) {
+        NSLog(@"Cached : %@",cachedChannelList);
+    } gotOnlineChannels:^(NSArray *onlineChannelList) {
+        NSLog(@"Online : %@",onlineChannelList);
+    } errorHandler:^(NSError *error) {
+        NSLog(@"Error : %@",error);
+    }];
+    
+
+}
 
 -(PYStatusMenuController*)init {
 	self = [super init];
@@ -40,7 +57,7 @@
     [newNote setEnabled:NO];
     [pryvFiles setEnabled:NO];
     [displayCurrentUser setEnabled:NO];
-    [purgeEvents setEnabled:NO];
+    [test setEnabled:YES];
     [goToMyPryv setEnabled:NO];
     [preferences setEnabled:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -78,12 +95,6 @@
 	NSLog(@"\n%@",[current description]);
 }
 
--(IBAction)purgeEvents:(id)sender {
-	NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-	User *current = [User currentUserInContext:context];
-	[current purgeEventsInContext:context];
-}
-
 - (IBAction)logInOrOut:(id)sender {
     NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
     User * user = [User currentUserInContext:context];
@@ -109,7 +120,7 @@
 -(void)windowWillClose:(NSNotification *)notification{
     NSString *identifier = [[notification object] valueForKey:@"identifier"];
     if ([identifier isEqual: @"LoginWindow"]) {
-        [logInOrOut setEnabled:NO];
+        [logInOrOut setEnabled:YES];
     }
 }
 

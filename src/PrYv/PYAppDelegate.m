@@ -15,6 +15,7 @@
 #import "PYServicesController.h"
 #import "NSDictionary+SubscriptingCompatibility.h"
 #import "Constants.h"
+#import "PryvApiKit.h"
 
 @implementation PYAppDelegate
 
@@ -31,14 +32,14 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
-@synthesize loginWindow, menuController;
+@synthesize loginWindow, menuController, user;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	menuController = [[PYStatusMenuController alloc] init];
 	[NSBundle loadNibNamed:@"StatusMenu" owner:menuController];
 	
 	//Try to retrieve the user from the CoreData DB
-	User * user = [User currentUserInContext:[self managedObjectContext]];
+	user = [User currentUserInContext:[self managedObjectContext]];
 	
 	//If no user has been found, open login window
 	if (!user) {
@@ -48,6 +49,7 @@
 	
 	//If the user has been found
 	}else {
+        [PYClient setDefaultDomainStaging];
 		NSLog(@"Welcome back, %@ !",user.username);
         [[NSNotificationCenter defaultCenter] postNotificationName:PYLoginSuccessfullNotification object:self];
 	}

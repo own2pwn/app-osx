@@ -22,7 +22,7 @@
     IBOutlet NSMenuItem *newNote;
     IBOutlet NSMenuItem *pryvFiles;
     IBOutlet NSMenuItem *displayCurrentUser;
-    IBOutlet NSMenuItem *purgeEvents;
+    IBOutlet NSMenuItem *test;
     IBOutlet NSMenuItem *goToMyPryv;
     IBOutlet NSMenuItem *preferences;
 }
@@ -34,7 +34,7 @@
 -(IBAction)displayCurrentUser:(id)sender;
 -(IBAction)goToMyPryv:(id)sender;
 -(IBAction)openFiles:(id)sender;
--(IBAction)purgeEvents:(id)sender;
+-(IBAction)test:(id)sender;
 - (IBAction)logInOrOut:(id)sender;
 -(void)showMenu;
 -(void)updateMenuItemsLogin:(NSNotification*)notification;
