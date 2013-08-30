@@ -32,6 +32,18 @@
     User *current = [User currentUserInContext:context];
     PYConnection *connection = [current connection];
     
+    [connection getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:^(NSArray *cachedStreamsList) {
+        [cachedStreamsList enumerateObjectsUsingBlock:^(PYStream *stream, NSUInteger idx, BOOL *stop) {
+            NSLog(@"Cached : %@ (%@)", stream.name, stream.streamId);
+        }];
+    } gotOnlineStreams:^(NSArray *onlineStreamList) {
+        [onlineStreamList enumerateObjectsUsingBlock:^(PYStream *stream, NSUInteger idx, BOOL *stop) {
+            NSLog(@"Online : %@ (%@)", stream.name, stream.streamId);
+        }];
+    } errorHandler:^(NSError *error) {
+        NSLog(@"%@", error);
+    }];
+    
 }
 
 -(PYStatusMenuController*)init {

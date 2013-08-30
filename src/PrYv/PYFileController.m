@@ -155,16 +155,19 @@
 		User *current = [User currentUserInContext:context];
 		PYConnection *connection = [current connection];
         
-//        NSMutableArray *attachments = [[NSMutableArray alloc] init];
-//        [filesToSend enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//            NSData *fileData = [NSData dataWithContentsOfFile:obj];
-//        }]
+        NSMutableArray *attachments = [[NSMutableArray alloc] init];
+        [filesToSend enumerateObjectsUsingBlock:^(NSString *file, NSUInteger idx, BOOL *stop) {
+            NSData *fileData = [NSData dataWithContentsOfFile:file];
+            NSString *filename = [file lastPathComponent];
+            NSString *name = [filename stringByDeletingPathExtension];
+            PYAttachment *attachment = [[PYAttachment alloc] initWithFileData:fileData
+                                                           name:@"My chicken picture"
+                                                       fileName:@"chicken.jpg"];
+        }];
 //        NSData *pictureData = [[NSData alloc] initWithContentsOfFile:file];
 //        NSLog(@"Length : %lu", (unsigned long)[pictureData length]);
-//        PYAttachment *attachment = [[PYAttachment alloc] initWithFileData:pictureData
-//                                                                     name:@"My chicken picture"
-//                                                                 fileName:@"chicken.jpg"];
-//        
+        
+//
 //        PYEvent *event = [[PYEvent alloc] init];
 //        event.folderId = @"notes";
 //        event.eventClass = @"picture";
