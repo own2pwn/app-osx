@@ -25,9 +25,6 @@
 -(void)constructFilesArray:(NSMutableArray*)array
                   withFile:(NSString*)file
                inSubfolder:(NSString*)subfolder;
--(NSString*)createsUniqueIDForFile:(File*)file;
--(NSString*)findCachesDirectory;
--(void)cacheFile:(NSString*)file atPath:(NSString*)path success:(void (^)(void))block;
 
 @end
 
@@ -82,6 +79,43 @@
 			NSArray *files = [_openDialog URLs];
 			
 			[self pryvFiles:files withTags:[newTags autorelease] andFolderName:folderName];
+//            NSString *file = [[files objectAtIndex:0] path];
+//            NSLog(@"File : %@",file);
+//            NSData *pictureData = [[NSData alloc] initWithContentsOfFile:file];
+//            NSLog(@"Length : %lu", (unsigned long)[pictureData length]);
+//            PYAttachment *attachment = [[PYAttachment alloc] initWithFileData:pictureData
+//                                                                         name:@"My chicken picture"
+//                                                                     fileName:@"chicken.jpg"];
+//            
+//            PYEvent *event = [[PYEvent alloc] init];
+//            event.folderId = @"notes";
+//            event.eventClass = @"picture";
+//            event.eventFormat = @"attached";
+//            event.attachments = [NSMutableArray arrayWithObject:attachment];
+//            
+//            NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
+//            User *current = [User currentUserInContext:context];
+//            PYAccess *access = [current access];
+//            __block PYChannel *diaryChannel;
+//            [access getAllChannelsWithRequestType:PYRequestTypeAsync gotCachedChannels:^(NSArray *cachedChannelList) {
+//                [cachedChannelList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//                    if ([[obj channelId] isEqualToString:@"diary"]) {
+//                        diaryChannel = [obj retain];
+//                    }
+//                }];
+//            } gotOnlineChannels:^(NSArray *onlineChannelList) {
+//                [onlineChannelList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { }];
+//            } errorHandler:^(NSError *error) {
+//                NSLog(@"Error : %@",error);
+//            }];
+//            NSLog(@"Channel : %@",[diaryChannel channelId]);
+//            
+//            [diaryChannel createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
+//                NSLog(@"New Event ID : %@", newEventId);
+//                NSLog(@"Stopped ID : %@", stoppedId);
+//            } errorHandler:^(NSError *error) {
+//                NSLog(@"Error : %@", error);
+//            }];
 		}
 		[_openDialog release];//Mac OS X 10.6 fix		
 	}];
@@ -119,19 +153,48 @@
 		
 		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
 		User *current = [User currentUserInContext:context];
-		PYAccess *access = [current access];
-        [access getAllChannelsWithRequestType:PYRequestTypeAsync gotCachedChannels:^(NSArray *cachedChannelList) {
-            NSLog(@"%@",cachedChannelList);
-        } gotOnlineChannels:^(NSArray *onlineChannelList) {
-            NSLog(@"%@",onlineChannelList);
-        } errorHandler:^(NSError *error) {
-            NSLog(@"Error : %@",error);
-        }];
+		PYConnection *connection = [current connection];
         
-        
-        NSMutableArray *attachments = [[NSMutableArray alloc] init];
-        
-        
+//        NSMutableArray *attachments = [[NSMutableArray alloc] init];
+//        [filesToSend enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//            NSData *fileData = [NSData dataWithContentsOfFile:obj];
+//        }]
+//        NSData *pictureData = [[NSData alloc] initWithContentsOfFile:file];
+//        NSLog(@"Length : %lu", (unsigned long)[pictureData length]);
+//        PYAttachment *attachment = [[PYAttachment alloc] initWithFileData:pictureData
+//                                                                     name:@"My chicken picture"
+//                                                                 fileName:@"chicken.jpg"];
+//        
+//        PYEvent *event = [[PYEvent alloc] init];
+//        event.folderId = @"notes";
+//        event.eventClass = @"picture";
+//        event.eventFormat = @"attached";
+//        event.attachments = [NSMutableArray arrayWithObject:attachment];
+//        
+//        NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
+//        User *current = [User currentUserInContext:context];
+//        PYAccess *access = [current access];
+//        __block PYChannel *diaryChannel;
+//        [access getAllChannelsWithRequestType:PYRequestTypeAsync gotCachedChannels:^(NSArray *cachedChannelList) {
+//            [cachedChannelList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//                if ([[obj channelId] isEqualToString:@"diary"]) {
+//                    diaryChannel = [obj retain];
+//                }
+//            }];
+//        } gotOnlineChannels:^(NSArray *onlineChannelList) {
+//            [onlineChannelList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { }];
+//        } errorHandler:^(NSError *error) {
+//            NSLog(@"Error : %@",error);
+//        }];
+//        NSLog(@"Channel : %@",[diaryChannel channelId]);
+//        
+//        [diaryChannel createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
+//            NSLog(@"New Event ID : %@", newEventId);
+//            NSLog(@"Stopped ID : %@", stoppedId);
+//        } errorHandler:^(NSError *error) {
+//            NSLog(@"Error : %@", error);
+//        }];
+
 		
 		
 		
@@ -139,7 +202,6 @@
 		[filesToSend release];
 		[newTags release];
 		[folderName release];
-        [attachments release];
 	}
 	[_threadLock unlock];
 }
@@ -171,23 +233,20 @@
     //If it is a file
 	} else {
 		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-		NSString *cachesDirectory = [self findCachesDirectory];
 		
         //Create a file object to add in the array
 		File *newFile = [NSEntityDescription insertNewObjectForEntityForName:@"File"
                                                       inManagedObjectContext:context];
 		
-		NSString *tempFileName = [self createsUniqueIDForFile:newFile];
-		
         //Add the subfolder before the file name to trace the hierarchical structure
 		newFile.filename = [subfolder stringByAppendingPathComponent:[file lastPathComponent]];
-		newFile.path = [cachesDirectory stringByAppendingPathComponent:tempFileName];
-		newFile.size = [NSNumber numberWithInt:[fileAttributes valueForKey:NSFileSize]];
+		newFile.path = [NSString stringWithString:file];
+		newFile.size = [NSNumber numberWithLongLong:[fileAttributes fileSize]];
         NSString* mimeType = [NSString mimeTypeFromFileExtension:newFile.filename];
 		newFile.mimeType = [NSString stringWithString:mimeType];
-        [self cacheFile:file atPath:newFile.path success:^{
-            [array addObject:newFile];
-        }];
+        [array addObject:newFile];
+        
+        NSLog(@"File : %@",newFile);
 		}
 }
 

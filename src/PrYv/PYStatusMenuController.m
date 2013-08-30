@@ -20,20 +20,18 @@
 
 @implementation PYStatusMenuController
 
+-(void)dealloc {
+	[_newNoteController release];
+	[_fileController release];
+	[_statusItem release];
+	[super dealloc];
+}
+
 -(IBAction)test:(id)sender {
 	NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
     User *current = [User currentUserInContext:context];
-    PYAccess *access = [current access];
+    PYConnection *connection = [current connection];
     
-    [access getAllChannelsWithRequestType:PYRequestTypeAsync gotCachedChannels:^(NSArray *cachedChannelList) {
-        NSLog(@"Cached : %@",cachedChannelList);
-    } gotOnlineChannels:^(NSArray *onlineChannelList) {
-        NSLog(@"Online : %@",onlineChannelList);
-    } errorHandler:^(NSError *error) {
-        NSLog(@"Error : %@",error);
-    }];
-    
-
 }
 
 -(PYStatusMenuController*)init {
@@ -55,7 +53,7 @@
 	[_statusItem setView:dragAndDropView];
 	[dragAndDropView release];
     [newNote setEnabled:NO];
-    [pryvFiles setEnabled:NO];
+    [pryvFiles setEnabled:YES];
     [displayCurrentUser setEnabled:NO];
     [test setEnabled:YES];
     [goToMyPryv setEnabled:NO];
@@ -137,13 +135,6 @@
 	NSURL *url = [NSURL URLWithString:@"http://www.pryv.net/"];
 	if(![[NSWorkspace sharedWorkspace] openURL:url])
 		NSLog(@"Failed to open url: %@",[url description]);
-}
-
--(void)dealloc {
-	[_newNoteController release];
-	[_fileController release];
-	[_statusItem release];
-	[super dealloc];
 }
 
 @end

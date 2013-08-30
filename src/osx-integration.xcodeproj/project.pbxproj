@@ -351,7 +351,7 @@
 				0C24088016B7095600BD60CC /* Model */,
 				0C3C26A316CBDC880023E724 /* View */,
 				0CD0497D179C5AA3003716A2 /* Constants */,
-				0C7342DC16ADB00B00EA101F /* PrYv */,
+				0C7342DC16ADB00B00EA101F /* Pryv */,
 				0C9B754416D37AAF00A7FEBD /* PrYvLogicTests */,
 				0C9B755916D37C3200A7FEBD /* PrYvApplicationTests */,
 				0C7342D516ADB00B00EA101F /* Frameworks */,
@@ -390,7 +390,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		0C7342DC16ADB00B00EA101F /* PrYv */ = {
+		0C7342DC16ADB00B00EA101F /* Pryv */ = {
 			isa = PBXGroup;
 			children = (
 				0C7342E816ADB00B00EA101F /* PYAppDelegate.h */,
@@ -398,6 +398,7 @@
 				0C7343B016AEA6F400EA101F /* PrYv.entitlements */,
 				0C7342DD16ADB00B00EA101F /* Supporting Files */,
 			);
+			name = Pryv;
 			path = PrYv;
 			sourceTree = "<group>";
 		};

@@ -13,7 +13,7 @@
         <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="mimeType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="event" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Event" inverseName="files" inverseEntity="Event" syncable="YES"/>
     </entity>
     <entity name="FileEvent" representedClassName="FileEvent" parentEntity="Event" syncable="YES"/>
@@ -43,7 +43,7 @@
     </entity>
     <elements>
         <element name="Event" positionX="-468" positionY="-946" width="128" height="148"/>
-        <element name="File" positionX="-270" positionY="-981" width="128" height="118"/>
+        <element name="File" positionX="-270" positionY="-981" width="128" height="120"/>
         <element name="FileEvent" positionX="-362" positionY="-621" width="128" height="43"/>
         <element name="Folder" positionX="-765" positionY="-660" width="128" height="148"/>
         <element name="NoteEvent" positionX="-506" positionY="-621" width="128" height="75"/>

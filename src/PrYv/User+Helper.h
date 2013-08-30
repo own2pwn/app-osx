@@ -7,7 +7,7 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 
-@class PYAccess;
+@class PYConnection;
 
 @interface User (Helper)
 
@@ -32,6 +32,6 @@
 -(NSArray*)folderNames;
 -(NSString*)description;
 -(void)logoutFromContext:(NSManagedObjectContext*)context;
--(PYAccess*)access;
+-(PYConnection*)connection;
 
 @end

@@ -42,8 +42,8 @@
     return newUser;
 }
 
--(PYAccess*)access{
-    return [PYClient createAccessWithUsername:self.username andAccessToken:self.token];
+-(PYConnection*)connection{
+    return [PYClient createConnectionWithUsername:self.username andAccessToken:self.token];
 }
 
 -(void)purgeEventsInContext:(NSManagedObjectContext *)context {

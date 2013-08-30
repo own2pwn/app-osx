@@ -269,6 +269,14 @@
 					</object>
 					<int key="connectionID">40</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">openFiles:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="532144682"/>
+					</object>
+					<int key="connectionID">41</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -424,7 +432,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">40</int>
+			<int key="maxID">41</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -473,7 +481,7 @@
 						<string key="newNote">NSMenuItem</string>
 						<string key="preferences">NSMenuItem</string>
 						<string key="pryvFiles">NSMenuItem</string>
-						<string key="purgeEvents">NSMenuItem</string>
+						<string key="test">NSMenuItem</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="_statusMenu">
@@ -504,8 +512,8 @@
 							<string key="name">pryvFiles</string>
 							<string key="candidateClassName">NSMenuItem</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="purgeEvents">
-							<string key="name">purgeEvents</string>
+						<object class="IBToOneOutletInfo" key="test">
+							<string key="name">test</string>
 							<string key="candidateClassName">NSMenuItem</string>
 						</object>
 					</dictionary>

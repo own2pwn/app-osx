@@ -40,24 +40,30 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-    NSArray *objects = [NSArray arrayWithObjects:@"*", @"manage", nil];
-    NSArray *keys = [NSArray arrayWithObjects:@"channelId", @"level", nil];
+    NSArray *objects = [NSArray arrayWithObjects:
+                        kPYAPIConnectionRequestAllStreams,
+                        kPYAPIConnectionRequestManageLevel,
+                        nil];
+    NSArray *keys = [NSArray arrayWithObjects:
+                     kPYAPIConnectionRequestStreamId,
+                     kPYAPIConnectionRequestLevel,
+                     nil];
     NSArray *permissions = [NSArray arrayWithObject:[NSDictionary dictionaryWithObjects:objects forKeys:keys]];
     [PYClient setDefaultDomainStaging];
-    [PYWebLoginViewController requestAccessWithAppId:@"integration-osx"
+    [PYWebLoginViewController requestConnectionWithAppId:@"integration-osx"
                                       andPermissions:permissions
                                             delegate:self
                                          withWebView:&webView];
 }
 
-- (void) pyWebLoginSuccess:(PYAccess*)pyAccess{
+- (void) pyWebLoginSuccess:(PYConnection*)pyConnection{
     
-    NSLog(@"Signin With Success %@ %@",pyAccess.userID,pyAccess.accessToken);
+    NSLog(@"Signin With Success %@ %@",pyConnection.userID,pyConnection.accessToken);
     NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-    _user = [User createNewUserWithUsername:pyAccess.userID
-                                   AndToken:pyAccess.accessToken
+    _user = [User createNewUserWithUsername:pyConnection.userID
+                                   AndToken:pyConnection.accessToken
                                   InContext:context];
-    [pyAccess synchronizeTimeWithSuccessHandler:nil errorHandler:nil];
+    [pyConnection synchronizeTimeWithSuccessHandler:nil errorHandler:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:PYLoginSuccessfullNotification
                                                         object:self];
 }
