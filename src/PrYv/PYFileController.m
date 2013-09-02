@@ -56,8 +56,24 @@
 	
     //Get the folder names list and fill the popup button
 	User* current = [User currentUserInContext:context];
-	NSArray *folderNames = [current folderNames];
-	[_folder addItemsWithTitles: folderNames];
+    [[current connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:^(NSArray *cachedStreamsList) {
+        NSMutableArray *streamNames = [[NSMutableArray alloc] init];
+        for (PYStream *stream in cachedStreamsList){
+            [streamNames addObject:[stream name]];
+        }
+        [_folder addItemsWithTitles: streamNames];
+        
+        
+    } gotOnlineStreams:^(NSArray *onlineStreamList) {
+        NSMutableArray *streamNames = [[NSMutableArray alloc] init];
+        for (PYStream *stream in onlineStreamList){
+            [streamNames addObject:[stream name]];
+        }
+        [_folder addItemsWithTitles: streamNames];
+
+    } errorHandler:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
 	
 	//Handle result 
 	[_openDialog beginWithCompletionHandler:^(NSInteger result){
@@ -77,7 +93,7 @@
 				folderName = [NSString stringWithString:[_folder titleOfSelectedItem]];
 			}
 			NSArray *files = [_openDialog URLs];
-			
+            
 			[self pryvFiles:files withTags:[newTags autorelease] andFolderName:folderName];
 //            NSString *file = [[files objectAtIndex:0] path];
 //            NSLog(@"File : %@",file);
@@ -147,64 +163,44 @@
         //Construct the array of files @filesToSend recursively
 		//The hierarchical structure is kept in the filename
 		NSMutableArray *filesToSend = [[NSMutableArray alloc] init];
-		[files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-			[self constructFilesArray:filesToSend withFile:[obj path] inSubfolder:@""];
-		}];
-		
-		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-		User *current = [User currentUserInContext:context];
-		PYConnection *connection = [current connection];
+        for (NSURL *fileUrl in files){
+			[self constructFilesArray:filesToSend withFile:[fileUrl path] inSubfolder:@""];
+        }
         
         NSMutableArray *attachments = [[NSMutableArray alloc] init];
-        [filesToSend enumerateObjectsUsingBlock:^(NSString *file, NSUInteger idx, BOOL *stop) {
-            NSData *fileData = [NSData dataWithContentsOfFile:file];
-            NSString *filename = [file lastPathComponent];
-            NSString *name = [filename stringByDeletingPathExtension];
+        for(File *f in filesToSend){
+            NSData *fileData = [[NSData alloc] initWithContentsOfFile:[f path]];
+            NSLog(@"Length : %lu", (unsigned long)[fileData length]);
             PYAttachment *attachment = [[PYAttachment alloc] initWithFileData:fileData
-                                                           name:@"My chicken picture"
-                                                       fileName:@"chicken.jpg"];
-        }];
-//        NSData *pictureData = [[NSData alloc] initWithContentsOfFile:file];
-//        NSLog(@"Length : %lu", (unsigned long)[pictureData length]);
+                                                                         name:[[f filename] stringByDeletingPathExtension]
+                                                                     fileName:[f filename]];
+            [attachments addObject:attachment];
+        }
         
-//
-//        PYEvent *event = [[PYEvent alloc] init];
-//        event.folderId = @"notes";
-//        event.eventClass = @"picture";
-//        event.eventFormat = @"attached";
-//        event.attachments = [NSMutableArray arrayWithObject:attachment];
-//        
-//        NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-//        User *current = [User currentUserInContext:context];
-//        PYAccess *access = [current access];
-//        __block PYChannel *diaryChannel;
-//        [access getAllChannelsWithRequestType:PYRequestTypeAsync gotCachedChannels:^(NSArray *cachedChannelList) {
-//            [cachedChannelList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//                if ([[obj channelId] isEqualToString:@"diary"]) {
-//                    diaryChannel = [obj retain];
-//                }
-//            }];
-//        } gotOnlineChannels:^(NSArray *onlineChannelList) {
-//            [onlineChannelList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { }];
-//        } errorHandler:^(NSError *error) {
-//            NSLog(@"Error : %@",error);
-//        }];
-//        NSLog(@"Channel : %@",[diaryChannel channelId]);
-//        
-//        [diaryChannel createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
-//            NSLog(@"New Event ID : %@", newEventId);
-//            NSLog(@"Stopped ID : %@", stoppedId);
-//        } errorHandler:^(NSError *error) {
-//            NSLog(@"Error : %@", error);
-//        }];
-
-		
-		
-		
-		[context save:nil];
-		[filesToSend release];
+        PYEvent *event = [[PYEvent alloc] init];
+        event.streamId = @"diary";
+        event.type = @"file/attached-multiple";
+        event.time = NSTimeIntervalSince1970;
+        event.attachments = [NSMutableArray arrayWithArray:attachments];
+        
+        NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
+        User *current = [User currentUserInContext:context];
+        [PYClient setDefaultDomainStaging];
+        
+        //Sync request because otherwise thread dies before request is sent. However this is not a
+        //problem since only the current thread is blocked by the sync request and this is the last
+        //instruction before releasing everything.
+        [[current connection] createEvent:event requestType:PYRequestTypeSync successHandler:^(NSString *newEventId, NSString *stoppedId) {
+            NSLog(@"New event ID : %@",newEventId);
+        } errorHandler:^(NSError *error) {
+            NSLog(@"%@",error);
+            NSLog(@"UserInfo: %@",[error userInfo]);
+        }];
+        
+        [filesToSend release];
 		[newTags release];
 		[folderName release];
+        [event release];
 	}
 	[_threadLock unlock];
 }
