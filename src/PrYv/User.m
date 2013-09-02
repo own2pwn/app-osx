@@ -13,5 +13,6 @@
 
 @dynamic username;
 @dynamic token;
+@synthesize streams;
 
 @end

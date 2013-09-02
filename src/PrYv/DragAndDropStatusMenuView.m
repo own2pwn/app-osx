@@ -84,8 +84,8 @@
 		}];
 		PYFileController *fileController = [[PYFileController alloc] init];
 		[fileController pryvFiles:[urls autorelease]
-						 withTags:[[[NSSet alloc] init] autorelease]
-					andFolderName:@""];
+						 inStreamId:@"diary"
+					withTags:[[[NSArray alloc] init] autorelease]];
 		[fileController release];
     }
     return YES;

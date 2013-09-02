@@ -13,7 +13,7 @@
 @interface PYFileController : NSObject {
 @private
 	IBOutlet NSTokenField *_tags;
-	IBOutlet NSPopUpButton *_folder;
+	IBOutlet NSPopUpButton *_streams;
 	IBOutlet NSView *_accessoryView;
 	NSOpenPanel* _openDialog;
 	NSLock *_threadLock;
@@ -22,7 +22,7 @@
 -(PYFileController*)initWithOpenPanel:(NSOpenPanel*)openDialog;
 -(void)runDialog;
 -(void)pryvFiles:(NSArray*)files
-        withTags:(NSSet*)tags
-   andFolderName:(NSString*)folderName;
+        inStreamId:(NSString*)streamId
+   withTags:(NSArray*)tags;
 
 @end

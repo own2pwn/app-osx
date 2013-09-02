@@ -54,47 +54,46 @@
 	if ([NSBundle loadNibNamed:@"OpenPanelWithTagsAndFolder" owner:self])
 		[_openDialog setAccessoryView:_accessoryView];
 	
-    //Get the folder names list and fill the popup button
+    //Get the stream names list and fill the popup button
 	User* current = [User currentUserInContext:context];
+    current.streams = [[NSMutableDictionary alloc] init];
     [[current connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:^(NSArray *cachedStreamsList) {
         NSMutableArray *streamNames = [[NSMutableArray alloc] init];
         for (PYStream *stream in cachedStreamsList){
             [streamNames addObject:[stream name]];
+            [current.streams setObject:[stream streamId] forKey:[stream name]];
         }
-        [_folder addItemsWithTitles: streamNames];
-        
+        [_streams addItemsWithTitles: streamNames];
+        [_streams removeItemAtIndex:0];
         
     } gotOnlineStreams:^(NSArray *onlineStreamList) {
         NSMutableArray *streamNames = [[NSMutableArray alloc] init];
         for (PYStream *stream in onlineStreamList){
             [streamNames addObject:[stream name]];
+            [[current streams] setObject:[stream streamId] forKey:[stream name]];
         }
-        [_folder addItemsWithTitles: streamNames];
+        [_streams addItemsWithTitles: streamNames];
+        [_streams removeItemAtIndex:0];
 
     } errorHandler:^(NSError *error) {
         NSLog(@"%@",error);
-    }];
+    }];    
 	
 	//Handle result 
 	[_openDialog beginWithCompletionHandler:^(NSInteger result){
 		if (result == NSFileHandlingPanelOKButton) {
 			
-            //Get the tags for the event
-			NSMutableSet *newTags = [[NSMutableSet alloc] init];
-			[[_tags objectValue] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-				[newTags addObject:[Tag tagWithValue:obj inContext:context]];
-			}];
-			
-            //Get the folder
-			NSString* folderName;
-			if ([[_folder titleOfSelectedItem] isEqualTo:@"None"]) {
-				folderName = @"";
+            //Get the stream
+			NSString* streamId;
+			if ([[_streams titleOfSelectedItem] isEqualTo:@"None"]) {
+				streamId = @"diary";
 			}else {
-				folderName = [NSString stringWithString:[_folder titleOfSelectedItem]];
+				NSString *streamName = [NSString stringWithString:[_streams titleOfSelectedItem]];
+                streamId = [[current streams] objectForKey:streamName];
 			}
 			NSArray *files = [_openDialog URLs];
             
-			[self pryvFiles:files withTags:[newTags autorelease] andFolderName:folderName];
+			[self pryvFiles:files inStreamId:streamId withTags:[_tags objectValue]];
 //            NSString *file = [[files objectAtIndex:0] path];
 //            NSLog(@"File : %@",file);
 //            NSData *pictureData = [[NSData alloc] initWithContentsOfFile:file];
@@ -132,15 +131,18 @@
 //            } errorHandler:^(NSError *error) {
 //                NSLog(@"Error : %@", error);
 //            }];
-		}
+		}else{
+            [current.streams release];
+            current.streams = nil;
+        }
 		[_openDialog release];//Mac OS X 10.6 fix		
 	}];
 }
 
--(void)pryvFiles:(NSArray *)files withTags:(NSSet *)tags andFolderName:(NSString *)folderName {
+-(void)pryvFiles:(NSArray *)files inStreamId:(NSString *)streamId withTags:(NSArray *)tags {
     
-	NSArray *objects = [NSArray arrayWithObjects: files, tags, folderName, nil];
-	NSArray *keys = [NSArray arrayWithObjects:@"files",@"tags",@"folder", nil];
+	NSArray *objects = [NSArray arrayWithObjects: files, tags, streamId, nil];
+	NSArray *keys = [NSArray arrayWithObjects:@"files",@"tags",@"stream", nil];
 	NSDictionary *arguments = [NSDictionary dictionaryWithObjects:objects
                                                           forKeys:keys];
     [NSThread detachNewThreadSelector:@selector(pryvFilesThread:)
@@ -155,10 +157,8 @@
 	[_threadLock lock];
 	@autoreleasepool {
 		NSArray *files = [NSArray arrayWithArray:[args objectForKey:@"files"]];
-		NSSet *newTags = [NSSet setWithSet:[args objectForKey:@"tags"]];
-		[newTags retain];
-		NSString *folderName = [NSString stringWithString:[args objectForKey:@"folder"]];
-		[folderName retain];
+		NSArray *tags = [NSArray arrayWithArray:[args objectForKey:@"tags"]];
+		NSString *streamId = [NSString stringWithString:[args objectForKey:@"stream"]];
 		
         //Construct the array of files @filesToSend recursively
 		//The hierarchical structure is kept in the filename
@@ -177,14 +177,20 @@
             [attachments addObject:attachment];
         }
         
-        PYEvent *event = [[PYEvent alloc] init];
-        event.streamId = @"diary";
-        event.type = @"file/attached-multiple";
-        event.time = NSTimeIntervalSince1970;
-        event.attachments = [NSMutableArray arrayWithArray:attachments];
-        
         NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
         User *current = [User currentUserInContext:context];
+        
+        PYEvent *event = [[PYEvent alloc] init];
+        event.streamId = streamId;
+        if ([attachments count] > 1) {
+            event.type = @"file/attached-multiple";
+        } else {
+            event.type = @"file/attached";
+        }
+        event.time = NSTimeIntervalSince1970;
+        event.tags = [NSArray arrayWithArray:tags];
+        event.attachments = [NSMutableArray arrayWithArray:attachments];
+        
         [PYClient setDefaultDomainStaging];
         
         //Sync request because otherwise thread dies before request is sent. However this is not a
@@ -198,9 +204,8 @@
         }];
         
         [filesToSend release];
-		[newTags release];
-		[folderName release];
         [event release];
+        [current.streams release];
 	}
 	[_threadLock unlock];
 }

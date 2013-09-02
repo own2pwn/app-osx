@@ -26,6 +26,7 @@
     [menuController release];
     [loginWindow release];
     [servicesController release];
+    [user.streams release];
     [super dealloc];
 }
 
@@ -51,6 +52,11 @@
 	}else {
         [PYClient setDefaultDomainStaging];
 		NSLog(@"Welcome back, %@ !",user.username);
+        [[user connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:NULL gotOnlineStreams:^(NSArray *onlineStreamList) {
+            NSLog(@"Retrieved online streams.");
+        } errorHandler:^(NSError *error) {
+            NSLog(@"%@",error);
+        }];
         [[NSNotificationCenter defaultCenter] postNotificationName:PYLoginSuccessfullNotification object:self];
 	}
     
@@ -66,8 +72,8 @@
 	}];
 	PYFileController *fileController = [[PYFileController alloc] init];
 	[fileController pryvFiles:[urls autorelease]
-                     withTags:[[[NSSet alloc] init] autorelease]
-                andFolderName:@""];
+                     inStreamId:@"diary"
+                withTags:[[[NSArray alloc] init] autorelease]];
 	[fileController release];
 }
 
