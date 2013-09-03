@@ -1,13 +1,13 @@
 //
 //  File.m
-//  PrYv
+//  osx-integration
 //
-//  Created by Victor Kristof on 11.02.13.
+//  Created by Victor Kristof on 03.09.13.
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
 #import "File.h"
-#import "FileEvent.h"
+#import "Event.h"
 
 
 @implementation File
@@ -16,6 +16,7 @@
 @dynamic mimeType;
 @dynamic path;
 @dynamic size;
-@dynamic fileEvent;
+@dynamic isPicture;
+@dynamic event;
 
 @end

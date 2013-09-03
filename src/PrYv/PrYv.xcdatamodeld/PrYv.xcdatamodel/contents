@@ -11,6 +11,7 @@
     </entity>
     <entity name="File" representedClassName="File" syncable="YES">
         <attribute name="filename" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isPicture" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="mimeType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -43,7 +44,7 @@
     </entity>
     <elements>
         <element name="Event" positionX="-468" positionY="-946" width="128" height="148"/>
-        <element name="File" positionX="-270" positionY="-981" width="128" height="120"/>
+        <element name="File" positionX="-270" positionY="-981" width="128" height="135"/>
         <element name="FileEvent" positionX="-362" positionY="-621" width="128" height="43"/>
         <element name="Folder" positionX="-765" positionY="-660" width="128" height="148"/>
         <element name="NoteEvent" positionX="-506" positionY="-621" width="128" height="75"/>

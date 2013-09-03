@@ -87,4 +87,15 @@
     
     return @"text/plain";
 }
+
+-(BOOL)isPicture
+{
+    if ([self isEqualToString:@"image/png"])       return YES;
+    else if ([self isEqualToString:@"image/bmp"])  return YES; 
+    else if ([self isEqualToString:@"image/gif"])  return YES; 
+    else if ([self isEqualToString:@"image/tiff"]) return YES; 
+    else if ([self isEqualToString:@"image/jpeg"]) return YES; 
+    else  return NO; 
+    
+}
 @end

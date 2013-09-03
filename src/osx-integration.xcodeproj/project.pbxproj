@@ -13,7 +13,6 @@
 		0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */; };
 		0C1A1E2016C9589F0042D7D4 /* FileEvent+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E1F16C9589F0042D7D4 /* FileEvent+Helper.m */; };
 		0C1A1E2316C95FAB0042D7D4 /* NoteEvent+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E2216C95FAB0042D7D4 /* NoteEvent+Helper.m */; };
-		0C1A1E4716C96F840042D7D4 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E4616C96F840042D7D4 /* File.m */; };
 		0C1A1E4A16C96F860042D7D4 /* Folder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E4916C96F860042D7D4 /* Folder.m */; };
 		0C1A1E4D16C96F870042D7D4 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E4C16C96F860042D7D4 /* Event.m */; };
 		0C1A1E5016C96F870042D7D4 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E4F16C96F870042D7D4 /* Tag.m */; };
@@ -56,6 +55,8 @@
 		0C9B755816D37C3200A7FEBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0C9B755E16D37C3200A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */; };
 		0C9B756116D37C3200A7FEBD /* PrYvApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */; };
+		0CA8A2E317D5E78300C5F507 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8A2E217D5E78300C5F507 /* File.m */; };
+		0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */; };
 		0CD04985179C5AD8003716A2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD04984179C5AD8003716A2 /* Constants.m */; };
 /* End PBXBuildFile section */
 
@@ -116,8 +117,6 @@
 		0C1A1E1F16C9589F0042D7D4 /* FileEvent+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FileEvent+Helper.m"; path = "PrYv/FileEvent+Helper.m"; sourceTree = "<group>"; };
 		0C1A1E2116C95FAB0042D7D4 /* NoteEvent+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NoteEvent+Helper.h"; path = "PrYv/NoteEvent+Helper.h"; sourceTree = "<group>"; };
 		0C1A1E2216C95FAB0042D7D4 /* NoteEvent+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NoteEvent+Helper.m"; path = "PrYv/NoteEvent+Helper.m"; sourceTree = "<group>"; };
-		0C1A1E4516C96F840042D7D4 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = PrYv/File.h; sourceTree = "<group>"; };
-		0C1A1E4616C96F840042D7D4 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = File.m; path = PrYv/File.m; sourceTree = "<group>"; };
 		0C1A1E4816C96F860042D7D4 /* Folder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Folder.h; path = PrYv/Folder.h; sourceTree = "<group>"; };
 		0C1A1E4916C96F860042D7D4 /* Folder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Folder.m; path = PrYv/Folder.m; sourceTree = "<group>"; };
 		0C1A1E4B16C96F860042D7D4 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = PrYv/Event.h; sourceTree = "<group>"; };
@@ -191,6 +190,10 @@
 		0C9B755F16D37C3200A7FEBD /* PrYvApplicationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvApplicationTests.h; sourceTree = "<group>"; };
 		0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvApplicationTests.m; sourceTree = "<group>"; };
 		0C9B756216D37C3200A7FEBD /* osx-integrationApplicationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-integrationApplicationTests-Prefix.pch"; sourceTree = "<group>"; };
+		0CA8A2E117D5E78300C5F507 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = PrYv/File.h; sourceTree = "<group>"; };
+		0CA8A2E217D5E78300C5F507 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = File.m; path = PrYv/File.m; sourceTree = "<group>"; };
+		0CA8A2E417D5EA3200C5F507 /* NSMutableArray+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Helper.h"; path = "PrYv/NSMutableArray+Helper.h"; sourceTree = "<group>"; };
+		0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Helper.m"; path = "PrYv/NSMutableArray+Helper.m"; sourceTree = "<group>"; };
 		0CD04983179C5AD8003716A2 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = PrYv/Constants.h; sourceTree = "<group>"; };
 		0CD04984179C5AD8003716A2 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = PrYv/Constants.m; sourceTree = "<group>"; };
 		4EDEB9381725A14400AA6D7D /* PryvApiKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PryvApiKit.xcodeproj; path = "sdk-objectivec-apple/PryvApiKit.xcodeproj"; sourceTree = "<group>"; };
@@ -247,8 +250,6 @@
 				0C1A1E5B16CA3B7C0042D7D4 /* Event+Helper.m */,
 				0C1413B4170CB82B00C21239 /* TextEvent+Helper.h */,
 				0C1413B5170CB82B00C21239 /* TextEvent+Helper.m */,
-				0C5D66C41796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.h */,
-				0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -256,6 +257,8 @@
 		0C1A1E1D16C958560042D7D4 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				0CA8A2E117D5E78300C5F507 /* File.h */,
+				0CA8A2E217D5E78300C5F507 /* File.m */,
 				0C5D66D0179807110040DB36 /* User.h */,
 				0C5D66D1179807120040DB36 /* User.m */,
 				0C1413B7170CB89300C21239 /* TextEvent.h */,
@@ -270,8 +273,6 @@
 				0C1A1E4C16C96F860042D7D4 /* Event.m */,
 				0C1A1E4816C96F860042D7D4 /* Folder.h */,
 				0C1A1E4916C96F860042D7D4 /* Folder.m */,
-				0C1A1E4516C96F840042D7D4 /* File.h */,
-				0C1A1E4616C96F840042D7D4 /* File.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -308,8 +309,12 @@
 		0C24088216B7097300BD60CC /* API */ = {
 			isa = PBXGroup;
 			children = (
+				0C5D66C41796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.h */,
+				0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */,
 				0C1F955A16C27D1900E3C2F2 /* NSString+Helper.h */,
 				0C1F955B16C27D1900E3C2F2 /* NSString+Helper.m */,
+				0CA8A2E417D5EA3200C5F507 /* NSMutableArray+Helper.h */,
+				0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -689,7 +694,6 @@
 				0C1F955C16C27D1900E3C2F2 /* NSString+Helper.m in Sources */,
 				0C1A1E2016C9589F0042D7D4 /* FileEvent+Helper.m in Sources */,
 				0C1A1E2316C95FAB0042D7D4 /* NoteEvent+Helper.m in Sources */,
-				0C1A1E4716C96F840042D7D4 /* File.m in Sources */,
 				0C1A1E4A16C96F860042D7D4 /* Folder.m in Sources */,
 				0C1A1E4D16C96F870042D7D4 /* Event.m in Sources */,
 				0C1A1E5016C96F870042D7D4 /* Tag.m in Sources */,
@@ -704,6 +708,8 @@
 				0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */,
 				0C5D66D2179807120040DB36 /* User.m in Sources */,
 				0CD04985179C5AD8003716A2 /* Constants.m in Sources */,
+				0CA8A2E317D5E78300C5F507 /* File.m in Sources */,
+				0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

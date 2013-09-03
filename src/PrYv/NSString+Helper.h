@@ -10,4 +10,5 @@
 
 @interface NSString (Helper)
 +(NSString*) mimeTypeFromFileExtension:(NSString*) fileName;
+-(BOOL) isPicture;
 @end

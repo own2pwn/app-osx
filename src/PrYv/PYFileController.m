@@ -18,6 +18,7 @@
 #import "Folder+Helper.h"
 #import "FileEvent.h"
 #import "PryvApiKit.h"
+#import "NSMutableArray+Helper.h"
 
 @interface PYFileController ()
 
@@ -25,6 +26,7 @@
 -(void)constructFilesArray:(NSMutableArray*)array
                   withFile:(NSString*)file
                inSubfolder:(NSString*)subfolder;
+-(NSString*)createStreamNameForStream:(PYStream*)current inArray:(NSMutableArray*)array andUser:(User*)user;
 
 @end
 
@@ -60,20 +62,22 @@
     [[current connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:^(NSArray *cachedStreamsList) {
         NSMutableArray *streamNames = [[NSMutableArray alloc] init];
         for (PYStream *stream in cachedStreamsList){
-            [streamNames addObject:[stream name]];
             [current.streams setObject:[stream streamId] forKey:[stream name]];
+            [streamNames addObject:[self createStreamNameForStream:stream inArray:streamNames andUser:current]];
         }
         [_streams addItemsWithTitles: streamNames];
         [_streams removeItemAtIndex:0];
+        [streamNames release];
         
     } gotOnlineStreams:^(NSArray *onlineStreamList) {
         NSMutableArray *streamNames = [[NSMutableArray alloc] init];
         for (PYStream *stream in onlineStreamList){
-            [streamNames addObject:[stream name]];
-            [[current streams] setObject:[stream streamId] forKey:[stream name]];
+            [current.streams setObject:[stream streamId] forKey:[stream name]];
+            [streamNames addObject:[self createStreamNameForStream:stream inArray:streamNames andUser:current]];
         }
         [_streams addItemsWithTitles: streamNames];
         [_streams removeItemAtIndex:0];
+        [streamNames release];
 
     } errorHandler:^(NSError *error) {
         NSLog(@"%@",error);
@@ -94,43 +98,6 @@
 			NSArray *files = [_openDialog URLs];
             
 			[self pryvFiles:files inStreamId:streamId withTags:[_tags objectValue]];
-//            NSString *file = [[files objectAtIndex:0] path];
-//            NSLog(@"File : %@",file);
-//            NSData *pictureData = [[NSData alloc] initWithContentsOfFile:file];
-//            NSLog(@"Length : %lu", (unsigned long)[pictureData length]);
-//            PYAttachment *attachment = [[PYAttachment alloc] initWithFileData:pictureData
-//                                                                         name:@"My chicken picture"
-//                                                                     fileName:@"chicken.jpg"];
-//            
-//            PYEvent *event = [[PYEvent alloc] init];
-//            event.folderId = @"notes";
-//            event.eventClass = @"picture";
-//            event.eventFormat = @"attached";
-//            event.attachments = [NSMutableArray arrayWithObject:attachment];
-//            
-//            NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-//            User *current = [User currentUserInContext:context];
-//            PYAccess *access = [current access];
-//            __block PYChannel *diaryChannel;
-//            [access getAllChannelsWithRequestType:PYRequestTypeAsync gotCachedChannels:^(NSArray *cachedChannelList) {
-//                [cachedChannelList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//                    if ([[obj channelId] isEqualToString:@"diary"]) {
-//                        diaryChannel = [obj retain];
-//                    }
-//                }];
-//            } gotOnlineChannels:^(NSArray *onlineChannelList) {
-//                [onlineChannelList enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) { }];
-//            } errorHandler:^(NSError *error) {
-//                NSLog(@"Error : %@",error);
-//            }];
-//            NSLog(@"Channel : %@",[diaryChannel channelId]);
-//            
-//            [diaryChannel createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
-//                NSLog(@"New Event ID : %@", newEventId);
-//                NSLog(@"Stopped ID : %@", stoppedId);
-//            } errorHandler:^(NSError *error) {
-//                NSLog(@"Error : %@", error);
-//            }];
 		}else{
             [current.streams release];
             current.streams = nil;
@@ -181,12 +148,12 @@
         User *current = [User currentUserInContext:context];
         
         PYEvent *event = [[PYEvent alloc] init];
+        
+        if ([filesToSend areAllImages]) event.type = @"picture/attached";
+        else if ([attachments count] > 1) event.type = @"file/attached-multiple";
+        else event.type = @"file/attached";
+        
         event.streamId = streamId;
-        if ([attachments count] > 1) {
-            event.type = @"file/attached-multiple";
-        } else {
-            event.type = @"file/attached";
-        }
         event.time = NSTimeIntervalSince1970;
         event.tags = [NSArray arrayWithArray:tags];
         event.attachments = [NSMutableArray arrayWithArray:attachments];
@@ -248,10 +215,23 @@
 		newFile.size = [NSNumber numberWithLongLong:[fileAttributes fileSize]];
         NSString* mimeType = [NSString mimeTypeFromFileExtension:newFile.filename];
 		newFile.mimeType = [NSString stringWithString:mimeType];
+        newFile.isPicture = [NSNumber numberWithBool:[mimeType isPicture]];
         [array addObject:newFile];
         
         NSLog(@"File : %@",newFile);
 		}
+}
+
+-(NSString *)createStreamNameForStream:(PYStream *)current
+                               inArray:(NSMutableArray *)array
+                               andUser:(User *)user{
+    if ([current.children count] > 0) {
+        for (PYStream *child in current.children) {
+            [user.streams setObject:child.name forKey:child.streamId];
+            [array addObject:[NSString stringWithFormat:@" - %@",[self createStreamNameForStream:child inArray:array andUser:user]]];
+        }
+    }
+    return current.name;
 }
 
 //Create unique id to store the file in the Caches directory

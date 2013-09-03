@@ -15,6 +15,10 @@
 	[description appendFormat:@"\n\tMIME-Type : %@",self.mimeType];
 	[description appendFormat:@"\n\tSize : %@",self.size];
 	[description appendFormat:@"\n\tData path : %@",self.path];
+    
+    if (self.isPicture) {
+        [description appendFormat:@"\n\tPicture"];
+    }
 	
 	return description;
 }
