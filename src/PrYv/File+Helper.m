@@ -16,7 +16,7 @@
 	[description appendFormat:@"\n\tSize : %@",self.size];
 	[description appendFormat:@"\n\tData path : %@",self.path];
     
-    if (self.isPicture) {
+    if ([self.isPicture boolValue]) {
         [description appendFormat:@"\n\tPicture"];
     }
 	

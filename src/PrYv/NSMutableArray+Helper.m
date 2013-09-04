@@ -14,7 +14,9 @@
 - (BOOL)areAllImages
 {
     for (File *f in self) {
-        if (!f.isPicture) {
+        NSLog(@"BOOL value : %c",[f.isPicture boolValue]);
+        if (![f.isPicture boolValue]) {
+            NSLog(@"Not a picture");
             return NO;
         }
     }

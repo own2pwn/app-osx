@@ -26,7 +26,12 @@
 -(void)constructFilesArray:(NSMutableArray*)array
                   withFile:(NSString*)file
                inSubfolder:(NSString*)subfolder;
--(NSString*)createStreamNameForStream:(PYStream*)current inArray:(NSMutableArray*)array andUser:(User*)user;
+-(NSUInteger)createStreamNameForStreams:(NSArray *)streams
+                          inArray:(NSMutableArray *)streamNames
+               withLevelDelimiter:(NSString *)delimiter
+                          forUser:(User *)user
+                          atIndex:(NSUInteger)index;
+
 
 @end
 
@@ -35,6 +40,7 @@
 -(id)initWithOpenPanel:(NSOpenPanel *)openDialog {
 	self = [super init];
 	if (self) {
+        _popUpButtonContent = [[NSArrayController alloc] init];
 		_openDialog = openDialog;
 		[_openDialog setCanChooseFiles:YES];
 		[_openDialog setAllowsMultipleSelection:YES];
@@ -61,22 +67,22 @@
     current.streams = [[NSMutableDictionary alloc] init];
     [[current connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:^(NSArray *cachedStreamsList) {
         NSMutableArray *streamNames = [[NSMutableArray alloc] init];
-        for (PYStream *stream in cachedStreamsList){
-            [current.streams setObject:[stream streamId] forKey:[stream name]];
-            [streamNames addObject:[self createStreamNameForStream:stream inArray:streamNames andUser:current]];
-        }
-        [_streams addItemsWithTitles: streamNames];
-        [_streams removeItemAtIndex:0];
+        
+        [self createStreamNameForStreams:cachedStreamsList inArray:streamNames withLevelDelimiter:@"" forUser:current atIndex:0];
+        
+        [_popUpButtonContent addObjects:streamNames];
+        [_streams selectItemAtIndex:0];
+        
         [streamNames release];
         
     } gotOnlineStreams:^(NSArray *onlineStreamList) {
         NSMutableArray *streamNames = [[NSMutableArray alloc] init];
-        for (PYStream *stream in onlineStreamList){
-            [current.streams setObject:[stream streamId] forKey:[stream name]];
-            [streamNames addObject:[self createStreamNameForStream:stream inArray:streamNames andUser:current]];
-        }
-        [_streams addItemsWithTitles: streamNames];
-        [_streams removeItemAtIndex:0];
+        
+        [self createStreamNameForStreams:onlineStreamList inArray:streamNames withLevelDelimiter:@"" forUser:current atIndex:0];
+        
+        [_popUpButtonContent addObjects:streamNames];
+        [_streams selectItemAtIndex:0];
+        
         [streamNames release];
 
     } errorHandler:^(NSError *error) {
@@ -89,15 +95,18 @@
 			
             //Get the stream
 			NSString* streamId;
-			if ([[_streams titleOfSelectedItem] isEqualTo:@"None"]) {
+			if ([[_streams titleOfSelectedItem] isEqualTo:@""]) {
 				streamId = @"diary";
 			}else {
-				NSString *streamName = [NSString stringWithString:[_streams titleOfSelectedItem]];
-                streamId = [[current streams] objectForKey:streamName];
+//				NSString *streamName = [NSString stringWithString:[_streams titleOfSelectedItem]];
+				NSString *streamIndex = [NSString stringWithFormat:@"%lu",[_streams indexOfSelectedItem]];
+                streamId = [[current streams] objectForKey:streamIndex];
+                
 			}
 			NSArray *files = [_openDialog URLs];
             
 			[self pryvFiles:files inStreamId:streamId withTags:[_tags objectValue]];
+            
 		}else{
             [current.streams release];
             current.streams = nil;
@@ -126,6 +135,7 @@
 		NSArray *files = [NSArray arrayWithArray:[args objectForKey:@"files"]];
 		NSArray *tags = [NSArray arrayWithArray:[args objectForKey:@"tags"]];
 		NSString *streamId = [NSString stringWithString:[args objectForKey:@"stream"]];
+        NSLog(@"Stream ID : %@", streamId);
 		
         //Construct the array of files @filesToSend recursively
 		//The hierarchical structure is kept in the filename
@@ -159,6 +169,8 @@
         event.attachments = [NSMutableArray arrayWithArray:attachments];
         
         [PYClient setDefaultDomainStaging];
+        
+        NSLog(@"EVENT TYPE : %@", event.type);
         
         //Sync request because otherwise thread dies before request is sent. However this is not a
         //problem since only the current thread is blocked by the sync request and this is the last
@@ -222,16 +234,24 @@
 		}
 }
 
--(NSString *)createStreamNameForStream:(PYStream *)current
-                               inArray:(NSMutableArray *)array
-                               andUser:(User *)user{
-    if ([current.children count] > 0) {
-        for (PYStream *child in current.children) {
-            [user.streams setObject:child.name forKey:child.streamId];
-            [array addObject:[NSString stringWithFormat:@" - %@",[self createStreamNameForStream:child inArray:array andUser:user]]];
+-(NSUInteger)createStreamNameForStreams:(NSArray *)streams
+                          inArray:(NSMutableArray *)streamNames
+               withLevelDelimiter:(NSString *)delimiter
+                          forUser:(User *)user
+                          atIndex:(NSUInteger)index
+{
+    for (PYStream *stream in streams){
+        [user.streams setObject:[stream streamId] forKey:[NSString stringWithFormat:@"%lu",(unsigned long)index]];
+        index++;
+        [streamNames addObject:[NSString stringWithFormat:@"%@%@",delimiter,stream.name]];
+        if ([stream.children count] > 0) {
+            index = [self createStreamNameForStreams:stream.children inArray:streamNames withLevelDelimiter:@"- " forUser:user atIndex:index];
+            
         }
     }
-    return current.name;
+    
+    return index;
+
 }
 
 //Create unique id to store the file in the Caches directory
@@ -260,6 +280,7 @@
 }
 
 -(void)dealloc {
+    [_popUpButtonContent release];
 	[_threadLock release];
 	[super dealloc];
 }

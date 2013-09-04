@@ -17,6 +17,7 @@
 	IBOutlet NSView *_accessoryView;
 	NSOpenPanel* _openDialog;
 	NSLock *_threadLock;
+    IBOutlet NSArrayController *_popUpButtonContent;
 }
 
 -(PYFileController*)initWithOpenPanel:(NSOpenPanel*)openDialog;
