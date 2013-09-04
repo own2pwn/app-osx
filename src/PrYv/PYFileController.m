@@ -70,6 +70,8 @@
         
         [self createStreamNameForStreams:cachedStreamsList inArray:streamNames withLevelDelimiter:@"" forUser:current atIndex:0];
         
+        NSRange range = NSMakeRange(0, [[_popUpButtonContent arrangedObjects] count]);
+        [_popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
         [_popUpButtonContent addObjects:streamNames];
         [_streams selectItemAtIndex:0];
         
@@ -80,6 +82,8 @@
         
         [self createStreamNameForStreams:onlineStreamList inArray:streamNames withLevelDelimiter:@"" forUser:current atIndex:0];
         
+        NSRange range = NSMakeRange(0, [[_popUpButtonContent arrangedObjects] count]);
+        [_popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
         [_popUpButtonContent addObjects:streamNames];
         [_streams selectItemAtIndex:0];
         
@@ -241,7 +245,7 @@
                           atIndex:(NSUInteger)index
 {
     for (PYStream *stream in streams){
-        [user.streams setObject:[stream streamId] forKey:[NSString stringWithFormat:@"%lu",(unsigned long)index]];
+        [user.streams setObject:[stream streamId] forKey:[NSString stringWithFormat:@"%lu",index]];
         index++;
         [streamNames addObject:[NSString stringWithFormat:@"%@%@",delimiter,stream.name]];
         if ([stream.children count] > 0) {
