@@ -31,6 +31,15 @@
                withLevelDelimiter:(NSString *)delimiter
                           forUser:(User *)user
                           atIndex:(NSUInteger)index;
+-(void)pryvGPSEventAtLongitude:(NSString*)longitude
+                      latitude:(NSString*)latitude
+                    inStreamId:(NSString*)streamId
+                      withTags:(NSArray*)tags
+                        atTime:(NSTimeInterval)time;
+-(void)pryvLocationIfAnyForFile:(NSString*)path
+                     inStreamId:(NSString*)streamId
+                       withTags:(NSArray*)tags
+                         atTime:(NSTimeInterval)time;
 
 
 @end
@@ -139,6 +148,7 @@
 		NSArray *files = [NSArray arrayWithArray:[args objectForKey:@"files"]];
 		NSArray *tags = [NSArray arrayWithArray:[args objectForKey:@"tags"]];
 		NSString *streamId = [NSString stringWithString:[args objectForKey:@"stream"]];
+        NSDate *currentTime = [NSDate dateWithTimeIntervalSince1970:NSTimeIntervalSince1970];
         NSLog(@"Stream ID : %@", streamId);
 		
         //Construct the array of files @filesToSend recursively
@@ -150,32 +160,33 @@
         
         NSMutableArray *attachments = [[NSMutableArray alloc] init];
         for(File *f in filesToSend){
+            [self pryvLocationIfAnyForFile:[f path]
+                                inStreamId:streamId
+                                  withTags:tags
+                                    atTime:[currentTime timeIntervalSince1970]];
             NSData *fileData = [[NSData alloc] initWithContentsOfFile:[f path]];
-            NSLog(@"Length : %lu", (unsigned long)[fileData length]);
+            //NSLog(@"Length : %lu", (unsigned long)[fileData length]);
             PYAttachment *attachment = [[PYAttachment alloc] initWithFileData:fileData
                                                                          name:[[f filename] stringByDeletingPathExtension]
                                                                      fileName:[f filename]];
             [attachments addObject:attachment];
         }
         
-        NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-        User *current = [User currentUserInContext:context];
-        
         PYEvent *event = [[PYEvent alloc] init];
         
-        if ([filesToSend areAllImages]) event.type = @"picture/attached";
-        else if ([attachments count] > 1) event.type = @"file/attached-multiple";
-        else event.type = @"file/attached";
+        if ([filesToSend areAllImages])     event.type = @"picture/attached";
+        else if ([attachments count] > 1)   event.type = @"file/attached-multiple";
+        else                                event.type = @"file/attached";
         
         event.streamId = streamId;
-        event.time = NSTimeIntervalSince1970;
+        event.time = [currentTime timeIntervalSince1970];
         event.tags = [NSArray arrayWithArray:tags];
         event.attachments = [NSMutableArray arrayWithArray:attachments];
         
+        NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
+        User *current = [User currentUserInContext:context];
         [PYClient setDefaultDomainStaging];
-        
-        NSLog(@"EVENT TYPE : %@", event.type);
-        
+                
         //Sync request because otherwise thread dies before request is sent. However this is not a
         //problem since only the current thread is blocked by the sync request and this is the last
         //instruction before releasing everything.
@@ -257,6 +268,85 @@
     return index;
 
 }
+
+-(void)pryvLocationIfAnyForFile:(NSString*)path
+                     inStreamId:(NSString *)streamId
+                       withTags:(NSArray *)tags
+                         atTime:(NSTimeInterval)time
+{
+    NSURL *imageFileURL = [NSURL fileURLWithPath:path];
+    CGImageSourceRef imageSource = CGImageSourceCreateWithURL((CFURLRef)imageFileURL, NULL);
+    if (imageSource == NULL) {
+        NSLog(@"Error loading image in memory.");
+    }
+    else{
+        NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                                 [NSNumber numberWithBool:NO], (NSString *)kCGImageSourceShouldCache,
+                                 nil];
+        CFDictionaryRef imageProperties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, (CFDictionaryRef)options);
+        
+        if (imageProperties) {
+            CFDictionaryRef gps = CFDictionaryGetValue(imageProperties, kCGImagePropertyGPSDictionary);
+            if (gps) {
+                NSString *latitudeString = (NSString *)CFDictionaryGetValue(gps, kCGImagePropertyGPSLatitude);
+                NSString *latitudeRef = (NSString *)CFDictionaryGetValue(gps, kCGImagePropertyGPSLatitudeRef);
+                NSString *longitudeString = (NSString *)CFDictionaryGetValue(gps, kCGImagePropertyGPSLongitude);
+                NSString *longitudeRef = (NSString *)CFDictionaryGetValue(gps, kCGImagePropertyGPSLongitudeRef);
+                
+                //Longitude
+                NSString *longitude;
+                if ([longitudeRef isEqualToString:@"W"])
+                    longitude = [NSString stringWithFormat:@"-%@",longitudeString];
+                else
+                    longitude = [NSString stringWithFormat:@"%@",longitudeString];
+                
+                //Latitude
+                NSString *latitude;
+                if ([latitudeRef isEqualToString:@"S"])
+                    latitude = [NSString stringWithFormat:@"-%@",latitudeString];
+                else
+                    latitude = [NSString stringWithFormat:@"%@",latitudeString];
+                
+                //NSLog(@"GPS Coordinates: %@ / %@", longitude, latitude);
+                [self pryvGPSEventAtLongitude:longitude
+                                     latitude:latitude
+                                   inStreamId:streamId
+                                     withTags:tags
+                                       atTime:time];
+                
+                CFRelease(gps);
+            }
+            CFRelease(imageProperties);
+        }
+    }    
+}
+
+-(void)pryvGPSEventAtLongitude:(NSString*)longitude
+                      latitude:(NSString*)latitude
+                    inStreamId:(NSString*)streamId
+                      withTags:(NSArray*)tags
+                        atTime:(NSTimeInterval)time
+{
+    PYEvent *event = [[PYEvent alloc] init];
+    event.streamId = [NSString stringWithString:streamId];
+    event.time = time;
+    event.tags = [NSArray arrayWithArray:tags];
+    event.type = @"position/wgs84";
+    NSNumber *longitudeNumber = [NSNumber numberWithDouble:[longitude doubleValue]];
+    NSNumber *latitudeNumber = [NSNumber numberWithDouble:[latitude doubleValue]];
+    event.eventContent = [NSDictionary dictionaryWithObjectsAndKeys:latitudeNumber,@"latitude",longitudeNumber,@"longitude", nil];
+    
+    NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
+    User *current = [User currentUserInContext:context];
+    [PYClient setDefaultDomainStaging];
+    [[current connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
+        NSLog(@"New location event : %@", newEventId);
+    } errorHandler:^(NSError *error) {
+        NSLog(@"Error when pryving GPS event : %@", error);
+    }];
+    
+}
+
 
 //Create unique id to store the file in the Caches directory
 -(NSString*)createsUniqueIDForFile:(File*)file {

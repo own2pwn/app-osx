@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreFoundation/CoreFoundation.h>
 
 @class File;
 
@@ -15,9 +16,9 @@
 	IBOutlet NSTokenField *_tags;
 	IBOutlet NSPopUpButton *_streams;
 	IBOutlet NSView *_accessoryView;
+    IBOutlet NSArrayController *_popUpButtonContent;
 	NSOpenPanel* _openDialog;
 	NSLock *_threadLock;
-    IBOutlet NSArrayController *_popUpButtonContent;
 }
 
 -(PYFileController*)initWithOpenPanel:(NSOpenPanel*)openDialog;
