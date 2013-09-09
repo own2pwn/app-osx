@@ -10,10 +10,10 @@
 
 @interface PYNewNoteController : NSWindowController <NSWindowDelegate> {
 @private
-	IBOutlet NSTextField *_title;
+    IBOutlet NSArrayController *_popUpButtonContent;
 	IBOutlet NSTextField *_content;
 	IBOutlet NSTokenField *_tags;
-	IBOutlet NSPopUpButton *_folder;
+	IBOutlet NSPopUpButton *_streams;
 }
 
 -(IBAction)createNote:(id)sender;

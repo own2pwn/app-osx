@@ -14,9 +14,15 @@
 #import "Tag+Helper.h"
 #import "Tag.h"
 #import "Folder.h"
+#import "PryvApiKit.h"
 
 @interface PYNewNoteController ()
 
+-(NSUInteger)createStreamNameForStreams:(NSArray *)streams
+                                inArray:(NSMutableArray *)streamNames
+                     withLevelDelimiter:(NSString *)delimiter
+                                forUser:(User *)user
+                                atIndex:(NSUInteger)index;
 @end
 
 @implementation PYNewNoteController
@@ -28,41 +34,67 @@
 	}else {
 		//Get the general context and create a new note
 		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-		NoteEvent *newNoteEvent = [NSEntityDescription insertNewObjectForEntityForName:@"NoteEvent"
-                                                                inManagedObjectContext:context];
-		//Construct the note using the fields in the panel
-		newNoteEvent.title = [_title stringValue];
-		newNoteEvent.content = [_content stringValue];
-		newNoteEvent.folder = (Folder*)[NSEntityDescription insertNewObjectForEntityForName:@"Folder"
-                                                                     inManagedObjectContext:context];
-		if ([[_folder titleOfSelectedItem] isEqualTo:@"None"]) {
-			newNoteEvent.folder.name = @"";
-		}else {
-			newNoteEvent.folder.name = [_folder titleOfSelectedItem];
-		}
-		NSMutableSet *newTags = [[NSMutableSet alloc] init];
+        User* current = [User currentUserInContext:context];
+        
+        NSString* streamId;
+        if ([[_streams titleOfSelectedItem] isEqualTo:@""]) {
+            streamId = @"diary";
+        }else {
+            //				NSString *streamName = [NSString stringWithString:[_streams titleOfSelectedItem]];
+            NSString *streamIndex = [NSString stringWithFormat:@"%lu",[_streams indexOfSelectedItem]];
+            streamId = [[current streams] objectForKey:streamIndex];
+        }
+        
+        NSMutableSet *newTags = [[NSMutableSet alloc] init];
 		[[_tags objectValue] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 			[newTags addObject:[Tag tagWithValue:obj inContext:context]];
 		}];
-		newNoteEvent.tags = newTags;
+
+        PYEvent *event = [[PYEvent alloc] init];
+        
+        event.streamId = [NSString stringWithString:streamId];
+        event.type = @"note/txt";
+        event.time = NSTimeIntervalSince1970;
+        event.eventContent = [NSString stringWithString:[_content stringValue]];
+        
+        [[current connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
+            NSLog(@"Note created with event ID : %@",newEventId);
+        } errorHandler:^(NSError *error) {
+            NSLog(@"Error when pryving a note : %@",error);
+        }];
+		
 		[newTags release];
-		
-		//Add the note in the user set of notes and save the changes
-		//User *current = [User currentUserInContext:context];
-		//[current addEventsObject:newNoteEvent];
-		[context save:nil];
-		
-		NSLog(@"Note created with title : %@",[_title stringValue]);
+        [event release];
 		[self.window close];
 	}
 }
 
+-(NSUInteger)createStreamNameForStreams:(NSArray *)streams
+                                inArray:(NSMutableArray *)streamNames
+                     withLevelDelimiter:(NSString *)delimiter
+                                forUser:(User *)user
+                                atIndex:(NSUInteger)index
+{
+    for (PYStream *stream in streams){
+        [user.streams setObject:[stream streamId] forKey:[NSString stringWithFormat:@"%lu",index]];
+        index++;
+        [streamNames addObject:[NSString stringWithFormat:@"%@%@",delimiter,stream.name]];
+        if ([stream.children count] > 0) {
+            index = [self createStreamNameForStreams:stream.children inArray:streamNames withLevelDelimiter:@"- " forUser:user atIndex:index];
+            
+        }
+    }
+    
+    return index;
+    
+}
+
+
 //Reset the window so that next time you open it, it is a new window
 -(void)windowWillClose:(NSNotification *)notification {
-	[_title setStringValue:@""];
 	[_content setStringValue:@""];
 	[_tags setStringValue:@""];
-	[_title becomeFirstResponder];
+	[_content becomeFirstResponder];
 	
 }
 
@@ -78,8 +110,35 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
 	User *current = [User currentUserInContext:[[PYAppDelegate sharedInstance] managedObjectContext]];
-	NSArray *folderNames = [current folderNames];
-	[_folder addItemsWithTitles: folderNames];
+	current.streams = [[NSMutableDictionary alloc] init];
+    [[current connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:^(NSArray *cachedStreamsList) {
+        NSMutableArray *streamNames = [[NSMutableArray alloc] init];
+        
+        [self createStreamNameForStreams:cachedStreamsList inArray:streamNames withLevelDelimiter:@"" forUser:current atIndex:0];
+        
+        NSRange range = NSMakeRange(0, [[_popUpButtonContent arrangedObjects] count]);
+        [_popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
+        [_popUpButtonContent addObjects:streamNames];
+        [_streams selectItemAtIndex:0];
+        
+        [streamNames release];
+        
+    } gotOnlineStreams:^(NSArray *onlineStreamList) {
+        NSMutableArray *streamNames = [[NSMutableArray alloc] init];
+        
+        [self createStreamNameForStreams:onlineStreamList inArray:streamNames withLevelDelimiter:@"" forUser:current atIndex:0];
+        
+        NSRange range = NSMakeRange(0, [[_popUpButtonContent arrangedObjects] count]);
+        [_popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
+        [_popUpButtonContent addObjects:streamNames];
+        [_streams selectItemAtIndex:0];
+        
+        [streamNames release];
+        
+    } errorHandler:^(NSError *error) {
+        NSLog(@"%@",error);
+    }];
+
 }
 
 @end

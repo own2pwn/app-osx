@@ -114,7 +114,6 @@
 //				NSString *streamName = [NSString stringWithString:[_streams titleOfSelectedItem]];
 				NSString *streamIndex = [NSString stringWithFormat:@"%lu",[_streams indexOfSelectedItem]];
                 streamId = [[current streams] objectForKey:streamIndex];
-                
 			}
 			NSArray *files = [_openDialog URLs];
             

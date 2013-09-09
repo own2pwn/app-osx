@@ -64,7 +64,7 @@
 	[dragAndDropView setMenu:_statusMenu];
 	[_statusItem setView:dragAndDropView];
 	[dragAndDropView release];
-    [newNote setEnabled:NO];
+    [newNote setEnabled:YES];
     [pryvFiles setEnabled:YES];
     [displayCurrentUser setEnabled:NO];
     [test setEnabled:YES];
