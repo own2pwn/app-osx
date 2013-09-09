@@ -855,10 +855,7 @@
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/PrYv-gusgsoeaisafeehjlkslssmwnyms/Build/Products/Debug\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -881,10 +878,7 @@
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/PrYv-gusgsoeaisafeehjlkslssmwnyms/Build/Products/Debug\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
@@ -1005,10 +999,7 @@
 			buildSettings = {
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/PrYv-gusgsoeaisafeehjlkslssmwnyms/Build/Products/Debug\"",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (

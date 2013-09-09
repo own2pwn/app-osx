@@ -2,7 +2,7 @@
 
 Desktop application &amp; system wide contextual menu integration for Pryv.
 
-**Current version :** iteration 7
+**Current version :** iteration 8
 
 ##Troubleshooter and reset
 
@@ -17,15 +17,15 @@ You are reading this section if you want to :
 ###CoreData errors
 CoreData is a great, powerful feature but it has some constraints when you have to change the data model. The solution is to *activate model versioning* or to *delete the data folder*. The first one has to be used in *deployment phase*  and the second one in *development phase*. 
 
-If you want to troubleshoot the CoreData errors delete the **~/Library/Containers/pryv.PrYv** folder.
+If you want to troubleshoot the CoreData errors delete the **~/Library/Containers/pryv.PrYv** folder or simply run the `./update_coredata.sh` script.
 
 ###Change user
 
-Delete the **~/Library/Containers/pryv.PrYv** folder.
+Delete the **~/Library/Containers/pryv.PrYv** folder or run the `./update_coredata.sh` script.
 
 ###Access cached files
 
-You can find all the cached files in the **~/Library/Containers/pryv.PrYv/Data/Library/Caches** folder.
+You can find all the cached files (streams, events and attachments) in the **~/Library/Containers/com.pryv.Pryv/Data/Library/Caches/PYCachingController** folder.
 
 ###Manage the Services
 If you want to disable the Services, just uncheck the corresponding box in 
