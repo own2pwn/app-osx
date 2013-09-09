@@ -19,10 +19,6 @@ CoreData is a great, powerful feature but it has some constraints when you have 
 
 If you want to troubleshoot the CoreData errors delete the **~/Library/Containers/pryv.PrYv** folder or simply run the `./update_coredata.sh` script.
 
-###Change user
-
-Delete the **~/Library/Containers/pryv.PrYv** folder or run the `./update_coredata.sh` script.
-
 ###Access cached files
 
 You can find all the cached files (streams, events and attachments) in the **~/Library/Containers/com.pryv.Pryv/Data/Library/Caches/PYCachingController** folder.
@@ -33,6 +29,8 @@ If you want to disable the Services, just uncheck the corresponding box in
 *System Preferences > Keyboard > Keyboard shortcuts > Services*
 
 To remove it completely, right-click on the service name and chose *Reveal in Finder*. Then delete the corresponding folder.
+
+**Note if you have compiled the project before iteration 8 :** you might need to manually remove - as explained before - the services (you should not have more than one service with the same name in the list).
 
 ##Information
 You can explore data with the [GitHub explorer](http://pryv.github.io/explorer/).
