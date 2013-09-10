@@ -7,7 +7,6 @@
 //
 
 #import "PYTextController.h"
-#import "TextEvent.h"
 #import "PYAppDelegate.h"
 #import "User.h"
 #import "User+Helper.h"
@@ -20,16 +19,19 @@
 	}else {
         //Get the general context
 		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-		TextEvent *newTextEvent = [NSEntityDescription insertNewObjectForEntityForName:@"TextEvent"
-                                                                inManagedObjectContext:context];
-        newTextEvent.text = [NSString stringWithString:text];
+		User *user = [User currentUserInContext:context];
         
-        //Add the text in the user event set
-		//User *current = [User currentUserInContext:context];
-		//[current addEventsObject:newTextEvent];
-		[context save:nil];
-		
-		NSLog(@"Text pryved : %@",text);
+        PYEvent *event = [[PYEvent alloc] init];
+        event.streamId = @"diary";
+        event.time = NSTimeIntervalSince1970;
+        event.type = @"note/txt";
+        event.eventContent = [NSString stringWithString:text];
+        
+        [[user connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
+            NSLog(@"Pryved text with event ID : %@", newEventId);
+        } errorHandler:^(NSError *error) {
+            NSLog(@"Error while pryving text : %@", error);
+        }];
     }
 }
 

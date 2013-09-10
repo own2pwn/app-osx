@@ -7,14 +7,9 @@
 //
 
 #import "PYNewNoteController.h"
-#import "NoteEvent.h"
 #import "PYAppDelegate.h"
 #import "User.h"
 #import "User+Helper.h"
-#import "Tag+Helper.h"
-#import "Tag.h"
-#import "Folder.h"
-#import "PryvApiKit.h"
 
 @interface PYNewNoteController ()
 
@@ -45,10 +40,7 @@
             streamId = [[current streams] objectForKey:streamIndex];
         }
         
-        NSMutableSet *newTags = [[NSMutableSet alloc] init];
-		[[_tags objectValue] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-			[newTags addObject:[Tag tagWithValue:obj inContext:context]];
-		}];
+		
 
         PYEvent *event = [[PYEvent alloc] init];
         
@@ -56,6 +48,7 @@
         event.type = @"note/txt";
         event.time = NSTimeIntervalSince1970;
         event.eventContent = [NSString stringWithString:[_content stringValue]];
+        event.tags = [NSArray arrayWithArray:[_tags objectValue]];
         
         [[current connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
             NSLog(@"Note created with event ID : %@",newEventId);
@@ -63,7 +56,6 @@
             NSLog(@"Error when pryving a note : %@",error);
         }];
 		
-		[newTags release];
         [event release];
 		[self.window close];
 	}

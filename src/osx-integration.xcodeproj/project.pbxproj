@@ -7,18 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C1413B6170CB82B00C21239 /* TextEvent+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1413B5170CB82B00C21239 /* TextEvent+Helper.m */; };
-		0C1413B9170CB89300C21239 /* TextEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1413B8170CB89300C21239 /* TextEvent.m */; };
 		0C1413BC170CB98500C21239 /* PYTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1413BB170CB98500C21239 /* PYTextController.m */; };
 		0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */; };
-		0C1A1E2016C9589F0042D7D4 /* FileEvent+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E1F16C9589F0042D7D4 /* FileEvent+Helper.m */; };
-		0C1A1E2316C95FAB0042D7D4 /* NoteEvent+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E2216C95FAB0042D7D4 /* NoteEvent+Helper.m */; };
-		0C1A1E4A16C96F860042D7D4 /* Folder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E4916C96F860042D7D4 /* Folder.m */; };
-		0C1A1E4D16C96F870042D7D4 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E4C16C96F860042D7D4 /* Event.m */; };
-		0C1A1E5016C96F870042D7D4 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E4F16C96F870042D7D4 /* Tag.m */; };
-		0C1A1E5316C96F870042D7D4 /* FileEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E5216C96F870042D7D4 /* FileEvent.m */; };
-		0C1A1E5616C96F870042D7D4 /* NoteEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E5516C96F870042D7D4 /* NoteEvent.m */; };
-		0C1A1E5C16CA3B7C0042D7D4 /* Event+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A1E5B16CA3B7C0042D7D4 /* Event+Helper.m */; };
 		0C1A714116BBB5DD004E35EF /* PYFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A714016BBB5DD004E35EF /* PYFileController.m */; };
 		0C1F955916C2784800E3C2F2 /* File+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F955816C2784800E3C2F2 /* File+Helper.m */; };
 		0C1F955C16C27D1900E3C2F2 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F955B16C27D1900E3C2F2 /* NSString+Helper.m */; };
@@ -26,8 +16,6 @@
 		0C2408A416B7BC5D00BD60CC /* PYStatusMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408A316B7BC5D00BD60CC /* PYStatusMenuController.m */; };
 		0C2408A616B7C0B600BD60CC /* NewNote.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C2408A516B7C0B600BD60CC /* NewNote.xib */; };
 		0C2408AC16B7C27A00BD60CC /* PYNewNoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408AB16B7C27A00BD60CC /* PYNewNoteController.m */; };
-		0C2408C616B7E12A00BD60CC /* Tag+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408C516B7E12A00BD60CC /* Tag+Helper.m */; };
-		0C2408CF16B7F49800BD60CC /* Folder+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408CE16B7F49600BD60CC /* Folder+Helper.m */; };
 		0C2408D316B9233200BD60CC /* PYLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408D116B9233200BD60CC /* PYLoginController.m */; };
 		0C2408D416B9233200BD60CC /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C2408D216B9233200BD60CC /* LoginController.xib */; };
 		0C2559B016FA5B7F00B4C2BC /* PYServicesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2559AF16FA5B7F00B4C2BC /* PYServicesController.m */; };
@@ -37,7 +25,6 @@
 		0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A716CCF9050023E724 /* FaviconBlack22.png */; };
 		0C5D66941796A5330040DB36 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5D66931796A5330040DB36 /* WebKit.framework */; };
 		0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */; };
-		0C5D66D2179807120040DB36 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D66D1179807120040DB36 /* User.m */; };
 		0C5F299517AFD8B900AAE154 /* pryv.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 0C5F299417AFD8B900AAE154 /* pryv.iconset */; };
 		0C63A04617DDA2680033BED8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C63A04517DDA2680033BED8 /* CoreFoundation.framework */; };
 		0C6FDEDB1725B8C300FF2447 /* PryvApiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6FDED61725B83500FF2447 /* PryvApiKit.framework */; };
@@ -56,9 +43,10 @@
 		0C9B755816D37C3200A7FEBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0C9B755E16D37C3200A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */; };
 		0C9B756116D37C3200A7FEBD /* PrYvApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */; };
-		0CA8A2E317D5E78300C5F507 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8A2E217D5E78300C5F507 /* File.m */; };
 		0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */; };
 		0CD04985179C5AD8003716A2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD04984179C5AD8003716A2 /* Constants.m */; };
+		0CED27A017DEF83D006854A1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED279F17DEF83D006854A1 /* File.m */; };
+		0CED27A617DEF8DF006854A1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED27A517DEF8DF006854A1 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,29 +95,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C1413B4170CB82B00C21239 /* TextEvent+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TextEvent+Helper.h"; path = "PrYv/TextEvent+Helper.h"; sourceTree = "<group>"; };
-		0C1413B5170CB82B00C21239 /* TextEvent+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "TextEvent+Helper.m"; path = "PrYv/TextEvent+Helper.m"; sourceTree = "<group>"; };
-		0C1413B7170CB89300C21239 /* TextEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TextEvent.h; path = PrYv/TextEvent.h; sourceTree = "<group>"; };
-		0C1413B8170CB89300C21239 /* TextEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextEvent.m; path = PrYv/TextEvent.m; sourceTree = "<group>"; };
 		0C1413BA170CB98500C21239 /* PYTextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYTextController.h; path = PrYv/PYTextController.h; sourceTree = "<group>"; };
 		0C1413BB170CB98500C21239 /* PYTextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYTextController.m; path = PrYv/PYTextController.m; sourceTree = "<group>"; };
 		0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenPanelWithTagsAndFolder.xib; sourceTree = "<group>"; };
-		0C1A1E1E16C9589F0042D7D4 /* FileEvent+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FileEvent+Helper.h"; path = "PrYv/FileEvent+Helper.h"; sourceTree = "<group>"; };
-		0C1A1E1F16C9589F0042D7D4 /* FileEvent+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FileEvent+Helper.m"; path = "PrYv/FileEvent+Helper.m"; sourceTree = "<group>"; };
-		0C1A1E2116C95FAB0042D7D4 /* NoteEvent+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NoteEvent+Helper.h"; path = "PrYv/NoteEvent+Helper.h"; sourceTree = "<group>"; };
-		0C1A1E2216C95FAB0042D7D4 /* NoteEvent+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NoteEvent+Helper.m"; path = "PrYv/NoteEvent+Helper.m"; sourceTree = "<group>"; };
-		0C1A1E4816C96F860042D7D4 /* Folder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Folder.h; path = PrYv/Folder.h; sourceTree = "<group>"; };
-		0C1A1E4916C96F860042D7D4 /* Folder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Folder.m; path = PrYv/Folder.m; sourceTree = "<group>"; };
-		0C1A1E4B16C96F860042D7D4 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Event.h; path = PrYv/Event.h; sourceTree = "<group>"; };
-		0C1A1E4C16C96F860042D7D4 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Event.m; path = PrYv/Event.m; sourceTree = "<group>"; };
-		0C1A1E4E16C96F870042D7D4 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tag.h; path = PrYv/Tag.h; sourceTree = "<group>"; };
-		0C1A1E4F16C96F870042D7D4 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tag.m; path = PrYv/Tag.m; sourceTree = "<group>"; };
-		0C1A1E5116C96F870042D7D4 /* FileEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FileEvent.h; path = PrYv/FileEvent.h; sourceTree = "<group>"; };
-		0C1A1E5216C96F870042D7D4 /* FileEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FileEvent.m; path = PrYv/FileEvent.m; sourceTree = "<group>"; };
-		0C1A1E5416C96F870042D7D4 /* NoteEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NoteEvent.h; path = PrYv/NoteEvent.h; sourceTree = "<group>"; };
-		0C1A1E5516C96F870042D7D4 /* NoteEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NoteEvent.m; path = PrYv/NoteEvent.m; sourceTree = "<group>"; };
-		0C1A1E5A16CA3B7B0042D7D4 /* Event+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Event+Helper.h"; path = "PrYv/Event+Helper.h"; sourceTree = "<group>"; };
-		0C1A1E5B16CA3B7C0042D7D4 /* Event+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Event+Helper.m"; path = "PrYv/Event+Helper.m"; sourceTree = "<group>"; };
 		0C1A713F16BBB5DD004E35EF /* PYFileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYFileController.h; path = PrYv/PYFileController.h; sourceTree = "<group>"; };
 		0C1A714016BBB5DD004E35EF /* PYFileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYFileController.m; path = PrYv/PYFileController.m; sourceTree = "<group>"; };
 		0C1F955716C2784800E3C2F2 /* File+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "File+Helper.h"; path = "PrYv/File+Helper.h"; sourceTree = "<group>"; };
@@ -143,10 +111,6 @@
 		0C2408A516B7C0B600BD60CC /* NewNote.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewNote.xib; sourceTree = "<group>"; };
 		0C2408AA16B7C27A00BD60CC /* PYNewNoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYNewNoteController.h; path = PrYv/PYNewNoteController.h; sourceTree = "<group>"; };
 		0C2408AB16B7C27A00BD60CC /* PYNewNoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYNewNoteController.m; path = PrYv/PYNewNoteController.m; sourceTree = "<group>"; };
-		0C2408C416B7E12A00BD60CC /* Tag+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Tag+Helper.h"; path = "PrYv/Tag+Helper.h"; sourceTree = "<group>"; };
-		0C2408C516B7E12A00BD60CC /* Tag+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Tag+Helper.m"; path = "PrYv/Tag+Helper.m"; sourceTree = "<group>"; };
-		0C2408CD16B7F49600BD60CC /* Folder+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Folder+Helper.h"; path = "PrYv/Folder+Helper.h"; sourceTree = "<group>"; };
-		0C2408CE16B7F49600BD60CC /* Folder+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Folder+Helper.m"; path = "PrYv/Folder+Helper.m"; sourceTree = "<group>"; };
 		0C2408D016B9233200BD60CC /* PYLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYLoginController.h; path = PrYv/PYLoginController.h; sourceTree = "<group>"; };
 		0C2408D116B9233200BD60CC /* PYLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYLoginController.m; path = PrYv/PYLoginController.m; sourceTree = "<group>"; };
 		0C2408D216B9233200BD60CC /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
@@ -160,8 +124,6 @@
 		0C5D66931796A5330040DB36 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		0C5D66C41796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+SubscriptingCompatibility.h"; path = "PrYv/NSDictionary+SubscriptingCompatibility.h"; sourceTree = "<group>"; };
 		0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+SubscriptingCompatibility.m"; path = "PrYv/NSDictionary+SubscriptingCompatibility.m"; sourceTree = "<group>"; };
-		0C5D66D0179807110040DB36 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = PrYv/User.h; sourceTree = "<group>"; };
-		0C5D66D1179807120040DB36 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = PrYv/User.m; sourceTree = "<group>"; };
 		0C5F299417AFD8B900AAE154 /* pryv.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = pryv.iconset; sourceTree = "<group>"; };
 		0C63A04517DDA2680033BED8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		0C7342D216ADB00B00EA101F /* Pryv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pryv.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,12 +154,14 @@
 		0C9B755F16D37C3200A7FEBD /* PrYvApplicationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvApplicationTests.h; sourceTree = "<group>"; };
 		0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvApplicationTests.m; sourceTree = "<group>"; };
 		0C9B756216D37C3200A7FEBD /* osx-integrationApplicationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-integrationApplicationTests-Prefix.pch"; sourceTree = "<group>"; };
-		0CA8A2E117D5E78300C5F507 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = PrYv/File.h; sourceTree = "<group>"; };
-		0CA8A2E217D5E78300C5F507 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = File.m; path = PrYv/File.m; sourceTree = "<group>"; };
 		0CA8A2E417D5EA3200C5F507 /* NSMutableArray+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Helper.h"; path = "PrYv/NSMutableArray+Helper.h"; sourceTree = "<group>"; };
 		0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Helper.m"; path = "PrYv/NSMutableArray+Helper.m"; sourceTree = "<group>"; };
 		0CD04983179C5AD8003716A2 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = PrYv/Constants.h; sourceTree = "<group>"; };
 		0CD04984179C5AD8003716A2 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = PrYv/Constants.m; sourceTree = "<group>"; };
+		0CED279E17DEF83D006854A1 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
+		0CED279F17DEF83D006854A1 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
+		0CED27A417DEF8DF006854A1 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		0CED27A517DEF8DF006854A1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		4EDEB9381725A14400AA6D7D /* PryvApiKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PryvApiKit.xcodeproj; path = "sdk-objectivec-apple/PryvApiKit.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -239,20 +203,8 @@
 			children = (
 				0C1F955716C2784800E3C2F2 /* File+Helper.h */,
 				0C1F955816C2784800E3C2F2 /* File+Helper.m */,
-				0C1A1E1E16C9589F0042D7D4 /* FileEvent+Helper.h */,
-				0C1A1E1F16C9589F0042D7D4 /* FileEvent+Helper.m */,
-				0C2408CD16B7F49600BD60CC /* Folder+Helper.h */,
-				0C2408CE16B7F49600BD60CC /* Folder+Helper.m */,
 				0C24089216B7B78C00BD60CC /* User+Helper.h */,
 				0C24089316B7B78C00BD60CC /* User+Helper.m */,
-				0C2408C416B7E12A00BD60CC /* Tag+Helper.h */,
-				0C2408C516B7E12A00BD60CC /* Tag+Helper.m */,
-				0C1A1E2116C95FAB0042D7D4 /* NoteEvent+Helper.h */,
-				0C1A1E2216C95FAB0042D7D4 /* NoteEvent+Helper.m */,
-				0C1A1E5A16CA3B7B0042D7D4 /* Event+Helper.h */,
-				0C1A1E5B16CA3B7C0042D7D4 /* Event+Helper.m */,
-				0C1413B4170CB82B00C21239 /* TextEvent+Helper.h */,
-				0C1413B5170CB82B00C21239 /* TextEvent+Helper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -260,22 +212,10 @@
 		0C1A1E1D16C958560042D7D4 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				0CA8A2E117D5E78300C5F507 /* File.h */,
-				0CA8A2E217D5E78300C5F507 /* File.m */,
-				0C5D66D0179807110040DB36 /* User.h */,
-				0C5D66D1179807120040DB36 /* User.m */,
-				0C1413B7170CB89300C21239 /* TextEvent.h */,
-				0C1413B8170CB89300C21239 /* TextEvent.m */,
-				0C1A1E5416C96F870042D7D4 /* NoteEvent.h */,
-				0C1A1E5516C96F870042D7D4 /* NoteEvent.m */,
-				0C1A1E5116C96F870042D7D4 /* FileEvent.h */,
-				0C1A1E5216C96F870042D7D4 /* FileEvent.m */,
-				0C1A1E4E16C96F870042D7D4 /* Tag.h */,
-				0C1A1E4F16C96F870042D7D4 /* Tag.m */,
-				0C1A1E4B16C96F860042D7D4 /* Event.h */,
-				0C1A1E4C16C96F860042D7D4 /* Event.m */,
-				0C1A1E4816C96F860042D7D4 /* Folder.h */,
-				0C1A1E4916C96F860042D7D4 /* Folder.m */,
+				0CED27A417DEF8DF006854A1 /* User.h */,
+				0CED27A517DEF8DF006854A1 /* User.m */,
+				0CED279E17DEF83D006854A1 /* File.h */,
+				0CED279F17DEF83D006854A1 /* File.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -690,30 +630,18 @@
 				0C24089416B7B78C00BD60CC /* User+Helper.m in Sources */,
 				0C2408A416B7BC5D00BD60CC /* PYStatusMenuController.m in Sources */,
 				0C2408AC16B7C27A00BD60CC /* PYNewNoteController.m in Sources */,
-				0C2408C616B7E12A00BD60CC /* Tag+Helper.m in Sources */,
-				0C2408CF16B7F49800BD60CC /* Folder+Helper.m in Sources */,
 				0C2408D316B9233200BD60CC /* PYLoginController.m in Sources */,
 				0C1A714116BBB5DD004E35EF /* PYFileController.m in Sources */,
 				0C1F955916C2784800E3C2F2 /* File+Helper.m in Sources */,
 				0C1F955C16C27D1900E3C2F2 /* NSString+Helper.m in Sources */,
-				0C1A1E2016C9589F0042D7D4 /* FileEvent+Helper.m in Sources */,
-				0C1A1E2316C95FAB0042D7D4 /* NoteEvent+Helper.m in Sources */,
-				0C1A1E4A16C96F860042D7D4 /* Folder.m in Sources */,
-				0C1A1E4D16C96F870042D7D4 /* Event.m in Sources */,
-				0C1A1E5016C96F870042D7D4 /* Tag.m in Sources */,
-				0C1A1E5316C96F870042D7D4 /* FileEvent.m in Sources */,
-				0C1A1E5616C96F870042D7D4 /* NoteEvent.m in Sources */,
-				0C1A1E5C16CA3B7C0042D7D4 /* Event+Helper.m in Sources */,
 				0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */,
 				0C2559B016FA5B7F00B4C2BC /* PYServicesController.m in Sources */,
-				0C1413B6170CB82B00C21239 /* TextEvent+Helper.m in Sources */,
-				0C1413B9170CB89300C21239 /* TextEvent.m in Sources */,
 				0C1413BC170CB98500C21239 /* PYTextController.m in Sources */,
 				0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */,
-				0C5D66D2179807120040DB36 /* User.m in Sources */,
 				0CD04985179C5AD8003716A2 /* Constants.m in Sources */,
-				0CA8A2E317D5E78300C5F507 /* File.m in Sources */,
 				0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */,
+				0CED27A017DEF83D006854A1 /* File.m in Sources */,
+				0CED27A617DEF8DF006854A1 /* User.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

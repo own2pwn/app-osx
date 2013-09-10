@@ -12,12 +12,6 @@
 #import "User.h"
 #import "User+Helper.h"
 #import "NSString+Helper.h"
-#import "Tag.h"
-#import "Tag+Helper.h"
-#import "Folder.h"
-#import "Folder+Helper.h"
-#import "FileEvent.h"
-#import "PryvApiKit.h"
 #import "NSMutableArray+Helper.h"
 
 @interface PYFileController ()

@@ -5,12 +5,7 @@
 
 
 #import "User+Helper.h"
-#import "Folder.h"
-#import "FileEvent.h"
-#import "Event.h"
-#import "FileEvent+Helper.h"
 #import "Constants.h"
-#import "PryvApiKit.h"
 
 @implementation User (Helper)
 

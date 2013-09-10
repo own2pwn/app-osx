@@ -44,7 +44,6 @@
                   error:(NSString **)error{
     
     //Test for string on the pasteboard
-    NSLog(@"OK");
     if ([[pboard types] containsObject:NSPasteboardTypeString]) {
         NSString *text = [pboard  stringForType:NSPasteboardTypeString];
         PYTextController *textController = [[PYTextController alloc] init];

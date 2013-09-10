@@ -9,14 +9,12 @@
 #import "PYStatusMenuController.h"
 #import "PYNewNoteController.h"
 #import "PYAppDelegate.h"
-#import "User+Helper.h"
 #import "User.h"
-#import "NoteEvent.h"
+#import "User+Helper.h"
 #import "PYFileController.h"
 #import "DragAndDropStatusMenuView.h"
 #import "PYLoginController.h"
 #import "Constants.h"
-#import "PryvApiKit.h"
 
 @implementation PYStatusMenuController
 
