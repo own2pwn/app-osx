@@ -1,8 +1,8 @@
 //
 //  User.m
-//  PrYv
+//  osx-integration
 //
-//  Created by Victor Kristof on 18.07.13.
+//  Created by Victor Kristof on 10.09.13.
 //  Copyright (c) 2013 PrYv. All rights reserved.
 //
 
@@ -11,8 +11,9 @@
 
 @implementation User
 
-@dynamic username;
 @dynamic token;
+@dynamic username;
+@dynamic pryvedEvents;
 @synthesize streams;
 
 @end

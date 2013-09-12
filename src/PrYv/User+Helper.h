@@ -29,9 +29,9 @@
 							AndToken:(NSString *)token
 							InContext:(NSManagedObjectContext*)context;
 -(void)purgeEventsInContext:(NSManagedObjectContext*)context;
--(NSArray*)folderNames;
 -(NSString*)description;
 -(void)logoutFromContext:(NSManagedObjectContext*)context;
 -(PYConnection*)connection;
+-(NSArray*)sortLastPryvedEvents;
 
 @end

@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class PYStatusMenuController;
+
 @interface DragAndDropStatusMenuView : NSView <NSObject, NSMenuDelegate>{
 @private
 	NSMenu *_menu;
@@ -15,5 +17,6 @@
 	
 }
 @property(retain, nonatomic) NSStatusItem* statusItem;
+@property(retain, nonatomic) PYStatusMenuController *statusMenuController;
 
 @end

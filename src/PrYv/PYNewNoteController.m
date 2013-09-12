@@ -10,6 +10,7 @@
 #import "PYAppDelegate.h"
 #import "User.h"
 #import "User+Helper.h"
+#import "PryvedEvent.h"
 
 @interface PYNewNoteController ()
 
@@ -46,12 +47,23 @@
         
         event.streamId = [NSString stringWithString:streamId];
         event.type = @"note/txt";
-        event.time = NSTimeIntervalSince1970;
+        event.time = [[NSDate date] timeIntervalSince1970];
         event.eventContent = [NSString stringWithString:[_content stringValue]];
         event.tags = [NSArray arrayWithArray:[_tags objectValue]];
         
         [[current connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
             NSLog(@"Note created with event ID : %@",newEventId);
+            
+            PryvedEvent *pryvedEvent = [NSEntityDescription insertNewObjectForEntityForName:@"PryvedEvent"
+                                                                inManagedObjectContext:context];            
+            NSDate *currentDate = [NSDate date];
+            pryvedEvent.type = @"note/txt";
+            pryvedEvent.date = currentDate;
+            pryvedEvent.eventId = [NSString stringWithString:newEventId];
+            
+            [current addPryvedEventsObject:pryvedEvent];
+            [context save:nil];
+            
         } errorHandler:^(NSError *error) {
             NSLog(@"Error when pryving a note : %@",error);
         }];

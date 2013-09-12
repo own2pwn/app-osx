@@ -10,6 +10,7 @@
 #import "PYAppDelegate.h"
 #import "User.h"
 #import "User+Helper.h"
+#import "PryvedEvent.h"
 
 @implementation PYTextController
 
@@ -23,12 +24,22 @@
         
         PYEvent *event = [[PYEvent alloc] init];
         event.streamId = @"diary";
-        event.time = NSTimeIntervalSince1970;
+        event.time = [[NSDate date] timeIntervalSince1970];
         event.type = @"note/txt";
         event.eventContent = [NSString stringWithString:text];
         
         [[user connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
             NSLog(@"Pryved text with event ID : %@", newEventId);
+            
+            PryvedEvent *pryvedEvent = (PryvedEvent*)[NSEntityDescription entityForName:@"PryvedEvent" inManagedObjectContext:context];
+            NSDate *currentDate = [NSDate date];
+            pryvedEvent.date = currentDate;
+            pryvedEvent.type = @"note/txt";
+            pryvedEvent.eventId = [NSString stringWithString:newEventId];
+            
+            [user addPryvedEventsObject:pryvedEvent];
+            [context save:nil];
+            
         } errorHandler:^(NSError *error) {
             NSLog(@"Error while pryving text : %@", error);
         }];

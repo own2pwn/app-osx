@@ -45,8 +45,9 @@
 		0C9B756116D37C3200A7FEBD /* PrYvApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */; };
 		0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */; };
 		0CD04985179C5AD8003716A2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD04984179C5AD8003716A2 /* Constants.m */; };
-		0CED27A017DEF83D006854A1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED279F17DEF83D006854A1 /* File.m */; };
-		0CED27A617DEF8DF006854A1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED27A517DEF8DF006854A1 /* User.m */; };
+		0CD268DC17E1B0410078171E /* PryvedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD268DB17E1B0410078171E /* PryvedEvent.m */; };
+		0CED27A917DEFE62006854A1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED27A817DEFE62006854A1 /* User.m */; };
+		0CED27AF17DEFF1F006854A1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED27AE17DEFF1F006854A1 /* File.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,10 +159,12 @@
 		0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Helper.m"; path = "PrYv/NSMutableArray+Helper.m"; sourceTree = "<group>"; };
 		0CD04983179C5AD8003716A2 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = PrYv/Constants.h; sourceTree = "<group>"; };
 		0CD04984179C5AD8003716A2 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = PrYv/Constants.m; sourceTree = "<group>"; };
-		0CED279E17DEF83D006854A1 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = File.h; sourceTree = "<group>"; };
-		0CED279F17DEF83D006854A1 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = File.m; sourceTree = "<group>"; };
-		0CED27A417DEF8DF006854A1 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		0CED27A517DEF8DF006854A1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		0CD268DA17E1B0410078171E /* PryvedEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PryvedEvent.h; path = PrYv/PryvedEvent.h; sourceTree = "<group>"; };
+		0CD268DB17E1B0410078171E /* PryvedEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PryvedEvent.m; path = PrYv/PryvedEvent.m; sourceTree = "<group>"; };
+		0CED27A717DEFE62006854A1 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = PrYv/User.h; sourceTree = "<group>"; };
+		0CED27A817DEFE62006854A1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = PrYv/User.m; sourceTree = "<group>"; };
+		0CED27AD17DEFF1F006854A1 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = PrYv/File.h; sourceTree = "<group>"; };
+		0CED27AE17DEFF1F006854A1 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = File.m; path = PrYv/File.m; sourceTree = "<group>"; };
 		4EDEB9381725A14400AA6D7D /* PryvApiKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PryvApiKit.xcodeproj; path = "sdk-objectivec-apple/PryvApiKit.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -212,10 +215,12 @@
 		0C1A1E1D16C958560042D7D4 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				0CED27A417DEF8DF006854A1 /* User.h */,
-				0CED27A517DEF8DF006854A1 /* User.m */,
-				0CED279E17DEF83D006854A1 /* File.h */,
-				0CED279F17DEF83D006854A1 /* File.m */,
+				0CED27AD17DEFF1F006854A1 /* File.h */,
+				0CED27AE17DEFF1F006854A1 /* File.m */,
+				0CED27A717DEFE62006854A1 /* User.h */,
+				0CED27A817DEFE62006854A1 /* User.m */,
+				0CD268DA17E1B0410078171E /* PryvedEvent.h */,
+				0CD268DB17E1B0410078171E /* PryvedEvent.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -640,8 +645,9 @@
 				0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */,
 				0CD04985179C5AD8003716A2 /* Constants.m in Sources */,
 				0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */,
-				0CED27A017DEF83D006854A1 /* File.m in Sources */,
-				0CED27A617DEF8DF006854A1 /* User.m in Sources */,
+				0CED27A917DEFE62006854A1 /* User.m in Sources */,
+				0CED27AF17DEFF1F006854A1 /* File.m in Sources */,
+				0CD268DC17E1B0410078171E /* PryvedEvent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

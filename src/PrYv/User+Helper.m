@@ -41,6 +41,17 @@
     return [PYClient createConnectionWithUsername:self.username andAccessToken:self.token];
 }
 
+-(NSArray*)sortLastPryvedEvents{
+    if ([self.pryvedEvents count] > 0) {
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+        NSArray *sortedEvents = [self.pryvedEvents sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        [sortDescriptor release];
+        return sortedEvents;
+    }else {
+        return [[[NSArray alloc] init] autorelease];
+    }
+}
+
 -(void)purgeEventsInContext:(NSManagedObjectContext *)context {
 //	[self.events enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
 //		if ([obj isKindOfClass:[FileEvent class]]) {
@@ -60,26 +71,13 @@
                                                                            object:self];
 }
 
--(NSArray*)folderNames {
-	NSMutableArray *names = [[NSMutableArray alloc] init];
-//	[self.folders enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
-//		[names addObject:[obj name]];
-//	}];
-	return [names autorelease];
-}
-
 -(NSString*)description {
 	NSMutableString *description = [NSMutableString stringWithString:@""];
 	[description appendString:@"#######################################"];
 	[description appendString:@"\nCURRENT USER"];
 	[description appendFormat:@"\nUsername: %@",self.username];
-	//[description appendFormat:@"\noAuthToken: %@",self.oAuthToken];
-	//__block int i = 1;
-//	[self.events enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
-//		[description appendFormat:@"\n\n****** Event %d: %@ *****",i,[obj className]];
-//		[description appendFormat:@"%@",[obj description]];
-//		i++;
-//	}];
+	[description appendFormat:@"\nToken: %@",self.token];
+	
 	return description;
 }
 

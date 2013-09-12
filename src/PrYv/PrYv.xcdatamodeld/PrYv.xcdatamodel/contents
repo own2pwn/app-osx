@@ -7,12 +7,20 @@
         <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
+    <entity name="PryvedEvent" representedClassName="PryvedEvent" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="eventId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="pryvedEvents" inverseEntity="User" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pryvedEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PryvedEvent" inverseName="user" inverseEntity="PryvedEvent" syncable="YES"/>
     </entity>
     <elements>
-        <element name="File" positionX="-270" positionY="-981" width="128" height="120"/>
-        <element name="User" positionX="-936" positionY="-1062" width="128" height="73"/>
+        <element name="File" positionX="-792" positionY="-930" width="128" height="120"/>
+        <element name="PryvedEvent" positionX="-666" positionY="-1077" width="128" height="105"/>
+        <element name="User" positionX="-936" positionY="-1062" width="128" height="88"/>
     </elements>
 </model>

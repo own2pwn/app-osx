@@ -8,6 +8,7 @@
 
 #import "DragAndDropStatusMenuView.h"
 #import "PYFileController.h"
+#import "PYStatusMenuController.h"
 
 @interface DragAndDropStatusMenuView ()
 
@@ -22,12 +23,14 @@
 @implementation DragAndDropStatusMenuView
 
 @synthesize statusItem = _statusItem;
+@synthesize statusMenuController = _statusMenuController;
 
 - (id)initWithFrame:(NSRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
 		_statusItem = nil;
 		_menu = nil;
+        _statusMenuController = nil;
 		_isMenuVisible = NO;
         [self registerForDraggedTypes:[NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
     }
@@ -49,6 +52,7 @@
 
 -(void)mouseDown:(NSEvent *)theEvent {
 	[[self menu] setDelegate:self];
+    [_statusMenuController updateLastPryvedEvents];
 	[_statusItem popUpStatusItemMenu:[self menu]];
     //[self setNeedsDisplay:YES];
 }

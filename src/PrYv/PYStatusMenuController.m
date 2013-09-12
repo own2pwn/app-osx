@@ -15,6 +15,7 @@
 #import "DragAndDropStatusMenuView.h"
 #import "PYLoginController.h"
 #import "Constants.h"
+#import "PryvedEvent.h"
 
 @implementation PYStatusMenuController
 
@@ -47,7 +48,7 @@
 -(PYStatusMenuController*)init {
 	self = [super init];
 	if (self) {
-		
+        
 	}
 	return self;
 }
@@ -58,6 +59,7 @@
 	[_statusItem retain];
 	DragAndDropStatusMenuView *dragAndDropView = [[DragAndDropStatusMenuView alloc]
 												  initWithFrame:NSMakeRect(0, 0, 22, 22)];
+    dragAndDropView.statusMenuController = self;
 	dragAndDropView.statusItem = _statusItem;
 	[dragAndDropView setMenu:_statusMenu];
 	[_statusItem setView:dragAndDropView];
@@ -76,6 +78,7 @@
                                              selector:@selector(updateMenuItemsLogout:)
                                                  name:PYLogoutSuccessfullNotification
                                                object:nil];
+    
 }
 
 -(void)showMenu {
@@ -88,6 +91,28 @@
 
 -(void)updateMenuItemsLogout:(NSNotification*)notification{
     [logInOrOut setTitle:@"Log in"];
+}
+
+-(void)updateLastPryvedEvents
+{
+    
+    NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
+    User *current = [User currentUserInContext:context];
+    
+    NSArray *sortedPryvedEvents = [NSArray arrayWithArray:[current sortLastPryvedEvents]];
+    
+    NSMenu *pryvedEvents = [[NSMenu alloc] init];
+    if ([sortedPryvedEvents count] > 0) {
+        for (PryvedEvent *event in sortedPryvedEvents) {
+            [pryvedEvents addItemWithTitle:[event.date description] action:NULL keyEquivalent:@""];
+        }
+    }else{
+        [pryvedEvents addItemWithTitle:@"Nothing pryved yet." action:NULL keyEquivalent:@""];
+    }
+    
+    [lastPryvedItems setSubmenu:pryvedEvents];
+    [pryvedEvents release];
+
 }
 
 -(IBAction)openFiles:(id)sender {

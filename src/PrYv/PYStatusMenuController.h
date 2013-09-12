@@ -11,7 +11,7 @@
 
 @class PYNewNoteController, PYFileController, PYLoginController;
 
-@interface PYStatusMenuController : NSViewController <NSWindowDelegate>{
+@interface PYStatusMenuController : NSViewController <NSWindowDelegate, NSMenuDelegate>{
 @private
 	PYNewNoteController *_newNoteController;
 	PYFileController *_fileController;
@@ -25,6 +25,7 @@
     IBOutlet NSMenuItem *test;
     IBOutlet NSMenuItem *goToMyPryv;
     IBOutlet NSMenuItem *preferences;
+    IBOutlet NSMenuItem *lastPryvedItems;
 }
 
 
@@ -39,5 +40,6 @@
 -(void)showMenu;
 -(void)updateMenuItemsLogin:(NSNotification*)notification;
 -(void)updateMenuItemsLogout:(NSNotification*)notification;
+-(void)updateLastPryvedEvents;
 @end
 

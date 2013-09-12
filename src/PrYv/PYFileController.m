@@ -13,6 +13,7 @@
 #import "User+Helper.h"
 #import "NSString+Helper.h"
 #import "NSMutableArray+Helper.h"
+#import "PryvedEvent.h"
 
 @interface PYFileController ()
 
@@ -141,7 +142,7 @@
 		NSArray *files = [NSArray arrayWithArray:[args objectForKey:@"files"]];
 		NSArray *tags = [NSArray arrayWithArray:[args objectForKey:@"tags"]];
 		NSString *streamId = [NSString stringWithString:[args objectForKey:@"stream"]];
-        NSDate *currentTime = [NSDate dateWithTimeIntervalSince1970:NSTimeIntervalSince1970];
+        NSDate *currentTime = [NSDate date];
         NSLog(@"Stream ID : %@", streamId);
 		
         //Construct the array of files @filesToSend recursively
@@ -185,6 +186,17 @@
         //instruction before releasing everything.
         [[current connection] createEvent:event requestType:PYRequestTypeSync successHandler:^(NSString *newEventId, NSString *stoppedId) {
             NSLog(@"New event ID : %@",newEventId);
+            
+            PryvedEvent *pryvedEvent = (PryvedEvent*)[NSEntityDescription entityForName:@"PryvedEvent" inManagedObjectContext:context];
+            NSDate *currentDate = [NSDate date];
+            pryvedEvent.date = currentDate;
+            pryvedEvent.type = [NSString stringWithString:event.type];
+            pryvedEvent.eventId = [NSString stringWithString:newEventId];
+            
+            [current addPryvedEventsObject:pryvedEvent];
+            [context save:nil];
+
+            
         } errorHandler:^(NSError *error) {
             NSLog(@"%@",error);
             NSLog(@"UserInfo: %@",[error userInfo]);
