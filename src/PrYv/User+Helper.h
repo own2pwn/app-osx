@@ -28,10 +28,10 @@
 +(User*)createNewUserWithUsername:(NSString *)username
 							AndToken:(NSString *)token
 							InContext:(NSManagedObjectContext*)context;
--(void)purgeEventsInContext:(NSManagedObjectContext*)context;
 -(NSString*)description;
 -(void)logoutFromContext:(NSManagedObjectContext*)context;
 -(PYConnection*)connection;
--(NSArray*)sortLastPryvedEvents;
+-(NSArray*)sortLastPryvedEventsInContext:(NSManagedObjectContext*)context;
+-(void)updateNumberOfPryvedEventsInContext:(NSManagedObjectContext*)context;
 
 @end

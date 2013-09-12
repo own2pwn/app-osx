@@ -14,6 +14,7 @@
 #import "NSString+Helper.h"
 #import "NSMutableArray+Helper.h"
 #import "PryvedEvent.h"
+#import "Constants.h"
 
 @interface PYFileController ()
 
@@ -187,11 +188,19 @@
         [[current connection] createEvent:event requestType:PYRequestTypeSync successHandler:^(NSString *newEventId, NSString *stoppedId) {
             NSLog(@"New event ID : %@",newEventId);
             
-            PryvedEvent *pryvedEvent = (PryvedEvent*)[NSEntityDescription entityForName:@"PryvedEvent" inManagedObjectContext:context];
+            PryvedEvent *pryvedEvent = [NSEntityDescription insertNewObjectForEntityForName:@"PryvedEvent"
+                                                                     inManagedObjectContext:context];
             NSDate *currentDate = [NSDate date];
+            NSString *filename;
+            if ([filesToSend count] > 1) {
+                filename = @"Folder";
+            }else{
+                filename = [NSString stringWithString:[[filesToSend objectAtIndex:0] filename]];
+            }
             pryvedEvent.date = currentDate;
-            pryvedEvent.type = [NSString stringWithString:event.type];
             pryvedEvent.eventId = [NSString stringWithString:newEventId];
+            pryvedEvent.type = [NSString stringWithString:kPYLastPryvedEventFile];
+            pryvedEvent.content = [NSString stringWithString:filename];
             
             [current addPryvedEventsObject:pryvedEvent];
             [context save:nil];

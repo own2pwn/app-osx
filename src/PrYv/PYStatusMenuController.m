@@ -99,12 +99,18 @@
     NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
     User *current = [User currentUserInContext:context];
     
-    NSArray *sortedPryvedEvents = [NSArray arrayWithArray:[current sortLastPryvedEvents]];
-    
+    NSArray *sortedPryvedEvents = [NSArray arrayWithArray:[current sortLastPryvedEventsInContext:context]];
     NSMenu *pryvedEvents = [[NSMenu alloc] init];
+    
     if ([sortedPryvedEvents count] > 0) {
         for (PryvedEvent *event in sortedPryvedEvents) {
-            [pryvedEvents addItemWithTitle:[event.date description] action:NULL keyEquivalent:@""];
+            NSMutableString *title = [NSMutableString stringWithFormat:@"%@ : %@", event.type, event.content];
+            if ([title length] > 30) {
+                NSString *tooLongTitle = [NSString stringWithFormat:@"%@...",[title substringToIndex:31]];
+                [pryvedEvents addItemWithTitle:tooLongTitle action:NULL keyEquivalent:@""];
+            }else{
+                [pryvedEvents addItemWithTitle:title action:NULL keyEquivalent:@""];
+            }
         }
     }else{
         [pryvedEvents addItemWithTitle:@"Nothing pryved yet." action:NULL keyEquivalent:@""];

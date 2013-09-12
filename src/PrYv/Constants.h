@@ -10,3 +10,10 @@
 
 FOUNDATION_EXPORT NSString *const PYLoginSuccessfullNotification;
 FOUNDATION_EXPORT NSString *const PYLogoutSuccessfullNotification;
+
+FOUNDATION_EXPORT NSString *const kPYLastPryvedEventNote;
+FOUNDATION_EXPORT NSString *const kPYLastPryvedEventText;
+FOUNDATION_EXPORT NSString *const kPYLastPryvedEventFile;
+
+
+FOUNDATION_EXPORT int const kPYNumberOfLastPryvedEvents;

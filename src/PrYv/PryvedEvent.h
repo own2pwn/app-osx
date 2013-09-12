@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSString * eventId;
 @property (nonatomic, retain) NSString * type;
+@property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) User *user;
 
 @end

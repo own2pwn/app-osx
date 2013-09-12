@@ -11,6 +11,7 @@
 #import "User.h"
 #import "User+Helper.h"
 #import "PryvedEvent.h"
+#import "Constants.h"
 
 @interface PYNewNoteController ()
 
@@ -57,11 +58,13 @@
             PryvedEvent *pryvedEvent = [NSEntityDescription insertNewObjectForEntityForName:@"PryvedEvent"
                                                                 inManagedObjectContext:context];            
             NSDate *currentDate = [NSDate date];
-            pryvedEvent.type = @"note/txt";
+            pryvedEvent.type = [NSString stringWithString:kPYLastPryvedEventNote];
+            pryvedEvent.content = [NSString stringWithString:event.eventContent];
             pryvedEvent.date = currentDate;
             pryvedEvent.eventId = [NSString stringWithString:newEventId];
             
             [current addPryvedEventsObject:pryvedEvent];
+            [current updateNumberOfPryvedEventsInContext:context];
             [context save:nil];
             
         } errorHandler:^(NSError *error) {

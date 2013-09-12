@@ -11,6 +11,7 @@
 #import "User.h"
 #import "User+Helper.h"
 #import "PryvedEvent.h"
+#import "Constants.h"
 
 @implementation PYTextController
 
@@ -31,11 +32,13 @@
         [[user connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
             NSLog(@"Pryved text with event ID : %@", newEventId);
             
-            PryvedEvent *pryvedEvent = (PryvedEvent*)[NSEntityDescription entityForName:@"PryvedEvent" inManagedObjectContext:context];
+            PryvedEvent *pryvedEvent = [NSEntityDescription insertNewObjectForEntityForName:@"PryvedEvent"
+                                                                     inManagedObjectContext:context];
             NSDate *currentDate = [NSDate date];
             pryvedEvent.date = currentDate;
-            pryvedEvent.type = @"note/txt";
             pryvedEvent.eventId = [NSString stringWithString:newEventId];
+            pryvedEvent.type = [NSString stringWithString:kPYLastPryvedEventText];
+            pryvedEvent.content = [NSString stringWithString:text];
             
             [user addPryvedEventsObject:pryvedEvent];
             [context save:nil];

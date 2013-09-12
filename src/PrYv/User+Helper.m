@@ -6,6 +6,8 @@
 
 #import "User+Helper.h"
 #import "Constants.h"
+#import "PryvedEvent.h"
+#import "Constants.h"
 
 @implementation User (Helper)
 
@@ -41,26 +43,44 @@
     return [PYClient createConnectionWithUsername:self.username andAccessToken:self.token];
 }
 
--(NSArray*)sortLastPryvedEvents{
+-(NSArray*)sortLastPryvedEventsInContext:(NSManagedObjectContext *)context{
     if ([self.pryvedEvents count] > 0) {
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
         NSArray *sortedEvents = [self.pryvedEvents sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
         [sortDescriptor release];
+        
         return sortedEvents;
+        
     }else {
         return [[[NSArray alloc] init] autorelease];
     }
 }
 
--(void)purgeEventsInContext:(NSManagedObjectContext *)context {
-//	[self.events enumerateObjectsUsingBlock:^(id obj, BOOL *stop) {
-//		if ([obj isKindOfClass:[FileEvent class]]) {
-//			[(FileEvent*)obj deleteFiles];
-//		}
-//		[context deleteObject:obj];
-//	}];
-	[context save:nil];
-	NSLog(@"Events purged !");
+-(void)updateNumberOfPryvedEventsInContext:(NSManagedObjectContext *)context {
+    
+    NSLog(@"Count : %lu",(unsigned long)[self.pryvedEvents count]);
+    NSLog(@"Max value : %d",kPYNumberOfLastPryvedEvents);
+   
+    if ([self.pryvedEvents count] >  kPYNumberOfLastPryvedEvents) {
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+        NSArray *sortedEvents = [self.pryvedEvents sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+        [sortDescriptor release];
+        
+        NSRange range;
+        range.location = 0;
+        range.length = kPYNumberOfLastPryvedEvents;
+        
+        NSArray *reducedArray = [sortedEvents subarrayWithRange:range];
+        
+        NSSet *reducedSet = [NSSet setWithArray:reducedArray];
+        [self removePryvedEvents:self.pryvedEvents];
+        [context save:nil];
+        
+        [self addPryvedEvents:reducedSet];
+        [context save:nil];
+    }
+    
+
 }
 
 -(void)logoutFromContext:(NSManagedObjectContext *)context{

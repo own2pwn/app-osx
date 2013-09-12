@@ -8,6 +8,7 @@
         <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <entity name="PryvedEvent" representedClassName="PryvedEvent" syncable="YES">
+        <attribute name="content" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="eventId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
@@ -20,7 +21,7 @@
     </entity>
     <elements>
         <element name="File" positionX="-792" positionY="-930" width="128" height="120"/>
-        <element name="PryvedEvent" positionX="-666" positionY="-1077" width="128" height="105"/>
+        <element name="PryvedEvent" positionX="-666" positionY="-1077" width="128" height="118"/>
         <element name="User" positionX="-936" positionY="-1062" width="128" height="88"/>
     </elements>
 </model>

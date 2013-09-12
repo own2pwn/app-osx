@@ -15,6 +15,7 @@
 @dynamic date;
 @dynamic eventId;
 @dynamic type;
+@dynamic content;
 @dynamic user;
 
 @end

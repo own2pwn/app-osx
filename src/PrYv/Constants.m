@@ -10,3 +10,9 @@
 
 NSString *const PYLoginSuccessfullNotification = @"PYLoginSuccessfullNotification";
 NSString *const PYLogoutSuccessfullNotification = @"PYLogoutSuccessfullNotification";
+
+NSString *const kPYLastPryvedEventNote = @"Note";
+NSString *const kPYLastPryvedEventText = @"Text";
+NSString *const kPYLastPryvedEventFile = @"File";
+
+int const kPYNumberOfLastPryvedEvents = 5;
