@@ -4,6 +4,14 @@ Desktop application &amp; system wide contextual menu integration for Pryv.
 
 **Current version :** iteration 9
 
+##Build and run the application
+
+- Be sure that the PryvSDK submodule is on the `origin/streams` branch.
+- If not, after making the change, clean the project (⇧-⌘-K) and relaunch Xcode.
+- In Xcode, the scheme should be set on `Pryv > My Mac 64-bit` or `osx-integration > My Mac 64-bit`.
+- Build/Run the application in Xcode.
+
+
 ##Troubleshooter and reset
 
 You are reading this section if you want to :
