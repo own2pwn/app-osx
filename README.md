@@ -2,7 +2,7 @@
 
 Desktop application &amp; system wide contextual menu integration for Pryv.
 
-**Current version :** iteration 8
+**Current version :** iteration 9
 
 ##Troubleshooter and reset
 
@@ -10,7 +10,6 @@ You are reading this section if you want to :
 
 - Troubleshoot **The managed object model version used to open the persistent store is incompatible with the one that was used to create the persistent store**
 - Troubleshoot **Failed to initialize the store**
-- Change the user
 - Check what files are cached
 - Remove the *pryv file(s)* or *pryv selected text* service
 
