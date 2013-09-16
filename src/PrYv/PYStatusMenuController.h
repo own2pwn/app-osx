@@ -21,8 +21,6 @@
     IBOutlet NSMenuItem *logInOrOut;
     IBOutlet NSMenuItem *newNote;
     IBOutlet NSMenuItem *pryvFiles;
-    IBOutlet NSMenuItem *displayCurrentUser;
-    IBOutlet NSMenuItem *test;
     IBOutlet NSMenuItem *goToMyPryv;
     IBOutlet NSMenuItem *preferences;
     IBOutlet NSMenuItem *lastPryvedItems;
@@ -32,10 +30,8 @@
 
 -(PYStatusMenuController*)init;
 -(IBAction)newNote:(id)sender;
--(IBAction)displayCurrentUser:(id)sender;
 -(IBAction)goToMyPryv:(id)sender;
 -(IBAction)openFiles:(id)sender;
--(IBAction)test:(id)sender;
 - (IBAction)logInOrOut:(id)sender;
 -(void)showMenu;
 -(void)updateMenuItemsLogin:(NSNotification*)notification;

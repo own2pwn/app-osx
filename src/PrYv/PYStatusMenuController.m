@@ -19,30 +19,13 @@
 
 @implementation PYStatusMenuController
 
+#pragma mark - General methods
+
 -(void)dealloc {
 	[_newNoteController release];
 	[_fileController release];
 	[_statusItem release];
 	[super dealloc];
-}
-
--(IBAction)test:(id)sender {
-	NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-    User *current = [User currentUserInContext:context];
-    PYConnection *connection = [current connection];
-    
-    [connection getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:^(NSArray *cachedStreamsList) {
-        [cachedStreamsList enumerateObjectsUsingBlock:^(PYStream *stream, NSUInteger idx, BOOL *stop) {
-            NSLog(@"Cached : %@ (%@)", stream.name, stream.streamId);
-        }];
-    } gotOnlineStreams:^(NSArray *onlineStreamList) {
-        [onlineStreamList enumerateObjectsUsingBlock:^(PYStream *stream, NSUInteger idx, BOOL *stop) {
-            NSLog(@"Online : %@ (%@)", stream.name, stream.streamId);
-        }];
-    } errorHandler:^(NSError *error) {
-        NSLog(@"%@", error);
-    }];
-    
 }
 
 -(PYStatusMenuController*)init {
@@ -66,8 +49,6 @@
 	[dragAndDropView release];
     [newNote setEnabled:YES];
     [pryvFiles setEnabled:YES];
-    [displayCurrentUser setEnabled:NO];
-    [test setEnabled:YES];
     [goToMyPryv setEnabled:NO];
     [preferences setEnabled:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -80,6 +61,62 @@
                                                object:nil];
     
 }
+
+#pragma mark - Actions
+
+-(IBAction)newNote:(id)sender {
+	if(!_newNoteController) {
+		_newNoteController = [[PYNewNoteController alloc] initWithWindowNibName:@"NewNote"];
+		[_newNoteController.window setDelegate:_newNoteController];
+	}
+	[_newNoteController showWindow:self];
+}
+
+-(IBAction)openFiles:(id)sender {
+	NSOpenPanel *openDialog = [NSOpenPanel openPanel];
+	[openDialog retain]; //Mac OS X 10.6 fix
+	_fileController = [[PYFileController alloc] initWithOpenPanel:openDialog];
+	[_fileController runDialog];
+}
+
+-(IBAction)goToMyPryv:(id)sender {
+	NSURL *url = [NSURL URLWithString:@"http://www.pryv.net/"];
+	if(![[NSWorkspace sharedWorkspace] openURL:url])
+		NSLog(@"Failed to open url: %@",[url description]);
+}
+
+- (IBAction)logInOrOut:(id)sender {
+    NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
+    User * user = [User currentUserInContext:context];
+	//If no user has been found, open login window
+	if (!user) {
+		loginWindow = [[PYLoginController alloc] initForUser:user];
+		[loginWindow.window setDelegate:self];
+		[loginWindow showWindow:self];
+        
+        //If the user has been found
+	}else {
+		[user logoutFromContext:context];
+    }
+}
+
+#pragma mark - Window delegate
+
+-(void)windowDidBecomeKey:(NSNotification *)notification{
+    NSString *identifier = [[notification object] valueForKey:@"identifier"];
+    if ([identifier isEqual: @"LoginWindow"]) {
+        [logInOrOut setEnabled:NO];
+    }
+}
+
+-(void)windowWillClose:(NSNotification *)notification{
+    NSString *identifier = [[notification object] valueForKey:@"identifier"];
+    if ([identifier isEqual: @"LoginWindow"]) {
+        [logInOrOut setEnabled:YES];
+    }
+}
+
+#pragma mark - View methods
 
 -(void)showMenu {
 	[_statusItem popUpStatusItemMenu:_statusMenu];
@@ -95,7 +132,6 @@
 
 -(void)updateLastPryvedEvents
 {
-    
     NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
     User *current = [User currentUserInContext:context];
     
@@ -118,64 +154,6 @@
     
     [lastPryvedItems setSubmenu:pryvedEvents];
     [pryvedEvents release];
-
-}
-
--(IBAction)openFiles:(id)sender {
-	NSOpenPanel *openDialog = [NSOpenPanel openPanel];
-	[openDialog retain]; //Mac OS X 10.6 fix	
-	_fileController = [[PYFileController alloc] initWithOpenPanel:openDialog];
-	[_fileController runDialog];
-}
-
--(IBAction)displayCurrentUser:(id)sender {
-	NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-	User *current = [User currentUserInContext:context];
-	NSLog(@"\n%@",[current description]);
-}
-
-- (IBAction)logInOrOut:(id)sender {
-    NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-    User * user = [User currentUserInContext:context];
-	//If no user has been found, open login window
-	if (!user) {
-		loginWindow = [[PYLoginController alloc] initForUser:user];
-		[loginWindow.window setDelegate:self];
-		[loginWindow showWindow:self];
-        
-        //If the user has been found
-	}else {
-		[user logoutFromContext:context];
-    }
-}
-
--(void)windowDidBecomeKey:(NSNotification *)notification{
-    NSString *identifier = [[notification object] valueForKey:@"identifier"];
-    if ([identifier isEqual: @"LoginWindow"]) {
-        [logInOrOut setEnabled:NO];
-    }
-}
-
--(void)windowWillClose:(NSNotification *)notification{
-    NSString *identifier = [[notification object] valueForKey:@"identifier"];
-    if ([identifier isEqual: @"LoginWindow"]) {
-        [logInOrOut setEnabled:YES];
-    }
-}
-
-
--(IBAction)newNote:(id)sender {
-	if(!_newNoteController) {
-		_newNoteController = [[PYNewNoteController alloc] initWithWindowNibName:@"NewNote"];
-		[_newNoteController.window setDelegate:_newNoteController];
-	}
-	[_newNoteController showWindow:self];
-}
-
--(IBAction)goToMyPryv:(id)sender {
-	NSURL *url = [NSURL URLWithString:@"http://www.pryv.net/"];
-	if(![[NSWorkspace sharedWorkspace] openURL:url])
-		NSLog(@"Failed to open url: %@",[url description]);
 }
 
 @end
