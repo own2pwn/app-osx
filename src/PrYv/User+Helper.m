@@ -58,9 +58,6 @@
 
 -(void)updateNumberOfPryvedEventsInContext:(NSManagedObjectContext *)context {
     
-    NSLog(@"Count : %lu",(unsigned long)[self.pryvedEvents count]);
-    NSLog(@"Max value : %d",kPYNumberOfLastPryvedEvents);
-   
     if ([self.pryvedEvents count] >  kPYNumberOfLastPryvedEvents) {
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
         NSArray *sortedEvents = [self.pryvedEvents sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];

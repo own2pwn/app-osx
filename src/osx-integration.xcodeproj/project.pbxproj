@@ -28,7 +28,6 @@
 		0C5F299517AFD8B900AAE154 /* pryv.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 0C5F299417AFD8B900AAE154 /* pryv.iconset */; };
 		0C63A04617DDA2680033BED8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C63A04517DDA2680033BED8 /* CoreFoundation.framework */; };
 		0C6FDEDB1725B8C300FF2447 /* PryvApiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6FDED61725B83500FF2447 /* PryvApiKit.framework */; };
-		0C7342D716ADB00B00EA101F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342DF16ADB00B00EA101F /* InfoPlist.strings */; };
 		0C7342E316ADB00B00EA101F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E216ADB00B00EA101F /* main.m */; };
 		0C7342E716ADB00B00EA101F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342E516ADB00B00EA101F /* Credits.rtf */; };
@@ -46,6 +45,7 @@
 		0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */; };
 		0CD04985179C5AD8003716A2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD04984179C5AD8003716A2 /* Constants.m */; };
 		0CD268DF17E1CE150078171E /* PryvedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD268DE17E1CE150078171E /* PryvedEvent.m */; };
+		0CE26F0817EECDE50095BAC0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0CED27A917DEFE62006854A1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED27A817DEFE62006854A1 /* User.m */; };
 		0CED27AF17DEFF1F006854A1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED27AE17DEFF1F006854A1 /* File.m */; };
 /* End PBXBuildFile section */
@@ -173,10 +173,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CE26F0817EECDE50095BAC0 /* Cocoa.framework in Frameworks */,
 				0C63A04617DDA2680033BED8 /* CoreFoundation.framework in Frameworks */,
 				0C5D66941796A5330040DB36 /* WebKit.framework in Frameworks */,
 				0C6FDEDB1725B8C300FF2447 /* PryvApiKit.framework in Frameworks */,
-				0C7342D716ADB00B00EA101F /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -492,7 +492,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = PRYV;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = PrYv;
 			};
 			buildConfigurationList = 0C7342CC16ADB00B00EA101F /* Build configuration list for PBXProject "osx-integration" */;
