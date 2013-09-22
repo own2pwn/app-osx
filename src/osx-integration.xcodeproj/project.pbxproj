@@ -23,10 +23,8 @@
 		0C3C26A216CBCC380023E724 /* StatusMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A116CBCC380023E724 /* StatusMenu.xib */; };
 		0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */; };
 		0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A716CCF9050023E724 /* FaviconBlack22.png */; };
-		0C5D66941796A5330040DB36 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C5D66931796A5330040DB36 /* WebKit.framework */; };
 		0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */; };
 		0C5F299517AFD8B900AAE154 /* pryv.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 0C5F299417AFD8B900AAE154 /* pryv.iconset */; };
-		0C63A04617DDA2680033BED8 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C63A04517DDA2680033BED8 /* CoreFoundation.framework */; };
 		0C6FDEDB1725B8C300FF2447 /* PryvApiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6FDED61725B83500FF2447 /* PryvApiKit.framework */; };
 		0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342DF16ADB00B00EA101F /* InfoPlist.strings */; };
 		0C7342E316ADB00B00EA101F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E216ADB00B00EA101F /* main.m */; };
@@ -43,9 +41,11 @@
 		0C9B755E16D37C3200A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */; };
 		0C9B756116D37C3200A7FEBD /* PrYvApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */; };
 		0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */; };
+		0CC0F39217EEE6BF00870E29 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39017EEE6B000870E29 /* Cocoa.framework */; };
+		0CC0F39417EEE6C700870E29 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */; };
+		0CC0F39617EEE6CE00870E29 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39517EEE6CE00870E29 /* WebKit.framework */; };
 		0CD04985179C5AD8003716A2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD04984179C5AD8003716A2 /* Constants.m */; };
 		0CD268DF17E1CE150078171E /* PryvedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD268DE17E1CE150078171E /* PryvedEvent.m */; };
-		0CE26F0817EECDE50095BAC0 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0CED27A917DEFE62006854A1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED27A817DEFE62006854A1 /* User.m */; };
 		0CED27AF17DEFF1F006854A1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED27AE17DEFF1F006854A1 /* File.m */; };
 /* End PBXBuildFile section */
@@ -157,6 +157,9 @@
 		0C9B756216D37C3200A7FEBD /* osx-integrationApplicationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-integrationApplicationTests-Prefix.pch"; sourceTree = "<group>"; };
 		0CA8A2E417D5EA3200C5F507 /* NSMutableArray+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Helper.h"; path = "PrYv/NSMutableArray+Helper.h"; sourceTree = "<group>"; };
 		0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Helper.m"; path = "PrYv/NSMutableArray+Helper.m"; sourceTree = "<group>"; };
+		0CC0F39017EEE6B000870E29 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		0CC0F39517EEE6CE00870E29 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		0CD04983179C5AD8003716A2 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = PrYv/Constants.h; sourceTree = "<group>"; };
 		0CD04984179C5AD8003716A2 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = PrYv/Constants.m; sourceTree = "<group>"; };
 		0CD268DD17E1CE150078171E /* PryvedEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PryvedEvent.h; path = PrYv/PryvedEvent.h; sourceTree = "<group>"; };
@@ -173,9 +176,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CE26F0817EECDE50095BAC0 /* Cocoa.framework in Frameworks */,
-				0C63A04617DDA2680033BED8 /* CoreFoundation.framework in Frameworks */,
-				0C5D66941796A5330040DB36 /* WebKit.framework in Frameworks */,
+				0CC0F39617EEE6CE00870E29 /* WebKit.framework in Frameworks */,
+				0CC0F39417EEE6C700870E29 /* CoreFoundation.framework in Frameworks */,
+				0CC0F39217EEE6BF00870E29 /* Cocoa.framework in Frameworks */,
 				0C6FDEDB1725B8C300FF2447 /* PryvApiKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +328,9 @@
 		0C7342D516ADB00B00EA101F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0CC0F39517EEE6CE00870E29 /* WebKit.framework */,
+				0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */,
+				0CC0F39017EEE6B000870E29 /* Cocoa.framework */,
 				0C63A04517DDA2680033BED8 /* CoreFoundation.framework */,
 				0C5D66931796A5330040DB36 /* WebKit.framework */,
 				0C7342D616ADB00B00EA101F /* Cocoa.framework */,
@@ -493,7 +499,12 @@
 			attributes = {
 				CLASSPREFIX = PRYV;
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = PrYv;
+				ORGANIZATIONNAME = Pryv;
+				TargetAttributes = {
+					0C7342D116ADB00B00EA101F = {
+						DevelopmentTeam = GNL8PH5553;
+					};
+				};
 			};
 			buildConfigurationList = 0C7342CC16ADB00B00EA101F /* Build configuration list for PBXProject "osx-integration" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -788,6 +799,7 @@
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -800,7 +812,9 @@
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = Pryv;
-				SDKROOT = macosx10.6;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -811,6 +825,7 @@
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -818,7 +833,9 @@
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = Pryv;
-				SDKROOT = macosx10.6;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -932,6 +949,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -944,7 +963,9 @@
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = Pryv;
-				SDKROOT = macosx10.6;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Tests;
@@ -986,6 +1007,91 @@
 			};
 			name = Tests;
 		};
+		0CC0F39717EEE9EB00870E29 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx10.6;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+			};
+			name = Distribution;
+		};
+		0CC0F39817EEE9EB00870E29 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
+				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = Pryv;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Distribution;
+		};
+		0CC0F39917EEE9EB00870E29 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvTests/osx-integrationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvTests/osx-integrationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "osx-integrationLogicTests";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Distribution;
+		};
+		0CC0F39A17EEE9EB00870E29 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PrYv.app/Contents/MacOS/PrYv";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvApplicationTests/osx-integrationApplicationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvApplicationTests/osx-integrationApplicationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "osx-integrationApplicationTests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Distribution;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -995,6 +1101,7 @@
 				0C73430516ADB00B00EA101F /* Debug */,
 				0C9B756816D3816900A7FEBD /* Tests */,
 				0C73430616ADB00B00EA101F /* Release */,
+				0CC0F39717EEE9EB00870E29 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1005,6 +1112,7 @@
 				0C73430816ADB00B00EA101F /* Debug */,
 				0C9B756916D3816900A7FEBD /* Tests */,
 				0C73430916ADB00B00EA101F /* Release */,
+				0CC0F39817EEE9EB00870E29 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1015,6 +1123,7 @@
 				0C9B754F16D37AAF00A7FEBD /* Debug */,
 				0C9B756A16D3816900A7FEBD /* Tests */,
 				0C9B755016D37AAF00A7FEBD /* Release */,
+				0CC0F39917EEE9EB00870E29 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1025,6 +1134,7 @@
 				0C9B756416D37C3200A7FEBD /* Debug */,
 				0C9B756B16D3816900A7FEBD /* Tests */,
 				0C9B756516D37C3200A7FEBD /* Release */,
+				0CC0F39A17EEE9EB00870E29 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
