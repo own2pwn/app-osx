@@ -63,6 +63,8 @@
     //Set up the service handler
     servicesController = [[PYServicesController alloc] init];
     [NSApp setServicesProvider:servicesController];
+    
+    [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 }
 
 -(void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
@@ -95,6 +97,12 @@
 	return sharedInstance;
 }
 
+//Set the app to display notifications on the screen and not only in NotificationCenter
+- (BOOL)userNotificationCenter:(NSUserNotificationCenter *)center
+     shouldPresentNotification:(NSUserNotification *)notification
+{
+    return YES;
+}
 
 // Creates if necessary and returns the managed object model for the application.
 - (NSManagedObjectModel *)managedObjectModel {

@@ -55,20 +55,33 @@
         [[current connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
             NSLog(@"Note created with event ID : %@",newEventId);
             
-            PryvedEvent *pryvedEvent = [NSEntityDescription insertNewObjectForEntityForName:@"PryvedEvent"
-                                                                inManagedObjectContext:context];            
+            //Display notification
+            NSUserNotification *notification = [[NSUserNotification alloc] init];
+            notification.title = @"Note pryved successfully.";
+            notification.informativeText = [NSString stringWithFormat:@"Your note \"%@\" has been pryved.",event.eventContent];
+            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+            
+            //Add this event to the last synced events list
+            PryvedEvent *pryvedEvent = [NSEntityDescription
+                                        insertNewObjectForEntityForName:@"PryvedEvent" inManagedObjectContext:context];
             NSDate *currentDate = [NSDate date];
             pryvedEvent.type = [NSString stringWithString:kPYLastPryvedEventNote];
             pryvedEvent.content = [NSString stringWithString:event.eventContent];
             pryvedEvent.date = currentDate;
             pryvedEvent.eventId = [NSString stringWithString:newEventId];
-            
             [current addPryvedEventsObject:pryvedEvent];
             [current updateNumberOfPryvedEventsInContext:context];
             [context save:nil];
             
         } errorHandler:^(NSError *error) {
             NSLog(@"Error when pryving a note : %@",error);
+            
+            //Display notification
+            NSUserNotification *notification = [[NSUserNotification alloc] init];
+            notification.title = @"The note could not by pryved.";
+            notification.informativeText = [NSString stringWithFormat:@"%@",[[error userInfo] valueForKey:NSLocalizedDescriptionKey]];
+            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+
         }];
 		
         [event release];

@@ -188,6 +188,13 @@
         [[current connection] createEvent:event requestType:PYRequestTypeSync successHandler:^(NSString *newEventId, NSString *stoppedId) {
             NSLog(@"New event ID : %@",newEventId);
             
+            //Display notification
+            NSUserNotification *notification = [[NSUserNotification alloc] init];
+            notification.title = @"File(s) pryved successfully.";
+            notification.informativeText = [NSString stringWithFormat:@"Your file \"%@\" has been pryved.",[[attachments objectAtIndex:0] filename]];
+            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+            
+            //Add file event to last pryved event list.
             PryvedEvent *pryvedEvent = [NSEntityDescription insertNewObjectForEntityForName:@"PryvedEvent"
                                                                      inManagedObjectContext:context];
             NSDate *currentDate = [NSDate date];
@@ -208,7 +215,11 @@
             
         } errorHandler:^(NSError *error) {
             NSLog(@"%@",error);
-            NSLog(@"UserInfo: %@",[error userInfo]);
+            //Display notification
+            NSUserNotification *notification = [[NSUserNotification alloc] init];
+            notification.title = @"Problem while pryving files.";
+            notification.informativeText = [NSString stringWithFormat:@"%@",[[error userInfo] valueForKey:NSLocalizedDescriptionKey]];
+            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
         }];
         
         [filesToSend release];

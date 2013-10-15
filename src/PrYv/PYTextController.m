@@ -32,6 +32,13 @@
         [[user connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
             NSLog(@"Pryved text with event ID : %@", newEventId);
             
+            //Display notification
+            NSUserNotification *notification = [[NSUserNotification alloc] init];
+            notification.title = @"Text pryved successfully !";
+            notification.informativeText = [NSString stringWithFormat:@"Your text \"%@\" has been pryved.",event.eventContent];
+            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+            
+            //Add text event to list of last synced events
             PryvedEvent *pryvedEvent = [NSEntityDescription insertNewObjectForEntityForName:@"PryvedEvent"
                                                                      inManagedObjectContext:context];
             NSDate *currentDate = [NSDate date];
@@ -45,6 +52,12 @@
             
         } errorHandler:^(NSError *error) {
             NSLog(@"Error while pryving text : %@", error);
+            //Display notification
+            NSUserNotification *notification = [[NSUserNotification alloc] init];
+            notification.title = @"Problem while pryving text.";
+            notification.informativeText = [NSString stringWithFormat:@"%@",[[error userInfo] valueForKey:NSLocalizedDescriptionKey]];
+            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+
         }];
     }
 }

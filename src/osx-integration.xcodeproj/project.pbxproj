@@ -25,13 +25,14 @@
 		0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A716CCF9050023E724 /* FaviconBlack22.png */; };
 		0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */; };
 		0C5F299517AFD8B900AAE154 /* pryv.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 0C5F299417AFD8B900AAE154 /* pryv.iconset */; };
-		0C6FDEDB1725B8C300FF2447 /* PryvApiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6FDED61725B83500FF2447 /* PryvApiKit.framework */; };
 		0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342DF16ADB00B00EA101F /* InfoPlist.strings */; };
 		0C7342E316ADB00B00EA101F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E216ADB00B00EA101F /* main.m */; };
 		0C7342E716ADB00B00EA101F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342E516ADB00B00EA101F /* Credits.rtf */; };
 		0C7342EA16ADB00B00EA101F /* PYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E916ADB00B00EA101F /* PYAppDelegate.m */; };
 		0C7342ED16ADB00B00EA101F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342EB16ADB00B00EA101F /* MainMenu.xib */; };
 		0C7342F016ADB00B00EA101F /* PrYv.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342EE16ADB00B00EA101F /* PrYv.xcdatamodeld */; };
+		0C737EE317F1AD010040168D /* PryvApiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6FDED61725B83500FF2447 /* PryvApiKit.framework */; };
+		0C737EE517F1B3BB0040168D /* PryvApiKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0C6FDED61725B83500FF2447 /* PryvApiKit.framework */; };
 		0C9B754216D37AAF00A7FEBD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342F716ADB00B00EA101F /* SenTestingKit.framework */; };
 		0C9B754316D37AAF00A7FEBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0C9B754916D37AAF00A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B754716D37AAF00A7FEBD /* InfoPlist.strings */; };
@@ -94,6 +95,19 @@
 			remoteInfo = libPryvApiKitLogicTests;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0C737EE417F1B39C0040168D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0C737EE517F1B3BB0040168D /* PryvApiKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0C1413BA170CB98500C21239 /* PYTextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYTextController.h; path = PrYv/PYTextController.h; sourceTree = "<group>"; };
@@ -176,10 +190,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C737EE317F1AD010040168D /* PryvApiKit.framework in Frameworks */,
 				0CC0F39617EEE6CE00870E29 /* WebKit.framework in Frameworks */,
 				0CC0F39417EEE6C700870E29 /* CoreFoundation.framework in Frameworks */,
 				0CC0F39217EEE6BF00870E29 /* Cocoa.framework in Frameworks */,
-				0C6FDEDB1725B8C300FF2447 /* PryvApiKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +458,7 @@
 				0C7342CE16ADB00B00EA101F /* Sources */,
 				0C7342CF16ADB00B00EA101F /* Frameworks */,
 				0C7342D016ADB00B00EA101F /* Resources */,
+				0C737EE417F1B39C0040168D /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -798,7 +813,7 @@
 			buildSettings = {
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -824,7 +839,7 @@
 			buildSettings = {
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -949,7 +964,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_LINK_OBJC_RUNTIME = NO;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1039,7 +1054,7 @@
 			buildSettings = {
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";

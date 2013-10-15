@@ -58,6 +58,12 @@
 - (void) pyWebLoginSuccess:(PYConnection*)pyConnection{
     
     NSLog(@"Signin With Success %@ %@",pyConnection.userID,pyConnection.accessToken);
+    //Display notification
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    notification.title = @"Login successful.";
+    notification.informativeText = [NSString stringWithFormat:@"Welcome back, %@ !",pyConnection.userID];
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+
     NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
     _user = [User createNewUserWithUsername:pyConnection.userID
                                    AndToken:pyConnection.accessToken

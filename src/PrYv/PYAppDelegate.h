@@ -10,7 +10,7 @@
 
 @class PYLoginController, PYStatusMenuController, PYServicesController, User;
 
-@interface PYAppDelegate : NSObject <NSApplicationDelegate> {
+@interface PYAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate> {
 @private
     PYServicesController *servicesController;
 }
