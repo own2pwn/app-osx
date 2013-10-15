@@ -32,7 +32,7 @@
 -(IBAction)newNote:(id)sender;
 -(IBAction)goToMyPryv:(id)sender;
 -(IBAction)openFiles:(id)sender;
-- (IBAction)logInOrOut:(id)sender;
+-(IBAction)logInOrOut:(id)sender;
 -(void)showMenu;
 -(void)updateMenuItemsLogin:(NSNotification*)notification;
 -(void)updateMenuItemsLogout:(NSNotification*)notification;

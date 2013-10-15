@@ -169,9 +169,23 @@
         
         PYEvent *event = [[PYEvent alloc] init];
         
-        if ([filesToSend areAllImages])     event.type = @"picture/attached";
-        else if ([attachments count] > 1)   event.type = @"file/attached-multiple";
-        else                                event.type = @"file/attached";
+        NSString *notificationTitle;
+        NSString *notificationText;
+        if ([filesToSend areAllImages]){
+            event.type = @"picture/attached";
+            notificationTitle = @"Pictures pryved succesfully.";
+            notificationText = [NSString stringWithFormat:@"Your pictures including \"%@\" have been pryved.",[(PYAttachment*)[attachments objectAtIndex:0] fileName]];
+        }
+        else if ([attachments count] > 1){
+            event.type = @"file/attached-multiple";
+            notificationTitle = @"Files pryved succesfully.";
+            notificationText = [NSString stringWithFormat:@"Your files including \"%@\" have been pryved.",[(PYAttachment*)[attachments objectAtIndex:0] fileName]];
+        }
+        else{
+            event.type = @"file/attached";
+            notificationTitle = @"File pryved succesfully.";
+            notificationText = [NSString stringWithFormat:@"Your file \"%@\" have been pryved.",[(PYAttachment*)[attachments objectAtIndex:0] fileName]];
+        }
         
         event.streamId = streamId;
         event.time = [currentTime timeIntervalSince1970];
@@ -187,11 +201,10 @@
         //instruction before releasing everything.
         [[current connection] createEvent:event requestType:PYRequestTypeSync successHandler:^(NSString *newEventId, NSString *stoppedId) {
             NSLog(@"New event ID : %@",newEventId);
-            
             //Display notification
             NSUserNotification *notification = [[NSUserNotification alloc] init];
-            notification.title = @"File(s) pryved successfully.";
-            notification.informativeText = [NSString stringWithFormat:@"Your file \"%@\" has been pryved.",[[attachments objectAtIndex:0] filename]];
+            notification.title = [NSString stringWithString:notificationTitle];
+            notification.informativeText = [NSString stringWithString:notificationText];
             [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
             
             //Add file event to last pryved event list.

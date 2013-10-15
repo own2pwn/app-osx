@@ -47,6 +47,7 @@
 		loginWindow = [[PYLoginController alloc] initForUser:user];
 		[loginWindow.window setDelegate:menuController];
 		[loginWindow showWindow:self];
+        [[NSNotificationCenter defaultCenter] postNotificationName:PYLogoutSuccessfullNotification object:self];
 	
 	//If the user has been found
 	}else {

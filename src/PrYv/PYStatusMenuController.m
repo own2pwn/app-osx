@@ -47,10 +47,6 @@
 	[dragAndDropView setMenu:_statusMenu];
 	[_statusItem setView:dragAndDropView];
 	[dragAndDropView release];
-    [newNote setEnabled:YES];
-    [pryvFiles setEnabled:YES];
-    [goToMyPryv setEnabled:NO];
-    [preferences setEnabled:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateMenuItemsLogin:)
                                                  name:PYLoginSuccessfullNotification
@@ -124,10 +120,18 @@
 
 -(void)updateMenuItemsLogin:(NSNotification*)notification{
     [logInOrOut setTitle:@"Log out"];
+    [newNote setEnabled:YES];
+    [pryvFiles setEnabled:YES];
+    [goToMyPryv setEnabled:NO];
+    [preferences setEnabled:NO];
 }
 
 -(void)updateMenuItemsLogout:(NSNotification*)notification{
     [logInOrOut setTitle:@"Log in"];
+    [newNote setEnabled:NO];
+    [pryvFiles setEnabled:NO];
+    [goToMyPryv setEnabled:NO];
+    [preferences setEnabled:NO];
 }
 
 -(void)updateLastPryvedEvents
