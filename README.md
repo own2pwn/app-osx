@@ -2,7 +2,7 @@
 
 Desktop application &amp; system wide contextual menu integration for Pryv.
 
-**Current version :** iteration 9
+**Current version :** v.0.8
 
 
 ## Setting up the development environment
