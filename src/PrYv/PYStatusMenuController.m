@@ -85,6 +85,7 @@
 		NSLog(@"Failed to open url: %@",[url description]);
 }
 - (IBAction)openPreferences:(id)sender {
+    [NSApp activateIgnoringOtherApps:YES];
     if (!_preferencesController) {
         _preferencesController = [[PYPreferencesPaneController alloc] initWithWindowNibName:@"PreferencesPane"];
         [_preferencesController.window setDelegate:_preferencesController];
@@ -93,6 +94,7 @@
 }
 
 - (IBAction)logInOrOut:(id)sender {
+    [NSApp activateIgnoringOtherApps:YES];
     NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
     User * user = [User currentUserInContext:context];
 	//If no user has been found, open login window
