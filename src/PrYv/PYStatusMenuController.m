@@ -8,6 +8,7 @@
 
 #import "PYStatusMenuController.h"
 #import "PYNewNoteController.h"
+#import "PYPreferencesPaneController.h"
 #import "PYAppDelegate.h"
 #import "User.h"
 #import "User+Helper.h"
@@ -83,15 +84,22 @@
 	if(![[NSWorkspace sharedWorkspace] openURL:url])
 		NSLog(@"Failed to open url: %@",[url description]);
 }
+- (IBAction)openPreferences:(id)sender {
+    if (!_preferencesController) {
+        _preferencesController = [[PYPreferencesPaneController alloc] initWithWindowNibName:@"PreferencesPane"];
+        [_preferencesController.window setDelegate:_preferencesController];
+    }
+    [_preferencesController showWindow:self];
+}
 
 - (IBAction)logInOrOut:(id)sender {
     NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
     User * user = [User currentUserInContext:context];
 	//If no user has been found, open login window
 	if (!user) {
-		loginWindow = [[PYLoginController alloc] initForUser:user];
-		[loginWindow.window setDelegate:self];
-		[loginWindow showWindow:self];
+		_loginWindow = [[PYLoginController alloc] initForUser:user];
+		[_loginWindow.window setDelegate:self];
+		[_loginWindow showWindow:self];
         
         //If the user has been found
 	}else {
@@ -126,7 +134,7 @@
     [newNote setEnabled:YES];
     [pryvFiles setEnabled:YES];
     [goToMyPryv setEnabled:YES];
-    [preferences setEnabled:NO];
+    [preferences setEnabled:YES];
 }
 
 -(void)updateMenuItemsLogout:(NSNotification*)notification{

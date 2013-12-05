@@ -33,6 +33,8 @@
 		0C7342F016ADB00B00EA101F /* PrYv.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342EE16ADB00B00EA101F /* PrYv.xcdatamodeld */; };
 		0C737EE317F1AD010040168D /* PryvApiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6FDED61725B83500FF2447 /* PryvApiKit.framework */; };
 		0C737EE517F1B3BB0040168D /* PryvApiKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0C6FDED61725B83500FF2447 /* PryvApiKit.framework */; };
+		0C96BFFA185122E4007155E2 /* PYPreferencesPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C96BFF8185122E4007155E2 /* PYPreferencesPaneController.m */; };
+		0C96BFFB185122E4007155E2 /* PreferencesPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C96BFF9185122E4007155E2 /* PreferencesPane.xib */; };
 		0C9B754216D37AAF00A7FEBD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342F716ADB00B00EA101F /* SenTestingKit.framework */; };
 		0C9B754316D37AAF00A7FEBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0C9B754916D37AAF00A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B754716D37AAF00A7FEBD /* InfoPlist.strings */; };
@@ -157,6 +159,9 @@
 		0C7342EF16ADB00B00EA101F /* PrYv.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrYv.xcdatamodel; sourceTree = "<group>"; };
 		0C7342F716ADB00B00EA101F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0C7343B016AEA6F400EA101F /* PrYv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrYv.entitlements; sourceTree = "<group>"; };
+		0C96BFF7185122E4007155E2 /* PYPreferencesPaneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYPreferencesPaneController.h; path = PrYv/PYPreferencesPaneController.h; sourceTree = "<group>"; };
+		0C96BFF8185122E4007155E2 /* PYPreferencesPaneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYPreferencesPaneController.m; path = PrYv/PYPreferencesPaneController.m; sourceTree = "<group>"; };
+		0C96BFF9185122E4007155E2 /* PreferencesPane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesPane.xib; sourceTree = "<group>"; };
 		0C9B754116D37AAF00A7FEBD /* osx-integrationLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "osx-integrationLogicTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C9B754616D37AAF00A7FEBD /* osx-integrationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "osx-integrationTests-Info.plist"; sourceTree = "<group>"; };
 		0C9B754816D37AAF00A7FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -267,6 +272,8 @@
 				0C2559AF16FA5B7F00B4C2BC /* PYServicesController.m */,
 				0C1413BA170CB98500C21239 /* PYTextController.h */,
 				0C1413BB170CB98500C21239 /* PYTextController.m */,
+				0C96BFF7185122E4007155E2 /* PYPreferencesPaneController.h */,
+				0C96BFF8185122E4007155E2 /* PYPreferencesPaneController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -294,6 +301,7 @@
 				0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */,
 				0C3C26A416CBDCCF0023E724 /* DragAndDropStatusMenuView.h */,
 				0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */,
+				0C96BFF9185122E4007155E2 /* PreferencesPane.xib */,
 			);
 			name = View;
 			path = PrYv;
@@ -598,6 +606,7 @@
 				0C2408D416B9233200BD60CC /* LoginController.xib in Resources */,
 				0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */,
 				0C3C26A216CBCC380023E724 /* StatusMenu.xib in Resources */,
+				0C96BFFB185122E4007155E2 /* PreferencesPane.xib in Resources */,
 				0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */,
 				0C5F299517AFD8B900AAE154 /* pryv.iconset in Resources */,
 			);
@@ -663,6 +672,7 @@
 				0C2408AC16B7C27A00BD60CC /* PYNewNoteController.m in Sources */,
 				0C2408D316B9233200BD60CC /* PYLoginController.m in Sources */,
 				0C1A714116BBB5DD004E35EF /* PYFileController.m in Sources */,
+				0C96BFFA185122E4007155E2 /* PYPreferencesPaneController.m in Sources */,
 				0C1F955916C2784800E3C2F2 /* File+Helper.m in Sources */,
 				0C1F955C16C27D1900E3C2F2 /* NSString+Helper.m in Sources */,
 				0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */,
