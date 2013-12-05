@@ -76,7 +76,10 @@
 }
 
 -(IBAction)goToMyPryv:(id)sender {
-	NSURL *url = [NSURL URLWithString:@"http://www.pryv.net/"];
+    NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
+    NSString *username = [[[User currentUserInContext:context] username] copy];
+    NSString *urlString = [NSString stringWithFormat:@"https://%@.pryv.li/",username];
+	NSURL *url = [NSURL URLWithString:urlString];
 	if(![[NSWorkspace sharedWorkspace] openURL:url])
 		NSLog(@"Failed to open url: %@",[url description]);
 }
@@ -122,7 +125,7 @@
     [logInOrOut setTitle:@"Log out"];
     [newNote setEnabled:YES];
     [pryvFiles setEnabled:YES];
-    [goToMyPryv setEnabled:NO];
+    [goToMyPryv setEnabled:YES];
     [preferences setEnabled:NO];
 }
 
