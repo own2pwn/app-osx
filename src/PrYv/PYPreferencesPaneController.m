@@ -7,10 +7,9 @@
 //
 
 #import "PYPreferencesPaneController.h"
+#import <ServiceManagement/ServiceManagement.h>
 
 @interface PYPreferencesPaneController ()
-
-- (BOOL)launchOnLogin;
 
 @end
 
@@ -31,14 +30,6 @@
     [_toolbar setSelectedItemIdentifier:identifier];
 }
 
--(IBAction)checkBoxState : (id)sender;
-{
-    if (100==[sender tag]) {
-        [self launchOnLogin];
-    }
-    
-}
-
 -(NSArray *)toolbarSelectableItemIdentifiers:(NSToolbar *)toolbar {
     return [NSArray arrayWithObjects:@"0",@"1", nil];
 }
@@ -49,13 +40,29 @@
     [_toolbar setSelectedItemIdentifier:@"0"];    
 }
 
--(BOOL)launchOnLogin {
-    if (self.launchOnLoginSwitch.state == NSOnState) {
-        NSLog(@"Launch YES");
-        return YES;
-    }else {
-        NSLog(@"Launch NO");
-        return NO;
+-(IBAction)toggleLaunchAtLogin:(id)sender {
+    NSInteger clickedSegment = [sender selectedSegment];
+    if (clickedSegment == 0) { // ON
+                               // Turn on launch at login
+        if (!SMLoginItemSetEnabled ((__bridge CFStringRef)@"com.pryv.PryvHelper", YES)) {
+            NSAlert *alert = [NSAlert alertWithMessageText:@"An error ocurred"
+                                             defaultButton:@"OK"
+                                           alternateButton:nil
+                                               otherButton:nil
+                                 informativeTextWithFormat:@"Couldn't add Helper App to launch at login item list."];
+            [alert runModal];
+        }
+    }
+    if (clickedSegment == 1) { // OFF
+                               // Turn off launch at login
+        if (!SMLoginItemSetEnabled ((__bridge CFStringRef)@"com.pryv.PryvHelper", NO)) {
+            NSAlert *alert = [NSAlert alertWithMessageText:@"An error ocurred"
+                                             defaultButton:@"OK"
+                                           alternateButton:nil
+                                               otherButton:nil
+                                 informativeTextWithFormat:@"Couldn't remove Helper App from launch at login item list."];
+            [alert runModal];
+        }
     }
 }
 

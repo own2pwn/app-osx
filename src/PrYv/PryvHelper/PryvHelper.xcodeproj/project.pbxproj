@@ -50,6 +50,7 @@
 		0C9EB86A1877681E006B019A /* PryvHelperTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PryvHelperTests-Info.plist"; sourceTree = "<group>"; };
 		0C9EB86C1877681E006B019A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0C9EB86E1877681E006B019A /* PryvHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PryvHelperTests.m; sourceTree = "<group>"; };
+		0C9EB88518776E55006B019A /* PryvHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PryvHelper.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +116,7 @@
 		0C9EB84A1877681E006B019A /* PryvHelper */ = {
 			isa = PBXGroup;
 			children = (
+				0C9EB88518776E55006B019A /* PryvHelper.entitlements */,
 				0C9EB8561877681E006B019A /* PYAppDelegate.h */,
 				0C9EB8571877681E006B019A /* PYAppDelegate.m */,
 				0C9EB8591877681E006B019A /* MainMenu.xib */,
@@ -202,6 +204,14 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Pryv;
 				TargetAttributes = {
+					0C9EB8401877681E006B019A = {
+						DevelopmentTeam = GNL8PH5553;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					0C9EB8611877681E006B019A = {
 						TestTargetID = 0C9EB8401877681E006B019A;
 					};
@@ -384,11 +394,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PryvHelper/PryvHelper.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PryvHelper/PryvHelper-Prefix.pch";
 				INFOPLIST_FILE = "PryvHelper/PryvHelper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -397,11 +410,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PryvHelper/PryvHelper.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PryvHelper/PryvHelper-Prefix.pch";
 				INFOPLIST_FILE = "PryvHelper/PryvHelper-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

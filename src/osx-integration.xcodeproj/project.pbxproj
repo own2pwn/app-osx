@@ -44,6 +44,7 @@
 		0C9B755E16D37C3200A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */; };
 		0C9B756116D37C3200A7FEBD /* PrYvApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */; };
 		0C9EB884187769B4006B019A /* PryvHelper.app in Copy Helper App */ = {isa = PBXBuildFile; fileRef = 0C9EB87E18776820006B019A /* PryvHelper.app */; };
+		0C9EB8871877710A006B019A /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9EB8861877710A006B019A /* ServiceManagement.framework */; };
 		0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */; };
 		0CC0F39217EEE6BF00870E29 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39017EEE6B000870E29 /* Cocoa.framework */; };
 		0CC0F39417EEE6C700870E29 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */; };
@@ -202,6 +203,7 @@
 		0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvApplicationTests.m; sourceTree = "<group>"; };
 		0C9B756216D37C3200A7FEBD /* osx-integrationApplicationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-integrationApplicationTests-Prefix.pch"; sourceTree = "<group>"; };
 		0C9EB8781877681E006B019A /* PryvHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PryvHelper.xcodeproj; path = PrYv/PryvHelper/PryvHelper.xcodeproj; sourceTree = "<group>"; };
+		0C9EB8861877710A006B019A /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		0CA8A2E417D5EA3200C5F507 /* NSMutableArray+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Helper.h"; path = "PrYv/NSMutableArray+Helper.h"; sourceTree = "<group>"; };
 		0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Helper.m"; path = "PrYv/NSMutableArray+Helper.m"; sourceTree = "<group>"; };
 		0CC0F39017EEE6B000870E29 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -223,6 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C9EB8871877710A006B019A /* ServiceManagement.framework in Frameworks */,
 				0C737EE317F1AD010040168D /* PryvApiKit.framework in Frameworks */,
 				0CC0F39617EEE6CE00870E29 /* WebKit.framework in Frameworks */,
 				0CC0F39417EEE6C700870E29 /* CoreFoundation.framework in Frameworks */,
@@ -378,6 +381,7 @@
 		0C7342D516ADB00B00EA101F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C9EB8861877710A006B019A /* ServiceManagement.framework */,
 				0C9EB8781877681E006B019A /* PryvHelper.xcodeproj */,
 				0CC0F39517EEE6CE00870E29 /* WebKit.framework */,
 				0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */,
@@ -909,6 +913,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
