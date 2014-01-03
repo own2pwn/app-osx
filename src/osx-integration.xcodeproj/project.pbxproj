@@ -32,7 +32,7 @@
 		0C7342ED16ADB00B00EA101F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342EB16ADB00B00EA101F /* MainMenu.xib */; };
 		0C7342F016ADB00B00EA101F /* PrYv.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342EE16ADB00B00EA101F /* PrYv.xcdatamodeld */; };
 		0C737EE317F1AD010040168D /* PryvApiKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6FDED61725B83500FF2447 /* PryvApiKit.framework */; };
-		0C737EE517F1B3BB0040168D /* PryvApiKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0C6FDED61725B83500FF2447 /* PryvApiKit.framework */; };
+		0C737EE517F1B3BB0040168D /* PryvApiKit.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 0C6FDED61725B83500FF2447 /* PryvApiKit.framework */; };
 		0C96BFFA185122E4007155E2 /* PYPreferencesPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C96BFF8185122E4007155E2 /* PYPreferencesPaneController.m */; };
 		0C96BFFB185122E4007155E2 /* PreferencesPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C96BFF9185122E4007155E2 /* PreferencesPane.xib */; };
 		0C9B754216D37AAF00A7FEBD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342F716ADB00B00EA101F /* SenTestingKit.framework */; };
@@ -43,6 +43,7 @@
 		0C9B755816D37C3200A7FEBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
 		0C9B755E16D37C3200A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */; };
 		0C9B756116D37C3200A7FEBD /* PrYvApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */; };
+		0C9EB884187769B4006B019A /* PryvHelper.app in Copy Helper App */ = {isa = PBXBuildFile; fileRef = 0C9EB87E18776820006B019A /* PryvHelper.app */; };
 		0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */; };
 		0CC0F39217EEE6BF00870E29 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39017EEE6B000870E29 /* Cocoa.framework */; };
 		0CC0F39417EEE6C700870E29 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */; };
@@ -82,6 +83,20 @@
 			remoteGlobalIDString = 0C7342D116ADB00B00EA101F;
 			remoteInfo = PrYv;
 		};
+		0C9EB87D18776820006B019A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C9EB8781877681E006B019A /* PryvHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C9EB8411877681E006B019A;
+			remoteInfo = PryvHelper;
+		};
+		0C9EB87F18776820006B019A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C9EB8781877681E006B019A /* PryvHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C9EB8621877681E006B019A;
+			remoteInfo = PryvHelperTests;
+		};
 		0CE29E5517842C1500D6F9DC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4EDEB9381725A14400AA6D7D /* PryvApiKit.xcodeproj */;
@@ -99,14 +114,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0C737EE417F1B39C0040168D /* CopyFiles */ = {
+		0C737EE417F1B39C0040168D /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0C737EE517F1B3BB0040168D /* PryvApiKit.framework in CopyFiles */,
+				0C737EE517F1B3BB0040168D /* PryvApiKit.framework in Copy Files */,
 			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C9EB88218776974006B019A /* Copy Helper App */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				0C9EB884187769B4006B019A /* PryvHelper.app in Copy Helper App */,
+			);
+			name = "Copy Helper App";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -174,6 +201,7 @@
 		0C9B755F16D37C3200A7FEBD /* PrYvApplicationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvApplicationTests.h; sourceTree = "<group>"; };
 		0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvApplicationTests.m; sourceTree = "<group>"; };
 		0C9B756216D37C3200A7FEBD /* osx-integrationApplicationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-integrationApplicationTests-Prefix.pch"; sourceTree = "<group>"; };
+		0C9EB8781877681E006B019A /* PryvHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PryvHelper.xcodeproj; path = PrYv/PryvHelper/PryvHelper.xcodeproj; sourceTree = "<group>"; };
 		0CA8A2E417D5EA3200C5F507 /* NSMutableArray+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Helper.h"; path = "PrYv/NSMutableArray+Helper.h"; sourceTree = "<group>"; };
 		0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Helper.m"; path = "PrYv/NSMutableArray+Helper.m"; sourceTree = "<group>"; };
 		0CC0F39017EEE6B000870E29 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -350,6 +378,7 @@
 		0C7342D516ADB00B00EA101F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0C9EB8781877681E006B019A /* PryvHelper.xcodeproj */,
 				0CC0F39517EEE6CE00870E29 /* WebKit.framework */,
 				0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */,
 				0CC0F39017EEE6B000870E29 /* Cocoa.framework */,
@@ -437,6 +466,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0C9EB8791877681E006B019A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C9EB87E18776820006B019A /* PryvHelper.app */,
+				0C9EB88018776820006B019A /* PryvHelperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		0CD0497D179C5AA3003716A2 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -466,7 +504,8 @@
 				0C7342CE16ADB00B00EA101F /* Sources */,
 				0C7342CF16ADB00B00EA101F /* Frameworks */,
 				0C7342D016ADB00B00EA101F /* Resources */,
-				0C737EE417F1B39C0040168D /* CopyFiles */,
+				0C737EE417F1B39C0040168D /* Copy Files */,
+				0C9EB88218776974006B019A /* Copy Helper App */,
 			);
 			buildRules = (
 			);
@@ -545,6 +584,10 @@
 					ProductGroup = 0C6FDED01725B83500FF2447 /* Products */;
 					ProjectRef = 4EDEB9381725A14400AA6D7D /* PryvApiKit.xcodeproj */;
 				},
+				{
+					ProductGroup = 0C9EB8791877681E006B019A /* Products */;
+					ProjectRef = 0C9EB8781877681E006B019A /* PryvHelper.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -575,6 +618,20 @@
 			fileType = wrapper.application;
 			path = "iOs Example.app";
 			remoteRef = 0C6FDED91725B83500FF2447 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C9EB87E18776820006B019A /* PryvHelper.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = PryvHelper.app;
+			remoteRef = 0C9EB87D18776820006B019A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C9EB88018776820006B019A /* PryvHelperTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PryvHelperTests.xctest;
+			remoteRef = 0C9EB87F18776820006B019A /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		0CE29E5617842C1500D6F9DC /* OS X example.app */ = {

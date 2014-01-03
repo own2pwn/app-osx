@@ -10,6 +10,8 @@
 
 @interface PYPreferencesPaneController ()
 
+- (BOOL)launchOnLogin;
+
 @end
 
 @implementation PYPreferencesPaneController
@@ -29,6 +31,14 @@
     [_toolbar setSelectedItemIdentifier:identifier];
 }
 
+-(IBAction)checkBoxState : (id)sender;
+{
+    if (100==[sender tag]) {
+        [self launchOnLogin];
+    }
+    
+}
+
 -(NSArray *)toolbarSelectableItemIdentifiers:(NSToolbar *)toolbar {
     return [NSArray arrayWithObjects:@"0",@"1", nil];
 }
@@ -36,9 +46,17 @@
 
 -(void)windowDidLoad{
     [super windowDidLoad];
-    [_toolbar setSelectedItemIdentifier:@"0"];
+    [_toolbar setSelectedItemIdentifier:@"0"];    
 }
 
-
+-(BOOL)launchOnLogin {
+    if (self.launchOnLoginSwitch.state == NSOnState) {
+        NSLog(@"Launch YES");
+        return YES;
+    }else {
+        NSLog(@"Launch NO");
+        return NO;
+    }
+}
 
 @end

@@ -12,8 +12,10 @@
 @property (assign) IBOutlet NSToolbar *toolbar;
 @property (assign) IBOutlet NSToolbarItem *generalItem;
 @property (assign) IBOutlet NSToolbarItem *userItem;
+@property (assign) IBOutlet NSButton *launchOnLoginSwitch;
+@property (assign) IBOutlet NSTabView *tabView;
 
 - (IBAction)changeTabView:(id)sender;
-@property (assign) IBOutlet NSTabView *tabView;
+- (IBAction)checkBoxState:(id)sender;
 
 @end
