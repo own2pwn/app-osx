@@ -23,5 +23,6 @@
 @property (assign) IBOutlet NSArrayController *popUpButtonContent;
 
 -(id)initWithWindowNibName:(NSString *)windowNibName andFiles:(NSArray*)files;
+- (IBAction)pryvFilesWithDetails:(id)sender;
 
 @end

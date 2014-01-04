@@ -90,14 +90,9 @@
         
         PYDetailPopupController *detailPopupController =[[PYDetailPopupController alloc]
                                                          initWithWindowNibName:@"DetailPopupController"
-                                                         andFiles:files];
+                                                         andFiles:urls];
         [detailPopupController showWindow:self];
-        
-//		PYFileController *fileController = [[PYFileController alloc] init];
-//		[fileController pryvFiles:[urls autorelease]
-//						 inStreamId:@"diary"
-//					withTags:[[[NSArray alloc] init] autorelease]];
-//		[fileController release];
+        [detailPopupController.window makeKeyAndOrderFront:self];
     }
     return YES;
 }

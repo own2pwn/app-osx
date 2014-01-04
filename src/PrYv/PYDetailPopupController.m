@@ -13,6 +13,7 @@
 #import "PYAppDelegate.h"
 #import "File.h"
 #import "File+Helper.h"
+#import "PYFileController.h"
 
 @interface PYDetailPopupController ()
 
@@ -27,6 +28,27 @@
     }
     
     return self;
+}
+
+- (IBAction)pryvFilesWithDetails:(id)sender {
+    User *current = [User currentUserInContext:[[PYAppDelegate sharedInstance] managedObjectContext]];
+    NSString* streamId;
+    if ([[_streamPopUpButton titleOfSelectedItem] isEqualTo:@""]) {
+        streamId = @"diary";
+    }else {
+        //				NSString *streamName = [NSString stringWithString:[_streams titleOfSelectedItem]];
+        NSString *streamIndex = [NSString stringWithFormat:@"%lu",[_streamPopUpButton indexOfSelectedItem]];
+        streamId = [[current streams] objectForKey:streamIndex];
+    }
+    
+    PYFileController *fileController = [[PYFileController alloc] init];
+    [fileController pryvFiles:[_files autorelease]
+                   inStreamId:@"diary"
+                     withTags:[NSArray arrayWithArray:[_tagsTokenField objectValue]]];
+    [fileController release];
+    
+    [self close];
+
 }
 
 
