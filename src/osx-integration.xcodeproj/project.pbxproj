@@ -47,7 +47,7 @@
 		0C9EB8871877710A006B019A /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9EB8861877710A006B019A /* ServiceManagement.framework */; };
 		0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */; };
 		0CBF1ECA1878A3A4004A9AA9 /* PYDetailPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBF1EC81878A3A4004A9AA9 /* PYDetailPopupController.m */; };
-		0CBF1ECB1878A3A4004A9AA9 /* PYDetailPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBF1EC91878A3A4004A9AA9 /* PYDetailPopupController.xib */; };
+		0CBF1ECB1878A3A4004A9AA9 /* DetailPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBF1EC91878A3A4004A9AA9 /* DetailPopupController.xib */; };
 		0CBF1ED51878AC62004A9AA9 /* PYUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBF1ED41878AC62004A9AA9 /* PYUtility.m */; };
 		0CC0F39217EEE6BF00870E29 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39017EEE6B000870E29 /* Cocoa.framework */; };
 		0CC0F39417EEE6C700870E29 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */; };
@@ -211,7 +211,7 @@
 		0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Helper.m"; path = "PrYv/NSMutableArray+Helper.m"; sourceTree = "<group>"; };
 		0CBF1EC71878A3A4004A9AA9 /* PYDetailPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYDetailPopupController.h; path = PrYv/PYDetailPopupController.h; sourceTree = "<group>"; };
 		0CBF1EC81878A3A4004A9AA9 /* PYDetailPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYDetailPopupController.m; path = PrYv/PYDetailPopupController.m; sourceTree = "<group>"; };
-		0CBF1EC91878A3A4004A9AA9 /* PYDetailPopupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PYDetailPopupController.xib; sourceTree = "<group>"; };
+		0CBF1EC91878A3A4004A9AA9 /* DetailPopupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPopupController.xib; sourceTree = "<group>"; };
 		0CBF1ED31878AC62004A9AA9 /* PYUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYUtility.h; path = PrYv/PYUtility.h; sourceTree = "<group>"; };
 		0CBF1ED41878AC62004A9AA9 /* PYUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYUtility.m; path = PrYv/PYUtility.m; sourceTree = "<group>"; };
 		0CC0F39017EEE6B000870E29 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
@@ -337,7 +337,7 @@
 		0C3C26A316CBDC880023E724 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0CBF1EC91878A3A4004A9AA9 /* PYDetailPopupController.xib */,
+				0CBF1EC91878A3A4004A9AA9 /* DetailPopupController.xib */,
 				0C2408D216B9233200BD60CC /* LoginController.xib */,
 				0C7342EB16ADB00B00EA101F /* MainMenu.xib */,
 				0C3C26A116CBCC380023E724 /* StatusMenu.xib */,
@@ -672,7 +672,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CBF1ECB1878A3A4004A9AA9 /* PYDetailPopupController.xib in Resources */,
+				0CBF1ECB1878A3A4004A9AA9 /* DetailPopupController.xib in Resources */,
 				0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */,
 				0C7342E716ADB00B00EA101F /* Credits.rtf in Resources */,
 				0C7342ED16ADB00B00EA101F /* MainMenu.xib in Resources */,

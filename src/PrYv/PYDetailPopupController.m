@@ -11,6 +11,8 @@
 #import "User+Helper.h"
 #import "PYUtility.h"
 #import "PYAppDelegate.h"
+#import "File.h"
+#import "File+Helper.h"
 
 @interface PYDetailPopupController ()
 
@@ -31,6 +33,9 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
+    
+    NSString *label = [NSString stringWithFormat:@"You are about to pryv the file %@",[(NSURL*)[_files objectAtIndex:0] lastPathComponent]];
+    [_fileToPryv setStringValue:label];
 	User *current = [User currentUserInContext:[[PYAppDelegate sharedInstance] managedObjectContext]];
 	current.streams = [[NSMutableDictionary alloc] init];
     PYUtility *utility = [[PYUtility alloc] init];
