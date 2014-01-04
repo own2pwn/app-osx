@@ -48,6 +48,7 @@
 		0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */; };
 		0CBF1ECA1878A3A4004A9AA9 /* PYDetailPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBF1EC81878A3A4004A9AA9 /* PYDetailPopupController.m */; };
 		0CBF1ECB1878A3A4004A9AA9 /* PYDetailPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBF1EC91878A3A4004A9AA9 /* PYDetailPopupController.xib */; };
+		0CBF1ED51878AC62004A9AA9 /* PYUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBF1ED41878AC62004A9AA9 /* PYUtility.m */; };
 		0CC0F39217EEE6BF00870E29 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39017EEE6B000870E29 /* Cocoa.framework */; };
 		0CC0F39417EEE6C700870E29 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */; };
 		0CC0F39617EEE6CE00870E29 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39517EEE6CE00870E29 /* WebKit.framework */; };
@@ -211,6 +212,8 @@
 		0CBF1EC71878A3A4004A9AA9 /* PYDetailPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYDetailPopupController.h; path = PrYv/PYDetailPopupController.h; sourceTree = "<group>"; };
 		0CBF1EC81878A3A4004A9AA9 /* PYDetailPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYDetailPopupController.m; path = PrYv/PYDetailPopupController.m; sourceTree = "<group>"; };
 		0CBF1EC91878A3A4004A9AA9 /* PYDetailPopupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PYDetailPopupController.xib; sourceTree = "<group>"; };
+		0CBF1ED31878AC62004A9AA9 /* PYUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYUtility.h; path = PrYv/PYUtility.h; sourceTree = "<group>"; };
+		0CBF1ED41878AC62004A9AA9 /* PYUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYUtility.m; path = PrYv/PYUtility.m; sourceTree = "<group>"; };
 		0CC0F39017EEE6B000870E29 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		0CC0F39517EEE6CE00870E29 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -325,6 +328,8 @@
 				0C1F955B16C27D1900E3C2F2 /* NSString+Helper.m */,
 				0CA8A2E417D5EA3200C5F507 /* NSMutableArray+Helper.h */,
 				0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */,
+				0CBF1ED31878AC62004A9AA9 /* PYUtility.h */,
+				0CBF1ED41878AC62004A9AA9 /* PYUtility.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -749,6 +754,7 @@
 				0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */,
 				0C2559B016FA5B7F00B4C2BC /* PYServicesController.m in Sources */,
 				0C1413BC170CB98500C21239 /* PYTextController.m in Sources */,
+				0CBF1ED51878AC62004A9AA9 /* PYUtility.m in Sources */,
 				0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */,
 				0CD04985179C5AD8003716A2 /* Constants.m in Sources */,
 				0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */,

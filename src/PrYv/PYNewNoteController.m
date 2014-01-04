@@ -12,14 +12,10 @@
 #import "User+Helper.h"
 #import "PryvedEvent.h"
 #import "Constants.h"
+#import "PYUtility.h"
 
 @interface PYNewNoteController ()
 
--(NSUInteger)createStreamNameForStreams:(NSArray *)streams
-                                inArray:(NSMutableArray *)streamNames
-                     withLevelDelimiter:(NSString *)delimiter
-                                forUser:(User *)user
-                                atIndex:(NSUInteger)index;
 @end
 
 @implementation PYNewNoteController
@@ -89,26 +85,6 @@
 	}
 }
 
--(NSUInteger)createStreamNameForStreams:(NSArray *)streams
-                                inArray:(NSMutableArray *)streamNames
-                     withLevelDelimiter:(NSString *)delimiter
-                                forUser:(User *)user
-                                atIndex:(NSUInteger)index
-{
-    for (PYStream *stream in streams){
-        [user.streams setObject:[stream streamId] forKey:[NSString stringWithFormat:@"%lu",index]];
-        index++;
-        [streamNames addObject:[NSString stringWithFormat:@"%@%@",delimiter,stream.name]];
-        if ([stream.children count] > 0) {
-            index = [self createStreamNameForStreams:stream.children inArray:streamNames withLevelDelimiter:@"- " forUser:user atIndex:index];
-            
-        }
-    }
-    
-    return index;
-    
-}
-
 
 //Reset the window so that next time you open it, it is a new window
 -(void)windowWillClose:(NSNotification *)notification {
@@ -131,34 +107,11 @@
     [super windowDidLoad];
 	User *current = [User currentUserInContext:[[PYAppDelegate sharedInstance] managedObjectContext]];
 	current.streams = [[NSMutableDictionary alloc] init];
-    [[current connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:^(NSArray *cachedStreamsList) {
-        NSMutableArray *streamNames = [[NSMutableArray alloc] init];
-        
-        [self createStreamNameForStreams:cachedStreamsList inArray:streamNames withLevelDelimiter:@"" forUser:current atIndex:0];
-        
-        NSRange range = NSMakeRange(0, [[_popUpButtonContent arrangedObjects] count]);
-        [_popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
-        [_popUpButtonContent addObjects:streamNames];
-        [_streams selectItemAtIndex:0];
-        
-        [streamNames release];
-        
-    } gotOnlineStreams:^(NSArray *onlineStreamList) {
-        NSMutableArray *streamNames = [[NSMutableArray alloc] init];
-        
-        [self createStreamNameForStreams:onlineStreamList inArray:streamNames withLevelDelimiter:@"" forUser:current atIndex:0];
-        
-        NSRange range = NSMakeRange(0, [[_popUpButtonContent arrangedObjects] count]);
-        [_popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
-        [_popUpButtonContent addObjects:streamNames];
-        [_streams selectItemAtIndex:0];
-        
-        [streamNames release];
-        
-    } errorHandler:^(NSError *error) {
-        NSLog(@"%@",error);
-    }];
-
+    PYUtility *utility = [[PYUtility alloc] init];
+    [utility setupStreamPopUpButton:_streams withArrayController:_popUpButtonContent forUser:current];
+    
+    [utility release];
+    
 }
 
 @end
