@@ -48,7 +48,7 @@
                      kPYAPIConnectionRequestLevel,
                      nil];
     NSArray *permissions = [NSArray arrayWithObject:[NSDictionary dictionaryWithObjects:objects forKeys:keys]];
-    [PYClient setDefaultDomainStaging];
+    [PYClient setDefaultDomain:kPYAPIDomain];
     [PYWebLoginViewController requestConnectionWithAppId:@"integration-osx"
                                       andPermissions:permissions
                                             delegate:self
