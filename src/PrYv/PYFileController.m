@@ -169,7 +169,7 @@
         
         NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
         User *current = [User currentUserInContext:context];
-        [PYClient setDefaultDomainStaging];
+        [PYClient setDefaultDomain:kPYAPIDomain];
                 
         //Sync request because otherwise thread dies before request is sent. However this is not a
         //problem since only the current thread is blocked by the sync request and this is the last
@@ -351,7 +351,7 @@
     
     NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
     User *current = [User currentUserInContext:context];
-    [PYClient setDefaultDomainStaging];
+    [PYClient setDefaultDomain:kPYAPIDomain];
     [[current connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
         NSLog(@"New location event : %@", newEventId);
     } errorHandler:^(NSError *error) {

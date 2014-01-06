@@ -52,7 +52,7 @@
 	
 	//If the user has been found
 	}else {
-        [PYClient setDefaultDomainStaging];
+        [PYClient setDefaultDomain:kPYAPIDomain];
 		NSLog(@"Welcome back, %@ !",user.username);
         [[user connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:NULL gotOnlineStreams:^(NSArray *onlineStreamList) {
             NSLog(@"Retrieved online streams.");
