@@ -7,6 +7,7 @@
 //
 
 #import "PYServicesController.h"
+#import "PYDetailPopupController.h"
 
 @implementation PYServicesController
 
@@ -31,11 +32,11 @@
 			[urls addObject:[NSURL fileURLWithPath:obj]];
 		}];
         //NSLog(@"Files : %@",files);
-		PYFileController *fileController = [[PYFileController alloc] init];
-		[fileController pryvFiles:[urls autorelease]
-						 inStreamId:@"diary"
-					withTags:[[[NSArray alloc] init] autorelease]];
-		[fileController release];
+        
+        PYDetailPopupController *detailPopupController =[[PYDetailPopupController alloc]
+                                                         initWithWindowNibName:@"DetailPopupController"
+                                                         andFiles:urls];
+        [detailPopupController showWindow:self];
     }
 }
 

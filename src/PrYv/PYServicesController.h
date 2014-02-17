@@ -11,9 +11,12 @@
 #import "PYFileController.h"
 #import "PYTextController.h"
 
+@class PYDetailPopupController;
+
 @interface PYServicesController : NSObject{
 @private
     PYFileController* _fileController;
+    PYDetailPopupController* _detailPopupController;
     PYTextController* _textController;
 }
 

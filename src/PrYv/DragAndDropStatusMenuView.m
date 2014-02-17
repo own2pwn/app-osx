@@ -9,6 +9,7 @@
 #import "DragAndDropStatusMenuView.h"
 #import "PYFileController.h"
 #import "PYStatusMenuController.h"
+#import "PYDetailPopupController.h"
 
 @interface DragAndDropStatusMenuView ()
 
@@ -86,11 +87,12 @@
 		[files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 			[urls addObject:[NSURL fileURLWithPath:obj]];
 		}];
-		PYFileController *fileController = [[PYFileController alloc] init];
-		[fileController pryvFiles:[urls autorelease]
-						 inStreamId:@"diary"
-					withTags:[[[NSArray alloc] init] autorelease]];
-		[fileController release];
+        
+        PYDetailPopupController *detailPopupController =[[PYDetailPopupController alloc]
+                                                         initWithWindowNibName:@"DetailPopupController"
+                                                         andFiles:urls];
+        [detailPopupController showWindow:self];
+        [detailPopupController.window makeKeyAndOrderFront:self];
     }
     return YES;
 }

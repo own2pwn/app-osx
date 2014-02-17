@@ -15,6 +15,7 @@
 #import "NSMutableArray+Helper.h"
 #import "PryvedEvent.h"
 #import "Constants.h"
+#import "PYUtility.h"
 
 @interface PYFileController ()
 
@@ -57,8 +58,7 @@
 	return self;
 }
 
-#pragma mark -
-#pragma mark Pryv Files
+#pragma mark - Pryv Files
 
 -(void)runDialog {
 	NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
@@ -70,34 +70,9 @@
     //Get the stream names list and fill the popup button
 	User* current = [User currentUserInContext:context];
     current.streams = [[NSMutableDictionary alloc] init];
-    [[current connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:^(NSArray *cachedStreamsList) {
-        NSMutableArray *streamNames = [[NSMutableArray alloc] init];
-        
-        [self createStreamNameForStreams:cachedStreamsList inArray:streamNames withLevelDelimiter:@"" forUser:current atIndex:0];
-        
-        NSRange range = NSMakeRange(0, [[_popUpButtonContent arrangedObjects] count]);
-        [_popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
-        [_popUpButtonContent addObjects:streamNames];
-        [_streams selectItemAtIndex:0];
-        
-        [streamNames release];
-        
-    } gotOnlineStreams:^(NSArray *onlineStreamList) {
-        NSMutableArray *streamNames = [[NSMutableArray alloc] init];
-        
-        [self createStreamNameForStreams:onlineStreamList inArray:streamNames withLevelDelimiter:@"" forUser:current atIndex:0];
-        
-        NSRange range = NSMakeRange(0, [[_popUpButtonContent arrangedObjects] count]);
-        [_popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
-        [_popUpButtonContent addObjects:streamNames];
-        [_streams selectItemAtIndex:0];
-        
-        [streamNames release];
-
-    } errorHandler:^(NSError *error) {
-        NSLog(@"%@",error);
-    }];    
-	
+    PYUtility *utility = [[PYUtility alloc] init];
+    [utility setupStreamPopUpButton:_streams withArrayController:_popUpButtonContent forUser:current];
+    
 	//Handle result 
 	[_openDialog beginWithCompletionHandler:^(NSInteger result){
 		if (result == NSFileHandlingPanelOKButton) {
