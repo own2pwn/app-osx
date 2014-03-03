@@ -25,7 +25,7 @@
         
         PYEvent *event = [[PYEvent alloc] init];
         event.streamId = @"diary";
-        event.time = [[NSDate date] timeIntervalSince1970];
+        [event setEventDate:[NSDate date]];
         event.type = @"note/txt";
         event.eventContent = [NSString stringWithString:text];
         

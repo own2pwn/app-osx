@@ -44,7 +44,7 @@
         
         event.streamId = [NSString stringWithString:streamId];
         event.type = @"note/txt";
-        event.time = [[NSDate date] timeIntervalSince1970];
+        [event setEventDate:[NSDate date]];
         event.eventContent = [NSString stringWithString:[_content stringValue]];
         event.tags = [NSArray arrayWithArray:[_tags objectValue]];
         

@@ -163,7 +163,7 @@
         }
         
         event.streamId = streamId;
-        event.time = [currentTime timeIntervalSince1970];
+        [event setEventDate:[NSDate date]];
         event.tags = [NSArray arrayWithArray:tags];
         event.attachments = [NSMutableArray arrayWithArray:attachments];
         
@@ -341,7 +341,7 @@
 {
     PYEvent *event = [[PYEvent alloc] init];
     event.streamId = [NSString stringWithString:streamId];
-    event.time = time;
+    [event setEventDate:[NSDate date]];
     event.tags = [NSArray arrayWithArray:tags];
     event.type = @"position/wgs84";
     NSNumber *longitudeNumber = [NSNumber numberWithDouble:[longitude doubleValue]];

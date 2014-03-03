@@ -73,7 +73,7 @@
                                                         object:self];
 }
 
-- (void) pyWebLoginAborded:(NSString*)reason {
+- (void) pyWebLoginAborted:(NSString*)reason {
     NSLog(@"Signin Aborded: %@",reason);
 }
 
