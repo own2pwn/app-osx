@@ -29,7 +29,7 @@
         event.type = @"note/txt";
         event.eventContent = [NSString stringWithString:text];
         
-        [[user connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
+        [[user connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
             NSLog(@"Pryved text with event ID : %@", newEventId);
             
             //Display notification
@@ -49,7 +49,6 @@
             
             [user addPryvedEventsObject:pryvedEvent];
             [context save:nil];
-            
         } errorHandler:^(NSError *error) {
             NSLog(@"Error while pryving text : %@", error);
             //Display notification
@@ -59,6 +58,7 @@
             [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 
         }];
+        
     }
 }
 

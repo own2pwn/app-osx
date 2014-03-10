@@ -173,7 +173,8 @@
         //Sync request because otherwise thread dies before request is sent. However this is not a
         //problem since only the current thread is blocked by the sync request and this is the last
         //instruction before releasing everything.
-        [[current connection] createEvent:event requestType:PYRequestTypeSync successHandler:^(NSString *newEventId, NSString *stoppedId) {
+        
+        [[current connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
             NSLog(@"New event ID : %@",newEventId);
             //Display notification
             NSUserNotification *notification = [[NSUserNotification alloc] init];
@@ -198,7 +199,6 @@
             
             [current addPryvedEventsObject:pryvedEvent];
             [context save:nil];
-
             
         } errorHandler:^(NSError *error) {
             NSLog(@"%@",error);
@@ -351,12 +351,11 @@
     NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
     User *current = [User currentUserInContext:context];
    
-    [[current connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
+    [[current connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
         NSLog(@"New location event : %@", newEventId);
     } errorHandler:^(NSError *error) {
         NSLog(@"Error when pryving GPS event : %@", error);
     }];
-    
 }
 
 

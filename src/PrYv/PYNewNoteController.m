@@ -48,7 +48,7 @@
         event.eventContent = [NSString stringWithString:[_content stringValue]];
         event.tags = [NSArray arrayWithArray:[_tags objectValue]];
         
-        [[current connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId) {
+        [[current connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
             NSLog(@"Note created with event ID : %@",newEventId);
             
             //Display notification
@@ -68,18 +68,18 @@
             [current addPryvedEventsObject:pryvedEvent];
             [current updateNumberOfPryvedEventsInContext:context];
             [context save:nil];
+
             
         } errorHandler:^(NSError *error) {
-            NSLog(@"Error when pryving a note : %@",error);
+            NSLog(@"Error when pryving a note : %@", error);
             
             //Display notification
             NSUserNotification *notification = [[NSUserNotification alloc] init];
             notification.title = @"The note could not by pryved.";
             notification.informativeText = [NSString stringWithFormat:@"%@",[[error userInfo] valueForKey:NSLocalizedDescriptionKey]];
             [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
-
         }];
-		
+        		
         [event release];
 		[self.window close];
 	}

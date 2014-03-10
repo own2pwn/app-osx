@@ -41,7 +41,8 @@
 	
 	//Try to retrieve the user from the CoreData DB
 	user = [User currentUserInContext:[self managedObjectContext]];
-	
+	//[PYClient setDefaultDomainStaging];
+    
 	//If no user has been found, open login window
 	if (!user) {
 		loginWindow = [[PYLoginController alloc] initForUser:user];
@@ -52,7 +53,6 @@
 	
 	//If the user has been found
 	}else {
-        //[PYClient setDefaultDomainStaging];
 		NSLog(@"Welcome back, %@ !",user.username);
         [[user connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:NULL gotOnlineStreams:^(NSArray *onlineStreamList) {
             NSLog(@"Retrieved online streams.");
