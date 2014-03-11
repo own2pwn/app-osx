@@ -64,7 +64,7 @@
 -(IBAction)newNote:(id)sender {
 	if(!_newNoteController) {
 		_newNoteController = [[PYNewNoteController alloc] initWithWindowNibName:@"NewNote"];
-		[_newNoteController.window setDelegate:_newNoteController];
+		[_newNoteController.window setDelegate:self];
 	}
 	[_newNoteController showWindow:self];
 }
@@ -113,15 +113,18 @@
 
 -(void)windowDidBecomeKey:(NSNotification *)notification{
     NSString *identifier = [[notification object] valueForKey:@"identifier"];
-    if ([identifier isEqual: @"LoginWindow"]) {
+    if ([identifier isEqualToString: @"LoginWindow"]) {
         [logInOrOut setEnabled:NO];
     }
 }
 
 -(void)windowWillClose:(NSNotification *)notification{
     NSString *identifier = [[notification object] valueForKey:@"identifier"];
-    if ([identifier isEqual: @"LoginWindow"]) {
+    if ([identifier isEqualToString: @"LoginWindow"]) {
         [logInOrOut setEnabled:YES];
+    }else if ([identifier isEqualToString:@"NewNote"]){
+        [_newNoteController release];
+        _newNoteController = nil;
     }
 }
 
