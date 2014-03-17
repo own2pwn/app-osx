@@ -15,5 +15,6 @@
 @dynamic username;
 @dynamic pryvedEvents;
 @synthesize streams;
+@synthesize allStreams;
 
 @end

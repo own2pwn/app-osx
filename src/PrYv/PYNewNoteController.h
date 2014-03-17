@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface PYNewNoteController : NSWindowController <NSWindowDelegate> {
+@interface PYNewNoteController : NSWindowController {
 @private
     IBOutlet NSArrayController *_popUpButtonContent;
 	IBOutlet NSTextField *_content;

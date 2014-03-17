@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSString * username;
 @property (nonatomic, retain) NSSet *pryvedEvents;
 @property (nonatomic, retain) NSMutableDictionary *streams;
+@property (nonatomic, retain) NSMutableArray *allStreams;
 @end
 
 @interface User (CoreDataGeneratedAccessors)

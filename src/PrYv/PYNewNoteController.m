@@ -33,13 +33,11 @@
         if ([[_streams titleOfSelectedItem] isEqualTo:@""]) {
             streamId = @"diary";
         }else {
-            //				NSString *streamName = [NSString stringWithString:[_streams titleOfSelectedItem]];
+            //NSString *streamName = [NSString stringWithString:[_streams titleOfSelectedItem]];
             NSString *streamIndex = [NSString stringWithFormat:@"%lu",[_streams indexOfSelectedItem]];
             streamId = [[current streams] objectForKey:streamIndex];
         }
         
-		
-
         PYEvent *event = [[PYEvent alloc] init];
         
         event.streamId = [NSString stringWithString:streamId];
@@ -86,13 +84,13 @@
 }
 
 
-//Reset the window so that next time you open it, it is a new window
--(void)windowWillClose:(NSNotification *)notification {
-	[_content setStringValue:@""];
-	[_tags setStringValue:@""];
-	[_content becomeFirstResponder];
-	
-}
+////Reset the window so that next time you open it, it is a new window
+//-(void)windowWillClose:(NSNotification *)notification {
+//	[_content setStringValue:@""];
+//	[_tags setStringValue:@""];
+//	[_content becomeFirstResponder];
+//	
+//}
 
 - (id)initWithWindow:(NSWindow *)window {
     self = [super initWithWindow:window];
@@ -106,10 +104,10 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
 	User *current = [User currentUserInContext:[[PYAppDelegate sharedInstance] managedObjectContext]];
+    NSLog(@"%@",current);
 	current.streams = [[NSMutableDictionary alloc] init];
     PYUtility *utility = [[PYUtility alloc] init];
     [utility setupStreamPopUpButton:_streams withArrayController:_popUpButtonContent forUser:current];
-    
     [utility release];
     
 }

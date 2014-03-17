@@ -33,6 +33,7 @@
 	
     newUser.username = username;
     newUser.token = token;
+    //newUser.allStreams = [[NSMutableArray alloc] init];
    
     [context save:nil];
     

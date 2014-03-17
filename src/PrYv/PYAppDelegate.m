@@ -26,26 +26,26 @@
     [menuController release];
     [loginWindow release];
     [servicesController release];
-    [user.streams release];
+    [_user.streams release];
     [super dealloc];
 }
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize managedObjectContext = _managedObjectContext;
-@synthesize loginWindow, menuController, user;
+@synthesize loginWindow, menuController, user = _user;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	menuController = [[PYStatusMenuController alloc] init];
 	[NSBundle loadNibNamed:@"StatusMenu" owner:menuController];
 	
 	//Try to retrieve the user from the CoreData DB
-	user = [User currentUserInContext:[self managedObjectContext]];
+	self.user = [User currentUserInContext:[self managedObjectContext]];
 	//[PYClient setDefaultDomainStaging];
     
 	//If no user has been found, open login window
-	if (!user) {
-		loginWindow = [[PYLoginController alloc] initForUser:user];
+	if (!_user) {
+		loginWindow = [[PYLoginController alloc] initForUser:_user];
 		[loginWindow.window setDelegate:menuController];
 		[loginWindow showWindow:self];
         [loginWindow.window makeKeyAndOrderFront:self];
@@ -53,9 +53,10 @@
 	
 	//If the user has been found
 	}else {
-		NSLog(@"Welcome back, %@ !",user.username);
-        [[user connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:NULL gotOnlineStreams:^(NSArray *onlineStreamList) {
-            NSLog(@"Retrieved online streams.");
+		NSLog(@"Welcome back, %@ !",_user.username);
+        [[_user connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:NULL gotOnlineStreams:^(NSArray *onlineStreamList) {
+            //_user.allStreams = [NSMutableArray arrayWithArray:onlineStreamList];
+            //NSLog(@"Retrieved online streams");
         } errorHandler:^(NSError *error) {
             NSLog(@"%@",error);
         }];

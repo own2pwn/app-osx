@@ -58,19 +58,25 @@
 - (void) pyWebLoginSuccess:(PYConnection*)pyConnection{
     
     NSLog(@"Signin With Success %@ %@",pyConnection.userID,pyConnection.accessToken);
-    //Display notification
-    NSUserNotification *notification = [[NSUserNotification alloc] init];
-    notification.title = @"Login successful.";
-    notification.informativeText = [NSString stringWithFormat:@"Welcome back, %@ !",pyConnection.userID];
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 
     NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
     _user = [User createNewUserWithUsername:pyConnection.userID
                                    AndToken:pyConnection.accessToken
                                   InContext:context];
     [pyConnection synchronizeTimeWithSuccessHandler:nil errorHandler:nil];
+    [pyConnection getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:NULL gotOnlineStreams:^(NSArray *onlineStreamList) {
+        //_user.allStreams = [NSMutableArray arrayWithArray:onlineStreamList];
+        //NSLog(@"Streams retrieved.");
+    } errorHandler:^(NSError *error) {
+        NSLog(@"Error : %@",error);
+    }];
     [[NSNotificationCenter defaultCenter] postNotificationName:PYLoginSuccessfullNotification
                                                         object:self];
+    //Display notification
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    notification.title = @"Login successful.";
+    notification.informativeText = [NSString stringWithFormat:@"Welcome back, %@ !",pyConnection.userID];
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
 - (void) pyWebLoginAborted:(NSString*)reason {

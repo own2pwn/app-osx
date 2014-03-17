@@ -27,21 +27,16 @@
            withArrayController:(NSArrayController*)popUpButtonContent
                        forUser:(User*)user{
     
-    [[user connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:^(NSArray *cachedStreamsList) {
-        NSMutableArray *streamNames = [[NSMutableArray alloc] init];
-        [self createStreamNameForStreams:cachedStreamsList inArray:streamNames withLevelDelimiter:@"" forUser:user atIndex:0];
-        
-        NSRange range = NSMakeRange(0, [[popUpButtonContent arrangedObjects] count]);
-        [popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
-        [popUpButtonContent addObjects:streamNames];
-        [streams selectItemAtIndex:0];
-        
-        [streamNames release];
-        
-    } gotOnlineStreams:^(NSArray *onlineStreamList) {
+    [[user connection] getAllStreamsWithRequestType:PYRequestTypeAsync
+                                   gotCachedStreams:NULL
+                                   gotOnlineStreams:^(NSArray *onlineStreamList) {
         NSMutableArray *streamNames = [[NSMutableArray alloc] init];
         
-        [self createStreamNameForStreams:onlineStreamList inArray:streamNames withLevelDelimiter:@"" forUser:user atIndex:0];
+        [self createStreamNameForStreams:onlineStreamList
+                                 inArray:streamNames
+                      withLevelDelimiter:@""
+                                 forUser:user
+                                 atIndex:0];
         
         NSRange range = NSMakeRange(0, [[popUpButtonContent arrangedObjects] count]);
         [popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
