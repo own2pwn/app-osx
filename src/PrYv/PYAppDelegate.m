@@ -39,6 +39,12 @@
 	menuController = [[PYStatusMenuController alloc] init];
 	[NSBundle loadNibNamed:@"StatusMenu" owner:menuController];
 	
+    [self loadUser];
+}
+
+
+- (void)loadUser {
+
 	//Try to retrieve the user from the CoreData DB
 	self.user = [User currentUserInContext:[self managedObjectContext]];
 	//[PYClient setDefaultDomainStaging];
@@ -54,11 +60,8 @@
 	//If the user has been found
 	}else {
 		NSLog(@"Welcome back, %@ !",_user.username);
-        [[_user connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:NULL gotOnlineStreams:^(NSArray *onlineStreamList) {
-            //_user.allStreams = [NSMutableArray arrayWithArray:onlineStreamList];
-            //NSLog(@"Retrieved online streams");
-        } errorHandler:^(NSError *error) {
-            NSLog(@"%@",error);
+        [[_user connection] streamsEnsureFetched:^(NSError *error) {
+            if (error) { NSLog(@" Failed fetching streams %@", error); }
         }];
         [[NSNotificationCenter defaultCenter] postNotificationName:PYLoginSuccessfullNotification object:self];
 	}

@@ -1,13 +1,9 @@
 PODS:
-  - AnyJSON (0.1.0)
   - PryvApiKit (0.0.1):
-    - AnyJSON
     - PryvApiKit/CWLSynthesizeSingleton
     - PryvApiKit/Reachability
-  - PryvApiKit/CWLSynthesizeSingleton (0.0.1):
-    - AnyJSON
-  - PryvApiKit/Reachability (0.0.1):
-    - AnyJSON
+  - PryvApiKit/CWLSynthesizeSingleton (0.0.1)
+  - PryvApiKit/Reachability (0.0.1)
 
 DEPENDENCIES:
   - PryvApiKit (from `../../sdk-objectivec-apple/PryvApiKit.podspec`)
@@ -17,7 +13,6 @@ EXTERNAL SOURCES:
     :path: ../../sdk-objectivec-apple/PryvApiKit.podspec
 
 SPEC CHECKSUMS:
-  AnyJSON: 693e7998be311cb6b77790fd46ce2bec64f1f853
-  PryvApiKit: 0d55e2797c78b5a3a1dbaf808aa0fae42adaff24
+  PryvApiKit: 465975928b6160318ddb03814f05f5ab14623ecc
 
-COCOAPODS: 0.29.0
+COCOAPODS: 0.32.1

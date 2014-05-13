@@ -29,7 +29,7 @@
         event.type = @"note/txt";
         event.eventContent = [NSString stringWithString:text];
         
-        [[user connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
+        [[user connection] eventCreate:event successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
             NSLog(@"Pryved text with event ID : %@", newEventId);
             
             //Display notification

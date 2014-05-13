@@ -46,7 +46,7 @@
         event.eventContent = [NSString stringWithString:[_content stringValue]];
         event.tags = [NSArray arrayWithArray:[_tags objectValue]];
         
-        [[current connection] createEvent:event requestType:PYRequestTypeAsync successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
+        [[current connection] eventCreate:event successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
             NSLog(@"Note created with event ID : %@",newEventId);
             
             //Display notification

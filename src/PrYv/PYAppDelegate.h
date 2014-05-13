@@ -23,5 +23,6 @@
 
 - (IBAction)saveAction:(id)sender;
 + (PYAppDelegate*)sharedInstance;
+- (void)loadUser;
 
 @end
