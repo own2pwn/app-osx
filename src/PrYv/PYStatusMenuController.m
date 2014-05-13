@@ -78,7 +78,14 @@
 
 -(IBAction)goToMyPryv:(id)sender {
     NSString *username = [[[User currentUser] username] copy];
-    NSString *urlString = [NSString stringWithFormat:@"https://%@.pryv.li/",username];
+    
+    NSString* domain = @"pryv.me";
+    if ([[PYClient defaultDomain] isEqualToString:@"pryv.in"]) {
+       domain = @"pryv.li";
+    };
+    
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://%@.%@/",username, domain];
 	NSURL *url = [NSURL URLWithString:urlString];
 	if(![[NSWorkspace sharedWorkspace] openURL:url])
 		NSLog(@"Failed to open url: %@",[url description]);
