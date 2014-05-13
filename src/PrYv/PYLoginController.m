@@ -63,12 +63,11 @@
     _user = [User createNewUserWithUsername:pyConnection.userID
                                    AndToken:pyConnection.accessToken
                                   InContext:context];
-    
-    
+
     //Display notification
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     notification.title = @"Login successful.";
-    notification.informativeText = [NSString stringWithFormat:@"Welcome back, %@ !",pyConnection.userID];
+    notification.informativeText = [NSString stringWithFormat:@"Welcome %@ !",pyConnection.userID];
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
     
     [[PYAppDelegate sharedInstance] loadUser];

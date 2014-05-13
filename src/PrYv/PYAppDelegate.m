@@ -50,7 +50,7 @@
 	//[PYClient setDefaultDomainStaging];
     
 	//If no user has been found, open login window
-	if (!_user) {
+	if (!self.user) {
 		loginWindow = [[PYLoginController alloc] initForUser:_user];
 		[loginWindow.window setDelegate:menuController];
 		[loginWindow showWindow:self];
@@ -59,10 +59,12 @@
 	
 	//If the user has been found
 	}else {
+
 		NSLog(@"Welcome back, %@ !",_user.username);
         [[_user connection] streamsEnsureFetched:^(NSError *error) {
             if (error) { NSLog(@" Failed fetching streams %@", error); }
         }];
+
         [[NSNotificationCenter defaultCenter] postNotificationName:PYLoginSuccessfullNotification object:self];
 	}
     
