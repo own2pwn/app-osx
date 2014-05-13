@@ -14,6 +14,7 @@
 #import "Constants.h"
 #import "PYUtility.h"
 
+
 @interface PYNewNoteController ()
 
 @end
@@ -104,7 +105,6 @@
 - (void)windowDidLoad {
     [super windowDidLoad];
 	User *current = [User currentUserInContext:[[PYAppDelegate sharedInstance] managedObjectContext]];
-    NSLog(@"%@",current);
 	current.streams = [[NSMutableDictionary alloc] init];
     PYUtility *utility = [[PYUtility alloc] init];
     [utility setupStreamPopUpButton:_streams withArrayController:_popUpButtonContent forUser:current];

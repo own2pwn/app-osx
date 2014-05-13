@@ -62,7 +62,11 @@
         index++;
         [streamNames addObject:[NSString stringWithFormat:@"%@%@",delimiter,stream.name]];
         if ([stream.children count] > 0) {
-            index = [self createStreamNameForStreams:stream.children inArray:streamNames withLevelDelimiter:@"- " forUser:user atIndex:index];
+            index = [self createStreamNameForStreams:stream.children
+                                             inArray:streamNames
+                                  withLevelDelimiter:@"- "
+                                             forUser:user
+                                             atIndex:index];
             
         }
     }

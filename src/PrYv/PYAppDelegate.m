@@ -44,7 +44,7 @@
 	//[PYClient setDefaultDomainStaging];
     
 	//If no user has been found, open login window
-	if (!_user) {
+	if (!self.user) {
 		loginWindow = [[PYLoginController alloc] initForUser:_user];
 		[loginWindow.window setDelegate:menuController];
 		[loginWindow showWindow:self];
@@ -53,13 +53,8 @@
 	
 	//If the user has been found
 	}else {
-		NSLog(@"Welcome back, %@ !",_user.username);
-        [[_user connection] getAllStreamsWithRequestType:PYRequestTypeAsync gotCachedStreams:NULL gotOnlineStreams:^(NSArray *onlineStreamList) {
-            //_user.allStreams = [NSMutableArray arrayWithArray:onlineStreamList];
-            //NSLog(@"Retrieved online streams");
-        } errorHandler:^(NSError *error) {
-            NSLog(@"%@",error);
-        }];
+		NSLog(@"Welcome back, %@ !",self.user.username);
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:PYLoginSuccessfullNotification object:self];
 	}
     

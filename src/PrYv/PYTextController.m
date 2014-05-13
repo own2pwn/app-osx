@@ -24,7 +24,7 @@
 		User *user = [User currentUserInContext:context];
         
         PYEvent *event = [[PYEvent alloc] init];
-        event.streamId = @"diary";
+        event.streamId = @"text";
         [event setEventDate:[NSDate date]];
         event.type = @"note/txt";
         event.eventContent = [NSString stringWithString:text];
