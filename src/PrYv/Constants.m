@@ -15,4 +15,7 @@ NSString *const kPYLastPryvedEventNote = @"Note";
 NSString *const kPYLastPryvedEventText = @"Text";
 NSString *const kPYLastPryvedEventFile = @"File";
 
+NSString *const kLastUsedUsernameKey = @"PYUsername";
+NSString *const kServiceName = @"com.pryv.osx-integration";
+
 int const kPYNumberOfLastPryvedEvents = 5;

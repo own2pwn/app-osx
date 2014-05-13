@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
 
-@interface File : NSManagedObject
+
+@interface File : NSObject
 
 @property (nonatomic, retain) NSString * filename;
 @property (nonatomic, retain) NSNumber * isPicture;

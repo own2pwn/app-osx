@@ -11,10 +11,10 @@
 
 @implementation File
 
-@dynamic filename;
-@dynamic isPicture;
-@dynamic mimeType;
-@dynamic path;
-@dynamic size;
+@synthesize filename;
+@synthesize isPicture;
+@synthesize mimeType;
+@synthesize path;
+@synthesize size;
 
 @end

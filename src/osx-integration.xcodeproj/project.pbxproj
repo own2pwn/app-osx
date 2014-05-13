@@ -30,7 +30,6 @@
 		0C7342E716ADB00B00EA101F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342E516ADB00B00EA101F /* Credits.rtf */; };
 		0C7342EA16ADB00B00EA101F /* PYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E916ADB00B00EA101F /* PYAppDelegate.m */; };
 		0C7342ED16ADB00B00EA101F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342EB16ADB00B00EA101F /* MainMenu.xib */; };
-		0C7342F016ADB00B00EA101F /* PrYv.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342EE16ADB00B00EA101F /* PrYv.xcdatamodeld */; };
 		0C96BFFA185122E4007155E2 /* PYPreferencesPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C96BFF8185122E4007155E2 /* PYPreferencesPaneController.m */; };
 		0C96BFFB185122E4007155E2 /* PreferencesPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C96BFF9185122E4007155E2 /* PreferencesPane.xib */; };
 		0C9B754216D37AAF00A7FEBD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342F716ADB00B00EA101F /* SenTestingKit.framework */; };
@@ -140,7 +139,6 @@
 		0C7342D216ADB00B00EA101F /* Pryv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pryv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7342D616ADB00B00EA101F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0C7342D916ADB00B00EA101F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
-		0C7342DA16ADB00B00EA101F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0C7342DB16ADB00B00EA101F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0C7342DE16ADB00B00EA101F /* osx-integration-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "osx-integration-Info.plist"; sourceTree = "<group>"; };
 		0C7342E016ADB00B00EA101F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 		0C7342E816ADB00B00EA101F /* PYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYAppDelegate.h; sourceTree = "<group>"; };
 		0C7342E916ADB00B00EA101F /* PYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYAppDelegate.m; sourceTree = "<group>"; };
 		0C7342EC16ADB00B00EA101F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		0C7342EF16ADB00B00EA101F /* PrYv.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PrYv.xcdatamodel; sourceTree = "<group>"; };
 		0C7342F716ADB00B00EA101F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0C7343B016AEA6F400EA101F /* PrYv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrYv.entitlements; sourceTree = "<group>"; };
 		0C96BFF7185122E4007155E2 /* PYPreferencesPaneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYPreferencesPaneController.h; path = PrYv/PYPreferencesPaneController.h; sourceTree = "<group>"; };
@@ -253,7 +250,6 @@
 		0C24088016B7095600BD60CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0C7342EE16ADB00B00EA101F /* PrYv.xcdatamodeld */,
 				0C1A1E1D16C958560042D7D4 /* Core Data */,
 				0C1A1E1316C956A30042D7D4 /* Helpers */,
 			);
@@ -365,7 +361,6 @@
 			isa = PBXGroup;
 			children = (
 				0C7342D916ADB00B00EA101F /* AppKit.framework */,
-				0C7342DA16ADB00B00EA101F /* CoreData.framework */,
 				0C7342DB16ADB00B00EA101F /* Foundation.framework */,
 			);
 			name = "Other Frameworks";
@@ -688,7 +683,6 @@
 			files = (
 				0C7342E316ADB00B00EA101F /* main.m in Sources */,
 				0C7342EA16ADB00B00EA101F /* PYAppDelegate.m in Sources */,
-				0C7342F016ADB00B00EA101F /* PrYv.xcdatamodeld in Sources */,
 				0C24089416B7B78C00BD60CC /* User+Helper.m in Sources */,
 				0C2408A416B7BC5D00BD60CC /* PYStatusMenuController.m in Sources */,
 				0C2408AC16B7C27A00BD60CC /* PYNewNoteController.m in Sources */,
@@ -1196,20 +1190,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0C7342EE16ADB00B00EA101F /* PrYv.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0C7342EF16ADB00B00EA101F /* PrYv.xcdatamodel */,
-			);
-			currentVersion = 0C7342EF16ADB00B00EA101F /* PrYv.xcdatamodel */;
-			name = PrYv.xcdatamodeld;
-			path = PrYv/PrYv.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 0C7342C916ADB00B00EA101F /* Project object */;
 }

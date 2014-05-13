@@ -14,9 +14,7 @@
 @private
     PYServicesController *servicesController;
 }
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @property (retain) PYLoginController *loginWindow;
 @property (retain) PYStatusMenuController *menuController;
 @property (retain) User *user;

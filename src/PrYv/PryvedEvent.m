@@ -12,10 +12,10 @@
 
 @implementation PryvedEvent
 
-@dynamic date;
-@dynamic eventId;
-@dynamic type;
-@dynamic content;
-@dynamic user;
+@synthesize date;
+@synthesize eventId;
+@synthesize type;
+@synthesize content;
+@synthesize user;
 
 @end

@@ -12,7 +12,9 @@
 @interface User (Helper)
 
 // get the current user for the application
-+(User *)currentUserInContext:(NSManagedObjectContext *)context;
++(User *)currentUser;
+
++ (void)saveConnection:(PYConnection *)connection;
 
 /**
  @name create or change the current user
@@ -25,13 +27,14 @@
  @param token is the user Authorization token to connect to the PrYv API
  */
 
+
+
 +(User*)createNewUserWithUsername:(NSString *)username
-							AndToken:(NSString *)token
-							InContext:(NSManagedObjectContext*)context;
+							AndToken:(NSString *)token;
 -(NSString*)description;
--(void)logoutFromContext:(NSManagedObjectContext*)context;
+-(void)logout;
 -(PYConnection*)connection;
--(NSArray*)sortLastPryvedEventsInContext:(NSManagedObjectContext*)context;
--(void)updateNumberOfPryvedEventsInContext:(NSManagedObjectContext*)context;
+-(NSArray*)sortLastPryvedEvents;
+-(void)updateNumberOfPryvedEvents;
 
 @end

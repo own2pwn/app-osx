@@ -20,8 +20,7 @@
 		NSLog(@"No text entered !");
 	}else {
         //Get the general context
-		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-		User *user = [User currentUserInContext:context];
+		User *user = [User currentUser];
         
         PYEvent *event = [[PYEvent alloc] init];
         event.streamId = @"text";
@@ -39,8 +38,11 @@
             [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
             
             //Add text event to list of last synced events
+           
+            /* X2
             PryvedEvent *pryvedEvent = [NSEntityDescription insertNewObjectForEntityForName:@"PryvedEvent"
                                                                      inManagedObjectContext:context];
+             
             NSDate *currentDate = [NSDate date];
             pryvedEvent.date = currentDate;
             pryvedEvent.eventId = [NSString stringWithString:newEventId];
@@ -49,6 +51,7 @@
             
             [user addPryvedEventsObject:pryvedEvent];
             [context save:nil];
+             */
         } errorHandler:^(NSError *error) {
             NSLog(@"Error while pryving text : %@", error);
             //Display notification

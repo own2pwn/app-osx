@@ -27,8 +27,7 @@
 		NSLog(@"The content is mandatory !");
 	}else {
 		//Get the general context and create a new note
-		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-        User* current = [User currentUserInContext:context];
+        User* current = [User currentUser];
         
         NSString* streamId;
         if ([[_streams titleOfSelectedItem] isEqualTo:@""]) {
@@ -57,6 +56,7 @@
             [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
             
             //Add this event to the last synced events list
+            /*X2
             PryvedEvent *pryvedEvent = [NSEntityDescription
                                         insertNewObjectForEntityForName:@"PryvedEvent" inManagedObjectContext:context];
             NSDate *currentDate = [NSDate date];
@@ -67,7 +67,7 @@
             [current addPryvedEventsObject:pryvedEvent];
             [current updateNumberOfPryvedEventsInContext:context];
             [context save:nil];
-
+             */
             
         } errorHandler:^(NSError *error) {
             NSLog(@"Error when pryving a note : %@", error);
@@ -104,7 +104,7 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
-	User *current = [User currentUserInContext:[[PYAppDelegate sharedInstance] managedObjectContext]];
+	User *current = [User currentUser];
 	current.streams = [[NSMutableDictionary alloc] init];
     PYUtility *utility = [[PYUtility alloc] init];
     [utility setupStreamPopUpButton:_streams withArrayController:_popUpButtonContent forUser:current];

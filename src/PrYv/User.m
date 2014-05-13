@@ -11,10 +11,13 @@
 
 @implementation User
 
-@dynamic token;
-@dynamic username;
-@dynamic pryvedEvents;
+@synthesize token;
+@synthesize username;
+@synthesize pryvedEvents;
 @synthesize streams;
 @synthesize allStreams;
+@synthesize connection;
+
+
 
 @end

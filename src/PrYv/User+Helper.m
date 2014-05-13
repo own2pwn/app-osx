@@ -8,43 +8,62 @@
 #import "Constants.h"
 #import "PryvedEvent.h"
 #import "Constants.h"
+#import "SSKeychain.h"
 
 @implementation User (Helper)
 
-+ (User *)currentUserInContext:(NSManagedObjectContext *)context {
-	
-    // NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
-	NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"User"
-                                              inManagedObjectContext:context];
-    request.entity = entity;
+
+
++ (void)saveConnection:(PYConnection *)connection
+{
+    if (connection == nil) {
+        if (_currentUser) {
+            [SSKeychain deletePasswordForService:kServiceName account:_currentUser.connection.userID];
+        }
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kLastUsedUsernameKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    } else {
+        [[NSUserDefaults standardUserDefaults] setObject:connection.userID forKey:kLastUsedUsernameKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [SSKeychain setPassword:connection.accessToken forService:kServiceName account:connection.userID];
+    }
+    _currentUser = nil;
     
-    return [[context executeFetchRequest:request error:nil] lastObject];
+}
+
+
+static User* _currentUser;
++ (User *)currentUser {
+	if (_currentUser) {
+        return _currentUser;
+    }
+    
+    NSString *lastUsedUsername = [[NSUserDefaults standardUserDefaults] objectForKey:kLastUsedUsernameKey];
+    if(lastUsedUsername)
+    {
+        NSString *accessToken = [SSKeychain passwordForService:kServiceName account:lastUsedUsername];
+        NSLog(@"LoadedSavedConnection: %@", lastUsedUsername);
+        _currentUser = [self createNewUserWithUsername:lastUsedUsername AndToken:accessToken];
+        
+    }
+    
+    return _currentUser;
+    
 }
 
 +(User*)createNewUserWithUsername:(NSString *)username
-                        AndToken:(NSString *)token
-                        InContext:(NSManagedObjectContext*)context{
+                         AndToken:(NSString *)token{
 	
-	User * newUser = [User currentUserInContext:context];
-    if (newUser == nil) {
-        newUser = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:context];
-    }
+    User* newUser = [[[User alloc] init] autorelease];
 	
     newUser.username = username;
     newUser.token = token;
-    //newUser.allStreams = [[NSMutableArray alloc] init];
-   
-    [context save:nil];
-    
+    newUser.connection = [PYClient createConnectionWithUsername:newUser.username andAccessToken:newUser.token];
     return newUser;
 }
 
--(PYConnection*)connection{
-    return [PYClient createConnectionWithUsername:self.username andAccessToken:self.token];
-}
 
--(NSArray*)sortLastPryvedEventsInContext:(NSManagedObjectContext *)context{
+-(NSArray*)sortLastPryvedEvents{
     if ([self.pryvedEvents count] > 0) {
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
         NSArray *sortedEvents = [self.pryvedEvents sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
@@ -57,7 +76,7 @@
     }
 }
 
--(void)updateNumberOfPryvedEventsInContext:(NSManagedObjectContext *)context {
+-(void)updateNumberOfPryvedEvents {
     
     if ([self.pryvedEvents count] >  kPYNumberOfLastPryvedEvents) {
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
@@ -72,21 +91,18 @@
         
         NSSet *reducedSet = [NSSet setWithArray:reducedArray];
         [self removePryvedEvents:self.pryvedEvents];
-        [context save:nil];
-        
+       
         [self addPryvedEvents:reducedSet];
-        [context save:nil];
+     
     }
     
-
+    
 }
 
--(void)logoutFromContext:(NSManagedObjectContext *)context{
-    [context deleteObject:self];
-    NSLog(@"Logged out.");
-    [context save:nil];
+-(void)logout{
+    [User saveConnection:nil];
     [[NSNotificationCenter defaultCenter] postNotificationName:PYLogoutSuccessfullNotification
-                                                                           object:self];
+                                                        object:self];
 }
 
 -(NSString*)description {

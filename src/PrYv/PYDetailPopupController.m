@@ -31,7 +31,7 @@
 }
 
 - (IBAction)pryvFilesWithDetails:(id)sender {
-    User *current = [User currentUserInContext:[[PYAppDelegate sharedInstance] managedObjectContext]];
+    User *current = [User currentUser];
     NSString* streamId;
     if ([[_streamPopUpButton titleOfSelectedItem] isEqualTo:@""]) {
         streamId = @"diary";
@@ -58,7 +58,7 @@
     
     NSString *label = [NSString stringWithFormat:@"You are about to pryv the file %@",[(NSURL*)[_files objectAtIndex:0] lastPathComponent]];
     [_fileToPryv setStringValue:label];
-	User *current = [User currentUserInContext:[[PYAppDelegate sharedInstance] managedObjectContext]];
+	User *current = [User currentUser];
 	current.streams = [[NSMutableDictionary alloc] init];
     PYUtility *utility = [[PYUtility alloc] init];
     [utility setupStreamPopUpButton:_streamPopUpButton withArrayController:_popUpButtonContent forUser:current];

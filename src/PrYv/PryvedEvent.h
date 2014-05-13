@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+
 
 @class User;
 
-@interface PryvedEvent : NSManagedObject
+@interface PryvedEvent : NSObject
 
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic, retain) NSString * eventId;

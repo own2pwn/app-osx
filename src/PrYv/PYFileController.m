@@ -61,14 +61,13 @@
 #pragma mark - Pryv Files
 
 -(void)runDialog {
-	NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-	
+
     //Add the fields for the tags and the folder
 	if ([NSBundle loadNibNamed:@"OpenPanelWithTagsAndFolder" owner:self])
 		[_openDialog setAccessoryView:_accessoryView];
 	
     //Get the stream names list and fill the popup button
-	User* current = [User currentUserInContext:context];
+	User* current = [User currentUser];
     current.streams = [[NSMutableDictionary alloc] init];
     PYUtility *utility = [[PYUtility alloc] init];
     [utility setupStreamPopUpButton:_streams withArrayController:_popUpButtonContent forUser:current];
@@ -167,8 +166,7 @@
         event.tags = [NSArray arrayWithArray:tags];
         event.attachments = [NSMutableArray arrayWithArray:attachments];
         
-        NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-        User *current = [User currentUserInContext:context];
+        User *current = [User currentUser];
         
         //Sync request because otherwise thread dies before request is sent. However this is not a
         //problem since only the current thread is blocked by the sync request and this is the last
@@ -183,6 +181,7 @@
             [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
             
             //Add file event to last pryved event list.
+            /*X2
             PryvedEvent *pryvedEvent = [NSEntityDescription insertNewObjectForEntityForName:@"PryvedEvent"
                                                                      inManagedObjectContext:context];
             NSDate *currentDate = [NSDate date];
@@ -199,7 +198,7 @@
             
             [current addPryvedEventsObject:pryvedEvent];
             [context save:nil];
-            
+            */
         } errorHandler:^(NSError *error) {
             NSLog(@"%@",error);
             //Display notification
@@ -242,9 +241,9 @@
 	
     //If it is a file
 	} else {
-		NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
 		
         //Create a file object to add in the array
+        /*X2
 		File *newFile = [NSEntityDescription insertNewObjectForEntityForName:@"File"
                                                       inManagedObjectContext:context];
 		
@@ -258,6 +257,7 @@
         [array addObject:newFile];
         
         NSLog(@"File : %@",newFile);
+         */
 		}
 }
 
@@ -348,8 +348,7 @@
     NSNumber *latitudeNumber = [NSNumber numberWithDouble:[latitude doubleValue]];
     event.eventContent = [NSDictionary dictionaryWithObjectsAndKeys:latitudeNumber,@"latitude",longitudeNumber,@"longitude", nil];
     
-    NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-    User *current = [User currentUserInContext:context];
+    User *current = [User currentUser];
    
     [[current connection] eventCreate:event successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
         NSLog(@"New location event : %@", newEventId);

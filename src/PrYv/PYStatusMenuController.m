@@ -77,8 +77,7 @@
 }
 
 -(IBAction)goToMyPryv:(id)sender {
-    NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-    NSString *username = [[[User currentUserInContext:context] username] copy];
+    NSString *username = [[[User currentUser] username] copy];
     NSString *urlString = [NSString stringWithFormat:@"https://%@.pryv.li/",username];
 	NSURL *url = [NSURL URLWithString:urlString];
 	if(![[NSWorkspace sharedWorkspace] openURL:url])
@@ -95,8 +94,7 @@
 
 - (IBAction)logInOrOut:(id)sender {
     [NSApp activateIgnoringOtherApps:YES];
-    NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-    User * user = [User currentUserInContext:context];
+    User * user = [User currentUser];
 	//If no user has been found, open login window
 	if (!user) {
 		_loginWindow = [[PYLoginController alloc] initForUser:user];
@@ -105,7 +103,7 @@
         
         //If the user has been found
 	}else {
-		[user logoutFromContext:context];
+		[User saveConnection:nil];
     }
 }
 
@@ -152,10 +150,9 @@
 
 -(void)updateLastPryvedEvents
 {
-    NSManagedObjectContext *context = [[PYAppDelegate sharedInstance] managedObjectContext];
-    User *current = [User currentUserInContext:context];
+    User *current = [User currentUser];
     
-    NSArray *sortedPryvedEvents = [NSArray arrayWithArray:[current sortLastPryvedEventsInContext:context]];
+    NSArray *sortedPryvedEvents = [NSArray arrayWithArray:[current sortLastPryvedEvents]];
     NSMenu *pryvedEvents = [[NSMenu alloc] init];
     
     if ([sortedPryvedEvents count] > 0) {
