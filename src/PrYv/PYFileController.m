@@ -85,6 +85,7 @@
 				NSString *streamIndex = [NSString stringWithFormat:@"%lu",[_streams indexOfSelectedItem]];
                 streamId = [[current streams] objectForKey:streamIndex];
 			}
+            
 			NSArray *files = [_openDialog URLs];
             
 			[self pryvFiles:files inStreamId:streamId withTags:[_tags objectValue]];
@@ -118,7 +119,6 @@
 		NSArray *tags = [NSArray arrayWithArray:[args objectForKey:@"tags"]];
 		NSString *streamId = [NSString stringWithString:[args objectForKey:@"stream"]];
         NSDate *currentTime = [NSDate date];
-        NSLog(@"Stream ID : %@", streamId);
 		
         //Construct the array of files @filesToSend recursively
 		//The hierarchical structure is kept in the filename
@@ -243,9 +243,11 @@
 	} else {
 		
         //Create a file object to add in the array
-        /*X2
-		File *newFile = [NSEntityDescription insertNewObjectForEntityForName:@"File"
-                                                      inManagedObjectContext:context];
+        
+//		File *newFile = [NSEntityDescription insertNewObjectForEntityForName:@"File"
+//                                                      inManagedObjectContext:context];
+        
+        File *newFile = [[[File alloc] init] autorelease];
 		
         //Add the subfolder before the file name to trace the hierarchical structure
 		newFile.filename = [subfolder stringByAppendingPathComponent:[file lastPathComponent]];
@@ -257,7 +259,6 @@
         [array addObject:newFile];
         
         NSLog(@"File : %@",newFile);
-         */
 		}
 }
 

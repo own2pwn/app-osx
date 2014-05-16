@@ -37,7 +37,7 @@
             NSString *streamIndex = [NSString stringWithFormat:@"%lu",[_streams indexOfSelectedItem]];
             streamId = [[current streams] objectForKey:streamIndex];
         }
-        
+                
         PYEvent *event = [[PYEvent alloc] init];
         
         event.streamId = [NSString stringWithString:streamId];
