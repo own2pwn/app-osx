@@ -93,17 +93,17 @@
 }
 
 - (IBAction)logInOrOut:(id)sender {
-    [NSApp activateIgnoringOtherApps:YES];
     User * user = [User currentUser];
 	//If no user has been found, open login window
 	if (!user) {
+        [NSApp activateIgnoringOtherApps:YES];
 		_loginWindow = [[PYLoginController alloc] initForUser:user];
 		[_loginWindow.window setDelegate:self];
 		[_loginWindow showWindow:self];
         
         //If the user has been found
 	}else {
-		[User saveConnection:nil];
+		[user logout];
     }
 }
 
@@ -141,6 +141,7 @@
 }
 
 -(void)updateMenuItemsLogout:(NSNotification*)notification{
+    NSLog(@"Logged out.");
     [logInOrOut setTitle:@"Log in"];
     [newNote setEnabled:NO];
     [pryvFiles setEnabled:NO];
@@ -148,6 +149,7 @@
     [preferences setEnabled:NO];
 }
 
+//BACKLOG : will be implemented later, feature removed for MVP
 -(void)updateLastPryvedEvents
 {
     User *current = [User currentUser];
