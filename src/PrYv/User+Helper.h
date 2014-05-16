@@ -33,7 +33,7 @@
 							AndToken:(NSString *)token;
 -(NSString*)description;
 -(void)logout;
--(PYConnection*)connection;
+//-(PYConnection*)connection;
 -(NSArray*)sortLastPryvedEvents;
 -(void)updateNumberOfPryvedEvents;
 

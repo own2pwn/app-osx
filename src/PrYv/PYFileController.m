@@ -357,12 +357,6 @@
     }];
 }
 
-
-//Create unique id to store the file in the Caches directory
--(NSString*)createsUniqueIDForFile:(File*)file {
-    return [[[[file objectID] URIRepresentation] relativeString] lastPathComponent];
-}
-
 //Returns path of Caches directory
 -(NSString*)findCachesDirectory {
     return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
