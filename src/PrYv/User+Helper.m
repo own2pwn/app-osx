@@ -62,7 +62,7 @@ static User* _currentUser;
     return newUser;
 }
 
-
+//BACKLOG : will be implemented later, feature removed for MVP
 -(NSArray*)sortLastPryvedEvents{
     if ([self.pryvedEvents count] > 0) {
         NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
@@ -76,6 +76,7 @@ static User* _currentUser;
     }
 }
 
+//BACKLOG : will be implemented later, feature removed for MVP
 -(void)updateNumberOfPryvedEvents {
     
     if ([self.pryvedEvents count] >  kPYNumberOfLastPryvedEvents) {

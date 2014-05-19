@@ -18,4 +18,6 @@
 @property (nonatomic, retain) NSString * path;
 @property (nonatomic, retain) NSNumber * size;
 
+-(id)init;
+
 @end

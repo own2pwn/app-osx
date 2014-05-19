@@ -85,6 +85,7 @@
 				NSString *streamIndex = [NSString stringWithFormat:@"%lu",[_streams indexOfSelectedItem]];
                 streamId = [[current streams] objectForKey:streamIndex];
 			}
+            
 			NSArray *files = [_openDialog URLs];
             
 			[self pryvFiles:files inStreamId:streamId withTags:[_tags objectValue]];
@@ -118,7 +119,6 @@
 		NSArray *tags = [NSArray arrayWithArray:[args objectForKey:@"tags"]];
 		NSString *streamId = [NSString stringWithString:[args objectForKey:@"stream"]];
         NSDate *currentTime = [NSDate date];
-        NSLog(@"Stream ID : %@", streamId);
 		
         //Construct the array of files @filesToSend recursively
 		//The hierarchical structure is kept in the filename
@@ -147,7 +147,7 @@
         NSString *notificationText;
         if ([filesToSend areAllImages]){
             event.type = @"picture/attached";
-            notificationTitle = @"Pictures pryved succesfully.";
+            notificationTitle = @"Picture pryved succesfully.";
             notificationText = [NSString stringWithFormat:@"Your pictures including \"%@\" have been pryved.",[(PYAttachment*)[attachments objectAtIndex:0] fileName]];
         }
         else if ([attachments count] > 1){
@@ -173,7 +173,9 @@
         //instruction before releasing everything.
         
         [[current connection] eventCreate:event  successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
+            
             NSLog(@"New event ID : %@",newEventId);
+            
             //Display notification
             NSUserNotification *notification = [[NSUserNotification alloc] init];
             notification.title = [NSString stringWithString:notificationTitle];
@@ -243,9 +245,11 @@
 	} else {
 		
         //Create a file object to add in the array
-        /*X2
-		File *newFile = [NSEntityDescription insertNewObjectForEntityForName:@"File"
-                                                      inManagedObjectContext:context];
+        
+//		File *newFile = [NSEntityDescription insertNewObjectForEntityForName:@"File"
+//                                                      inManagedObjectContext:context];
+        
+        File *newFile = [[[File alloc] init] autorelease];
 		
         //Add the subfolder before the file name to trace the hierarchical structure
 		newFile.filename = [subfolder stringByAppendingPathComponent:[file lastPathComponent]];
@@ -257,7 +261,6 @@
         [array addObject:newFile];
         
         NSLog(@"File : %@",newFile);
-         */
 		}
 }
 
@@ -355,12 +358,6 @@
     } errorHandler:^(NSError *error) {
         NSLog(@"Error when pryving GPS event : %@", error);
     }];
-}
-
-
-//Create unique id to store the file in the Caches directory
--(NSString*)createsUniqueIDForFile:(File*)file {
-    return [[[[file objectID] URIRepresentation] relativeString] lastPathComponent];
 }
 
 //Returns path of Caches directory

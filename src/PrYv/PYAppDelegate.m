@@ -40,12 +40,13 @@
 - (void)loadUser {
 
     
-	//Try to retrieve the user from the CoreData DB
+	//Try to retrieve the user from the user preferences
 	self.user = [User currentUser];
 	//[PYClient setDefaultDomainStaging];
     
 	//If no user has been found, open login window
 	if (!self.user) {
+        [NSApp activateIgnoringOtherApps:YES];
 		loginWindow = [[PYLoginController alloc] initForUser:_user];
 		[loginWindow.window setDelegate:menuController];
 		[loginWindow showWindow:self];

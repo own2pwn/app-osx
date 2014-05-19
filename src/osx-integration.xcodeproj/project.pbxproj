@@ -20,7 +20,6 @@
 		0C2408D416B9233200BD60CC /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C2408D216B9233200BD60CC /* LoginController.xib */; };
 		0C2559B016FA5B7F00B4C2BC /* PYServicesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2559AF16FA5B7F00B4C2BC /* PYServicesController.m */; };
 		0C293F5F16B13BFB00D90B36 /* FaviconBlack56.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */; };
-		0C3C26A216CBCC380023E724 /* StatusMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A116CBCC380023E724 /* StatusMenu.xib */; };
 		0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */; };
 		0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A716CCF9050023E724 /* FaviconBlack22.png */; };
 		0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */; };
@@ -30,6 +29,7 @@
 		0C7342E716ADB00B00EA101F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342E516ADB00B00EA101F /* Credits.rtf */; };
 		0C7342EA16ADB00B00EA101F /* PYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E916ADB00B00EA101F /* PYAppDelegate.m */; };
 		0C7342ED16ADB00B00EA101F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342EB16ADB00B00EA101F /* MainMenu.xib */; };
+		0C81B05219260802002D73C4 /* StatusMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C81B05419260802002D73C4 /* StatusMenu.xib */; };
 		0C96BFFA185122E4007155E2 /* PYPreferencesPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C96BFF8185122E4007155E2 /* PYPreferencesPaneController.m */; };
 		0C96BFFB185122E4007155E2 /* PreferencesPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C96BFF9185122E4007155E2 /* PreferencesPane.xib */; };
 		0C9B754216D37AAF00A7FEBD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342F716ADB00B00EA101F /* SenTestingKit.framework */; };
@@ -127,7 +127,6 @@
 		0C2559AE16FA5B7F00B4C2BC /* PYServicesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYServicesController.h; path = PrYv/PYServicesController.h; sourceTree = "<group>"; };
 		0C2559AF16FA5B7F00B4C2BC /* PYServicesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYServicesController.m; path = PrYv/PYServicesController.m; sourceTree = "<group>"; };
 		0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaviconBlack56.png; path = PrYv/FaviconBlack56.png; sourceTree = "<group>"; };
-		0C3C26A116CBCC380023E724 /* StatusMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusMenu.xib; sourceTree = "<group>"; };
 		0C3C26A416CBDCCF0023E724 /* DragAndDropStatusMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragAndDropStatusMenuView.h; sourceTree = "<group>"; };
 		0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragAndDropStatusMenuView.m; sourceTree = "<group>"; };
 		0C3C26A716CCF9050023E724 /* FaviconBlack22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaviconBlack22.png; sourceTree = "<group>"; };
@@ -150,6 +149,7 @@
 		0C7342EC16ADB00B00EA101F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		0C7342F716ADB00B00EA101F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0C7343B016AEA6F400EA101F /* PrYv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrYv.entitlements; sourceTree = "<group>"; };
+		0C81B05319260802002D73C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/StatusMenu.xib; sourceTree = "<group>"; };
 		0C96BFF7185122E4007155E2 /* PYPreferencesPaneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYPreferencesPaneController.h; path = PrYv/PYPreferencesPaneController.h; sourceTree = "<group>"; };
 		0C96BFF8185122E4007155E2 /* PYPreferencesPaneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYPreferencesPaneController.m; path = PrYv/PYPreferencesPaneController.m; sourceTree = "<group>"; };
 		0C96BFF9185122E4007155E2 /* PreferencesPane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesPane.xib; sourceTree = "<group>"; };
@@ -300,7 +300,7 @@
 				0CBF1EC91878A3A4004A9AA9 /* DetailPopupController.xib */,
 				0C2408D216B9233200BD60CC /* LoginController.xib */,
 				0C7342EB16ADB00B00EA101F /* MainMenu.xib */,
-				0C3C26A116CBCC380023E724 /* StatusMenu.xib */,
+				0C81B05419260802002D73C4 /* StatusMenu.xib */,
 				0C2408A516B7C0B600BD60CC /* NewNote.xib */,
 				0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */,
 				0C3C26A416CBDCCF0023E724 /* DragAndDropStatusMenuView.h */,
@@ -592,7 +592,7 @@
 				0C2408A616B7C0B600BD60CC /* NewNote.xib in Resources */,
 				0C2408D416B9233200BD60CC /* LoginController.xib in Resources */,
 				0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */,
-				0C3C26A216CBCC380023E724 /* StatusMenu.xib in Resources */,
+				0C81B05219260802002D73C4 /* StatusMenu.xib in Resources */,
 				0C96BFFB185122E4007155E2 /* PreferencesPane.xib in Resources */,
 				0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */,
 				0C5F299517AFD8B900AAE154 /* pryv.iconset in Resources */,
@@ -754,6 +754,14 @@
 				0C7342EC16ADB00B00EA101F /* en */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		0C81B05419260802002D73C4 /* StatusMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C81B05319260802002D73C4 /* en */,
+			);
+			name = StatusMenu.xib;
 			sourceTree = "<group>";
 		};
 		0C9B754716D37AAF00A7FEBD /* InfoPlist.strings */ = {
