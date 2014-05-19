@@ -49,7 +49,7 @@
                      nil];
     NSArray *permissions = [NSArray arrayWithObject:[NSDictionary dictionaryWithObjects:objects forKeys:keys]];
     
-    [PYWebLoginViewController requestConnectionWithAppId:@"integration-osx"
+    [PYWebLoginViewController requestConnectionWithAppId:@"pryv-integration-osx"
                                       andPermissions:permissions
                                             delegate:self
                                          withWebView:&webView];

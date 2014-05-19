@@ -147,7 +147,7 @@
         NSString *notificationText;
         if ([filesToSend areAllImages]){
             event.type = @"picture/attached";
-            notificationTitle = @"Pictures pryved succesfully.";
+            notificationTitle = @"Picture pryved succesfully.";
             notificationText = [NSString stringWithFormat:@"Your pictures including \"%@\" have been pryved.",[(PYAttachment*)[attachments objectAtIndex:0] fileName]];
         }
         else if ([attachments count] > 1){
@@ -173,7 +173,9 @@
         //instruction before releasing everything.
         
         [[current connection] eventCreate:event  successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
+            
             NSLog(@"New event ID : %@",newEventId);
+            
             //Display notification
             NSUserNotification *notification = [[NSUserNotification alloc] init];
             notification.title = [NSString stringWithString:notificationTitle];
