@@ -10,6 +10,8 @@
 
 @interface PYTextController : NSObject
 
--(void)pryvText:(NSString*)text;
+-(void)pryvText:(NSString*)text
+     inStreamId:(NSString*)streamId
+       withTags:(NSArray*)tags;
 
 @end

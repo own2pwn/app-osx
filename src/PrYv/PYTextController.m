@@ -15,7 +15,7 @@
 
 @implementation PYTextController
 
--(void)pryvText:(NSString *)text{
+-(void)pryvText:(NSString *)text inStreamId:(NSString *)streamId withTags:(NSArray *)tags{
     if ([text isEqualToString:@""]) {
 		NSLog(@"No text entered !");
 	}else {
@@ -23,10 +23,11 @@
 		User *user = [User currentUser];
         
         PYEvent *event = [[PYEvent alloc] init];
-        event.streamId = @"text";
+        event.streamId = [NSString stringWithString:streamId];
         [event setEventDate:[NSDate date]];
         event.type = @"note/txt";
         event.eventContent = [NSString stringWithString:text];
+        event.tags = [NSArray arrayWithArray:tags];
         
         [[user connection] eventCreate:event successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
             NSLog(@"Pryved text with event ID : %@", newEventId);

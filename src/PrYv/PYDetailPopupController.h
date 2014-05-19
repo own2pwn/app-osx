@@ -15,14 +15,19 @@
     @private
     PYFileController* _fileController;
     NSArray* _files;
+    NSString* _text;
+    NSString* _pryvType;
 }
-@property (assign) IBOutlet NSTextField *fileToPryv;
-@property (assign) IBOutlet NSButton *pryvFileButton;
+@property (assign) IBOutlet NSWindow *detailsWindow;
+@property (assign) IBOutlet NSTextField *infoToPryv;
+@property (assign) IBOutlet NSButton *pryvButton;
 @property (assign) IBOutlet NSTokenField *tagsTokenField;
 @property (assign) IBOutlet NSPopUpButton *streamPopUpButton;
 @property (assign) IBOutlet NSArrayController *popUpButtonContent;
 
 -(id)initWithWindowNibName:(NSString *)windowNibName andFiles:(NSArray*)files;
-- (IBAction)pryvFilesWithDetails:(id)sender;
+-(id)initWithWindowNibName:(NSString *)windowNibName andText:(NSString*)text;
+-(IBAction)pryvFiles:(id)sender;
+-(IBAction)pryvText:(id)sender;
 
 @end

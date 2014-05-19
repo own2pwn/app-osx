@@ -18,4 +18,8 @@ FOUNDATION_EXPORT NSString *const kPYLastPryvedEventFile;
 FOUNDATION_EXPORT NSString *const kLastUsedUsernameKey;
 FOUNDATION_EXPORT NSString *const kServiceName;
 
+FOUNDATION_EXPORT NSString *const kPYEventTypeNote;
+FOUNDATION_EXPORT NSString *const kPYEvenTypeText;
+FOUNDATION_EXPORT NSString *const kPYEventypeFiles;
+
 FOUNDATION_EXPORT int const kPYNumberOfLastPryvedEvents;

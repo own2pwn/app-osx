@@ -69,8 +69,7 @@
     //Get the stream names list and fill the popup button
 	User* current = [User currentUser];
     current.streams = [[NSMutableDictionary alloc] init];
-    PYUtility *utility = [[PYUtility alloc] init];
-    [utility setupStreamPopUpButton:_streams withArrayController:_popUpButtonContent forUser:current];
+    [PYUtility setupStreamPopUpButton:_streams withArrayController:_popUpButtonContent forUser:current];
     
 	//Handle result 
 	[_openDialog beginWithCompletionHandler:^(NSInteger result){

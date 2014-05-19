@@ -13,13 +13,13 @@
 
 @interface PYUtility ()
 
--(NSUInteger)createStreamNameForStreams:(NSArray *)streams
++(NSUInteger)createStreamNameForStreams:(NSArray *)streams
                                 inArray:(NSMutableArray *)streamNames
                      withLevelDelimiter:(NSString *)delimiter
                                 forUser:(User *)user
                                 atIndex:(NSUInteger)index;
 
--(void)fillPopupContent:(NSArrayController*)popUpButtonContent
++(void)fillPopupContent:(NSArrayController*)popUpButtonContent
         withStreamsList:(NSArray*)streamsList
          forPopUpButton:(NSPopUpButton*)streams
                 forUser:(User*)user;
@@ -28,20 +28,20 @@
 @implementation PYUtility
 
 
--(void)setupStreamPopUpButton:(NSPopUpButton*)streams
++(void)setupStreamPopUpButton:(NSPopUpButton*)streams
            withArrayController:(NSArrayController*)popUpButtonContent
                        forUser:(User*)user{
     
     [[user connection] streamsFromCache:^(NSArray *cachedStreamsList) {
         
-        [self fillPopupContent:popUpButtonContent
+        [PYUtility fillPopupContent:popUpButtonContent
                withStreamsList:cachedStreamsList
                 forPopUpButton:streams
                        forUser:user];
         
     } andOnline:^(NSArray *onlineStreamList) {
         
-        [self fillPopupContent:popUpButtonContent
+        [PYUtility fillPopupContent:popUpButtonContent
                withStreamsList:onlineStreamList
                 forPopUpButton:streams
                        forUser:user];
@@ -52,14 +52,14 @@
     
 }
 
--(void)fillPopupContent:(NSArrayController *)popUpButtonContent
++(void)fillPopupContent:(NSArrayController *)popUpButtonContent
         withStreamsList:(NSArray *)streamsList
          forPopUpButton:(NSPopUpButton *)streams
                 forUser:(User *)user {
     
     NSMutableArray *streamNames = [[NSMutableArray alloc] init];
     
-    [self createStreamNameForStreams:streamsList
+    [PYUtility createStreamNameForStreams:streamsList
                              inArray:streamNames
                   withLevelDelimiter:@""
                              forUser:user
@@ -75,7 +75,7 @@
     
 }
 
--(NSUInteger)createStreamNameForStreams:(NSArray *)streams
++(NSUInteger)createStreamNameForStreams:(NSArray *)streams
                                 inArray:(NSMutableArray *)streamNames
                      withLevelDelimiter:(NSString *)delimiter
                                 forUser:(User *)user

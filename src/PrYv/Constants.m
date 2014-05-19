@@ -11,11 +11,11 @@
 NSString *const PYLoginSuccessfullNotification = @"PYLoginSuccessfullNotification";
 NSString *const PYLogoutSuccessfullNotification = @"PYLogoutSuccessfullNotification";
 
-NSString *const kPYLastPryvedEventNote = @"Note";
-NSString *const kPYLastPryvedEventText = @"Text";
-NSString *const kPYLastPryvedEventFile = @"File";
-
 NSString *const kLastUsedUsernameKey = @"PYUsername";
 NSString *const kServiceName = @"com.pryv.osx-integration";
+
+NSString *const kPYEventTypeNote = @"Note";
+NSString *const kPYEvenTypeText = @"Text";
+NSString *const kPYEventypeFiles = @"Files";
 
 int const kPYNumberOfLastPryvedEvents = 5;
