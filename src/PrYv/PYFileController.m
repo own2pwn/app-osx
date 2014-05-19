@@ -79,7 +79,7 @@
             //Get the stream
 			NSString* streamId;
 			if ([[_streams titleOfSelectedItem] isEqualTo:@""]) {
-				streamId = @"diary";
+				streamId = [[current streams] objectForKey:@"0"];
 			}else {
 //				NSString *streamName = [NSString stringWithString:[_streams titleOfSelectedItem]];
 				NSString *streamIndex = [NSString stringWithFormat:@"%lu",[_streams indexOfSelectedItem]];
