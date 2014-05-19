@@ -19,7 +19,6 @@
 @property (retain) PYStatusMenuController *menuController;
 @property (retain) User *user;
 
-- (IBAction)saveAction:(id)sender;
 + (PYAppDelegate*)sharedInstance;
 - (void)loadUser;
 
