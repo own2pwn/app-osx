@@ -13,57 +13,69 @@
 
 @interface PYUtility ()
 
--(NSUInteger)createStreamNameForStreams:(NSArray *)streams
++(NSUInteger)createStreamNameForStreams:(NSArray *)streams
                                 inArray:(NSMutableArray *)streamNames
                      withLevelDelimiter:(NSString *)delimiter
                                 forUser:(User *)user
                                 atIndex:(NSUInteger)index;
+
++(void)fillPopupContent:(NSArrayController*)popUpButtonContent
+        withStreamsList:(NSArray*)streamsList
+         forPopUpButton:(NSPopUpButton*)streams
+                forUser:(User*)user;
 @end
 
 @implementation PYUtility
 
 
--(void)setupStreamPopUpButton:(NSPopUpButton*)streams
++(void)setupStreamPopUpButton:(NSPopUpButton*)streams
            withArrayController:(NSArrayController*)popUpButtonContent
                        forUser:(User*)user{
     
     [[user connection] streamsFromCache:^(NSArray *cachedStreamsList) {
-        NSMutableArray *streamNames = [[NSMutableArray alloc] init];
         
-        [self createStreamNameForStreams:cachedStreamsList
-                                 inArray:streamNames
-                      withLevelDelimiter:@""
-                                 forUser:user
-                                 atIndex:0];
+        [PYUtility fillPopupContent:popUpButtonContent
+               withStreamsList:cachedStreamsList
+                forPopUpButton:streams
+                       forUser:user];
         
-        NSRange range = NSMakeRange(0, [[popUpButtonContent arrangedObjects] count]);
-        [popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
-        [popUpButtonContent addObjects:streamNames];
-        [streams selectItemAtIndex:0];
-        
-        [streamNames release];
     } andOnline:^(NSArray *onlineStreamList) {
-        NSMutableArray *streamNames = [[NSMutableArray alloc] init];
         
-        [self createStreamNameForStreams:onlineStreamList
-                                 inArray:streamNames
-                      withLevelDelimiter:@""
-                                 forUser:user
-                                 atIndex:0];
+        [PYUtility fillPopupContent:popUpButtonContent
+               withStreamsList:onlineStreamList
+                forPopUpButton:streams
+                       forUser:user];
         
-        NSRange range = NSMakeRange(0, [[popUpButtonContent arrangedObjects] count]);
-        [popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
-        [popUpButtonContent addObjects:streamNames];
-        [streams selectItemAtIndex:0];
-        
-        [streamNames release];
     } errorHandler:^(NSError *error) {
          NSLog(@"%@",error);
     }];
     
 }
 
--(NSUInteger)createStreamNameForStreams:(NSArray *)streams
++(void)fillPopupContent:(NSArrayController *)popUpButtonContent
+        withStreamsList:(NSArray *)streamsList
+         forPopUpButton:(NSPopUpButton *)streams
+                forUser:(User *)user {
+    
+    NSMutableArray *streamNames = [[NSMutableArray alloc] init];
+    
+    [PYUtility createStreamNameForStreams:streamsList
+                             inArray:streamNames
+                  withLevelDelimiter:@""
+                             forUser:user
+                             atIndex:0];
+    
+    NSRange range = NSMakeRange(0, [[popUpButtonContent arrangedObjects] count]);
+    [popUpButtonContent removeObjectsAtArrangedObjectIndexes:[NSIndexSet indexSetWithIndexesInRange:range]];
+    [popUpButtonContent addObjects:streamNames];
+    [streams selectItemAtIndex:0];
+    
+    
+    [streamNames release];
+    
+}
+
++(NSUInteger)createStreamNameForStreams:(NSArray *)streams
                                 inArray:(NSMutableArray *)streamNames
                      withLevelDelimiter:(NSString *)delimiter
                                 forUser:(User *)user

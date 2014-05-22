@@ -47,9 +47,11 @@
     //Test for string on the pasteboard
     if ([[pboard types] containsObject:NSPasteboardTypeString]) {
         NSString *text = [pboard  stringForType:NSPasteboardTypeString];
-        PYTextController *textController = [[PYTextController alloc] init];
-        [textController pryvText:text];
-        [textController release];
+        PYDetailPopupController *detailPopupController =[[PYDetailPopupController alloc]
+                                                         initWithWindowNibName:@"DetailPopupController"
+                                                         andText:text];
+        [detailPopupController showWindow:self];
+
     }
 }
     

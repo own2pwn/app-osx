@@ -69,8 +69,7 @@
     //Get the stream names list and fill the popup button
 	User* current = [User currentUser];
     current.streams = [[NSMutableDictionary alloc] init];
-    PYUtility *utility = [[PYUtility alloc] init];
-    [utility setupStreamPopUpButton:_streams withArrayController:_popUpButtonContent forUser:current];
+    [PYUtility setupStreamPopUpButton:_streams withArrayController:_popUpButtonContent forUser:current];
     
 	//Handle result 
 	[_openDialog beginWithCompletionHandler:^(NSInteger result){
@@ -79,7 +78,7 @@
             //Get the stream
 			NSString* streamId;
 			if ([[_streams titleOfSelectedItem] isEqualTo:@""]) {
-				streamId = @"diary";
+				streamId = [[current streams] objectForKey:@"0"];
 			}else {
 //				NSString *streamName = [NSString stringWithString:[_streams titleOfSelectedItem]];
 				NSString *streamIndex = [NSString stringWithFormat:@"%lu",[_streams indexOfSelectedItem]];

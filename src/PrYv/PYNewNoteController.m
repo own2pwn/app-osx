@@ -106,9 +106,9 @@
     [super windowDidLoad];
 	User *current = [User currentUser];
 	current.streams = [[NSMutableDictionary alloc] init];
-    PYUtility *utility = [[PYUtility alloc] init];
-    [utility setupStreamPopUpButton:_streams withArrayController:_popUpButtonContent forUser:current];
-    [utility release];
+    [PYUtility setupStreamPopUpButton:_streams
+                  withArrayController:_popUpButtonContent
+                              forUser:current];
     
 }
 

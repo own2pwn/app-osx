@@ -12,7 +12,7 @@
 
 @interface PYUtility : NSObject
 
--(void)setupStreamPopUpButton:(NSPopUpButton*)streams
++(void)setupStreamPopUpButton:(NSPopUpButton*)streams
            withArrayController:(NSArrayController*)popUpBUttonContent
                        forUser:(User*)user;
 
