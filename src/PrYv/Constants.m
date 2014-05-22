@@ -18,4 +18,10 @@ NSString *const kPYEventTypeNote = @"Note";
 NSString *const kPYEvenTypeText = @"Text";
 NSString *const kPYEventypeFiles = @"Files";
 
+NSString *const kPYStartAtLogin = @"StartAtLogin";
+
+NSString *const kPYPreferencesGeneralTab = @"0";
+
+NSString *const kPYHelperBundleId = @"com.pryv.PryvHelper";
+
 int const kPYNumberOfLastPryvedEvents = 5;

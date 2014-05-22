@@ -4,6 +4,8 @@ pod 'PryvApiKit', :path => '../../sdk-objectivec-apple/PryvApiKit.podspec'
 
 pod 'SSKeychain', '~> 1.1.0'
 
+pod 'StartAtLoginController', '~> 0.0'
+
 #target 'PrYv-OSX-ExampleTests', :exclusive => true do
 #pod 'OCMock'
 #end
