@@ -7,9 +7,13 @@
 //
 
 #import "PYPreferencesPaneController.h"
+#import "StartAtLoginController.h"
+#import "Constants.h"
 #import <ServiceManagement/ServiceManagement.h>
 
 @interface PYPreferencesPaneController ()
+
+-(void) enableStartAtLogin:(BOOL)state;
 
 @end
 
@@ -37,33 +41,67 @@
 
 -(void)windowDidLoad{
     [super windowDidLoad];
-    [_toolbar setSelectedItemIdentifier:@"0"];    
+    NSString* selectedIdentifier = [[NSUserDefaults standardUserDefaults]
+                                    objectForKey:kPYStartAtLogin];
+    StartAtLoginController *loginController = [[StartAtLoginController alloc]
+                                               initWithIdentifier:kPYHelperBundleId];
+    
+    if ([selectedIdentifier isEqualToString:@"1"]){
+        [_launchAtLoginSwitch setSelectedSegment:0];
+    }
+    else [_launchAtLoginSwitch setSelectedSegment:1];
+    
+    
+    [_toolbar setSelectedItemIdentifier:kPYPreferencesGeneralTab];
 }
 
 -(IBAction)toggleLaunchAtLogin:(id)sender {
     NSInteger clickedSegment = [sender selectedSegment];
+    
     if (clickedSegment == 0) { // ON
-                               // Turn on launch at login
-        if (!SMLoginItemSetEnabled ((__bridge CFStringRef)@"com.pryv.PryvHelper", YES)) {
-            NSAlert *alert = [NSAlert alertWithMessageText:@"An error ocurred"
-                                             defaultButton:@"OK"
-                                           alternateButton:nil
-                                               otherButton:nil
-                                 informativeTextWithFormat:@"Couldn't add Helper App to launch at login item list."];
-            [alert runModal];
-        }
+        [self enableStartAtLogin:YES];
+        
+        // Turn on launch at login
+//        if (!SMLoginItemSetEnabled ((__bridge CFStringRef)@"com.pryv.PryvHelper", YES)) {
+//            NSAlert *alert = [NSAlert alertWithMessageText:@"An error ocurred"
+//                                             defaultButton:@"OK"
+//                                           alternateButton:nil
+//                                               otherButton:nil
+//                                 informativeTextWithFormat:@"Couldn't add Helper App to launch at login item list."];
+//            [alert runModal];
+//        }
     }
-    if (clickedSegment == 1) { // OFF
-                               // Turn off launch at login
-        if (!SMLoginItemSetEnabled ((__bridge CFStringRef)@"com.pryv.PryvHelper", NO)) {
-            NSAlert *alert = [NSAlert alertWithMessageText:@"An error ocurred"
-                                             defaultButton:@"OK"
-                                           alternateButton:nil
-                                               otherButton:nil
-                                 informativeTextWithFormat:@"Couldn't remove Helper App from launch at login item list."];
-            [alert runModal];
-        }
+    if (clickedSegment == 1) { //
+        [self enableStartAtLogin:NO];
+        
+        // Turn off launch at login
+//        if (!SMLoginItemSetEnabled ((__bridge CFStringRef)@"com.pryv.PryvHelper", NO)) {
+//            NSAlert *alert = [NSAlert alertWithMessageText:@"An error ocurred"
+//                                             defaultButton:@"OK"
+//                                           alternateButton:nil
+//                                               otherButton:nil
+//                                 informativeTextWithFormat:@"Couldn't remove Helper App from launch at login item list."];
+//            [alert runModal];
+//            
+//        }
     }
+}
+
+
+#pragma mark - Private Methods
+
+-(void) enableStartAtLogin:(BOOL)state{
+    
+    StartAtLoginController *loginController = [[StartAtLoginController alloc]
+                                               initWithIdentifier:kPYHelperBundleId];
+    NSString *identifier;
+    if (state) identifier = @"1";
+    else identifier = @"0";
+    
+    loginController.enabled = state;
+    [[NSUserDefaults standardUserDefaults] setObject:identifier forKey:kPYStartAtLogin];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+
 }
 
 @end

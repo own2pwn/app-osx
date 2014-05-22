@@ -22,4 +22,10 @@ FOUNDATION_EXPORT NSString *const kPYEventTypeNote;
 FOUNDATION_EXPORT NSString *const kPYEvenTypeText;
 FOUNDATION_EXPORT NSString *const kPYEventypeFiles;
 
+FOUNDATION_EXPORT NSString *const kPYStartAtLogin;
+
+FOUNDATION_EXPORT NSString *const kPYPreferencesGeneralTab;
+
+FOUNDATION_EXPORT NSString *const kPYHelperBundleId;
+
 FOUNDATION_EXPORT int const kPYNumberOfLastPryvedEvents;
