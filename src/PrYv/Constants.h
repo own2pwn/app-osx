@@ -28,4 +28,6 @@ FOUNDATION_EXPORT NSString *const kPYPreferencesGeneralTab;
 
 FOUNDATION_EXPORT NSString *const kPYHelperBundleId;
 
+FOUNDATION_EXPORT NSString *const kPYMultipleFilesAlert;
+
 FOUNDATION_EXPORT int const kPYNumberOfLastPryvedEvents;

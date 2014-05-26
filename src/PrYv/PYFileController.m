@@ -125,45 +125,60 @@
         for (NSURL *fileUrl in files){
 			[self constructFilesArray:filesToSend withFile:[fileUrl path] inSubfolder:@""];
         }
-        
-        NSMutableArray *attachments = [[NSMutableArray alloc] init];
-        for(File *f in filesToSend){
-            [self pryvLocationIfAnyForFile:[f path]
-                                inStreamId:streamId
-                                  withTags:tags
-                                    atTime:[currentTime timeIntervalSince1970]];
-            NSData *fileData = [[NSData alloc] initWithContentsOfFile:[f path]];
-            //NSLog(@"Length : %lu", (unsigned long)[fileData length]);
-            PYAttachment *attachment = [[PYAttachment alloc] initWithFileData:fileData
-                                                                         name:[[f filename] stringByDeletingPathExtension]
-                                                                     fileName:[f filename]];
-            [attachments addObject:attachment];
-        }
-        
-        PYEvent *event = [[PYEvent alloc] init];
+        // X2
+//        NSMutableArray *attachments = [[NSMutableArray alloc] init];
+//        for(File *f in filesToSend){
+//            [self pryvLocationIfAnyForFile:[f path]
+//                                inStreamId:streamId
+//                                  withTags:tags
+//                                    atTime:[currentTime timeIntervalSince1970]];
+//            NSData *fileData = [[NSData alloc] initWithContentsOfFile:[f path]];
+//            //NSLog(@"Length : %lu", (unsigned long)[fileData length]);
+//            PYAttachment *attachment = [[PYAttachment alloc]
+//                                        initWithFileData:fileData
+//                                        name:[[f filename] stringByDeletingPathExtension]
+//                                        fileName:[f filename]];
+//            [attachments addObject:attachment];
+//        }
+        //X2
+        //PYEvent *event = [[PYEvent alloc] init];
         
         NSString *notificationTitle;
         NSString *notificationText;
         if ([filesToSend areAllImages]){
-            event.type = @"picture/attached";
+            //X2
+            //event.type = @"picture/attached";
             notificationTitle = @"Picture pryved succesfully.";
-            notificationText = [NSString stringWithFormat:@"Your pictures including \"%@\" have been pryved.",[(PYAttachment*)[attachments objectAtIndex:0] fileName]];
+            //X2
+//            notificationText = [NSString
+//                                stringWithFormat:@"Your pictures including \"%@\" have been pryved.",
+//                                [(PYAttachment*)[attachments objectAtIndex:0] fileName]];
+            notificationText = [NSString
+                                stringWithFormat:@"Your pictures including \"%@\" have been pryved.",
+                                [[filesToSend objectAtIndex:0] filename]];
+
         }
-        else if ([attachments count] > 1){
-            event.type = @"file/attached-multiple";
-            notificationTitle = @"Files pryved succesfully.";
-            notificationText = [NSString stringWithFormat:@"Your files including \"%@\" have been pryved.",[(PYAttachment*)[attachments objectAtIndex:0] fileName]];
-        }
+// X2 : will be used later
+//        else if ([attachments count] > 1){
+//            event.type = @"file/attached-multiple";
+//            notificationTitle = @"Files pryved succesfully.";
+//            notificationText = [NSString
+//                                stringWithFormat:@"Your files including \"%@\" have been pryved.",
+//                                [(PYAttachment*)[attachments objectAtIndex:0] fileName]];
+//        }
         else{
-            event.type = @"file/attached";
+            //X2
+            //event.type = @"file/attached";
             notificationTitle = @"File pryved succesfully.";
-            notificationText = [NSString stringWithFormat:@"Your file \"%@\" have been pryved.",[(PYAttachment*)[attachments objectAtIndex:0] fileName]];
+            //X2
+//            notificationText = [NSString
+//                                stringWithFormat:@"Your file \"%@\" have been pryved.",
+//                                [(PYAttachment*)[attachments objectAtIndex:0] fileName]];
+            notificationText = [NSString
+                                stringWithFormat:@"Your file \"%@\" has been pryved.",
+                                [[filesToSend objectAtIndex:0] filename]];
         }
         
-        event.streamId = streamId;
-        [event setEventDate:[NSDate date]];
-        event.tags = [NSArray arrayWithArray:tags];
-        event.attachments = [NSMutableArray arrayWithArray:attachments];
         
         User *current = [User currentUser];
         
@@ -171,46 +186,119 @@
         //problem since only the current thread is blocked by the sync request and this is the last
         //instruction before releasing everything.
         
-        [[current connection] eventCreate:event  successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
+        //X2 : This for loop must be erased after uncommenting all the X2 comments
+        for(File *f in filesToSend){
+            [self pryvLocationIfAnyForFile:[f path]
+                                inStreamId:streamId
+                                  withTags:tags
+                                    atTime:[currentTime timeIntervalSince1970]];
+            NSData *fileData = [[NSData alloc] initWithContentsOfFile:[f path]];
+            //NSLog(@"Length : %lu", (unsigned long)[fileData length]);
+            PYAttachment *attachment = [[PYAttachment alloc]
+                                        initWithFileData:fileData
+                                        name:[[f filename] stringByDeletingPathExtension]
+                                        fileName:[f filename]];
+            PYEvent *event = [[PYEvent alloc] init];
+            if (f.isPicture) event.type = @"picture/attached";
+            else             event.type = @"file/attached";
+            event.streamId = streamId;
+            [event setEventDate:[NSDate date]];
+            event.tags = [NSArray arrayWithArray:tags];
+            event.attachments = [NSMutableArray arrayWithObject:attachment];
             
-            NSLog(@"New event ID : %@",newEventId);
+            [[current connection]
+             eventCreate:event successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
+                 
+                 NSLog(@"New event ID : %@",newEventId);
+                 
+                 //Display notification
+                 NSUserNotification *notification = [[NSUserNotification alloc] init];
+                 notification.title = [NSString stringWithString:notificationTitle];
+                 notification.informativeText = [NSString stringWithString:notificationText];
+                 [[NSUserNotificationCenter defaultUserNotificationCenter]
+                  deliverNotification:notification];
+                 [notification release];
+                 
+                 //Add file event to last pryved event list.
+                 /*X2
+                  PryvedEvent *pryvedEvent = [NSEntityDescription insertNewObjectForEntityForName:@"PryvedEvent"
+                  inManagedObjectContext:context];
+                  NSDate *currentDate = [NSDate date];
+                  NSString *filename;
+                  if ([filesToSend count] > 1) {
+                  filename = @"Folder";
+                  }else{
+                  filename = [NSString stringWithString:[[filesToSend objectAtIndex:0] filename]];
+                  }
+                  pryvedEvent.date = currentDate;
+                  pryvedEvent.eventId = [NSString stringWithString:newEventId];
+                  pryvedEvent.type = [NSString stringWithString:kPYLastPryvedEventFile];
+                  pryvedEvent.content = [NSString stringWithString:filename];
+                  
+                  [current addPryvedEventsObject:pryvedEvent];
+                  [context save:nil];
+                  */
+             } errorHandler:^(NSError *error) {
+                 NSLog(@"%@",error);
+                 //Display notification
+                 NSUserNotification *notification = [[NSUserNotification alloc] init];
+                 notification.title = @"Problem while pryving files.";
+                 notification.informativeText = [NSString stringWithFormat:@"%@",
+                                                 [[error userInfo] valueForKey:NSLocalizedDescriptionKey]];
+                 [[NSUserNotificationCenter defaultUserNotificationCenter]
+                  deliverNotification:notification];
+                 [notification release];
+             }];
             
-            //Display notification
-            NSUserNotification *notification = [[NSUserNotification alloc] init];
-            notification.title = [NSString stringWithString:notificationTitle];
-            notification.informativeText = [NSString stringWithString:notificationText];
-            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
-            
-            //Add file event to last pryved event list.
-            /*X2
-            PryvedEvent *pryvedEvent = [NSEntityDescription insertNewObjectForEntityForName:@"PryvedEvent"
-                                                                     inManagedObjectContext:context];
-            NSDate *currentDate = [NSDate date];
-            NSString *filename;
-            if ([filesToSend count] > 1) {
-                filename = @"Folder";
-            }else{
-                filename = [NSString stringWithString:[[filesToSend objectAtIndex:0] filename]];
-            }
-            pryvedEvent.date = currentDate;
-            pryvedEvent.eventId = [NSString stringWithString:newEventId];
-            pryvedEvent.type = [NSString stringWithString:kPYLastPryvedEventFile];
-            pryvedEvent.content = [NSString stringWithString:filename];
-            
-            [current addPryvedEventsObject:pryvedEvent];
-            [context save:nil];
-            */
-        } errorHandler:^(NSError *error) {
-            NSLog(@"%@",error);
-            //Display notification
-            NSUserNotification *notification = [[NSUserNotification alloc] init];
-            notification.title = @"Problem while pryving files.";
-            notification.informativeText = [NSString stringWithFormat:@"%@",[[error userInfo] valueForKey:NSLocalizedDescriptionKey]];
-            [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
-        }];
+            [event release];
+            [fileData release];
+
+        }
+        //X2
+//        [[current connection]
+//         eventCreate:event successHandler:^(NSString *newEventId, NSString *stoppedId, PYEvent *event) {
+//            
+//            NSLog(@"New event ID : %@",newEventId);
+//            
+//            //Display notification
+//            NSUserNotification *notification = [[NSUserNotification alloc] init];
+//            notification.title = [NSString stringWithString:notificationTitle];
+//            notification.informativeText = [NSString stringWithString:notificationText];
+//            [[NSUserNotificationCenter defaultUserNotificationCenter]
+//             deliverNotification:notification];
+//            
+//            //Add file event to last pryved event list.
+//            /*X2
+//            PryvedEvent *pryvedEvent = [NSEntityDescription insertNewObjectForEntityForName:@"PryvedEvent"
+//                                                                     inManagedObjectContext:context];
+//            NSDate *currentDate = [NSDate date];
+//            NSString *filename;
+//            if ([filesToSend count] > 1) {
+//                filename = @"Folder";
+//            }else{
+//                filename = [NSString stringWithString:[[filesToSend objectAtIndex:0] filename]];
+//            }
+//            pryvedEvent.date = currentDate;
+//            pryvedEvent.eventId = [NSString stringWithString:newEventId];
+//            pryvedEvent.type = [NSString stringWithString:kPYLastPryvedEventFile];
+//            pryvedEvent.content = [NSString stringWithString:filename];
+//            
+//            [current addPryvedEventsObject:pryvedEvent];
+//            [context save:nil];
+//            */
+//        } errorHandler:^(NSError *error) {
+//            NSLog(@"%@",error);
+//            //Display notification
+//            NSUserNotification *notification = [[NSUserNotification alloc] init];
+//            notification.title = @"Problem while pryving files.";
+//            notification.informativeText = [NSString stringWithFormat:@"%@",
+//                                            [[error userInfo] valueForKey:NSLocalizedDescriptionKey]];
+//            [[NSUserNotificationCenter defaultUserNotificationCenter]
+//             deliverNotification:notification];
+//        }];
         
-        [filesToSend release];
-        [event release];
+//        [filesToSend release];
+//        [event release];
         [current.streams release];
 	}
 	[_threadLock unlock];
@@ -274,8 +362,11 @@
         index++;
         [streamNames addObject:[NSString stringWithFormat:@"%@%@",delimiter,stream.name]];
         if ([stream.children count] > 0) {
-            index = [self createStreamNameForStreams:stream.children inArray:streamNames withLevelDelimiter:@"- " forUser:user atIndex:index];
-            
+            index = [self createStreamNameForStreams:stream.children
+                                             inArray:streamNames
+                                  withLevelDelimiter:@"- "
+                                             forUser:user
+                                             atIndex:index];
         }
     }
     
