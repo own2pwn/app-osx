@@ -10,6 +10,7 @@
 #import "PYFileController.h"
 #import "PYStatusMenuController.h"
 #import "PYDetailPopupController.h"
+#import "Constants.h"
 
 @interface DragAndDropStatusMenuView ()
 
@@ -83,16 +84,41 @@
 	
     if ( [[pboard types] containsObject:NSFilenamesPboardType] ) {
         NSArray *files = [pboard propertyListForType:NSFilenamesPboardType];
-		__block NSMutableArray *urls = [[NSMutableArray alloc] init];
-		[files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-			[urls addObject:[NSURL fileURLWithPath:obj]];
-		}];
+        NSString *file = [files objectAtIndex:0];
+        BOOL isDirectory;
+        if([[NSFileManager defaultManager]
+            fileExistsAtPath:file isDirectory:&isDirectory] && isDirectory){
+            NSLog(@"Is directory");
+        }
+        NSInteger *userChoice = NSAlertDefaultReturn;
+        if ([files count] > 1 || ([[NSFileManager defaultManager] fileExistsAtPath:file isDirectory:&isDirectory] && isDirectory)){
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            NSAlert *alert = [NSAlert alertWithMessageText:@"Pryving multiple files"
+                                             defaultButton:@"OK"
+                                           alternateButton:@"Cancel"
+                                               otherButton:nil
+                                 informativeTextWithFormat:@"You are about to pryv multiple files at once. One event will be created per file."];
+            [alert setShowsSuppressionButton:YES];
+            if (![defaults objectForKey:kPYMultipleFilesAlert]) userChoice = [alert runModal];
+            if ([[alert suppressionButton] state] == NSOnState) {
+                // Suppress this alert from now on.
+                [defaults setBool:YES forKey:kPYMultipleFilesAlert];
+            }
+        }
         
-        PYDetailPopupController *detailPopupController =[[PYDetailPopupController alloc]
-                                                         initWithWindowNibName:@"DetailPopupController"
-                                                         andFiles:urls];
-        [detailPopupController showWindow:self];
-        [detailPopupController.window makeKeyAndOrderFront:self];
+        if ((int)userChoice == NSAlertDefaultReturn){
+            __block NSMutableArray *urls = [[NSMutableArray alloc] init];
+            [files enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                [urls addObject:[NSURL fileURLWithPath:obj]];
+            }];
+            
+            PYDetailPopupController *detailPopupController =[[PYDetailPopupController alloc]
+                                                             initWithWindowNibName:@"DetailPopupController"
+                                                             andFiles:urls];
+            [detailPopupController showWindow:self];
+            [detailPopupController.window makeKeyAndOrderFront:self];
+
+        }
     }
     return YES;
 }

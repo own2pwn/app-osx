@@ -43,8 +43,6 @@
     [super windowDidLoad];
     NSString* selectedIdentifier = [[NSUserDefaults standardUserDefaults]
                                     objectForKey:kPYStartAtLogin];
-    StartAtLoginController *loginController = [[StartAtLoginController alloc]
-                                               initWithIdentifier:kPYHelperBundleId];
     
     if ([selectedIdentifier isEqualToString:@"1"]){
         [_launchAtLoginSwitch setSelectedSegment:0];

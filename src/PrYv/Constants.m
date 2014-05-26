@@ -24,4 +24,6 @@ NSString *const kPYPreferencesGeneralTab = @"0";
 
 NSString *const kPYHelperBundleId = @"com.pryv.PryvHelper";
 
+NSString *const kPYMultipleFilesAlert = @"MultipleFilesAlert";
+
 int const kPYNumberOfLastPryvedEvents = 5;
