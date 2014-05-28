@@ -14,6 +14,8 @@
 @interface PYPreferencesPaneController ()
 
 -(void) enableStartAtLogin:(BOOL)state;
+-(void) setAppVersion;
+-(void) setLaunchAtLogin;
 
 @end
 
@@ -41,16 +43,10 @@
 
 -(void)windowDidLoad{
     [super windowDidLoad];
-    NSString* selectedIdentifier = [[NSUserDefaults standardUserDefaults]
-                                    objectForKey:kPYStartAtLogin];
     
-    if ([selectedIdentifier isEqualToString:@"1"]){
-        [_launchAtLoginSwitch setSelectedSegment:0];
-    }
-    else [_launchAtLoginSwitch setSelectedSegment:1];
+    [self setLaunchAtLogin];
+    [self setAppVersion];
     
-    
-    [_toolbar setSelectedItemIdentifier:kPYPreferencesGeneralTab];
 }
 
 -(IBAction)toggleLaunchAtLogin:(id)sender {
@@ -99,6 +95,27 @@
     loginController.enabled = state;
     [[NSUserDefaults standardUserDefaults] setObject:identifier forKey:kPYStartAtLogin];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(void)setAppVersion{
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    NSString *version = [info objectForKey:@"CFBundleShortVersionString"];
+    NSString *labelText = [NSString
+                           stringWithString:[kPYAppVersionPrefix stringByAppendingString:version]];
+    //NSString *labelText = [NSString stringWithFormat:@" %@", version];
+    [_appVersionLabel setStringValue:labelText];
+}
+
+-(void)setLaunchAtLogin{
+    NSString* selectedIdentifier = [[NSUserDefaults standardUserDefaults]
+                                    objectForKey:kPYStartAtLogin];
+    
+    if ([selectedIdentifier isEqualToString:@"1"])
+        [_launchAtLoginSwitch setSelectedSegment:0];
+    else
+        [_launchAtLoginSwitch setSelectedSegment:1];
+    
+    [_toolbar setSelectedItemIdentifier:kPYPreferencesGeneralTab];
 
 }
 

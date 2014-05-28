@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 
 @interface PYPreferencesPaneController : NSWindowController <NSToolbarDelegate,NSWindowDelegate>
+
+@property (assign) IBOutlet NSTextField *appVersionLabel;
 @property (assign) IBOutlet NSToolbar *toolbar;
 @property (assign) IBOutlet NSToolbarItem *generalItem;
 @property (assign) IBOutlet NSToolbarItem *userItem;

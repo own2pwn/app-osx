@@ -26,4 +26,6 @@ NSString *const kPYHelperBundleId = @"com.pryv.PryvHelper";
 
 NSString *const kPYMultipleFilesAlert = @"MultipleFilesAlert";
 
+NSString *const kPYAppVersionPrefix = @"Pryv version ";
+
 int const kPYNumberOfLastPryvedEvents = 5;

@@ -30,4 +30,6 @@ FOUNDATION_EXPORT NSString *const kPYHelperBundleId;
 
 FOUNDATION_EXPORT NSString *const kPYMultipleFilesAlert;
 
+FOUNDATION_EXPORT NSString *const kPYAppVersionPrefix;
+
 FOUNDATION_EXPORT int const kPYNumberOfLastPryvedEvents;
