@@ -9,6 +9,8 @@
 #import "PYPreferencesPaneController.h"
 #import "StartAtLoginController.h"
 #import "Constants.h"
+#import "User.h"
+#import "User+Helper.h"
 #import <ServiceManagement/ServiceManagement.h>
 
 @interface PYPreferencesPaneController ()
@@ -16,6 +18,7 @@
 -(void) enableStartAtLogin:(BOOL)state;
 -(void) setAppVersion;
 -(void) setLaunchAtLogin;
+-(void) setUsername;
 
 @end
 
@@ -46,6 +49,7 @@
     
     [self setLaunchAtLogin];
     [self setAppVersion];
+    [self setUsername];
     
 }
 
@@ -116,7 +120,12 @@
         [_launchAtLoginSwitch setSelectedSegment:1];
     
     [_toolbar setSelectedItemIdentifier:kPYPreferencesGeneralTab];
+}
 
+-(void)setUsername{
+    User *user = [User currentUser];
+    NSString *usernameText = [NSString stringWithFormat:@"%@.",[user username]];
+    [_usernameLabel setStringValue:usernameText];
 }
 
 @end

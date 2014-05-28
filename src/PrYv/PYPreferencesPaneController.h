@@ -16,6 +16,7 @@
 @property (assign) IBOutlet NSToolbarItem *userItem;
 @property (assign) IBOutlet NSTabView *tabView;
 @property (assign) IBOutlet NSSegmentedControl *launchAtLoginSwitch;
+@property (assign) IBOutlet NSTextField *usernameLabel;
 
 - (IBAction)changeTabView:(id)sender;
 - (IBAction)toggleLaunchAtLogin:(id)sender;
