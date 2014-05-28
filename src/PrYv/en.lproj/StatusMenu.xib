@@ -105,7 +105,7 @@
 					</object>
 					<object class="NSMenuItem" id="203265491">
 						<reference key="NSMenu" ref="313429505"/>
-						<string key="NSTitle">Log in</string>
+						<string key="NSTitle">Log in/out (username)</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="464056802"/>

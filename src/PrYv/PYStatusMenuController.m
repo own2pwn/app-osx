@@ -140,7 +140,9 @@
 }
 
 -(void)updateMenuItemsLogin:(NSNotification*)notification{
-    [logInOrOut setTitle:@"Log out"];
+    User *user = [User currentUser];
+    NSString *title = [NSString stringWithFormat:@"Log out (%@)",[user username]];
+    [logInOrOut setTitle:title];
     [newNote setEnabled:YES];
     [pryvFiles setEnabled:YES];
     [goToMyPryv setEnabled:YES];
