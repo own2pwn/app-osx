@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DragAndDropStatusMenuView.h"
 
-@class PYNewNoteController, PYFileController, PYLoginController, PYPreferencesPaneController;
+@class PYNewNoteController, PYFileController, PYLoginController, PYPreferencesPaneController, DragAndDropStatusMenuView;
 
 @interface PYStatusMenuController : NSViewController <NSWindowDelegate, NSMenuDelegate>{
 @private
@@ -17,7 +16,7 @@
 	PYFileController *_fileController;
     PYLoginController *_loginWindow;
     PYPreferencesPaneController *_preferencesController;
-	NSStatusItem *_statusItem;
+	//NSStatusItem *_statusItem;
 	IBOutlet NSMenu *_statusMenu;
     IBOutlet NSMenuItem *logInOrOut;
     IBOutlet NSMenuItem *newNote;
@@ -27,6 +26,7 @@
     IBOutlet NSMenuItem *lastPryvedItems;
 }
 
+@property (retain,nonatomic) NSStatusItem *statusItem;;
 
 
 -(PYStatusMenuController*)init;

@@ -12,9 +12,10 @@
 
 @interface PYAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate> {
 @private
-    PYServicesController *servicesController;
+    PYServicesController *_servicesController;
 }
 
+@property BOOL connected;
 @property (retain) PYLoginController *loginWindow;
 @property (retain) PYStatusMenuController *menuController;
 @property (retain) User *user;

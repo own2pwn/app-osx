@@ -16,7 +16,8 @@
 }
 @property (assign) IBOutlet WebView *webView;
 @property (retain) User *user;
+@property (retain) NSStatusItem* statusItem;
 
--(PYLoginController*)initForUser:(User*)user;
+-(PYLoginController*)initForUser:(User*)user andStatusItem:(NSStatusItem*)statusItem;
 
 @end
