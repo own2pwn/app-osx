@@ -1,0 +1,1206 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0C1413BC170CB98500C21239 /* PYTextController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1413BB170CB98500C21239 /* PYTextController.m */; };
+		0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */; };
+		0C1A714116BBB5DD004E35EF /* PYFileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1A714016BBB5DD004E35EF /* PYFileController.m */; };
+		0C1F955916C2784800E3C2F2 /* File+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F955816C2784800E3C2F2 /* File+Helper.m */; };
+		0C1F955C16C27D1900E3C2F2 /* NSString+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C1F955B16C27D1900E3C2F2 /* NSString+Helper.m */; };
+		0C24089416B7B78C00BD60CC /* User+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C24089316B7B78C00BD60CC /* User+Helper.m */; };
+		0C2408A416B7BC5D00BD60CC /* PYStatusMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408A316B7BC5D00BD60CC /* PYStatusMenuController.m */; };
+		0C2408A616B7C0B600BD60CC /* NewNote.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C2408A516B7C0B600BD60CC /* NewNote.xib */; };
+		0C2408AC16B7C27A00BD60CC /* PYNewNoteController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408AB16B7C27A00BD60CC /* PYNewNoteController.m */; };
+		0C2408D316B9233200BD60CC /* PYLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2408D116B9233200BD60CC /* PYLoginController.m */; };
+		0C2408D416B9233200BD60CC /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C2408D216B9233200BD60CC /* LoginController.xib */; };
+		0C2559B016FA5B7F00B4C2BC /* PYServicesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C2559AF16FA5B7F00B4C2BC /* PYServicesController.m */; };
+		0C293F5F16B13BFB00D90B36 /* FaviconBlack56.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */; };
+		0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */; };
+		0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A716CCF9050023E724 /* FaviconBlack22.png */; };
+		0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */; };
+		0C5F299517AFD8B900AAE154 /* pryv.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 0C5F299417AFD8B900AAE154 /* pryv.iconset */; };
+		0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342DF16ADB00B00EA101F /* InfoPlist.strings */; };
+		0C7342E316ADB00B00EA101F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E216ADB00B00EA101F /* main.m */; };
+		0C7342E716ADB00B00EA101F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342E516ADB00B00EA101F /* Credits.rtf */; };
+		0C7342EA16ADB00B00EA101F /* PYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E916ADB00B00EA101F /* PYAppDelegate.m */; };
+		0C7342ED16ADB00B00EA101F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342EB16ADB00B00EA101F /* MainMenu.xib */; };
+		0C81B05219260802002D73C4 /* StatusMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C81B05419260802002D73C4 /* StatusMenu.xib */; };
+		0C96BFFA185122E4007155E2 /* PYPreferencesPaneController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C96BFF8185122E4007155E2 /* PYPreferencesPaneController.m */; };
+		0C96BFFB185122E4007155E2 /* PreferencesPane.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C96BFF9185122E4007155E2 /* PreferencesPane.xib */; };
+		0C9B754216D37AAF00A7FEBD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342F716ADB00B00EA101F /* SenTestingKit.framework */; };
+		0C9B754316D37AAF00A7FEBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
+		0C9B754916D37AAF00A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B754716D37AAF00A7FEBD /* InfoPlist.strings */; };
+		0C9B754C16D37AAF00A7FEBD /* PrYvLogicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B754B16D37AAF00A7FEBD /* PrYvLogicTests.m */; };
+		0C9B755716D37C3200A7FEBD /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342F716ADB00B00EA101F /* SenTestingKit.framework */; };
+		0C9B755816D37C3200A7FEBD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C7342D616ADB00B00EA101F /* Cocoa.framework */; };
+		0C9B755E16D37C3200A7FEBD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */; };
+		0C9B756116D37C3200A7FEBD /* PrYvApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */; };
+		0C9EB884187769B4006B019A /* PryvHelper.app in Copy Helper App */ = {isa = PBXBuildFile; fileRef = 0C9EB87E18776820006B019A /* PryvHelper.app */; };
+		0C9EB8871877710A006B019A /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C9EB8861877710A006B019A /* ServiceManagement.framework */; };
+		0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */; };
+		0CBF1ECA1878A3A4004A9AA9 /* PYDetailPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBF1EC81878A3A4004A9AA9 /* PYDetailPopupController.m */; };
+		0CBF1ECB1878A3A4004A9AA9 /* DetailPopupController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CBF1EC91878A3A4004A9AA9 /* DetailPopupController.xib */; };
+		0CBF1ED51878AC62004A9AA9 /* PYUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CBF1ED41878AC62004A9AA9 /* PYUtility.m */; };
+		0CC0F39217EEE6BF00870E29 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39017EEE6B000870E29 /* Cocoa.framework */; };
+		0CC0F39417EEE6C700870E29 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */; };
+		0CC0F39617EEE6CE00870E29 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39517EEE6CE00870E29 /* WebKit.framework */; };
+		0CD04985179C5AD8003716A2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD04984179C5AD8003716A2 /* Constants.m */; };
+		0CD268DF17E1CE150078171E /* PryvedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD268DE17E1CE150078171E /* PryvedEvent.m */; };
+		0CE33EA619361AC000BC8ED7 /* Pryv_logo_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CE33EA519361AC000BC8ED7 /* Pryv_logo_128x128.png */; };
+		0CE33EA819361E4D00BC8ED7 /* Pryv_logo_128x128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CE33EA719361E4D00BC8ED7 /* Pryv_logo_128x128@2x.png */; };
+		0CED27A917DEFE62006854A1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED27A817DEFE62006854A1 /* User.m */; };
+		0CED27AF17DEFF1F006854A1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED27AE17DEFF1F006854A1 /* File.m */; };
+		C5CB046975184E04A90866C1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C59B98928D4D068FD903D0 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0C9B756616D37D2100A7FEBD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C7342C916ADB00B00EA101F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0C7342D116ADB00B00EA101F;
+			remoteInfo = PrYv;
+		};
+		0C9EB87D18776820006B019A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C9EB8781877681E006B019A /* PryvHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C9EB8411877681E006B019A;
+			remoteInfo = PryvHelper;
+		};
+		0C9EB87F18776820006B019A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0C9EB8781877681E006B019A /* PryvHelper.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0C9EB8621877681E006B019A;
+			remoteInfo = PryvHelperTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0C737EE417F1B39C0040168D /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C9EB88218776974006B019A /* Copy Helper App */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				0C9EB884187769B4006B019A /* PryvHelper.app in Copy Helper App */,
+			);
+			name = "Copy Helper App";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0C1413BA170CB98500C21239 /* PYTextController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYTextController.h; path = PrYv/PYTextController.h; sourceTree = "<group>"; };
+		0C1413BB170CB98500C21239 /* PYTextController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYTextController.m; path = PrYv/PYTextController.m; sourceTree = "<group>"; };
+		0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OpenPanelWithTagsAndFolder.xib; sourceTree = "<group>"; };
+		0C1A713F16BBB5DD004E35EF /* PYFileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYFileController.h; path = PrYv/PYFileController.h; sourceTree = "<group>"; };
+		0C1A714016BBB5DD004E35EF /* PYFileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYFileController.m; path = PrYv/PYFileController.m; sourceTree = "<group>"; };
+		0C1F955716C2784800E3C2F2 /* File+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "File+Helper.h"; path = "PrYv/File+Helper.h"; sourceTree = "<group>"; };
+		0C1F955816C2784800E3C2F2 /* File+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "File+Helper.m"; path = "PrYv/File+Helper.m"; sourceTree = "<group>"; };
+		0C1F955A16C27D1900E3C2F2 /* NSString+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Helper.h"; path = "PrYv/NSString+Helper.h"; sourceTree = "<group>"; };
+		0C1F955B16C27D1900E3C2F2 /* NSString+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Helper.m"; path = "PrYv/NSString+Helper.m"; sourceTree = "<group>"; };
+		0C24089216B7B78C00BD60CC /* User+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "User+Helper.h"; path = "PrYv/User+Helper.h"; sourceTree = "<group>"; };
+		0C24089316B7B78C00BD60CC /* User+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "User+Helper.m"; path = "PrYv/User+Helper.m"; sourceTree = "<group>"; };
+		0C2408A216B7BC5D00BD60CC /* PYStatusMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYStatusMenuController.h; path = PrYv/PYStatusMenuController.h; sourceTree = "<group>"; };
+		0C2408A316B7BC5D00BD60CC /* PYStatusMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYStatusMenuController.m; path = PrYv/PYStatusMenuController.m; sourceTree = "<group>"; };
+		0C2408A516B7C0B600BD60CC /* NewNote.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewNote.xib; sourceTree = "<group>"; };
+		0C2408AA16B7C27A00BD60CC /* PYNewNoteController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYNewNoteController.h; path = PrYv/PYNewNoteController.h; sourceTree = "<group>"; };
+		0C2408AB16B7C27A00BD60CC /* PYNewNoteController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYNewNoteController.m; path = PrYv/PYNewNoteController.m; sourceTree = "<group>"; };
+		0C2408D016B9233200BD60CC /* PYLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYLoginController.h; path = PrYv/PYLoginController.h; sourceTree = "<group>"; };
+		0C2408D116B9233200BD60CC /* PYLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYLoginController.m; path = PrYv/PYLoginController.m; sourceTree = "<group>"; };
+		0C2408D216B9233200BD60CC /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
+		0C2559AE16FA5B7F00B4C2BC /* PYServicesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYServicesController.h; path = PrYv/PYServicesController.h; sourceTree = "<group>"; };
+		0C2559AF16FA5B7F00B4C2BC /* PYServicesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYServicesController.m; path = PrYv/PYServicesController.m; sourceTree = "<group>"; };
+		0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FaviconBlack56.png; path = PrYv/FaviconBlack56.png; sourceTree = "<group>"; };
+		0C3C26A416CBDCCF0023E724 /* DragAndDropStatusMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragAndDropStatusMenuView.h; sourceTree = "<group>"; };
+		0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragAndDropStatusMenuView.m; sourceTree = "<group>"; };
+		0C3C26A716CCF9050023E724 /* FaviconBlack22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaviconBlack22.png; sourceTree = "<group>"; };
+		0C5D66931796A5330040DB36 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		0C5D66C41796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+SubscriptingCompatibility.h"; path = "PrYv/NSDictionary+SubscriptingCompatibility.h"; sourceTree = "<group>"; };
+		0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+SubscriptingCompatibility.m"; path = "PrYv/NSDictionary+SubscriptingCompatibility.m"; sourceTree = "<group>"; };
+		0C5F299417AFD8B900AAE154 /* pryv.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = pryv.iconset; sourceTree = "<group>"; };
+		0C63A04517DDA2680033BED8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		0C7342D216ADB00B00EA101F /* integration-osx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "integration-osx.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C7342D616ADB00B00EA101F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		0C7342D916ADB00B00EA101F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		0C7342DB16ADB00B00EA101F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0C7342DE16ADB00B00EA101F /* osx-integration-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "osx-integration-Info.plist"; sourceTree = "<group>"; };
+		0C7342E016ADB00B00EA101F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0C7342E216ADB00B00EA101F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0C7342E416ADB00B00EA101F /* osx-integration-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-integration-Prefix.pch"; sourceTree = "<group>"; };
+		0C7342E616ADB00B00EA101F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		0C7342E816ADB00B00EA101F /* PYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PYAppDelegate.h; sourceTree = "<group>"; };
+		0C7342E916ADB00B00EA101F /* PYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PYAppDelegate.m; sourceTree = "<group>"; };
+		0C7342EC16ADB00B00EA101F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		0C7342F716ADB00B00EA101F /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0C7343B016AEA6F400EA101F /* PrYv.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrYv.entitlements; sourceTree = "<group>"; };
+		0C81B05319260802002D73C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/StatusMenu.xib; sourceTree = "<group>"; };
+		0C96BFF7185122E4007155E2 /* PYPreferencesPaneController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYPreferencesPaneController.h; path = PrYv/PYPreferencesPaneController.h; sourceTree = "<group>"; };
+		0C96BFF8185122E4007155E2 /* PYPreferencesPaneController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYPreferencesPaneController.m; path = PrYv/PYPreferencesPaneController.m; sourceTree = "<group>"; };
+		0C96BFF9185122E4007155E2 /* PreferencesPane.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesPane.xib; sourceTree = "<group>"; };
+		0C9B754116D37AAF00A7FEBD /* osx-integrationLogicTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "osx-integrationLogicTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C9B754616D37AAF00A7FEBD /* osx-integrationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "osx-integrationTests-Info.plist"; sourceTree = "<group>"; };
+		0C9B754816D37AAF00A7FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0C9B754A16D37AAF00A7FEBD /* PrYvLogicTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvLogicTests.h; sourceTree = "<group>"; };
+		0C9B754B16D37AAF00A7FEBD /* PrYvLogicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvLogicTests.m; sourceTree = "<group>"; };
+		0C9B754D16D37AAF00A7FEBD /* osx-integrationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-integrationTests-Prefix.pch"; sourceTree = "<group>"; };
+		0C9B755616D37C3200A7FEBD /* osx-integrationApplicationTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "osx-integrationApplicationTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C9B755B16D37C3200A7FEBD /* osx-integrationApplicationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "osx-integrationApplicationTests-Info.plist"; sourceTree = "<group>"; };
+		0C9B755D16D37C3200A7FEBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0C9B755F16D37C3200A7FEBD /* PrYvApplicationTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrYvApplicationTests.h; sourceTree = "<group>"; };
+		0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrYvApplicationTests.m; sourceTree = "<group>"; };
+		0C9B756216D37C3200A7FEBD /* osx-integrationApplicationTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "osx-integrationApplicationTests-Prefix.pch"; sourceTree = "<group>"; };
+		0C9EB8781877681E006B019A /* PryvHelper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PryvHelper.xcodeproj; path = PrYv/PryvHelper/PryvHelper.xcodeproj; sourceTree = "<group>"; };
+		0C9EB8861877710A006B019A /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		0CA8A2E417D5EA3200C5F507 /* NSMutableArray+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+Helper.h"; path = "PrYv/NSMutableArray+Helper.h"; sourceTree = "<group>"; };
+		0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+Helper.m"; path = "PrYv/NSMutableArray+Helper.m"; sourceTree = "<group>"; };
+		0CBF1EC71878A3A4004A9AA9 /* PYDetailPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYDetailPopupController.h; path = PrYv/PYDetailPopupController.h; sourceTree = "<group>"; };
+		0CBF1EC81878A3A4004A9AA9 /* PYDetailPopupController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYDetailPopupController.m; path = PrYv/PYDetailPopupController.m; sourceTree = "<group>"; };
+		0CBF1EC91878A3A4004A9AA9 /* DetailPopupController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailPopupController.xib; sourceTree = "<group>"; };
+		0CBF1ED31878AC62004A9AA9 /* PYUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PYUtility.h; path = PrYv/PYUtility.h; sourceTree = "<group>"; };
+		0CBF1ED41878AC62004A9AA9 /* PYUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PYUtility.m; path = PrYv/PYUtility.m; sourceTree = "<group>"; };
+		0CC0F39017EEE6B000870E29 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		0CC0F39517EEE6CE00870E29 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		0CD04983179C5AD8003716A2 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = PrYv/Constants.h; sourceTree = "<group>"; };
+		0CD04984179C5AD8003716A2 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = PrYv/Constants.m; sourceTree = "<group>"; };
+		0CD268DD17E1CE150078171E /* PryvedEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PryvedEvent.h; path = PrYv/PryvedEvent.h; sourceTree = "<group>"; };
+		0CD268DE17E1CE150078171E /* PryvedEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PryvedEvent.m; path = PrYv/PryvedEvent.m; sourceTree = "<group>"; };
+		0CE33EA519361AC000BC8ED7 /* Pryv_logo_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pryv_logo_128x128.png; sourceTree = "<group>"; };
+		0CE33EA719361E4D00BC8ED7 /* Pryv_logo_128x128@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pryv_logo_128x128@2x.png"; sourceTree = "<group>"; };
+		0CED27A717DEFE62006854A1 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = PrYv/User.h; sourceTree = "<group>"; };
+		0CED27A817DEFE62006854A1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = PrYv/User.m; sourceTree = "<group>"; };
+		0CED27AD17DEFF1F006854A1 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = PrYv/File.h; sourceTree = "<group>"; };
+		0CED27AE17DEFF1F006854A1 /* File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = File.m; path = PrYv/File.m; sourceTree = "<group>"; };
+		74C59B98928D4D068FD903D0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED76E5B3947640C3933B56FF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0C7342CF16ADB00B00EA101F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C9EB8871877710A006B019A /* ServiceManagement.framework in Frameworks */,
+				0CC0F39617EEE6CE00870E29 /* WebKit.framework in Frameworks */,
+				0CC0F39417EEE6C700870E29 /* CoreFoundation.framework in Frameworks */,
+				0CC0F39217EEE6BF00870E29 /* Cocoa.framework in Frameworks */,
+				C5CB046975184E04A90866C1 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C9B753D16D37AAF00A7FEBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C9B754216D37AAF00A7FEBD /* SenTestingKit.framework in Frameworks */,
+				0C9B754316D37AAF00A7FEBD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C9B755216D37C3200A7FEBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C9B755716D37C3200A7FEBD /* SenTestingKit.framework in Frameworks */,
+				0C9B755816D37C3200A7FEBD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0C1A1E1316C956A30042D7D4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0C1F955716C2784800E3C2F2 /* File+Helper.h */,
+				0C1F955816C2784800E3C2F2 /* File+Helper.m */,
+				0C24089216B7B78C00BD60CC /* User+Helper.h */,
+				0C24089316B7B78C00BD60CC /* User+Helper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		0C1A1E1D16C958560042D7D4 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				0CED27AD17DEFF1F006854A1 /* File.h */,
+				0CED27AE17DEFF1F006854A1 /* File.m */,
+				0CED27A717DEFE62006854A1 /* User.h */,
+				0CED27A817DEFE62006854A1 /* User.m */,
+				0CD268DD17E1CE150078171E /* PryvedEvent.h */,
+				0CD268DE17E1CE150078171E /* PryvedEvent.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		0C24088016B7095600BD60CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C1A1E1D16C958560042D7D4 /* Core Data */,
+				0C1A1E1316C956A30042D7D4 /* Helpers */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0C24088116B7096400BD60CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0C2408D016B9233200BD60CC /* PYLoginController.h */,
+				0C2408D116B9233200BD60CC /* PYLoginController.m */,
+				0C2408AA16B7C27A00BD60CC /* PYNewNoteController.h */,
+				0C2408AB16B7C27A00BD60CC /* PYNewNoteController.m */,
+				0CBF1EC71878A3A4004A9AA9 /* PYDetailPopupController.h */,
+				0CBF1EC81878A3A4004A9AA9 /* PYDetailPopupController.m */,
+				0C2408A216B7BC5D00BD60CC /* PYStatusMenuController.h */,
+				0C2408A316B7BC5D00BD60CC /* PYStatusMenuController.m */,
+				0C1A713F16BBB5DD004E35EF /* PYFileController.h */,
+				0C1A714016BBB5DD004E35EF /* PYFileController.m */,
+				0C2559AE16FA5B7F00B4C2BC /* PYServicesController.h */,
+				0C2559AF16FA5B7F00B4C2BC /* PYServicesController.m */,
+				0C1413BA170CB98500C21239 /* PYTextController.h */,
+				0C1413BB170CB98500C21239 /* PYTextController.m */,
+				0C96BFF7185122E4007155E2 /* PYPreferencesPaneController.h */,
+				0C96BFF8185122E4007155E2 /* PYPreferencesPaneController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0C24088216B7097300BD60CC /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0C5D66C41796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.h */,
+				0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */,
+				0C1F955A16C27D1900E3C2F2 /* NSString+Helper.h */,
+				0C1F955B16C27D1900E3C2F2 /* NSString+Helper.m */,
+				0CA8A2E417D5EA3200C5F507 /* NSMutableArray+Helper.h */,
+				0CA8A2E517D5EA3200C5F507 /* NSMutableArray+Helper.m */,
+				0CBF1ED31878AC62004A9AA9 /* PYUtility.h */,
+				0CBF1ED41878AC62004A9AA9 /* PYUtility.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		0C3C26A316CBDC880023E724 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0CBF1EC91878A3A4004A9AA9 /* DetailPopupController.xib */,
+				0C2408D216B9233200BD60CC /* LoginController.xib */,
+				0C7342EB16ADB00B00EA101F /* MainMenu.xib */,
+				0C81B05419260802002D73C4 /* StatusMenu.xib */,
+				0C2408A516B7C0B600BD60CC /* NewNote.xib */,
+				0C1A1DFC16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib */,
+				0C3C26A416CBDCCF0023E724 /* DragAndDropStatusMenuView.h */,
+				0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */,
+				0C96BFF9185122E4007155E2 /* PreferencesPane.xib */,
+			);
+			name = View;
+			path = PrYv;
+			sourceTree = "<group>";
+		};
+		0C7342C716ADB00A00EA101F = {
+			isa = PBXGroup;
+			children = (
+				0CD1201116BA6F740028CF5B /* Images */,
+				0C24088216B7097300BD60CC /* API */,
+				0C24088116B7096400BD60CC /* Controller */,
+				0C24088016B7095600BD60CC /* Model */,
+				0C3C26A316CBDC880023E724 /* View */,
+				0CD0497D179C5AA3003716A2 /* Constants */,
+				0C7342DC16ADB00B00EA101F /* Pryv */,
+				0C9B754416D37AAF00A7FEBD /* PrYvLogicTests */,
+				0C9B755916D37C3200A7FEBD /* PrYvApplicationTests */,
+				0C7342D516ADB00B00EA101F /* Frameworks */,
+				0C7342D316ADB00B00EA101F /* Products */,
+				ED76E5B3947640C3933B56FF /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		0C7342D316ADB00B00EA101F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C7342D216ADB00B00EA101F /* integration-osx.app */,
+				0C9B754116D37AAF00A7FEBD /* osx-integrationLogicTests.octest */,
+				0C9B755616D37C3200A7FEBD /* osx-integrationApplicationTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0C7342D516ADB00B00EA101F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C9EB8861877710A006B019A /* ServiceManagement.framework */,
+				0C9EB8781877681E006B019A /* PryvHelper.xcodeproj */,
+				0CC0F39517EEE6CE00870E29 /* WebKit.framework */,
+				0CC0F39317EEE6C700870E29 /* CoreFoundation.framework */,
+				0CC0F39017EEE6B000870E29 /* Cocoa.framework */,
+				0C63A04517DDA2680033BED8 /* CoreFoundation.framework */,
+				0C5D66931796A5330040DB36 /* WebKit.framework */,
+				0C7342D616ADB00B00EA101F /* Cocoa.framework */,
+				0C7342F716ADB00B00EA101F /* SenTestingKit.framework */,
+				0C7342D816ADB00B00EA101F /* Other Frameworks */,
+				74C59B98928D4D068FD903D0 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C7342D816ADB00B00EA101F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C7342D916ADB00B00EA101F /* AppKit.framework */,
+				0C7342DB16ADB00B00EA101F /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		0C7342DC16ADB00B00EA101F /* Pryv */ = {
+			isa = PBXGroup;
+			children = (
+				0C7342E816ADB00B00EA101F /* PYAppDelegate.h */,
+				0C7342E916ADB00B00EA101F /* PYAppDelegate.m */,
+				0C7343B016AEA6F400EA101F /* PrYv.entitlements */,
+				0C7342DD16ADB00B00EA101F /* Supporting Files */,
+			);
+			name = Pryv;
+			path = PrYv;
+			sourceTree = "<group>";
+		};
+		0C7342DD16ADB00B00EA101F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C7342DE16ADB00B00EA101F /* osx-integration-Info.plist */,
+				0C7342DF16ADB00B00EA101F /* InfoPlist.strings */,
+				0C7342E216ADB00B00EA101F /* main.m */,
+				0C7342E416ADB00B00EA101F /* osx-integration-Prefix.pch */,
+				0C7342E516ADB00B00EA101F /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C9B754416D37AAF00A7FEBD /* PrYvLogicTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C9B754A16D37AAF00A7FEBD /* PrYvLogicTests.h */,
+				0C9B754B16D37AAF00A7FEBD /* PrYvLogicTests.m */,
+				0C9B754516D37AAF00A7FEBD /* Supporting Files */,
+			);
+			name = PrYvLogicTests;
+			path = PrYvTests;
+			sourceTree = "<group>";
+		};
+		0C9B754516D37AAF00A7FEBD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C9B754616D37AAF00A7FEBD /* osx-integrationTests-Info.plist */,
+				0C9B754716D37AAF00A7FEBD /* InfoPlist.strings */,
+				0C9B754D16D37AAF00A7FEBD /* osx-integrationTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C9B755916D37C3200A7FEBD /* PrYvApplicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C9B755F16D37C3200A7FEBD /* PrYvApplicationTests.h */,
+				0C9B756016D37C3200A7FEBD /* PrYvApplicationTests.m */,
+				0C9B755A16D37C3200A7FEBD /* Supporting Files */,
+			);
+			path = PrYvApplicationTests;
+			sourceTree = "<group>";
+		};
+		0C9B755A16D37C3200A7FEBD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0C9B755B16D37C3200A7FEBD /* osx-integrationApplicationTests-Info.plist */,
+				0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */,
+				0C9B756216D37C3200A7FEBD /* osx-integrationApplicationTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C9EB8791877681E006B019A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0C9EB87E18776820006B019A /* PryvHelper.app */,
+				0C9EB88018776820006B019A /* PryvHelperTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0CD0497D179C5AA3003716A2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0CD04983179C5AD8003716A2 /* Constants.h */,
+				0CD04984179C5AD8003716A2 /* Constants.m */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
+		0CD1201116BA6F740028CF5B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0CE33EA519361AC000BC8ED7 /* Pryv_logo_128x128.png */,
+				0CE33EA719361E4D00BC8ED7 /* Pryv_logo_128x128@2x.png */,
+				0C5F299417AFD8B900AAE154 /* pryv.iconset */,
+				0C3C26A716CCF9050023E724 /* FaviconBlack22.png */,
+				0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0C7342D116ADB00B00EA101F /* osx-integration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C73430716ADB00B00EA101F /* Build configuration list for PBXNativeTarget "osx-integration" */;
+			buildPhases = (
+				87EED86B01754CE09869C532 /* Check Pods Manifest.lock */,
+				0C7342CE16ADB00B00EA101F /* Sources */,
+				0C7342CF16ADB00B00EA101F /* Frameworks */,
+				0C7342D016ADB00B00EA101F /* Resources */,
+				0C737EE417F1B39C0040168D /* Copy Files */,
+				0C9EB88218776974006B019A /* Copy Helper App */,
+				73FB3BAE2D7549AE9EF0CCAB /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "osx-integration";
+			productName = PrYv;
+			productReference = 0C7342D216ADB00B00EA101F /* integration-osx.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0C9B754016D37AAF00A7FEBD /* osx-integrationLogicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C9B754E16D37AAF00A7FEBD /* Build configuration list for PBXNativeTarget "osx-integrationLogicTests" */;
+			buildPhases = (
+				0C9B753C16D37AAF00A7FEBD /* Sources */,
+				0C9B753D16D37AAF00A7FEBD /* Frameworks */,
+				0C9B753E16D37AAF00A7FEBD /* Resources */,
+				0C9B753F16D37AAF00A7FEBD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "osx-integrationLogicTests";
+			productName = PrYvTests;
+			productReference = 0C9B754116D37AAF00A7FEBD /* osx-integrationLogicTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		0C9B755516D37C3200A7FEBD /* osx-integrationApplicationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C9B756316D37C3200A7FEBD /* Build configuration list for PBXNativeTarget "osx-integrationApplicationTests" */;
+			buildPhases = (
+				0C9B755116D37C3200A7FEBD /* Sources */,
+				0C9B755216D37C3200A7FEBD /* Frameworks */,
+				0C9B755316D37C3200A7FEBD /* Resources */,
+				0C9B755416D37C3200A7FEBD /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C9B756716D37D2100A7FEBD /* PBXTargetDependency */,
+			);
+			name = "osx-integrationApplicationTests";
+			productName = PrYvApplicationTests;
+			productReference = 0C9B755616D37C3200A7FEBD /* osx-integrationApplicationTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0C7342C916ADB00B00EA101F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PRYV;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = Pryv;
+				TargetAttributes = {
+					0C7342D116ADB00B00EA101F = {
+						DevelopmentTeam = GNL8PH5553;
+					};
+				};
+			};
+			buildConfigurationList = 0C7342CC16ADB00B00EA101F /* Build configuration list for PBXProject "Pryv" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				fr,
+			);
+			mainGroup = 0C7342C716ADB00A00EA101F;
+			productRefGroup = 0C7342D316ADB00B00EA101F /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0C9EB8791877681E006B019A /* Products */;
+					ProjectRef = 0C9EB8781877681E006B019A /* PryvHelper.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				0C7342D116ADB00B00EA101F /* osx-integration */,
+				0C9B754016D37AAF00A7FEBD /* osx-integrationLogicTests */,
+				0C9B755516D37C3200A7FEBD /* osx-integrationApplicationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0C9EB87E18776820006B019A /* PryvHelper.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = PryvHelper.app;
+			remoteRef = 0C9EB87D18776820006B019A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0C9EB88018776820006B019A /* PryvHelperTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PryvHelperTests.xctest;
+			remoteRef = 0C9EB87F18776820006B019A /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0C7342D016ADB00B00EA101F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CBF1ECB1878A3A4004A9AA9 /* DetailPopupController.xib in Resources */,
+				0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */,
+				0C7342E716ADB00B00EA101F /* Credits.rtf in Resources */,
+				0C7342ED16ADB00B00EA101F /* MainMenu.xib in Resources */,
+				0C293F5F16B13BFB00D90B36 /* FaviconBlack56.png in Resources */,
+				0C2408A616B7C0B600BD60CC /* NewNote.xib in Resources */,
+				0C2408D416B9233200BD60CC /* LoginController.xib in Resources */,
+				0CE33EA819361E4D00BC8ED7 /* Pryv_logo_128x128@2x.png in Resources */,
+				0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */,
+				0C81B05219260802002D73C4 /* StatusMenu.xib in Resources */,
+				0C96BFFB185122E4007155E2 /* PreferencesPane.xib in Resources */,
+				0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */,
+				0CE33EA619361AC000BC8ED7 /* Pryv_logo_128x128.png in Resources */,
+				0C5F299517AFD8B900AAE154 /* pryv.iconset in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C9B753E16D37AAF00A7FEBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C9B754916D37AAF00A7FEBD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C9B755316D37C3200A7FEBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C9B755E16D37C3200A7FEBD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C9B753F16D37AAF00A7FEBD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		0C9B755416D37C3200A7FEBD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		73FB3BAE2D7549AE9EF0CCAB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87EED86B01754CE09869C532 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C7342CE16ADB00B00EA101F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C7342E316ADB00B00EA101F /* main.m in Sources */,
+				0C7342EA16ADB00B00EA101F /* PYAppDelegate.m in Sources */,
+				0C24089416B7B78C00BD60CC /* User+Helper.m in Sources */,
+				0C2408A416B7BC5D00BD60CC /* PYStatusMenuController.m in Sources */,
+				0C2408AC16B7C27A00BD60CC /* PYNewNoteController.m in Sources */,
+				0C2408D316B9233200BD60CC /* PYLoginController.m in Sources */,
+				0CBF1ECA1878A3A4004A9AA9 /* PYDetailPopupController.m in Sources */,
+				0C1A714116BBB5DD004E35EF /* PYFileController.m in Sources */,
+				0C96BFFA185122E4007155E2 /* PYPreferencesPaneController.m in Sources */,
+				0C1F955916C2784800E3C2F2 /* File+Helper.m in Sources */,
+				0C1F955C16C27D1900E3C2F2 /* NSString+Helper.m in Sources */,
+				0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */,
+				0C2559B016FA5B7F00B4C2BC /* PYServicesController.m in Sources */,
+				0C1413BC170CB98500C21239 /* PYTextController.m in Sources */,
+				0CBF1ED51878AC62004A9AA9 /* PYUtility.m in Sources */,
+				0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */,
+				0CD04985179C5AD8003716A2 /* Constants.m in Sources */,
+				0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */,
+				0CED27A917DEFE62006854A1 /* User.m in Sources */,
+				0CED27AF17DEFF1F006854A1 /* File.m in Sources */,
+				0CD268DF17E1CE150078171E /* PryvedEvent.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C9B753C16D37AAF00A7FEBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C9B754C16D37AAF00A7FEBD /* PrYvLogicTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0C9B755116D37C3200A7FEBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C9B756116D37C3200A7FEBD /* PrYvApplicationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C9B756716D37D2100A7FEBD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0C7342D116ADB00B00EA101F /* osx-integration */;
+			targetProxy = 0C9B756616D37D2100A7FEBD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0C7342DF16ADB00B00EA101F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C7342E016ADB00B00EA101F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0C7342E516ADB00B00EA101F /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C7342E616ADB00B00EA101F /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		0C7342EB16ADB00B00EA101F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C7342EC16ADB00B00EA101F /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		0C81B05419260802002D73C4 /* StatusMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C81B05319260802002D73C4 /* en */,
+			);
+			name = StatusMenu.xib;
+			sourceTree = "<group>";
+		};
+		0C9B754716D37AAF00A7FEBD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C9B754816D37AAF00A7FEBD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0C9B755C16D37C3200A7FEBD /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C9B755D16D37C3200A7FEBD /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0C73430516ADB00B00EA101F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "02ED8912-BBA7-4031-95E0-6092E85D81C5";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+			};
+			name = Debug;
+		};
+		0C73430616ADB00B00EA101F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PROVISIONING_PROFILE = "02ED8912-BBA7-4031-95E0-6092E85D81C5";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+			};
+			name = Release;
+		};
+		0C73430816ADB00B00EA101F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED76E5B3947640C3933B56FF /* Pods.xcconfig */;
+			buildSettings = {
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"CACHE=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "integration-osx";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0C73430916ADB00B00EA101F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED76E5B3947640C3933B56FF /* Pods.xcconfig */;
+			buildSettings = {
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
+				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "integration-osx";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0C9B754F16D37AAF00A7FEBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvTests/osx-integrationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvTests/osx-integrationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "osx-integrationLogicTests";
+				PROVISIONING_PROFILE = "981FC22D-15BF-46B1-8001-9273801ACE3B";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0C9B755016D37AAF00A7FEBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvTests/osx-integrationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvTests/osx-integrationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "osx-integrationLogicTests";
+				PROVISIONING_PROFILE = "981FC22D-15BF-46B1-8001-9273801ACE3B";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		0C9B756416D37C3200A7FEBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PrYv.app/Contents/MacOS/PrYv";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvApplicationTests/osx-integrationApplicationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvApplicationTests/osx-integrationApplicationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "osx-integrationApplicationTests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0C9B756516D37C3200A7FEBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PrYv.app/Contents/MacOS/PrYv";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvApplicationTests/osx-integrationApplicationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvApplicationTests/osx-integrationApplicationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "osx-integrationApplicationTests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		0C9B756816D3816900A7FEBD /* Tests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "02ED8912-BBA7-4031-95E0-6092E85D81C5";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+			};
+			name = Tests;
+		};
+		0C9B756916D3816900A7FEBD /* Tests */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED76E5B3947640C3933B56FF /* Pods.xcconfig */;
+			buildSettings = {
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"CACHE=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "integration-osx";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Tests;
+		};
+		0C9B756A16D3816900A7FEBD /* Tests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvTests/osx-integrationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvTests/osx-integrationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "osx-integrationLogicTests";
+				PROVISIONING_PROFILE = "981FC22D-15BF-46B1-8001-9273801ACE3B";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Tests;
+		};
+		0C9B756B16D3816900A7FEBD /* Tests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PrYv.app/Contents/MacOS/PrYv";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvApplicationTests/osx-integrationApplicationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvApplicationTests/osx-integrationApplicationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "osx-integrationApplicationTests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Tests;
+		};
+		0CC0F39717EEE9EB00870E29 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = PrYv/PrYv.entitlements;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PROVISIONING_PROFILE = "02ED8912-BBA7-4031-95E0-6092E85D81C5";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
+			};
+			name = Distribution;
+		};
+		0CC0F39817EEE9EB00870E29 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED76E5B3947640C3933B56FF /* Pods.xcconfig */;
+			buildSettings = {
+				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
+				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				PRODUCT_NAME = "integration-osx";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Distribution;
+		};
+		0CC0F39917EEE9EB00870E29 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvTests/osx-integrationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvTests/osx-integrationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "osx-integrationLogicTests";
+				PROVISIONING_PROFILE = "981FC22D-15BF-46B1-8001-9273801ACE3B";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Distribution;
+		};
+		0CC0F39A17EEE9EB00870E29 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PrYv.app/Contents/MacOS/PrYv";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrYvApplicationTests/osx-integrationApplicationTests-Prefix.pch";
+				INFOPLIST_FILE = "PrYvApplicationTests/osx-integrationApplicationTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "osx-integrationApplicationTests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Distribution;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0C7342CC16ADB00B00EA101F /* Build configuration list for PBXProject "Pryv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C73430516ADB00B00EA101F /* Debug */,
+				0C9B756816D3816900A7FEBD /* Tests */,
+				0C73430616ADB00B00EA101F /* Release */,
+				0CC0F39717EEE9EB00870E29 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C73430716ADB00B00EA101F /* Build configuration list for PBXNativeTarget "osx-integration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C73430816ADB00B00EA101F /* Debug */,
+				0C9B756916D3816900A7FEBD /* Tests */,
+				0C73430916ADB00B00EA101F /* Release */,
+				0CC0F39817EEE9EB00870E29 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C9B754E16D37AAF00A7FEBD /* Build configuration list for PBXNativeTarget "osx-integrationLogicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C9B754F16D37AAF00A7FEBD /* Debug */,
+				0C9B756A16D3816900A7FEBD /* Tests */,
+				0C9B755016D37AAF00A7FEBD /* Release */,
+				0CC0F39917EEE9EB00870E29 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0C9B756316D37C3200A7FEBD /* Build configuration list for PBXNativeTarget "osx-integrationApplicationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C9B756416D37C3200A7FEBD /* Debug */,
+				0C9B756B16D3816900A7FEBD /* Tests */,
+				0C9B756516D37C3200A7FEBD /* Release */,
+				0CC0F39A17EEE9EB00870E29 /* Distribution */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0C7342C916ADB00B00EA101F /* Project object */;
+}
