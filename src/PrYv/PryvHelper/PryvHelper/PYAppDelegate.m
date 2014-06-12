@@ -36,4 +36,6 @@
     [NSApp terminate:nil];
 }
 
+- (IBAction)logInOrOut:(id)sender {
+}
 @end

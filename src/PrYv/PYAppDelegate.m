@@ -17,10 +17,13 @@
 #import "Constants.h"
 #import "PryvApiKit.h"
 #import "DragAndDropStatusMenuView.h"
+#import "AXStatusItemPopup.h"
+#import "StatusMenuViewController.h"
 
 @implementation PYAppDelegate
 
 - (void)dealloc {
+    [_statusItemPopup release];
     [_menuController release];
     [_loginWindow release];
     [_servicesController release];
@@ -35,10 +38,22 @@
     
     [[PYAppDelegate sharedInstance] setConnected:NO];
     
-	_menuController = [[PYStatusMenuController alloc] init];
+    StatusMenuViewController *statusViewController = [[StatusMenuViewController alloc]
+                                                      initWithNibName:@"StatusMenuViewController"
+                                                      bundle:nil];
+    NSImage *image = [NSImage imageNamed:@"FaviconBlack22.png"];
+    NSImage *alternateImage = [NSImage imageNamed:@"FaviconWhite22.png"];
+    NSImage *disconnectedImage = [NSImage imageNamed:@"FaviconGrey22.png"];
     
+    _statusItemPopup = [[AXStatusItemPopup alloc] initWithViewController:statusViewController
+                                                                   image:image
+                                                          alternateImage:alternateImage
+                                                       disconnectedImage:disconnectedImage];
+    _statusItemPopup.animated = NO;
+    statusViewController.statusItemPopup = _statusItemPopup;
     
-	[NSBundle loadNibNamed:@"StatusMenu" owner:_menuController];
+	//_menuController = [[PYStatusMenuController alloc] init];
+	//[NSBundle loadNibNamed:@"StatusMenu" owner:_menuController];
 	
     [self loadUser];
 }
@@ -54,7 +69,7 @@
 	//If no user has been found, open login window
 	if (!self.user) {
         [NSApp activateIgnoringOtherApps:YES];
-		_loginWindow = [[PYLoginController alloc] initForUser:_user andStatusItem:_menuController.statusItem];
+		_loginWindow = [[PYLoginController alloc] initForUser:_user andStatusItem:_statusItemPopup.statusItem];
 		[_loginWindow.window setDelegate:_menuController];
 		[_loginWindow showWindow:self];
         [_loginWindow.window makeKeyAndOrderFront:self];
@@ -79,6 +94,7 @@
     
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 }
+
 
 -(void)application:(NSApplication *)sender openFiles:(NSArray *)filenames {
 	__block NSMutableArray *urls = [[NSMutableArray alloc] init];

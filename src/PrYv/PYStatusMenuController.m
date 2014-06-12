@@ -44,7 +44,7 @@
 	[_statusItem retain];
     DragAndDropStatusMenuView *dragAndDropStatusMenuView = [[DragAndDropStatusMenuView alloc]
                                                             initWithFrame:NSMakeRect(0, 0, 22, 22)];
-    dragAndDropStatusMenuView.statusMenuController = self;
+    //dragAndDropStatusMenuView.statusMenuController = self;
 	dragAndDropStatusMenuView.statusItem = _statusItem;
 	[dragAndDropStatusMenuView setMenu:_statusMenu];
 	[_statusItem setView:dragAndDropStatusMenuView];
@@ -98,22 +98,6 @@
         [_preferencesController.window setDelegate:_preferencesController];
     }
     [_preferencesController showWindow:self];
-}
-
-- (IBAction)logInOrOut:(id)sender {
-    User * user = [User currentUser];
-	//If no user has been found, open login window
-	if (!user) {
-        [NSApp activateIgnoringOtherApps:YES];
-        _loginWindow = [[PYLoginController alloc] initForUser:user andStatusItem:_statusItem];
-		[_loginWindow.window setDelegate:self];
-		[_loginWindow showWindow:self];
-        
-        //If the user has been found
-	}else {
-        [[PYAppDelegate sharedInstance] setConnected:NO];
-		[user logout];
-    }
 }
 
 #pragma mark - Window delegate

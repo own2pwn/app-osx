@@ -22,6 +22,9 @@
 		0C293F5F16B13BFB00D90B36 /* FaviconBlack56.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */; };
 		0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */; };
 		0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */ = {isa = PBXBuildFile; fileRef = 0C3C26A716CCF9050023E724 /* FaviconBlack22.png */; };
+		0C5893111949E64700B3861D /* StatusMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C58930F1949E64700B3861D /* StatusMenuViewController.m */; };
+		0C5893121949E64700B3861D /* StatusMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C5893101949E64700B3861D /* StatusMenuViewController.xib */; };
+		0C5893151949EE5900B3861D /* AXStatusItemPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5893141949EE5900B3861D /* AXStatusItemPopup.m */; };
 		0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */; };
 		0C5F299517AFD8B900AAE154 /* pryv.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 0C5F299417AFD8B900AAE154 /* pryv.iconset */; };
 		0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342DF16ADB00B00EA101F /* InfoPlist.strings */; };
@@ -134,6 +137,11 @@
 		0C3C26A416CBDCCF0023E724 /* DragAndDropStatusMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragAndDropStatusMenuView.h; sourceTree = "<group>"; };
 		0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragAndDropStatusMenuView.m; sourceTree = "<group>"; };
 		0C3C26A716CCF9050023E724 /* FaviconBlack22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaviconBlack22.png; sourceTree = "<group>"; };
+		0C58930E1949E64700B3861D /* StatusMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StatusMenuViewController.h; path = PrYv/StatusMenuViewController.h; sourceTree = "<group>"; };
+		0C58930F1949E64700B3861D /* StatusMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StatusMenuViewController.m; path = PrYv/StatusMenuViewController.m; sourceTree = "<group>"; };
+		0C5893101949E64700B3861D /* StatusMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusMenuViewController.xib; sourceTree = "<group>"; };
+		0C5893131949EE5900B3861D /* AXStatusItemPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXStatusItemPopup.h; sourceTree = "<group>"; };
+		0C5893141949EE5900B3861D /* AXStatusItemPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXStatusItemPopup.m; sourceTree = "<group>"; };
 		0C5D66931796A5330040DB36 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
 		0C5D66C41796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+SubscriptingCompatibility.h"; path = "PrYv/NSDictionary+SubscriptingCompatibility.h"; sourceTree = "<group>"; };
 		0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+SubscriptingCompatibility.m"; path = "PrYv/NSDictionary+SubscriptingCompatibility.m"; sourceTree = "<group>"; };
@@ -267,6 +275,8 @@
 		0C24088116B7096400BD60CC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0C58930E1949E64700B3861D /* StatusMenuViewController.h */,
+				0C58930F1949E64700B3861D /* StatusMenuViewController.m */,
 				0C2408D016B9233200BD60CC /* PYLoginController.h */,
 				0C2408D116B9233200BD60CC /* PYLoginController.m */,
 				0C2408AA16B7C27A00BD60CC /* PYNewNoteController.h */,
@@ -305,6 +315,8 @@
 		0C3C26A316CBDC880023E724 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0C5893131949EE5900B3861D /* AXStatusItemPopup.h */,
+				0C5893141949EE5900B3861D /* AXStatusItemPopup.m */,
 				0CBF1EC91878A3A4004A9AA9 /* DetailPopupController.xib */,
 				0C2408D216B9233200BD60CC /* LoginController.xib */,
 				0C7342EB16ADB00B00EA101F /* MainMenu.xib */,
@@ -314,6 +326,7 @@
 				0C3C26A416CBDCCF0023E724 /* DragAndDropStatusMenuView.h */,
 				0C3C26A516CBDCCF0023E724 /* DragAndDropStatusMenuView.m */,
 				0C96BFF9185122E4007155E2 /* PreferencesPane.xib */,
+				0C5893101949E64700B3861D /* StatusMenuViewController.xib */,
 			);
 			name = View;
 			path = PrYv;
@@ -602,6 +615,7 @@
 				0C7342E716ADB00B00EA101F /* Credits.rtf in Resources */,
 				0C7342ED16ADB00B00EA101F /* MainMenu.xib in Resources */,
 				0C293F5F16B13BFB00D90B36 /* FaviconBlack56.png in Resources */,
+				0C5893121949E64700B3861D /* StatusMenuViewController.xib in Resources */,
 				0C2408A616B7C0B600BD60CC /* NewNote.xib in Resources */,
 				0C2408D416B9233200BD60CC /* LoginController.xib in Resources */,
 				0CE33EA819361E4D00BC8ED7 /* Pryv_logo_128x128@2x.png in Resources */,
@@ -704,8 +718,10 @@
 				0C2408AC16B7C27A00BD60CC /* PYNewNoteController.m in Sources */,
 				0C2408D316B9233200BD60CC /* PYLoginController.m in Sources */,
 				0CBF1ECA1878A3A4004A9AA9 /* PYDetailPopupController.m in Sources */,
+				0C5893111949E64700B3861D /* StatusMenuViewController.m in Sources */,
 				0C1A714116BBB5DD004E35EF /* PYFileController.m in Sources */,
 				0C96BFFA185122E4007155E2 /* PYPreferencesPaneController.m in Sources */,
+				0C5893151949EE5900B3861D /* AXStatusItemPopup.m in Sources */,
 				0C1F955916C2784800E3C2F2 /* File+Helper.m in Sources */,
 				0C1F955C16C27D1900E3C2F2 /* NSString+Helper.m in Sources */,
 				0C3C26A616CBDCCF0023E724 /* DragAndDropStatusMenuView.m in Sources */,
