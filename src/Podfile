@@ -1,5 +1,7 @@
 platform :osx, "10.6"
 
+xcodeproj 'Pryv.xcodeproj'
+
 pod 'PryvApiKit', :path => '../../sdk-objectivec-apple/PryvApiKit.podspec'
 pod 'SSKeychain', '~> 1.1.0'
 pod 'StartAtLoginController', '~> 0.0'

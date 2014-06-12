@@ -139,7 +139,7 @@
 		0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+SubscriptingCompatibility.m"; path = "PrYv/NSDictionary+SubscriptingCompatibility.m"; sourceTree = "<group>"; };
 		0C5F299417AFD8B900AAE154 /* pryv.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = pryv.iconset; sourceTree = "<group>"; };
 		0C63A04517DDA2680033BED8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
-		0C7342D216ADB00B00EA101F /* integration-osx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "integration-osx.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C7342D216ADB00B00EA101F /* Pryv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pryv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7342D616ADB00B00EA101F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		0C7342D916ADB00B00EA101F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		0C7342DB16ADB00B00EA101F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -340,7 +340,7 @@
 		0C7342D316ADB00B00EA101F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0C7342D216ADB00B00EA101F /* integration-osx.app */,
+				0C7342D216ADB00B00EA101F /* Pryv.app */,
 				0C9B754116D37AAF00A7FEBD /* osx-integrationLogicTests.octest */,
 				0C9B755616D37C3200A7FEBD /* osx-integrationApplicationTests.octest */,
 			);
@@ -474,9 +474,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0C7342D116ADB00B00EA101F /* osx-integration */ = {
+		0C7342D116ADB00B00EA101F /* Pryv */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0C73430716ADB00B00EA101F /* Build configuration list for PBXNativeTarget "osx-integration" */;
+			buildConfigurationList = 0C73430716ADB00B00EA101F /* Build configuration list for PBXNativeTarget "Pryv" */;
 			buildPhases = (
 				87EED86B01754CE09869C532 /* Check Pods Manifest.lock */,
 				0C7342CE16ADB00B00EA101F /* Sources */,
@@ -490,9 +490,9 @@
 			);
 			dependencies = (
 			);
-			name = "osx-integration";
+			name = Pryv;
 			productName = PrYv;
-			productReference = 0C7342D216ADB00B00EA101F /* integration-osx.app */;
+			productReference = 0C7342D216ADB00B00EA101F /* Pryv.app */;
 			productType = "com.apple.product-type.application";
 		};
 		0C9B754016D37AAF00A7FEBD /* osx-integrationLogicTests */ = {
@@ -567,7 +567,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				0C7342D116ADB00B00EA101F /* osx-integration */,
+				0C7342D116ADB00B00EA101F /* Pryv */,
 				0C9B754016D37AAF00A7FEBD /* osx-integrationLogicTests */,
 				0C9B755516D37C3200A7FEBD /* osx-integrationApplicationTests */,
 			);
@@ -742,7 +742,7 @@
 /* Begin PBXTargetDependency section */
 		0C9B756716D37D2100A7FEBD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0C7342D116ADB00B00EA101F /* osx-integration */;
+			target = 0C7342D116ADB00B00EA101F /* Pryv */;
 			targetProxy = 0C9B756616D37D2100A7FEBD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -823,7 +823,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "02ED8912-BBA7-4031-95E0-6092E85D81C5";
 				SDKROOT = macosx;
@@ -849,7 +849,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PROVISIONING_PROFILE = "02ED8912-BBA7-4031-95E0-6092E85D81C5";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
@@ -874,7 +874,7 @@
 				);
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "integration-osx";
+				PRODUCT_NAME = Pryv;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
@@ -896,7 +896,7 @@
 				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "integration-osx";
+				PRODUCT_NAME = Pryv;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
@@ -1004,7 +1004,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "02ED8912-BBA7-4031-95E0-6092E85D81C5";
 				SDKROOT = macosx;
@@ -1030,7 +1030,7 @@
 				);
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "integration-osx";
+				PRODUCT_NAME = Pryv;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
@@ -1095,7 +1095,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PROVISIONING_PROFILE = "02ED8912-BBA7-4031-95E0-6092E85D81C5";
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/**";
@@ -1115,7 +1115,7 @@
 				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "integration-osx";
+				PRODUCT_NAME = Pryv;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
@@ -1175,7 +1175,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0C73430716ADB00B00EA101F /* Build configuration list for PBXNativeTarget "osx-integration" */ = {
+		0C73430716ADB00B00EA101F /* Build configuration list for PBXNativeTarget "Pryv" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C73430816ADB00B00EA101F /* Debug */,
