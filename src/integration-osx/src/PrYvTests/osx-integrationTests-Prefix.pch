@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'PrYvTests' target in the 'PrYvTests' project
+//
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+#endif

@@ -16,22 +16,29 @@
 #import "NSDictionary+SubscriptingCompatibility.h"
 #import "Constants.h"
 #import "PryvApiKit.h"
+#import "DragAndDropStatusMenuView.h"
 
 @implementation PYAppDelegate
 
 - (void)dealloc {
-    [menuController release];
-    [loginWindow release];
-    [servicesController release];
+    [_menuController release];
+    [_loginWindow release];
+    [_servicesController release];
     [_user.streams release];
     [super dealloc];
 }
 
-@synthesize loginWindow, menuController, user = _user;
+@synthesize connected = _connected;
+@synthesize loginWindow = _loginWindow, menuController = _menuController, user = _user;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	menuController = [[PYStatusMenuController alloc] init];
-	[NSBundle loadNibNamed:@"StatusMenu" owner:menuController];
+    
+    [[PYAppDelegate sharedInstance] setConnected:NO];
+    
+	_menuController = [[PYStatusMenuController alloc] init];
+    
+    
+	[NSBundle loadNibNamed:@"StatusMenu" owner:_menuController];
 	
     [self loadUser];
 }
@@ -47,26 +54,28 @@
 	//If no user has been found, open login window
 	if (!self.user) {
         [NSApp activateIgnoringOtherApps:YES];
-		loginWindow = [[PYLoginController alloc] initForUser:_user];
-		[loginWindow.window setDelegate:menuController];
-		[loginWindow showWindow:self];
-        [loginWindow.window makeKeyAndOrderFront:self];
+		_loginWindow = [[PYLoginController alloc] initForUser:_user andStatusItem:_menuController.statusItem];
+		[_loginWindow.window setDelegate:_menuController];
+		[_loginWindow showWindow:self];
+        [_loginWindow.window makeKeyAndOrderFront:self];
         [[NSNotificationCenter defaultCenter] postNotificationName:PYLogoutSuccessfullNotification object:self];
 	
 	//If the user has been found
 	}else {
-
+        
+        [[PYAppDelegate sharedInstance] setConnected:YES];
+        //[_menuController.view setNeedsDisplay:YES];
 		NSLog(@"Welcome back, %@ !",_user.username);
         [[_user connection] streamsEnsureFetched:^(NSError *error) {
-            if (error) { NSLog(@" Failed fetching streams %@", error); }
+            if (error) { NSLog(@"Failed fetching streams %@", error); }
         }];
-
+        
         [[NSNotificationCenter defaultCenter] postNotificationName:PYLoginSuccessfullNotification object:self];
 	}
     
     //Set up the service handler
-    servicesController = [[PYServicesController alloc] init];
-    [NSApp setServicesProvider:servicesController];
+    _servicesController = [[PYServicesController alloc] init];
+    [NSApp setServicesProvider:_servicesController];
     
     [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
 }

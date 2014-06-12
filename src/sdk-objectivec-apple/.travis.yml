@@ -1,0 +1,19 @@
+rvm: 1.9.3
+
+language: objective-c
+
+before_install: export LANG=en_US.UTF-8
+
+before_script:
+   - pod --version
+   - gem update cocoapods --no-ri --no-rdoc
+   - sudo easy_install cpp-coveralls
+
+script:
+   - cd Project/PrYv-OSX-Example/
+   - pod install
+   - xcodebuild test -workspace PrYv-OSX-Example.xcworkspace -scheme PrYv-OSX-Example -verbose -configuration Coverage
+
+after_success:
+   - cd ../../
+   - ./coveralls.rb --extension m --exclude-folder Project

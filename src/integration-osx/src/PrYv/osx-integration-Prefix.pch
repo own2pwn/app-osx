@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'Pryv' target in the 'Pryv' project
+//
+
+#ifdef __OBJC__
+#import <Cocoa/Cocoa.h>
+#import <PryvApiKit/PryvApiKit.h>
+#endif

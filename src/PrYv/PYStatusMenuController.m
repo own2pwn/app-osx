@@ -20,6 +20,8 @@
 
 @implementation PYStatusMenuController
 
+@synthesize statusItem = _statusItem;
+
 #pragma mark - General methods
 
 -(void)dealloc {
@@ -29,10 +31,9 @@
 	[super dealloc];
 }
 
--(PYStatusMenuController*)init {
+-(PYStatusMenuController*)init{
 	self = [super init];
 	if (self) {
-        
 	}
 	return self;
 }
@@ -41,13 +42,13 @@
 	NSStatusBar *statusBar = [NSStatusBar systemStatusBar];
 	_statusItem = [statusBar statusItemWithLength:NSVariableStatusItemLength];
 	[_statusItem retain];
-	DragAndDropStatusMenuView *dragAndDropView = [[DragAndDropStatusMenuView alloc]
-												  initWithFrame:NSMakeRect(0, 0, 22, 22)];
-    dragAndDropView.statusMenuController = self;
-	dragAndDropView.statusItem = _statusItem;
-	[dragAndDropView setMenu:_statusMenu];
-	[_statusItem setView:dragAndDropView];
-	[dragAndDropView release];
+    DragAndDropStatusMenuView *dragAndDropStatusMenuView = [[DragAndDropStatusMenuView alloc]
+                                                            initWithFrame:NSMakeRect(0, 0, 22, 22)];
+    dragAndDropStatusMenuView.statusMenuController = self;
+	dragAndDropStatusMenuView.statusItem = _statusItem;
+	[dragAndDropStatusMenuView setMenu:_statusMenu];
+	[_statusItem setView:dragAndDropStatusMenuView];
+    [dragAndDropStatusMenuView release];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateMenuItemsLogin:)
                                                  name:PYLoginSuccessfullNotification
@@ -104,12 +105,13 @@
 	//If no user has been found, open login window
 	if (!user) {
         [NSApp activateIgnoringOtherApps:YES];
-		_loginWindow = [[PYLoginController alloc] initForUser:user];
+        _loginWindow = [[PYLoginController alloc] initForUser:user andStatusItem:_statusItem];
 		[_loginWindow.window setDelegate:self];
 		[_loginWindow showWindow:self];
         
         //If the user has been found
 	}else {
+        [[PYAppDelegate sharedInstance] setConnected:NO];
 		[user logout];
     }
 }
@@ -140,7 +142,9 @@
 }
 
 -(void)updateMenuItemsLogin:(NSNotification*)notification{
-    [logInOrOut setTitle:@"Log out"];
+    User *user = [User currentUser];
+    NSString *title = [NSString stringWithFormat:@"Log out (%@)",[user username]];
+    [logInOrOut setTitle:title];
     [newNote setEnabled:YES];
     [pryvFiles setEnabled:YES];
     [goToMyPryv setEnabled:YES];

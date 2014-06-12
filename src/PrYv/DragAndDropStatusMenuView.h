@@ -14,6 +14,7 @@
 @private
 	NSMenu *_menu;
 	BOOL _isMenuVisible;
+    BOOL _connected;
 	
 }
 @property(retain, nonatomic) NSStatusItem* statusItem;

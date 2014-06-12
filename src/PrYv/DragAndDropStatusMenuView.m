@@ -11,6 +11,7 @@
 #import "PYStatusMenuController.h"
 #import "PYDetailPopupController.h"
 #import "Constants.h"
+#import "PYAppDelegate.h"
 
 @interface DragAndDropStatusMenuView ()
 
@@ -34,19 +35,24 @@
 		_menu = nil;
         _statusMenuController = nil;
 		_isMenuVisible = NO;
+        _connected = YES;
         [self registerForDraggedTypes:[NSArray arrayWithObjects: NSFilenamesPboardType, nil]];
     }
 	
     return self;
 }
 
-
 -(void)drawRect:(NSRect)dirtyRect {
 	// Draw status bar background, highlighted if menu is showing
     [_statusItem drawStatusBarBackgroundInRect:[self bounds]
                                 withHighlight:_isMenuVisible];
 	NSRect rect = {0,0,22,22};
-	[[NSImage imageNamed:@"FaviconBlack22.png"] drawInRect:dirtyRect
+    
+    _connected = [[PYAppDelegate sharedInstance] connected];
+    
+    NSString *imageName = (_isMenuVisible ? @"FaviconWhite22.png" : (_connected ? @"FaviconBlack22.png" : @"FaviconGrey22.png"));
+    
+	[[NSImage imageNamed:imageName] drawInRect:dirtyRect
 												  fromRect:rect
 												 operation:NSCompositeSourceOver
 												  fraction:1];
@@ -56,7 +62,7 @@
 	[[self menu] setDelegate:self];
     [_statusMenuController updateLastPryvedEvents];
 	[_statusItem popUpStatusItemMenu:[self menu]];
-    //[self setNeedsDisplay:YES];
+    [self setNeedsDisplay:YES];
 }
 
 - (void)menuWillOpen:(NSMenu *)menu {

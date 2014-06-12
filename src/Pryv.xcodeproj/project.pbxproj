@@ -51,6 +51,10 @@
 		0CC0F39617EEE6CE00870E29 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CC0F39517EEE6CE00870E29 /* WebKit.framework */; };
 		0CD04985179C5AD8003716A2 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD04984179C5AD8003716A2 /* Constants.m */; };
 		0CD268DF17E1CE150078171E /* PryvedEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD268DE17E1CE150078171E /* PryvedEvent.m */; };
+		0CD7B6031948864B0066D1F9 /* FaviconGrey22.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CD7B6011948864B0066D1F9 /* FaviconGrey22.png */; };
+		0CD7B6041948864B0066D1F9 /* FaviconWhite22.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CD7B6021948864B0066D1F9 /* FaviconWhite22.png */; };
+		0CE33EA619361AC000BC8ED7 /* Pryv_logo_128x128.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CE33EA519361AC000BC8ED7 /* Pryv_logo_128x128.png */; };
+		0CE33EA819361E4D00BC8ED7 /* Pryv_logo_128x128@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0CE33EA719361E4D00BC8ED7 /* Pryv_logo_128x128@2x.png */; };
 		0CED27A917DEFE62006854A1 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED27A817DEFE62006854A1 /* User.m */; };
 		0CED27AF17DEFF1F006854A1 /* File.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CED27AE17DEFF1F006854A1 /* File.m */; };
 		C5CB046975184E04A90866C1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 74C59B98928D4D068FD903D0 /* libPods.a */; };
@@ -181,6 +185,10 @@
 		0CD04984179C5AD8003716A2 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = PrYv/Constants.m; sourceTree = "<group>"; };
 		0CD268DD17E1CE150078171E /* PryvedEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PryvedEvent.h; path = PrYv/PryvedEvent.h; sourceTree = "<group>"; };
 		0CD268DE17E1CE150078171E /* PryvedEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PryvedEvent.m; path = PrYv/PryvedEvent.m; sourceTree = "<group>"; };
+		0CD7B6011948864B0066D1F9 /* FaviconGrey22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaviconGrey22.png; sourceTree = "<group>"; };
+		0CD7B6021948864B0066D1F9 /* FaviconWhite22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FaviconWhite22.png; sourceTree = "<group>"; };
+		0CE33EA519361AC000BC8ED7 /* Pryv_logo_128x128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pryv_logo_128x128.png; sourceTree = "<group>"; };
+		0CE33EA719361E4D00BC8ED7 /* Pryv_logo_128x128@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pryv_logo_128x128@2x.png"; sourceTree = "<group>"; };
 		0CED27A717DEFE62006854A1 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = PrYv/User.h; sourceTree = "<group>"; };
 		0CED27A817DEFE62006854A1 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = PrYv/User.m; sourceTree = "<group>"; };
 		0CED27AD17DEFF1F006854A1 /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = PrYv/File.h; sourceTree = "<group>"; };
@@ -452,6 +460,10 @@
 		0CD1201116BA6F740028CF5B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0CE33EA519361AC000BC8ED7 /* Pryv_logo_128x128.png */,
+				0CD7B6011948864B0066D1F9 /* FaviconGrey22.png */,
+				0CD7B6021948864B0066D1F9 /* FaviconWhite22.png */,
+				0CE33EA719361E4D00BC8ED7 /* Pryv_logo_128x128@2x.png */,
 				0C5F299417AFD8B900AAE154 /* pryv.iconset */,
 				0C3C26A716CCF9050023E724 /* FaviconBlack22.png */,
 				0C293F5E16B13BFB00D90B36 /* FaviconBlack56.png */,
@@ -536,7 +548,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0C7342CC16ADB00B00EA101F /* Build configuration list for PBXProject "osx-integration" */;
+			buildConfigurationList = 0C7342CC16ADB00B00EA101F /* Build configuration list for PBXProject "Pryv" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -584,6 +596,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CD7B6041948864B0066D1F9 /* FaviconWhite22.png in Resources */,
 				0CBF1ECB1878A3A4004A9AA9 /* DetailPopupController.xib in Resources */,
 				0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */,
 				0C7342E716ADB00B00EA101F /* Credits.rtf in Resources */,
@@ -591,11 +604,14 @@
 				0C293F5F16B13BFB00D90B36 /* FaviconBlack56.png in Resources */,
 				0C2408A616B7C0B600BD60CC /* NewNote.xib in Resources */,
 				0C2408D416B9233200BD60CC /* LoginController.xib in Resources */,
+				0CE33EA819361E4D00BC8ED7 /* Pryv_logo_128x128@2x.png in Resources */,
 				0C1A1DFD16C930C20042D7D4 /* OpenPanelWithTagsAndFolder.xib in Resources */,
 				0C81B05219260802002D73C4 /* StatusMenu.xib in Resources */,
 				0C96BFFB185122E4007155E2 /* PreferencesPane.xib in Resources */,
 				0C3C26A816CCF9050023E724 /* FaviconBlack22.png in Resources */,
+				0CE33EA619361AC000BC8ED7 /* Pryv_logo_128x128.png in Resources */,
 				0C5F299517AFD8B900AAE154 /* pryv.iconset in Resources */,
+				0CD7B6031948864B0066D1F9 /* FaviconGrey22.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,6 +862,7 @@
 			buildSettings = {
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -856,8 +873,9 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "integration-osx";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
@@ -870,14 +888,16 @@
 			buildSettings = {
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "integration-osx";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
@@ -998,6 +1018,7 @@
 			buildSettings = {
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1008,8 +1029,9 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "integration-osx";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
@@ -1086,13 +1108,15 @@
 			buildSettings = {
 				CLANG_LINK_OBJC_RUNTIME = NO;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrYv/osx-integration-Prefix.pch";
 				INFOPLIST_FILE = "PrYv/osx-integration-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "integration-osx";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
@@ -1140,7 +1164,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0C7342CC16ADB00B00EA101F /* Build configuration list for PBXProject "osx-integration" */ = {
+		0C7342CC16ADB00B00EA101F /* Build configuration list for PBXProject "Pryv" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0C73430516ADB00B00EA101F /* Debug */,

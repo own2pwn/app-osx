@@ -9,6 +9,8 @@
 #import "PYLoginController.h"
 #import "PYAppDelegate.h"
 #import "Constants.h"
+#import "DragAndDropStatusMenuView.h"
+#import "PYStatusMenuController.h"
 
 @interface PYLoginController () <PYWebLoginDelegate>
 
@@ -17,12 +19,14 @@
 @implementation PYLoginController
 
 @synthesize user = _user;
+@synthesize statusItem = _statusItem;
 @synthesize webView;
 
--(PYLoginController*)initForUser:(User*)user {
+-(PYLoginController*)initForUser:(User*)user andStatusItem:(NSStatusItem *)statusItem{
 	self = [super initWithWindowNibName:@"LoginController"];
 	if (self) {
 		_user = user;
+        _statusItem = statusItem;
 	}
 	
 	return self;
@@ -60,14 +64,9 @@
     NSLog(@"Signin With Success %@ %@",pyConnection.userID,pyConnection.accessToken);
     
     [User saveConnection:pyConnection];
-
-    //Display notification
-    NSUserNotification *notification = [[NSUserNotification alloc] init];
-    notification.title = @"Login successful.";
-    notification.informativeText = [NSString stringWithFormat:@"Welcome %@ !",pyConnection.userID];
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
     
-    
+    [[PYAppDelegate sharedInstance] setConnected:YES];
+    [_statusItem.view setNeedsDisplay:YES];
     
     [[PYAppDelegate sharedInstance] loadUser];
 }

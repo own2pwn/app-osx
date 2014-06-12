@@ -148,7 +148,7 @@
         if ([filesToSend areAllImages]){
             //X2
             //event.type = @"picture/attached";
-            notificationTitle = @"Picture pryved succesfully.";
+            notificationTitle = @"Pictures pryved succesfully.";
             //X2
 //            notificationText = [NSString
 //                                stringWithFormat:@"Your pictures including \"%@\" have been pryved.",
