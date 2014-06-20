@@ -5,12 +5,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="5056"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="PYAppDelegate">
+        <customObject id="-2" userLabel="File's Owner" customClass="StatusMenuViewController">
             <connections>
-                <outlet property="logInOrOut" destination="Jlp-2t-qqp" id="I6m-pj-Da1"/>
-                <outlet property="moreActionsButton" destination="Pb0-dt-erx" id="9Zm-in-0Fv"/>
-                <outlet property="moreActionsMenu" destination="6V3-DK-hSw" id="kxc-A9-THe"/>
-                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+                <outlet property="logInOrOut" destination="Jlp-2t-qqp" id="bD1-Xy-FPA"/>
+                <outlet property="moreActionsButton" destination="Pb0-dt-erx" id="YWK-Rl-PWf"/>
+                <outlet property="moreActionsMenu" destination="6V3-DK-hSw" id="BqD-E6-Iff"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="QHF-NB-7w2"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -33,7 +33,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="12V-PH-e6z">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
+                        <font key="font" metaFont="menu"/>
                         <menu key="menu" title="OtherViews" id="WoL-Tc-fxZ"/>
                     </popUpButtonCell>
                 </popUpButton>
@@ -71,7 +71,7 @@
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="showMoreActions:" target="-2" id="Kt0-b3-ocR"/>
+                        <action selector="showMoreActions:" target="-2" id="BLD-9c-mcs"/>
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y3l-dz-u4e">
@@ -93,7 +93,7 @@
                 <menuItem title="Log in/out (username)" id="Jlp-2t-qqp">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="logInOrOut:" target="-2" id="82R-bv-YXI"/>
+                        <action selector="logInOrOut:" target="-2" id="bmI-mC-GPG"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Quit" id="cM6-qd-bfN">

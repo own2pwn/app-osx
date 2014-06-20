@@ -22,6 +22,9 @@
 @implementation StatusMenuViewController
 
 @synthesize statusItemPopup = _statusItemPopup;
+@synthesize logInOrOut = _logInOrOut;
+@synthesize moreActionsButton = _moreActionsButton;
+@synthesize moreActionsMenu = _moreActionsMenu;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,6 +40,12 @@
                                                    object:nil];
     }
     return self;
+}
+
+-(void)awakeFromNib{
+    User *user = [User currentUser];
+    NSString *logOutTitle = [NSString stringWithFormat:@"Log out (%@)", user.username];
+    [_logInOrOut setTitle:logOutTitle];
 }
 
 
@@ -68,7 +77,7 @@
 
 - (IBAction)logInOrOut:(id)sender {
     
-    User * user = [User currentUser];
+    User *user = [User currentUser];
 	//If no user has been found, open login window
 	if (!user) {
         [NSApp activateIgnoringOtherApps:YES];
@@ -124,6 +133,7 @@
 -(void)updateMenuItemsLogout:(NSNotification*)notification{
     NSLog(@"Logged out.");
     [_logInOrOut setTitle:@"Log in"];
+    [_moreActionsButton setEnabled:NO];
     //[newNote setEnabled:NO];
     //[pryvFiles setEnabled:NO];
     //[goToMyPryv setEnabled:NO];
