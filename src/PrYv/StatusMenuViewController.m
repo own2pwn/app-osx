@@ -22,14 +22,12 @@
 @implementation StatusMenuViewController
 
 @synthesize statusItemPopup = _statusItemPopup;
-@synthesize logInOrOut = _logInOrOut;
-@synthesize moreActionsButton = _moreActionsButton;
-@synthesize moreActionsMenu = _moreActionsMenu;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(updateMenuItemsLogin:)
                                                      name:PYLoginSuccessfullNotification
@@ -43,9 +41,7 @@
 }
 
 -(void)awakeFromNib{
-    User *user = [User currentUser];
-    NSString *logOutTitle = [NSString stringWithFormat:@"Log out (%@)", user.username];
-    [_logInOrOut setTitle:logOutTitle];
+    
 }
 
 
@@ -98,24 +94,59 @@
     
 }
 
+- (IBAction)goToMyPryv:(id)sender {
+    NSString *username = [[[User currentUser] username] copy];
+    
+    NSString* domain = @"pryv.me";
+    if ([[PYClient defaultDomain] isEqualToString:@"pryv.in"]) {
+        domain = @"pryv.li";
+    };
+    
+    NSString *urlString = [NSString stringWithFormat:@"https://%@.%@/",username, domain];
+	NSURL *url = [NSURL URLWithString:urlString];
+	if(![[NSWorkspace sharedWorkspace] openURL:url])
+		NSLog(@"Failed to open url: %@",[url description]);
+
+}
+
 
 #pragma mark - WindowDelegate methods
 
 -(void)windowDidBecomeKey:(NSNotification *)notification{
     NSString *identifier = [[notification object] valueForKey:@"identifier"];
     if ([identifier isEqualToString: @"LoginWindow"]) {
-        [_logInOrOut setEnabled:NO];
+        
     }
 }
 
 -(void)windowWillClose:(NSNotification *)notification{
     NSString *identifier = [[notification object] valueForKey:@"identifier"];
     if ([identifier isEqualToString: @"LoginWindow"]) {
-        [_logInOrOut setEnabled:YES];
-    }else if ([identifier isEqualToString:@"NewNote"]){
-        [_newNoteController release];
-        _newNoteController = nil;
+        
     }
+    //Normally don't need it with new layout (popover)
+//    else if ([identifier isEqualToString:@"NewNote"]){
+//        [_newNoteController release];
+//        _newNoteController = nil;
+//    }
+}
+
+#pragma mark - MenuDelegate methods
+
+-(void)menuWillOpen:(NSMenu *)menu{
+    
+    User *user = [User currentUser];
+    NSString *logOutTitle;
+    if ([[PYAppDelegate sharedInstance] connected])
+        logOutTitle = [NSString stringWithFormat:@"Log out (%@)", user.username];
+    else
+        logOutTitle = @"Log in";
+    
+    [_logInOrOut setTitle:logOutTitle];
+    
+    if ([[PYAppDelegate sharedInstance] loginWindowIsVisilbe])
+        [_logInOrOut setAction:NULL];
+    
 }
 
 #pragma mark - View methods
@@ -124,6 +155,8 @@
     User *user = [User currentUser];
     NSString *title = [NSString stringWithFormat:@"Log out (%@)",[user username]];
     [_logInOrOut setTitle:title];
+    [_logInOrOut setAction:@selector(logInOrOut:)];
+    [_goToMyPryvButton setEnabled:YES];
     //[newNote setEnabled:YES];
     //[pryvFiles setEnabled:YES];
     //[goToMyPryv setEnabled:YES];
@@ -133,7 +166,7 @@
 -(void)updateMenuItemsLogout:(NSNotification*)notification{
     NSLog(@"Logged out.");
     [_logInOrOut setTitle:@"Log in"];
-    [_moreActionsButton setEnabled:NO];
+    [_goToMyPryvButton setEnabled:NO];
     //[newNote setEnabled:NO];
     //[pryvFiles setEnabled:NO];
     //[goToMyPryv setEnabled:NO];

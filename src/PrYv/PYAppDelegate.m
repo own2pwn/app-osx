@@ -24,36 +24,34 @@
 
 - (void)dealloc {
     [_statusItemPopup release];
-    [_menuController release];
+    [_statusMenuViewController release];
     [_loginWindow release];
     [_servicesController release];
     [_user.streams release];
     [super dealloc];
 }
 
-@synthesize connected = _connected;
-@synthesize loginWindow = _loginWindow, menuController = _menuController, user = _user;
+@synthesize connected = _connected, loginWindowIsVisilbe = _loginWindowIsVisilbe;
+@synthesize loginWindow = _loginWindow, statusMenuViewController = _statusMenuViewController, user = _user;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     
     [[PYAppDelegate sharedInstance] setConnected:NO];
+    [[PYAppDelegate sharedInstance] setLoginWindowIsVisilbe:NO];
     
-    StatusMenuViewController *statusViewController = [[StatusMenuViewController alloc]
+    _statusMenuViewController = [[StatusMenuViewController alloc]
                                                       initWithNibName:@"StatusMenuViewController"
                                                       bundle:nil];
     NSImage *image = [NSImage imageNamed:@"FaviconBlack22.png"];
     NSImage *alternateImage = [NSImage imageNamed:@"FaviconWhite22.png"];
     NSImage *disconnectedImage = [NSImage imageNamed:@"FaviconGrey22.png"];
     
-    _statusItemPopup = [[AXStatusItemPopup alloc] initWithViewController:statusViewController
+    _statusItemPopup = [[AXStatusItemPopup alloc] initWithViewController:_statusMenuViewController
                                                                    image:image
                                                           alternateImage:alternateImage
                                                        disconnectedImage:disconnectedImage];
     _statusItemPopup.animated = NO;
-    statusViewController.statusItemPopup = _statusItemPopup;
-    
-	//_menuController = [[PYStatusMenuController alloc] init];
-	//[NSBundle loadNibNamed:@"StatusMenu" owner:_menuController];
+    _statusMenuViewController.statusItemPopup = _statusItemPopup;
 	
     [self loadUser];
 }
@@ -68,9 +66,10 @@
     
 	//If no user has been found, open login window
 	if (!self.user) {
+        
         [NSApp activateIgnoringOtherApps:YES];
 		_loginWindow = [[PYLoginController alloc] initForUser:_user andStatusItem:_statusItemPopup.statusItem];
-		[_loginWindow.window setDelegate:_menuController];
+        [_loginWindow.window setDelegate:_statusMenuViewController];
 		[_loginWindow showWindow:self];
         [_loginWindow.window makeKeyAndOrderFront:self];
         [[NSNotificationCenter defaultCenter] postNotificationName:PYLogoutSuccessfullNotification object:self];

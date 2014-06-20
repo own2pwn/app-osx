@@ -10,7 +10,7 @@
 
 @class PYNewNoteController, PYLoginController, AXStatusItemPopup;
 
-@interface StatusMenuViewController : NSViewController <NSWindowDelegate>
+@interface StatusMenuViewController : NSViewController <NSWindowDelegate, NSMenuDelegate>
 {
     
 @private
@@ -23,9 +23,11 @@
 @property (assign) IBOutlet NSMenuItem *logInOrOut;
 @property (assign) IBOutlet NSButton *moreActionsButton;
 @property (assign) IBOutlet NSMenu *moreActionsMenu;
+@property (assign) IBOutlet NSButton *goToMyPryvButton;
 
 - (IBAction)showMoreActions:(id)sender;
 - (IBAction)logInOrOut:(id)sender;
+- (IBAction)goToMyPryv:(id)sender;
 -(void)updateMenuItemsLogin:(NSNotification*)notification;
 -(void)updateMenuItemsLogout:(NSNotification*)notification;
 

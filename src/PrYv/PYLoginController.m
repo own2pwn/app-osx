@@ -43,6 +43,9 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    
+    [[PYAppDelegate sharedInstance] setLoginWindowIsVisilbe:YES];
+    
     NSArray *objects = [NSArray arrayWithObjects:
                         kPYAPIConnectionRequestAllStreams,
                         kPYAPIConnectionRequestManageLevel,
@@ -66,16 +69,19 @@
     [User saveConnection:pyConnection];
     
     [[PYAppDelegate sharedInstance] setConnected:YES];
+    [[PYAppDelegate sharedInstance] setLoginWindowIsVisilbe:NO];
     [_statusItem.view setNeedsDisplay:YES];
     
     [[PYAppDelegate sharedInstance] loadUser];
 }
 
 - (void) pyWebLoginAborted:(NSString*)reason {
+    [[PYAppDelegate sharedInstance] setLoginWindowIsVisilbe:NO];
     NSLog(@"Signin Aborded: %@",reason);
 }
 
 - (void) pyWebLoginError:(NSError*)error {
+    [[PYAppDelegate sharedInstance] setLoginWindowIsVisilbe:NO];
     NSLog(@"Signin Error: %@",error);
 }
 

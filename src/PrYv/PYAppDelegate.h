@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class PYLoginController, PYStatusMenuController, PYServicesController, User, AXStatusItemPopup;
+@class PYLoginController, StatusMenuViewController, PYServicesController, User, AXStatusItemPopup;
 
 @interface PYAppDelegate : NSObject <NSApplicationDelegate, NSUserNotificationCenterDelegate> {
 @private
@@ -16,8 +16,9 @@
 }
 
 @property BOOL connected;
+@property BOOL loginWindowIsVisilbe;
 @property (retain) PYLoginController *loginWindow;
-@property (retain) PYStatusMenuController *menuController;
+@property (retain) StatusMenuViewController *statusMenuViewController;
 @property (retain) AXStatusItemPopup *statusItemPopup;
 @property (retain) User *user;
 

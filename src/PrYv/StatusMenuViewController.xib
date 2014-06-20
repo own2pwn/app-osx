@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="StatusMenuViewController">
             <connections>
+                <outlet property="goToMyPryvButton" destination="Y3l-dz-u4e" id="FEv-99-rM5"/>
                 <outlet property="logInOrOut" destination="Jlp-2t-qqp" id="bD1-Xy-FPA"/>
                 <outlet property="moreActionsButton" destination="Pb0-dt-erx" id="YWK-Rl-PWf"/>
                 <outlet property="moreActionsMenu" destination="6V3-DK-hSw" id="BqD-E6-Iff"/>
@@ -81,6 +82,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="goToMyPryv:" target="-2" id="sdA-3M-M6S"/>
+                    </connections>
                 </button>
             </subviews>
         </customView>
@@ -103,6 +107,9 @@
                     </connections>
                 </menuItem>
             </items>
+            <connections>
+                <outlet property="delegate" destination="-2" id="jeI-XA-Df0"/>
+            </connections>
         </menu>
     </objects>
     <resources>
