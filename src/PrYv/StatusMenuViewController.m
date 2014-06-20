@@ -42,6 +42,8 @@
 
 -(void)awakeFromNib{
     
+    [_noteTextField setFocusRingType:NSFocusRingTypeNone];
+    
 }
 
 
@@ -106,6 +108,8 @@
 	NSURL *url = [NSURL URLWithString:urlString];
 	if(![[NSWorkspace sharedWorkspace] openURL:url])
 		NSLog(@"Failed to open url: %@",[url description]);
+    
+    [_statusItemPopup hidePopover];
 
 }
 
@@ -152,10 +156,10 @@
 #pragma mark - View methods
 
 -(void)updateMenuItemsLogin:(NSNotification*)notification{
-    User *user = [User currentUser];
-    NSString *title = [NSString stringWithFormat:@"Log out (%@)",[user username]];
-    [_logInOrOut setTitle:title];
-    [_logInOrOut setAction:@selector(logInOrOut:)];
+    //User *user = [User currentUser];
+    //NSString *title = [NSString stringWithFormat:@"Log out (%@)",[user username]];
+    //[_logInOrOut setTitle:title];
+    //[_logInOrOut setAction:@selector(logInOrOut:)];
     [_goToMyPryvButton setEnabled:YES];
     //[newNote setEnabled:YES];
     //[pryvFiles setEnabled:YES];
@@ -165,14 +169,13 @@
 
 -(void)updateMenuItemsLogout:(NSNotification*)notification{
     NSLog(@"Logged out.");
-    [_logInOrOut setTitle:@"Log in"];
+    //[_logInOrOut setTitle:@"Log in"];
     [_goToMyPryvButton setEnabled:NO];
     //[newNote setEnabled:NO];
     //[pryvFiles setEnabled:NO];
     //[goToMyPryv setEnabled:NO];
     //[preferences setEnabled:NO];
 }
-
 
 
 @end

@@ -24,6 +24,7 @@
 @property (assign) IBOutlet NSButton *moreActionsButton;
 @property (assign) IBOutlet NSMenu *moreActionsMenu;
 @property (assign) IBOutlet NSButton *goToMyPryvButton;
+@property (assign) IBOutlet NSTextField *noteTextField;
 
 - (IBAction)showMoreActions:(id)sender;
 - (IBAction)logInOrOut:(id)sender;

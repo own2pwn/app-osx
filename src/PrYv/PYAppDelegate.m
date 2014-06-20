@@ -62,7 +62,6 @@
     
 	//Try to retrieve the user from the user preferences
 	self.user = [User currentUser];
-	//[PYClient setDefaultDomainStaging];
     
 	//If no user has been found, open login window
 	if (!self.user) {
@@ -77,13 +76,12 @@
 	//If the user has been found
 	}else {
         
+        [NSApp activateIgnoringOtherApps:YES];//Fix to make it work with NSWindow+canBecomeKeyWindow
         [[PYAppDelegate sharedInstance] setConnected:YES];
-        //[_menuController.view setNeedsDisplay:YES];
 		NSLog(@"Welcome back, %@ !",_user.username);
         [[_user connection] streamsEnsureFetched:^(NSError *error) {
             if (error) { NSLog(@"Failed fetching streams %@", error); }
         }];
-        
         [[NSNotificationCenter defaultCenter] postNotificationName:PYLoginSuccessfullNotification object:self];
 	}
     
