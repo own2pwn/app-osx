@@ -27,7 +27,6 @@
 		0C5893151949EE5900B3861D /* AXStatusItemPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5893141949EE5900B3861D /* AXStatusItemPopup.m */; };
 		0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */; };
 		0C5F299517AFD8B900AAE154 /* pryv.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 0C5F299417AFD8B900AAE154 /* pryv.iconset */; };
-		0C614C37195489D6008B0CFA /* NSWindow+canBecomeKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C614C36195489D6008B0CFA /* NSWindow+canBecomeKeyWindow.m */; };
 		0C7342E116ADB00B00EA101F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342DF16ADB00B00EA101F /* InfoPlist.strings */; };
 		0C7342E316ADB00B00EA101F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7342E216ADB00B00EA101F /* main.m */; };
 		0C7342E716ADB00B00EA101F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 0C7342E516ADB00B00EA101F /* Credits.rtf */; };
@@ -147,8 +146,6 @@
 		0C5D66C41796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+SubscriptingCompatibility.h"; path = "PrYv/NSDictionary+SubscriptingCompatibility.h"; sourceTree = "<group>"; };
 		0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+SubscriptingCompatibility.m"; path = "PrYv/NSDictionary+SubscriptingCompatibility.m"; sourceTree = "<group>"; };
 		0C5F299417AFD8B900AAE154 /* pryv.iconset */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; path = pryv.iconset; sourceTree = "<group>"; };
-		0C614C35195489D6008B0CFA /* NSWindow+canBecomeKeyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+canBecomeKeyWindow.h"; sourceTree = "<group>"; };
-		0C614C36195489D6008B0CFA /* NSWindow+canBecomeKeyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+canBecomeKeyWindow.m"; sourceTree = "<group>"; };
 		0C63A04517DDA2680033BED8 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		0C7342D216ADB00B00EA101F /* Pryv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pryv.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C7342D616ADB00B00EA101F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -303,8 +300,6 @@
 		0C24088216B7097300BD60CC /* API */ = {
 			isa = PBXGroup;
 			children = (
-				0C614C35195489D6008B0CFA /* NSWindow+canBecomeKeyWindow.h */,
-				0C614C36195489D6008B0CFA /* NSWindow+canBecomeKeyWindow.m */,
 				0C5D66C41796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.h */,
 				0C5D66C51796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m */,
 				0C1F955A16C27D1900E3C2F2 /* NSString+Helper.h */,
@@ -734,7 +729,6 @@
 				0C1413BC170CB98500C21239 /* PYTextController.m in Sources */,
 				0CBF1ED51878AC62004A9AA9 /* PYUtility.m in Sources */,
 				0C5D66C61796D4460040DB36 /* NSDictionary+SubscriptingCompatibility.m in Sources */,
-				0C614C37195489D6008B0CFA /* NSWindow+canBecomeKeyWindow.m in Sources */,
 				0CD04985179C5AD8003716A2 /* Constants.m in Sources */,
 				0CA8A2E617D5EA3200C5F507 /* NSMutableArray+Helper.m in Sources */,
 				0CED27A917DEFE62006854A1 /* User.m in Sources */,

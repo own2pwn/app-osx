@@ -11,7 +11,6 @@
 #import "User+Helper.h"
 #import "PYLoginController.h"
 #import "PYAppDelegate.h"
-#import "AXStatusItemPopup.h"
 #import "Constants.h"
 #import "PYLoginController.h"
 
@@ -36,6 +35,7 @@
                                                  selector:@selector(updateMenuItemsLogout:)
                                                      name:PYLogoutSuccessfullNotification
                                                    object:nil];
+        
     }
     return self;
 }
@@ -113,6 +113,66 @@
 
 }
 
+- (IBAction)pryvNote:(id)sender {
+    if (![[_noteTextField stringValue] isEqualToString:@""]) {
+        NSLog(@"Pryv note : %@", [_noteTextField stringValue]);
+        [_noteTextField setStringValue:@""];
+    }
+    
+}
+
+#pragma mark - NSTextDelegate methods
+
+- (void)controlTextDidBeginEditing:(NSNotification *)aNotification{
+    [_pryvNoteButton setHidden:NO];
+    [_streamsPopUpButton setHidden:NO];
+    [_tagsTokenField setHidden:NO];
+}
+
+-(void)controlTextDidEndEditing:(NSNotification *)aNotification{
+    [_pryvNoteButton setHidden:YES];
+    [_streamsPopUpButton setHidden:YES];
+    [_tagsTokenField setHidden:YES];
+}
+
+- (BOOL)control:(NSControl*)control textView:(NSTextView*)textView doCommandBySelector:(SEL)commandSelector
+{
+    BOOL result = NO;
+    NSEvent *event = [NSApp currentEvent];
+    
+    if (commandSelector == @selector(insertNewline:))
+    {
+        // new line action:
+        // always insert a line-break character and don’t cause the receiver to end editing
+        [textView insertNewlineIgnoringFieldEditor:self];
+        result = YES;
+    }
+    else if (commandSelector == @selector(insertTab:))
+    {
+        // tab action:
+        // always insert a tab character and don’t cause the receiver to end editing
+        [textView insertTabIgnoringFieldEditor:self];
+        result = YES;
+    }
+    else if (([event modifierFlags] & NSDeviceIndependentModifierFlagsMask) == NSCommandKeyMask && [[event characters] isEqual:@"\r"])
+    {
+        // pryv note on CMD+Enter
+        [self performSelector:@selector(pryvNote:)];
+        result = YES;
+    }
+    return result;
+}
+
+#pragma mark - AXStatusItemPopupDelegate methods
+
+-(void)popupDidClose{
+    NSLog(@"Popup closed.");
+}
+
+-(void)popupWillClose{
+    NSLog(@"Pop closing...");
+    [_pryvNoteButton setHidden:YES];
+}
 
 #pragma mark - WindowDelegate methods
 

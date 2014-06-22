@@ -66,7 +66,7 @@
 	//If no user has been found, open login window
 	if (!self.user) {
         
-        [NSApp activateIgnoringOtherApps:YES];
+        //[NSApp activateIgnoringOtherApps:YES];
 		_loginWindow = [[PYLoginController alloc] initForUser:_user andStatusItem:_statusItemPopup.statusItem];
         [_loginWindow.window setDelegate:_statusMenuViewController];
 		[_loginWindow showWindow:self];
@@ -76,7 +76,7 @@
 	//If the user has been found
 	}else {
         
-        [NSApp activateIgnoringOtherApps:YES];//Fix to make it work with NSWindow+canBecomeKeyWindow
+        //[NSApp activateIgnoringOtherApps:YES];//Fix to make it work with NSWindow+canBecomeKeyWindow
         [[PYAppDelegate sharedInstance] setConnected:YES];
 		NSLog(@"Welcome back, %@ !",_user.username);
         [[_user connection] streamsEnsureFetched:^(NSError *error) {

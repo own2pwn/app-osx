@@ -7,10 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "AXStatusItemPopup.h"
 
 @class PYNewNoteController, PYLoginController, AXStatusItemPopup;
 
-@interface StatusMenuViewController : NSViewController <NSWindowDelegate, NSMenuDelegate>
+@interface StatusMenuViewController : NSViewController <NSWindowDelegate, NSMenuDelegate, NSTextDelegate, AXStatusItemPopupDelegate>
 {
     
 @private
@@ -25,10 +26,14 @@
 @property (assign) IBOutlet NSMenu *moreActionsMenu;
 @property (assign) IBOutlet NSButton *goToMyPryvButton;
 @property (assign) IBOutlet NSTextField *noteTextField;
+@property (assign) IBOutlet NSButton *pryvNoteButton;
+@property (assign) IBOutlet NSPopUpButton *streamsPopUpButton;
+@property (assign) IBOutlet NSTokenField *tagsTokenField;
 
 - (IBAction)showMoreActions:(id)sender;
 - (IBAction)logInOrOut:(id)sender;
 - (IBAction)goToMyPryv:(id)sender;
+- (IBAction)pryvNote:(id)sender;
 -(void)updateMenuItemsLogin:(NSNotification*)notification;
 -(void)updateMenuItemsLogout:(NSNotification*)notification;
 
