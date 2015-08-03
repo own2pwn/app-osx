@@ -24,7 +24,7 @@ git submodule update
 4. Then retrieve the `streams` branch in the submodule:
 
 	```
-cd src/sdk-objectivec-apple
+cd src/cocoa-lib
 git checkout streams
 git pull origin streams
 ```	
