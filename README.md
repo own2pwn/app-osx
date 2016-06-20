@@ -1,5 +1,7 @@
 # Pryv integration for Mac OSX
 
+Follow issues on [Waffle.io](https://waffle.io/pryv/app-osx)
+
 Desktop application &amp; system wide contextual menu integration for Pryv.
 
 **Current version :** v.0.8
